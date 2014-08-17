@@ -13,7 +13,7 @@ class tvguide extends filepath
 	{
 		ini_set('display_errors',1);
 		error_reporting(E_ALL);
-		require 'config.php';
+		require 'config_xmltv.php';
 		if(!isset($xmltv_subfolder_main))
 			die("Main subfolder not specified ($xmltv_subfolder_main)");
 		$this->xmltv_subfolder_main=$xmltv_subfolder_main;
