@@ -297,8 +297,7 @@ class tvguide extends filepath
 			else
 				return array('season'=>0,'episode'=>$matches[1]+1);
 		}
-		else
-			return false;
+		return false;
 
 	}
 	public function eitparser($eitfile,$mode='title')
