@@ -232,11 +232,6 @@ class tvguide extends filepath
 		{
 			$start=strtotime($program->attributes()->start);
 
-			if(!isset($prevprogram) && $time<$start)
-			{
-				$this->error.="Ingen sending på angitt tidspunkt<br />\n";
-				return false;
-			}
 			//var_dump($offsets);
 			if(is_array($offsets))
 			{
@@ -272,6 +267,11 @@ class tvguide extends filepath
 			}
 			
 			$prevprogram=$program;
+		}
+		if(!isset($prevprogram) && $time<$start)
+		{
+			$this->error.="Nothing on air at given time<br />\n";
+			return false;
 		}
 		$this->error.="No program found<br />\n";
 		return false;
