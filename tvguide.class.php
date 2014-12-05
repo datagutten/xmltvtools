@@ -139,6 +139,7 @@ class tvguide extends filepath
 				if(!isset($xml->programme))
 				{
 					$temperror="Invalid XML file for $channelid $ymd ($path)<br>\n";
+					unset($xml);
 					continue; //Invalid file, try next
 				}
 				else
