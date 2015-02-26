@@ -3,6 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Untitled Document</title>
+<style>
+td {
+    vertical-align: top;
+	min-width: 90px;
+}
+</style>
 </head>
 <body>
 <?Php
@@ -10,6 +16,8 @@ setlocale(LC_ALL, "nb_NO.UTF8");
 
 require_once 'tvguide.class.php';
 $tvguide=new tvguide;
+$timeformat='Hi';
+
 
 if (!isset($_GET['start']))
 	$time=strtotime("monday");
@@ -48,28 +56,21 @@ for ($i=1; $i<=$numdays; $i++) //Lag en rad for hver dag
 	echo "<tr>\n";
 	
 	
-	echo "\t".'<td rowspan="2" width="86">'.date('l d-m-y',$time)."</td>\n"; //Vis dato
-
-	if(isset($_GET['program']))
+	echo "\t".'<td width="86">'.date('l',$time)."<br />".date('Y-m-d',$time)."</td>\n"; //Show date
+	$key=0;
+	foreach($data->programme as $programme)
 	{
-		foreach ($xml['programme'] as $key=>$program)
-		{
-			if(strpos($program['title'],$_GET['program'])===false)
-				unset($xml['programme'][$key]);
-		}
-	}
-	foreach($xml['programme'] as $program)
-	{
-		echo "\t<td>".date('Hi',strtotime($program['@attributes']['start']));
-		if(isset($program['@attributes']['stop']))
-			echo '-'.date('Hi',strtotime($program['@attributes']['stop']))."</td>\n"; //Vis tidene
-	}
-	echo "</tr>\n";
-	echo "<tr>\n";
-	foreach($xml['programme'] as $program)
-	{
-		echo "\t<td>{$program['title']}";
-
+		if(isset($_GET['program']) && strpos($programme->title,$_GET['program'])===false)
+			continue;
+		
+		echo "\t<td>";
+		$attributes=$programme->attributes();
+		echo date($timeformat,strtotime($attributes->start));
+		if(!empty($attributes->stop))
+			echo "-".date($timeformat,strtotime($attributes->stop));
+		echo "<hr>";
+		echo $programme->title."<br />\n"; 
+		echo $tvguide->seasonepisode($programme);
 		echo "</td>\n";
 	}
 	
