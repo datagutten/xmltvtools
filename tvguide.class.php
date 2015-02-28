@@ -34,15 +34,14 @@ class tvguide extends filepath
 	}
 	 public function selectchannel($channelstring)
 	 {
-		require 'channellist.php';
+		require 'channellist.php'; //Load channel name to xmltv id mappings
 		if(isset($channellist[$channelstring]))
-			$return=$channellist[$channelstring];
+			return $channellist[$channelstring];
 		else
 		{
-			$this->error.="Finner ingen kanal for $channelstring".$this->linebreak;
-			$return=false;
+			$this->error.="No channel found for $channelstring".$this->linebreak;
+			return false;
 		}
-		return $return;
 	 }
 	 public function parsefilename($input)
 	 {
@@ -57,8 +56,6 @@ class tvguide extends filepath
 	 }
 	 public function filecheck($file)
 	 {
-		
-		//var_dump(strpos($file,'http://')===false);
 		if(strpos($file,'http://')===false)
 			return file_exists($file);
 		else
@@ -69,14 +66,14 @@ class tvguide extends filepath
 				return false;	
 			}
 			elseif($file_headers[0] == "HTTP/1.1 200 OK")
-			
 				return true;
-			else
+			elseif($this->debug)
 			{
 				print_r($file_headers);
 				return false;
-				
 			}
+			else
+				return false;
 		}
 	 }
 	public function getchannel($channelstring,$timestamp)
