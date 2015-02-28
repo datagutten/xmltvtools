@@ -9,6 +9,7 @@ class tvguide extends filepath
 	public $error;
 	public $debug=false;
 	public $channels;
+	public $linebreak="<br />\n";
 	public function __construct()
 	{
 		ini_set('display_errors',1);
@@ -38,7 +39,7 @@ class tvguide extends filepath
 			$return=$channellist[$channelstring];
 		else
 		{
-			$this->error.="Finner ingen kanal for $channelstring<br />\n";
+			$this->error.="Finner ingen kanal for $channelstring".$this->linebreak;
 			$return=false;
 		}
 		return $return;
@@ -121,13 +122,13 @@ class tvguide extends filepath
 				else
 				{
 					if($this->debug)
-						$this->error.="Successfully loaded $path<br />\n";
+						$this->error.="Successfully loaded $path".$this->linebreak;
 					break; //Valid file found, no need to continue
 				}
 			}
 			else
 			{
-				$temperror="No XML file found for $channelid $ymd<br />\n";
+				$temperror="No XML file found for $channelid $ymd".$this->linebreak;
 				continue; //No file found, try next
 			}
 		}
@@ -194,7 +195,7 @@ class tvguide extends filepath
 	{
 		if(!is_object($xml))
 		{
-			$this->error="Ugyldig xml<br />\n";	
+			$this->error="Ugyldig xml".$this->linebreak;	
 			return false;
 		}
 		//Opptak starter 5 min før programmet
@@ -235,7 +236,7 @@ class tvguide extends filepath
 						return $prevprogram;
 					else
 					{
-						$this->error.="Matcher første program<br />\n";
+						$this->error.="Matcher første program".$this->linebreak;
 						return false;
 					}
 				}
@@ -247,10 +248,10 @@ class tvguide extends filepath
 		}
 		if(!isset($prevprogram) && $time<$start)
 		{
-			$this->error.="Nothing on air at given time<br />\n";
+			$this->error.="Nothing on air at given time".$this->linebreak;
 			return false;
 		}
-		$this->error.="No program found<br />\n";
+		$this->error.="No program found".$this->linebreak;
 		return false;
 	}
 	public function seasonepisode($program,$string=true)
