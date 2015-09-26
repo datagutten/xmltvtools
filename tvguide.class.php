@@ -45,7 +45,7 @@ class tvguide extends filepath
 	 }
 	 public function parsefilename($input)
 	 {
-		if(!preg_match('^([0-9 ]+) - (.*) - (.*)\.ts^U',$input,$result))
+		if(!preg_match('^([0-9]{8} [0-9]{4}) - (.*) - (.*)\.ts^U',$input,$result))		
 		{
 			//print_r($result);
 			return false;
