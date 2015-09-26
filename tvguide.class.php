@@ -162,8 +162,10 @@ class tvguide extends filepath
 
 		$channelstring=$info['channel'];
 		if(!$channelid=$this->selectchannel($channelstring))
+		{
+			$this->error='Invalid channel: $channelstring';
 			return false;
-
+		}
 		/*$offsettimestamp=$this->offset($timestamp,$channelid);  //Some channels got early programs in yesterdays file
 
 		if($offsettimestamp!=$timestamp && $this->debug)
