@@ -154,6 +154,22 @@ class tvguide extends filepath
 	{
 		return @json_decode(@json_encode($xml),true); //Gjør om til array
 	}
+	public function getprograms($channel,$timestamp) //Combine data for current day and previous day to get all programs for the current day
+	{
+		$xml_today=$this->loadxmlfile($channel,$timestamp);
+		$xml_yesterday=$this->loadxmlfile($channel,$timestamp-86400);
+		$date_request=date('Ymd',$timestamp);
+		foreach(array($xml_yesterday,$xml_today) as $day)
+		{
+			foreach($day as $program)
+			{
+				if($date_request!=substr($program->attributes()->start,0,8)) //Wrong date
+					continue;
+				$programs[]=$program;
+			}
+		}
+		return $programs;
+	}	
 	public function recordinginfo($filename) //Find information about a recorded file
 	{
 		//list($datetime,$channelstring) = 
@@ -166,22 +182,13 @@ class tvguide extends filepath
 			$this->error='Invalid channel: $channelstring';
 			return false;
 		}
-		/*$offsettimestamp=$this->offset($timestamp,$channelid);  //Some channels got early programs in yesterdays file
 
-		if($offsettimestamp!=$timestamp && $this->debug)
-		{	
-			echo "Original: ".date('c',$timestamp)."\n";
-			echo "Offset:   ".date('c',$offsettimestamp)."\n";
-		}*/
 		if(!$xml=$this->loadxmlfile($channelid,$timestamp))
 			return false;
 		else
 		{			
-			$generator=(string)$xml->attributes();
-			if($generator=='quadepg' && !$xml=$this->loadxmlfile($channelid,$this->offset($timestamp,$channelid),'object','xmltv_quad'))
-				return false;
+			$xml=(object)array('programme'=>$this->getprograms($channelid,$timestamp));
 
-			//var_dump((array)$xml->attributes()["@attributes"]); //
 			$xmlprogram=$this->findprogram($timestamp,$xml,array(0,5*60,10*60,15*60,60)); //Se etter programmer som starter om kort tid
 			if($xmlprogram===false)
 		   		$xmlprogram=$this->findprogram($timestamp,$xml,'now'); //Se hvilket program som gikk på opptakstidspunktet
@@ -298,23 +305,5 @@ class tvguide extends filepath
 			return $info['title'];
 	}
 	
-	public function offset($timestamp,$channel) 
-	{
-		if(date('Hi',$timestamp)<300 && strpos($channel,'nrk')!==false) //Programmer sendt på NRK mellom midnatt og 03:00 finnes i gårsdagens fil
-		{
-			/*echo 'Forskyv: '.$input."<br>\n";
-			echo '_'.date('Y-m-d',$timestamp).".xml<br>\n";*/
-			return $timestamp-86400;
-		}
-		elseif((date('Hi',$timestamp)<800 && $channel=='natgeo.no')/* ||
-			   (date('Hi',$timestamp)<600 && $channel=='tvnorge.no')*/		
-		) //Programmer sendt på Nat Geo mellom midnatt og 08:00 finnes i gårsdagens fil
-		{
-			/*echo 'Forskyv: '.$input."<br>\n";
-			echo '_'.date('Y-m-d',$timestamp).".xml<br>\n";*/
-			return $timestamp-86400;
-		}
-		else
-			return $timestamp;
-	}
+
 }
