@@ -47,7 +47,7 @@ for ($i=1; $i<=$numdays; $i++) //Lag en rad for hver dag
 	$date=date('Y-m-d',$time);
 	//$filename="../../tv/$channel$date.xml";
 
-	if (!($data=$tvguide->loadxmlfile($_GET['channel'],$time)) || !($xml=$tvguide->xmltoarray($data)))
+	if (!$programs=$tvguide->getprograms($_GET['channel'],$time))
 	{
 		$time=strtotime('+1 day',$time);
 		continue;
@@ -58,7 +58,7 @@ for ($i=1; $i<=$numdays; $i++) //Lag en rad for hver dag
 	
 	echo "\t".'<td width="86">'.date('l',$time)."<br />".date('Y-m-d',$time)."</td>\n"; //Show date
 	$key=0;
-	foreach($data->programme as $programme)
+	foreach($programs as $programme)
 	{
 		if(isset($_GET['program']) && strpos($programme->title,$_GET['program'])===false)
 			continue;
@@ -75,7 +75,6 @@ for ($i=1; $i<=$numdays; $i++) //Lag en rad for hver dag
 	}
 	
 	echo "</tr>\n";
-	unset($xml);
 	$time=strtotime('+1 day',$time);
 
 }

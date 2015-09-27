@@ -181,83 +181,69 @@ class tvguide extends filepath
 		$channelstring=$info['channel'];
 		if(!$channelid=$this->selectchannel($channelstring))
 			return false;
+		$programs_xml=$this->getprograms($channelid,$timestamp);
 
-		if(!$xml=$this->loadxmlfile($channelid,$timestamp))
+		if($programs_xml===false)
 			return false;
 		else
-		{			
-			$xml=(object)array('programme'=>$this->getprograms($channelid,$timestamp));
-
-			$xmlprogram=$this->findprogram($timestamp,$xml,array(0,5*60,10*60,15*60,60)); //Se etter programmer som starter om kort tid
-			if($xmlprogram===false)
-		   		$xmlprogram=$this->findprogram($timestamp,$xml,'now'); //Se hvilket program som gikk på opptakstidspunktet
-
-			return $xmlprogram;
-			
-		}
+		   	return $this->findprogram($timestamp,$programs_xml,'nearest'); //Find the program start nearest to the search time			
 	}
-	public function findprogram($time,$xml,$offsets=array(300)) //Find a program from a tv-listing
+	//Get program running at the given time or the next starting program
+	//$mode can be now (running program at search time), next (next starting program) or nearest (program start with lowest difference to search time)
+	public function findprogram($search_time,$programs_xml,$mode='nearest')
 	{
-		if(!is_object($xml))
-		{
-			$this->error="Ugyldig xml".$this->linebreak;	
+		if($programs_xml===false)
 			return false;
-		}
-		//Opptak starter 5 min før programmet
-		//Sjekk om start-5 er samme som opptak
-		if($offsets==='now')
-			$now=$time;
-		else
-			$now=time();
+		elseif(!is_array($programs_xml))
+			throw new Exception('$programs_xml must be array');
 
-		//$now=strtotime('2013-12-26 10:59');
-		foreach($xml->programme as $program)
+		foreach($programs_xml as $key=>$program) //Loop through the programs
 		{
-			$start=strtotime($program->attributes()->start);
+			$program_start=strtotime($program->attributes()->start); //Get program start
+			if($key==0 && $this->debug)
+				echo sprintf("First program start: %s date: %s\n",(string)$program->attributes()->start,date('c',$program_start));
 
-			//var_dump($offsets);
-			if(is_array($offsets))
+			$time_to_start[$key]=$program_start-$search_time; //How long is there until the program starts?
+			$diff=$search_time-$program_start;
+
+			if($this->debug)
+				echo sprintf("Time to start: %s (%s seconds) Program starts: XML: %s date: %s Timestamp: %s\n",date('H:i',$time_to_start[$key]),$time_to_start[$key],$program->attributes()->start,date('H:i',$program_start),$program_start);
+
+			if($key==0 && $time_to_start[$key]>0) //First program has not started
 			{
-				foreach($offsets as $offset)
+				if($mode=='next' || $mode=='nearest')
+					return $program;
+				elseif($mode=='now')
 				{
-					//echo $start-$offset;
-					//echo "==$time\n";
-					if($start-$offset==$time)
-						return $program;
+					$this->error='Nothing on air at given time';
+					return false;
 				}
 			}
-			elseif($offsets==='now')
+
+			if($mode=='next' && $time_to_start[$key]>=0) //Find first program which has not started
+				return $program;
+			elseif($mode=='now')
 			{
-				$diff=$now-$start;
+				if($time_to_start[$key]>0) //Current program has not started, return the previous (running now)
+					return $programs_xml[$key-1];
+			}
+			elseif($mode=='nearest' && $key>0) //Get the nearest start
+			{
+				$time_to_start_previous=$time_to_start[$key-1];
+				$time_to_start_current=$time_to_start[$key];
+
+				if($time_to_start_previous<0)
+					$time_to_start_previous=-$time_to_start_previous;
+				if($time_to_start_current<0)
+					$time_to_start_current=-$time_to_start_current;
 				if($this->debug)
-				{
-					echo "$now-$start=$diff\n";
-					echo date('H:i',$now).'-'.date('H:i',$start)."\n";
-				}
-
-				if($diff<0)
-				{
-					if(isset($prevprogram))
-						return $prevprogram;
-					else
-					{
-						$this->error.="Matcher første program".$this->linebreak;
-						return false;
-					}
-				}
-
-
+					echo sprintf("%s<%s\n",$time_to_start_previous,$time_to_start_current);
+				if($time_to_start_previous<$time_to_start_current) //Previous diff was lower
+					return $programs_xml[$key-1];
+				if(!isset($programs_xml[$key+1])) //If we are on the last program and haven't returned yet, return the current program
+					return $program;
 			}
-			
-			$prevprogram=$program;
 		}
-		if(!isset($prevprogram) && $time<$start)
-		{
-			$this->error.="Nothing on air at given time".$this->linebreak;
-			return false;
-		}
-		$this->error.="No program found".$this->linebreak;
-		return false;
 	}
 	public function seasonepisode($program,$string=true)
 	{
