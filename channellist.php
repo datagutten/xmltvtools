@@ -30,5 +30,7 @@ $channellist['Boomerang']='boomerangtv.no';
 $channellist['Viasat 4 HD']='viasat4.no';
 $channellist['TV3 HD']='tv3.no';
 
+$channels['boomerangtv.no']='Boomerang';
+
 $channels=array_values($channellist);
 ?>
