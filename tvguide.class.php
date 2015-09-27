@@ -39,7 +39,7 @@ class tvguide extends filepath
 			return $channellist[$channelstring];
 		else
 		{
-			$this->error.="No channel found for $channelstring".$this->linebreak;
+			$this->error="Unkown channel: $channelstring";
 			return false;
 		}
 	 }
@@ -47,7 +47,7 @@ class tvguide extends filepath
 	 {
 		if(!preg_match('^([0-9]{8} [0-9]{4}) - (.*) - (.*)\.ts^U',$input,$result))		
 		{
-			//print_r($result);
+			$this->error='Could not parse file name';
 			return false;
 		}
 		else
