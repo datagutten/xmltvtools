@@ -9,7 +9,6 @@ class tvguide extends filepath
 	public $error;
 	public $debug=false;
 	public $channels;
-	public $linebreak="<br />\n";
 	public function __construct()
 	{
 		ini_set('display_errors',1);
@@ -90,19 +89,17 @@ class tvguide extends filepath
 		$ymd=date('Y-m-d',$timestamp);
 		$basename="$channelid/{$channelid}_$ymd.xml";
 
-		$files['main']=$this->fullpath($channelid,$this->xmltv_subfolder_main,$timestamp,'xml');
-		if(isset($this->xmltv_subfolder_alt))
-			$files['alt']=$this->fullpath($channelid,$this->xmltv_subfolder_alt,$timestamp,'xml');
-		$files['cache']=str_replace($this->xmltvpath,$this->xmltv_cache,$files['main']);
-
 		if($forcesubfolder!==false)
-		{
-			$checkfiles=array($this->fullpath($channelid,$forcesubfolder,$timestamp,'xml'));
-		}
+			$files=array($this->fullpath($channelid,$forcesubfolder,$timestamp,'xml'));
 		else
-			$checkfiles=array($files['cache'],$files['main'],$files['alt']);
+		{
+			$files['main']=$this->fullpath($channelid,$this->xmltv_subfolder_main,$timestamp,'xml');
+			if(isset($this->xmltv_subfolder_alt))
+				$files['alt']=$this->fullpath($channelid,$this->xmltv_subfolder_alt,$timestamp,'xml');
+			$files['cache']=str_replace($this->xmltvpath,$this->xmltv_cache,$files['main']);
+		}
 		
-		foreach($checkfiles as $path)
+		foreach($files as $path)
 		{
 			if($this->filecheck($path))
 			{
@@ -117,21 +114,17 @@ class tvguide extends filepath
 					continue; //Invalid file, try next
 				}
 				else
-				{
-					if($this->debug)
-						$this->error.="Successfully loaded $path".$this->linebreak;
 					break; //Valid file found, no need to continue
-				}
 			}
 			else
 			{
-				$temperror="No XML file found for $channelid $ymd".$this->linebreak;
+				$temperror=sprintf('No XML file found for %s %s',$channelid,$ymd);
 				continue; //No file found, try next
 			}
 		}
-		if(!isset($xml) || $xml===false) //If we are here without xml data, no valid file was found
+		if(!isset($xml) || $xml===false) //If we are here without xml data, no valid file was found. Return the error message
 		{
-			$this->error.=$temperror;
+			$this->error=$temperror;
 			return false;
 		}
 
