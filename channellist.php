@@ -17,8 +17,13 @@ $channellist['Disney XD']='xd.disneychannel.no';
 $channellist['TV Norge']='tvnorge.no';
 $channellist['TV Norge HD']='tvnorge.no';
 $channellist['MAX HD']='max.no';
+$channellist['VOX']='vox.no';
+$channellist['FEM']='fem.no';
+$channellist['Discovery HD (N)']='discovery.no';
+$channellist['Discovery HD Showcase']='hd.discovery.no';
 
 $channellist['TV2 HD']='tv2.no';
+
 $channellist['TV 2 (N)']='tv2.no';
 $channellist['Nat Geo Channel']='natgeo.no'; 
 $channellist['Nat Geo HD']='natgeo.no'; 
@@ -29,6 +34,7 @@ $channellist['Cartoon Network']='cartoonnetwork.no';
 $channellist['Boomerang']='boomerangtv.no';
 $channellist['Viasat 4 HD']='viasat4.no';
 $channellist['TV3 HD']='tv3.no';
+$channellist['TV3']='tv3.no';
 
 $channels['boomerangtv.no']='Boomerang';
 
