@@ -175,12 +175,21 @@ class tvguide extends filepath
 		$channelstring=$info['channel'];
 		if(!$channelid=$this->selectchannel($channelstring))
 			return false;
-		$programs_xml=$this->getprograms($channelid,$timestamp,true);
+		$programs_xml=$this->getprograms($channelid,$timestamp);
 
 		if($programs_xml===false)
 			return false;
 		else
-		   	return $this->findprogram($timestamp,$programs_xml,'nearest'); //Find the program start nearest to the search time			
+		{
+		   	$program=$this->findprogram($timestamp,$programs_xml,'nearest'); //Find the program start nearest to the search time
+			if($program===false) //If program was not found, try multi-day search
+			{
+				$programs_xml=$this->getprograms($channelid,$timestamp,true);
+				if($programs_xml===false)
+					return false;
+			   	return $this->findprogram($timestamp,$programs_xml,'nearest'); //Find the program start nearest to the search time
+			}
+		}
 	}
 	//Get program running at the given time or the next starting program
 	//$mode can be now (running program at search time), next (next starting program) or nearest (program start with lowest difference to search time)
