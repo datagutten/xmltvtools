@@ -146,18 +146,20 @@ class tvguide extends filepath
 	{
 		return @json_decode(@json_encode($xml),true); //Gjør om til array
 	}
-	public function getprograms($channel,$timestamp) //Combine data for current day and previous day to get all programs for the current day
+	public function getprograms($channel,$timestamp,$multiple_days=false) //Combine data for current day and previous day to get all programs for the current day
 	{
 		$xml_current_day=$this->loadxmlfile($channel,$timestamp);
 		$xml_previous_day=$this->loadxmlfile($channel,$timestamp-86400);
-		if($xml_current_day===false || $xml_previous_day===false)
+		if($multiple_days)
+			$xml_next_day=$this->loadxmlfile($channel,$timestamp+86400);
+		if($xml_current_day===false || $xml_previous_day===false || $xml_next_day===false)
 			return false;
 		$date_request=date('Ymd',$timestamp);
 		foreach(array($xml_previous_day,$xml_current_day) as $day)
 		{
 			foreach($day as $program)
 			{
-				if($date_request!=substr($program->attributes()->start,0,8)) //Wrong date
+				if($multiple_days===false && $date_request!=substr($program->attributes()->start,0,8)) //Wrong date
 					continue;
 				$programs[]=$program;
 			}
@@ -173,7 +175,7 @@ class tvguide extends filepath
 		$channelstring=$info['channel'];
 		if(!$channelid=$this->selectchannel($channelstring))
 			return false;
-		$programs_xml=$this->getprograms($channelid,$timestamp);
+		$programs_xml=$this->getprograms($channelid,$timestamp,true);
 
 		if($programs_xml===false)
 			return false;
