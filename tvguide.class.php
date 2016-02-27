@@ -149,13 +149,20 @@ class tvguide extends filepath
 	public function getprograms($channel,$timestamp,$multiple_days=false) //Combine data for current day and previous day to get all programs for the current day
 	{
 		$xml_current_day=$this->loadxmlfile($channel,$timestamp);
-		$xml_previous_day=$this->loadxmlfile($channel,$timestamp-86400);
-		if($multiple_days)
-			$xml_next_day=$this->loadxmlfile($channel,$timestamp+86400);
-		if($xml_current_day===false || $xml_previous_day===false || $xml_next_day===false)
+		if($xml_current_day===false)
 			return false;
+		if($multiple_days)
+		{
+			$xml_previous_day=$this->loadxmlfile($channel,$timestamp-86400);
+			$xml_next_day=$this->loadxmlfile($channel,$timestamp+86400);
+			$days=array($xml_previous_day,$xml_current_day,$xml_next_day);
+			if($xml_previous_day===false || $xml_next_day===false)
+				return false;
+		}
+		else
+			$days=array($xml_current_day);
 		$date_request=date('Ymd',$timestamp);
-		foreach(array($xml_previous_day,$xml_current_day) as $day)
+		foreach($days as $day)
 		{
 			foreach($day as $program)
 			{
@@ -176,7 +183,6 @@ class tvguide extends filepath
 		if(!$channelid=$this->selectchannel($channelstring))
 			return false;
 		$programs_xml=$this->getprograms($channelid,$timestamp);
-
 		if($programs_xml===false)
 			return false;
 		else
@@ -189,6 +195,8 @@ class tvguide extends filepath
 					return false;
 			   	return $this->findprogram($timestamp,$programs_xml,'nearest'); //Find the program start nearest to the search time
 			}
+			else
+				return $program;
 		}
 	}
 	//Get program running at the given time or the next starting program
