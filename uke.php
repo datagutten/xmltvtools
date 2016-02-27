@@ -49,13 +49,11 @@ for ($i=1; $i<=$numdays; $i++) //Lag en rad for hver dag
 
 	if (!$programs=$tvguide->getprograms($_GET['channel'],$time))
 	{
+		$errors.=$tvguide->error."<br />\n";
 		$time=strtotime('+1 day',$time);
 		continue;
 	}
-	
 	echo "<tr>\n";
-	
-	
 	echo "\t".'<td width="86">'.date('l',$time)."<br />".date('Y-m-d',$time)."</td>\n"; //Show date
 	$key=0;
 	foreach($programs as $programme)
@@ -80,7 +78,7 @@ for ($i=1; $i<=$numdays; $i++) //Lag en rad for hver dag
 }
 
 echo "</table>\n";
-echo $tvguide->error;
+echo $errors;
 ?>
 </body>
 </html>
