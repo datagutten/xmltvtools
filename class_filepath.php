@@ -9,14 +9,15 @@ class filepath
 			$outpath.='/';
 		$this->outpath=$outpath;
 	}
-	public function foldername($channel,$subfolder,$timestamp=false)
+	public function foldername($channel,$subfolder,$timestamp=false,$write=false)
 	{
 		if($timestamp===false)
 			$timestamp=strtotime('midnight');
 		$date=date('Y',$timestamp);
 		$folder=$this->outpath."$channel/$subfolder/$date/";
-		if(!file_exists($folder))
-			mkdir($folder,0777,true);
+		if(!file_exists($folder) && $write!==false)
+			if(mkdir($folder,0777,true)===false)
+				throw new Exception('Unable to create folder');
 		return $folder;
 	}
 	public function filename($channel,$timestamp,$extension)
