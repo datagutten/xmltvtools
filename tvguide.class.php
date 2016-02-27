@@ -29,7 +29,6 @@ class tvguide extends filepath
 				$xmltv_cache.='/';
 			$this->xmltv_cache=$xmltv_cache;
 		}
-		$this->channels=explode("\n",trim(file_get_contents($this->xmltvpath.'channels.txt')));
 	}
 	 public function selectchannel($channelstring)
 	 {
@@ -109,7 +108,7 @@ class tvguide extends filepath
 				$xml=simplexml_load_string(str_replace('&','&amp;',$xmlstring)); //Parse the file and create a simplexml object
 				if(!isset($xml->programme))
 				{
-					$temperror="Invalid XML file for $channelid $ymd ($path)<br>\n";
+					$temperror="Invalid XML file for $channelid $ymd ($path)";
 					unset($xml);
 					continue; //Invalid file, try next
 				}
