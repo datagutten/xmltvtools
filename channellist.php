@@ -17,7 +17,8 @@ $channellist['Disney XD']='xd.disneychannel.no';
 $channellist['TV Norge']='tvnorge.no';
 $channellist['TV Norge HD']='tvnorge.no';
 $channellist['MAX HD']='max.no';
-$channellist['VOX']='vox.no';
+$channellist['VOX']='voxtv.no';
+$channellist['VOX HD']='voxtv.no';
 $channellist['FEM']='fem.no';
 $channellist['Discovery HD (N)']='discovery.no';
 $channellist['Discovery HD Showcase']='hd.discovery.no';
@@ -37,6 +38,8 @@ $channellist['TV3 HD']='tv3.no';
 $channellist['TV3']='tv3.no';
 
 $channels['boomerangtv.no']='Boomerang';
+$channellist['FOX HD']='foxtv.no';
+
 
 $channels=array_values($channellist);
 ?>
