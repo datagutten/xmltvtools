@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Untitled Document</title>
+<title>Week schedule</title>
 <style>
 td {
     vertical-align: top;
@@ -78,7 +78,8 @@ for ($i=1; $i<=$numdays; $i++) //Lag en rad for hver dag
 }
 
 echo "</table>\n";
-echo $errors;
+if(isset($errors))
+	echo $errors;
 ?>
 </body>
 </html>
