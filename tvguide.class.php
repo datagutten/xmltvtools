@@ -32,6 +32,11 @@ class tvguide extends filepath
 	}
 	 public function selectchannel($channelstring)
 	 {
+		if(empty($channelstring))
+		{
+			$this->error='No channel name provided';
+			return false;
+		}
 		require 'channellist.php'; //Load channel name to xmltv id mappings
 		if(isset($channellist[$channelstring]))
 			return $channellist[$channelstring];
@@ -84,6 +89,11 @@ class tvguide extends filepath
 	}
 	public function loadxmlfile($channelid,$timestamp,$returntype='object',$forcesubfolder=false) //Get the xml file for the specified channel and time
 	{
+		if(!preg_match('/[a-z0-9]+\.[a-z]+/',$channelid))
+		{
+			$this->error='Invalid channel id: '.$channelid;
+			return false;
+		}
 		//Return can be object, array or string
 		$ymd=date('Y-m-d',$timestamp);
 		$basename="$channelid/{$channelid}_$ymd.xml";
