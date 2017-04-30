@@ -123,7 +123,11 @@ class tvguide extends filepath
 					continue; //Invalid file, try next
 				}
 				else
+				{
+					if($this->debug)
+						echo "Loaded $path\n";
 					break; //Valid file found, no need to continue
+				}
 			}
 			else
 			{
@@ -156,11 +160,16 @@ class tvguide extends filepath
 	{
 		return @json_decode(@json_encode($xml),true); //Gjør om til array
 	}
-	public function getprograms($channel,$timestamp,$multiple_days=false) //Combine data for current day and previous day to get all programs for the current day
+	public function getprograms($channel,$timestamp,$multiple_days=null) //Combine data for current day and previous day to get all programs for the current day
 	{
 		$xml_current_day=$this->loadxmlfile($channel,$timestamp);
 		if($xml_current_day===false)
 			return false;
+		$first_start_time=$xml_current_day->programme->attributes()['start'];
+		$first_start_hour=substr($first_start_time,8,2);
+		if($multiple_days===null && $first_start_hour>1) //If the first program in the file starts before or on 01:59 the file contains a complete day
+			$multiple_days=true;
+
 		if($multiple_days)
 		{
 			$xml_previous_day=$this->loadxmlfile($channel,$timestamp-86400);
@@ -176,7 +185,7 @@ class tvguide extends filepath
 		{
 			foreach($day as $program)
 			{
-				if($multiple_days===false && $date_request!=substr($program->attributes()->start,0,8)) //Wrong date
+				if($date_request!=substr($program->attributes()->start,0,8)) //Wrong date
 					continue;
 				$programs[]=$program;
 			}
@@ -262,7 +271,11 @@ class tvguide extends filepath
 				if($time_to_start_previous<$time_to_start_current) //Previous diff was lower
 					return $programs_xml[$key-1];
 				if(!isset($programs_xml[$key+1])) //If we are on the last program and haven't returned yet, return the current program
+				{
+					if($this->debug)
+						echo "Returning last program\n";
 					return $program;
+				}
 			}
 		}
 	}
