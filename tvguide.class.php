@@ -201,31 +201,40 @@ class tvguide extends filepath
 		$channelstring=$info['channel'];
 		if(!$channelid=$this->selectchannel($channelstring))
 			return false;
-		$programs_xml=$this->getprograms($channelid,$timestamp);
-		if($programs_xml===false)
-			return false;
-		else
-		{
-		   	$program=$this->findprogram($timestamp,$programs_xml,'nearest'); //Find the program start nearest to the search time
-			if($program===false) //If program was not found, try multi-day search
-			{
-				$programs_xml=$this->getprograms($channelid,$timestamp,true);
-				if($programs_xml===false)
-					return false;
-			   	return $this->findprogram($timestamp,$programs_xml,'nearest'); //Find the program start nearest to the search time
-			}
-			else
-				return $program;
-		}
+		return $this->findprogram($timestamp,$channelid,'nearest'); //Find the program start nearest to the search time
 	}
 	//Get program running at the given time or the next starting program
 	//$mode can be now (running program at search time), next (next starting program) or nearest (program start with lowest difference to search time)
-	public function findprogram($search_time,$programs_xml,$mode='nearest')
+	public function findprogram($search_time,$programs_xml_or_channel,$mode='nearest')
 	{
-		if($programs_xml===false)
+		if($programs_xml_or_channel===false)
 			return false;
-		elseif(!is_array($programs_xml))
-			throw new Exception('$programs_xml must be array');
+		if(is_string($programs_xml_or_channel))
+		{
+			$channel=$programs_xml_or_channel;
+			$search_start=$search_time-(3600*2);
+			$search_end=$search_time+(3600*2);
+
+			$programs_xml=$this->getprograms($channel,$search_time);
+			if(empty($programs_xml))
+				return false;
+			if(date('d',$search_start)!=date('d',$search_time))
+			{
+				$programs_prev=$this->getprograms($channel,$search_start,true); //Get previous day
+				if(is_array($programs_prev))
+					$programs_xml=array_merge($programs_prev,$programs_xml);
+			}
+			if(date('d',$search_end)!=date('d',$search_time))
+			{
+				$programs_next=$this->getprograms($channel,$search_end,true);
+				if(is_array($programs_next))
+					$programs_xml=array_merge($programs_xml,$programs_next);
+			}
+		}
+		elseif(is_array($programs_xml_or_channel))
+			$programs_xml=$programs_xml_or_channel;
+		else
+			throw new Exception('$programs_xml_or_channel must be array of programs or string channel id');
 
 		foreach($programs_xml as $key=>$program) //Loop through the programs
 		{
