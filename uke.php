@@ -17,7 +17,7 @@ setlocale(LC_ALL, "nb_NO.UTF8");
 require_once 'tvguide.class.php';
 $tvguide=new tvguide;
 $timeformat='Hi';
-
+$errors='';
 
 if (!isset($_GET['start']))
 	$time=strtotime("monday");
