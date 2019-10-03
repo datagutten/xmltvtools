@@ -18,6 +18,7 @@ require_once 'tvguide.class.php';
 $tvguide=new tvguide;
 $timeformat='Hi';
 $errors='';
+$timer_offset=5*60;
 
 if (!isset($_GET['start']))
 	$time=strtotime("monday");
@@ -63,12 +64,26 @@ for ($i=1; $i<=$numdays; $i++) //Lag en rad for hver dag
 		
 		echo "\t<td>";
 		$attributes=$programme->attributes();
-		echo date($timeformat,strtotime($attributes->start));
+		$start=strtotime($attributes->start);
+		$episode = $tvguide->seasonepisode($programme);
+		echo date($timeformat,$start);
 		if(!empty($attributes->stop))
-			echo "-".date($timeformat,strtotime($attributes->stop));
+		{
+			$end=strtotime($attributes->stop);
+			echo "-".date($timeformat,$end);
+			$timerlink=array('channel'=>$_GET['channel'],'begin'=>$start-$timer_offset,'end'=>$end+$timer_offset,'name'=>(string)$programme->title);
+			$timer_title = $programme->{'title'};
+			if(!empty($episode))
+			    $timer_title.= ' '.$episode;
+		}
 		echo "<hr>";
-		echo $programme->title."<br />\n"; 
-		echo $tvguide->seasonepisode($programme);
+		if(isset($timerlink))
+			printf('<a href="../dreambox-timer/dreamtimer.php?%s">%s</a><br />',http_build_query($timerlink),$programme->title);
+		else
+			echo $programme->title."<br />\n";
+		echo $programme->{'sub-title'}."<br />\n";
+		if(!empty($episode))
+		    echo $episode;
 		echo "</td>\n";
 	}
 	
