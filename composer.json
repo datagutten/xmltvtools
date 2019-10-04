@@ -1,0 +1,26 @@
+{
+    "name": "datagutten/xmltvtools",
+    "description": "PHP class and tools to work with XMLTV files",
+    "type": "project",
+    "require": {
+        "datagutten/tools": "^1.1",
+        "ext-simplexml": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.3",
+        "symfony/filesystem": "^4.3"
+    },
+    "license": "GPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "datagutten",
+            "email": "datagutten@datagutten.net"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "datagutten\\xmltv\\tools\\": "xmltv",
+            "datagutten\\xmltv\\tests\\tools\\": "tests"
+        }
+    }
+}
