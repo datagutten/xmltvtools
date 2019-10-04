@@ -4,10 +4,10 @@
 namespace datagutten\xmltv\tools\build;
 
 
+use datagutten\xmltv\tools\common\files;
 use DOMDocument;
 use FileNotFoundException;
 use SimpleXMLElement;
-use Symfony\Component\Filesystem\Filesystem;
 
 class tv
 {
@@ -24,6 +24,8 @@ class tv
 
     public $generator;
 
+    public $files;
+
     /**
      * tv constructor.
      * @param $folder
@@ -37,6 +39,7 @@ class tv
         if(!file_exists($folder))
             throw new FileNotFoundException($folder);
         $this->init_xml();
+        $this->files = new files();
     }
 
     function init_xml()
@@ -48,7 +51,7 @@ class tv
 
     function format_output()
     {
-        if(empty($this->xml->programme))
+        if(empty($this->xml->{'programme'}))
             return null;
         $dom = new DOMDocument('1.0');
         $dom->preserveWhiteSpace = false;
@@ -59,15 +62,10 @@ class tv
 
     function save_file($timestamp)
     {
-        $filesystem = new Filesystem();
-        //TODO: Add sub folder as argument or something
-        $folder = $this->folder.'/'.file::folder($this->channel, 'xmltv_quad', $timestamp);
-        $filesystem->mkdir($folder);
-        $filename = file::filename($this->channel, $timestamp, 'xml');
-        $file = $folder.'/'.$filename;
+        $file = $this->files->file($this->channel, $timestamp);
         //$xml_string = $this->xml->asXML();
         $xml_string = $this->format_output();
-        $filesystem->dumpFile($file, $xml_string);
+        $this->files->filesystem->dumpFile($file, $xml_string);
         return $file;
     }
 }

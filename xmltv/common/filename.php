@@ -4,7 +4,7 @@
 namespace datagutten\xmltv\tools\common;
 
 
-class file
+class filename
 {
     public static function folder($channel, $sub_folder='xmltv_php', $timestamp=null)
     {
