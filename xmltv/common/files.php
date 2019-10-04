@@ -32,7 +32,7 @@ class files
 
     function file($channel,$timestamp = null,$sub_folder = null, $extension = 'xml')
     {
-        $folder = filename::folder($channel, $sub_folder, $timestamp);
+        $folder = $this->xmltv_path.'/'.filename::folder($channel, $sub_folder, $timestamp);
         $this->filesystem->mkdir($folder);
         $file = $folder.'/'.filename::filename($channel, $timestamp, $extension);
         if(file_exists($file))
