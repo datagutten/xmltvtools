@@ -6,6 +6,7 @@ namespace datagutten\xmltv\tools\build;
 
 use datagutten\xmltv\tools\common\files;
 use DOMDocument;
+use Exception;
 use FileNotFoundException;
 use SimpleXMLElement;
 
@@ -20,24 +21,23 @@ class tv
 
     public $language;
 
-    public $folder;
-
     public $generator;
 
     public $files;
 
     /**
      * tv constructor.
-     * @param $folder
+     * @param string $channel Channel id
+     * @param string $language Language
      * @param string $generator
      * @throws FileNotFoundException
+     * @throws Exception
      */
-    function __construct($folder, $generator = 'php-xmltv-grabber')
+    function __construct($channel, $language, $generator = 'php-xmltv-grabber')
     {
-        $this->folder = $folder;
+        $this->channel = $channel;
+        $this->language = $language;
         $this->generator = $generator;
-        if(!file_exists($folder))
-            throw new FileNotFoundException($folder);
         $this->init_xml();
         $this->files = new files();
     }
