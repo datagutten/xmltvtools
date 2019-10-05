@@ -11,6 +11,7 @@ namespace datagutten\xmltv\tools\parse;
 
 use datagutten\xmltv\tools\common\files;
 use FileNotFoundException;
+use InvalidArgumentException;
 use \SimpleXMLElement;
 
 class parser
@@ -119,7 +120,7 @@ class parser
         elseif(is_array($programs_xml_or_channel))
             $programs_xml=$programs_xml_or_channel;
         else
-            throw new \InvalidArgumentException('$programs_xml_or_channel must be array of programs or string channel id');
+            throw new InvalidArgumentException('$programs_xml_or_channel must be array of programs or string channel id');
 
         foreach($programs_xml as $key=>$program) //Loop through the programs
         {
@@ -128,10 +129,9 @@ class parser
                 echo sprintf("First program start: %s date: %s\n",(string)$program->attributes()->{'start'},date('c',$program_start));
 
             $time_to_start[$key]=$program_start-$search_time; //How long is there until the program starts?
-            $diff=$search_time-$program_start;
 
             if($this->debug)
-                echo sprintf("Time to start: %s (%s seconds) Program starts: XML: %s date: %s Timestamp: %s\n",date('H:i',$time_to_start[$key]),$time_to_start[$key],$program->attributes()->start,date('H:i',$program_start),$program_start);
+                echo sprintf("Time to start: %s (%s seconds) Program starts: XML: %s date: %s Timestamp: %s\n",date('H:i',$time_to_start[$key]),$time_to_start[$key],$program->attributes()->{'start'},date('H:i',$program_start),$program_start);
 
             if($key==0 && $time_to_start[$key]>0) //First program has not started
             {
