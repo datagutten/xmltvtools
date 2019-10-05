@@ -6,11 +6,8 @@ namespace datagutten\xmltv\tools\common;
 
 class filename
 {
-    public static function folder($channel, $sub_folder='xmltv_php', $timestamp=null)
+    public static function folder($channel, $sub_folder, $timestamp)
     {
-        if(empty($timestamp))
-            $timestamp=strtotime('midnight');
-
         return sprintf('%s/%s/%s', $channel, $sub_folder, date('Y',$timestamp));
     }
     public static function filename($channel,$timestamp,$extension)
