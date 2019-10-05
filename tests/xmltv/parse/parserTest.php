@@ -21,9 +21,9 @@ class parserTest extends TestCase
      */
     function testCombine()
     {
-        $parser = new parser(__DIR__.'/test_data');
-        $day1 = $parser->load_xml_file('natgeo.no', strtotime('2019-10-03'));
-        $day2 = $parser->load_xml_file('natgeo.no', strtotime('2019-10-04'));
+        $parser = new parser();
+        $day1 = $parser->files->load_file('natgeo.no', strtotime('2019-10-03'));
+        $day2 = $parser->files->load_file('natgeo.no', strtotime('2019-10-04'));
         $day = $parser->combine_days(array($day1, $day2), '20191004');
         $this->assertIsArray($day);
         $this->assertEquals('20191004000000 +0000', $day[0]->attributes()['start']);
