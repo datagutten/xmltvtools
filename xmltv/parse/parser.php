@@ -9,79 +9,20 @@
 namespace datagutten\xmltv\tools\parse;
 
 
-use datagutten\xmltv\tools\common\filename;
+use datagutten\xmltv\tools\common\files;
 use FileNotFoundException;
 use \SimpleXMLElement;
 
 class parser
 {
     public $debug = false;
-    public $folder;
-    function __construct($folder)
-    {
-        $this->folder = $folder;
-        if(!file_exists($folder))
-            throw new FileNotFoundException($folder);
-    }
-
     /**
-     * Find XML file
-     * @param string $channel
-     * @param int $timestamp
-     * @param string $sub_folder
-     * @return SimpleXMLElement
-     * @throws FileNotFoundException XML file not found
-     * @throws InvalidXMLFileException XML file has no <programme> element
+     * @var files
      */
-    public function xml_file($channel, $timestamp, $sub_folder = 'xmltv')
+    public $files;
+    function __construct()
     {
-        if (!preg_match('/[a-z0-9]+\.[a-z]+/', $channel)) {
-            throw new \InvalidArgumentException('Invalid channel id: ' . $channel);
-        }
-
-        $path = filename::file_path($channel, $sub_folder, $timestamp, 'xml');
-        $file = $this->folder.'/'.$path;
-        if(!file_exists($file))
-            throw new FileNotFoundException($file);
-
-        $xml = simplexml_load_file($file);
-        if(empty($xml->programme))
-            throw new InvalidXMLFileException('Invalid XML file: '.$file);
-
-        return $xml;
-    }
-
-    /**
-     * @param $channelid
-     * @param $timestamp
-     * @param string $sub_folder
-     * @return SimpleXMLElement
-     * @throws FileNotFoundException XML file not found
-     * @throws InvalidXMLFileException XML file has no <programme> element
-     */
-    public function load_xml_file($channelid, $timestamp, $sub_folder=null) //Get the xml file for the specified channel and time
-    {
-        if($sub_folder)
-            $sub_folders = array($sub_folder);
-        else
-            $sub_folders = array('xmltv_quad', 'xmltv'); //TODO: Place this in a config file
-
-        foreach ($sub_folders as $sub_folder)
-        {
-            try {
-                $xml = $this->xml_file($channelid, $timestamp, $sub_folder);
-            }
-            catch (FileNotFoundException|InvalidXMLFileException $e)
-            {
-                if($this->debug)
-                    echo $e->getMessage();
-                continue;
-            }
-        }
-        if(empty($xml) && !empty($e))
-            throw $e;
-
-        return $xml;
+        $this->files = new files();
     }
 
     /**
@@ -118,7 +59,7 @@ class parser
      */
     public function get_programs($channel,$timestamp,$multiple_days=null)
     {
-        $xml_current_day=$this->load_xml_file($channel,$timestamp);
+        $xml_current_day=$this->files->load_file($channel,$timestamp);
 
         $first_start_time=$xml_current_day->{'programme'}->attributes()['start'];
         $first_start_hour=substr($first_start_time,8,2);
@@ -133,7 +74,7 @@ class parser
         {
             $days=array();
             try {
-                $xml_previous_day = $this->load_xml_file($channel, $timestamp - 86400);
+                $xml_previous_day = $this->files->load_file($channel, $timestamp - 86400);
                 $days[] = $xml_previous_day;
             }
             catch (FileNotFoundException|InvalidXMLFileException $e) {
@@ -144,7 +85,7 @@ class parser
             $days[]=$xml_current_day;
 
             try {
-                $xml_next_day=$this->load_xml_file($channel,$timestamp+86400);
+                $xml_next_day=$this->files->load_file($channel,$timestamp+86400);
                 $days[]=$xml_next_day;
             }
             catch (FileNotFoundException|InvalidXMLFileException $e) {
