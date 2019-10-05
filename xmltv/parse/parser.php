@@ -58,7 +58,7 @@ class parser
      * @throws FileNotFoundException
      * @throws InvalidXMLFileException
      */
-    public function get_programs($channel,$timestamp,$multiple_days=null)
+    public function get_programs($channel,$timestamp = null,$multiple_days = null)
     {
         $xml_current_day=$this->files->load_file($channel,$timestamp);
 
