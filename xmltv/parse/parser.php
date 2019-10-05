@@ -1,0 +1,268 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: abi
+ * Date: 04.10.2019
+ * Time: 10:54
+ */
+
+namespace datagutten\xmltv\tools\parse;
+
+
+use datagutten\xmltv\tools\common\filename;
+use FileNotFoundException;
+use \SimpleXMLElement;
+
+class parser
+{
+    public $debug = false;
+    public $folder;
+    function __construct($folder)
+    {
+        $this->folder = $folder;
+        if(!file_exists($folder))
+            throw new FileNotFoundException($folder);
+    }
+
+    /**
+     * Find XML file
+     * @param string $channel
+     * @param int $timestamp
+     * @param string $sub_folder
+     * @return SimpleXMLElement
+     * @throws FileNotFoundException XML file not found
+     * @throws InvalidXMLFileException XML file has no <programme> element
+     */
+    public function xml_file($channel, $timestamp, $sub_folder = 'xmltv')
+    {
+        if (!preg_match('/[a-z0-9]+\.[a-z]+/', $channel)) {
+            throw new \InvalidArgumentException('Invalid channel id: ' . $channel);
+        }
+
+        $path = filename::file_path($channel, $sub_folder, $timestamp, 'xml');
+        $file = $this->folder.'/'.$path;
+        if(!file_exists($file))
+            throw new FileNotFoundException($file);
+
+        $xml = simplexml_load_file($file);
+        if(empty($xml->programme))
+            throw new InvalidXMLFileException('Invalid XML file: '.$file);
+
+        return $xml;
+    }
+
+    /**
+     * @param $channelid
+     * @param $timestamp
+     * @param string $sub_folder
+     * @return SimpleXMLElement
+     * @throws FileNotFoundException XML file not found
+     * @throws InvalidXMLFileException XML file has no <programme> element
+     */
+    public function load_xml_file($channelid, $timestamp, $sub_folder=null) //Get the xml file for the specified channel and time
+    {
+        if($sub_folder)
+            $sub_folders = array($sub_folder);
+        else
+            $sub_folders = array('xmltv_quad', 'xmltv'); //TODO: Place this in a config file
+
+        foreach ($sub_folders as $sub_folder)
+        {
+            try {
+                $xml = $this->xml_file($channelid, $timestamp, $sub_folder);
+            }
+            catch (FileNotFoundException|InvalidXMLFileException $e)
+            {
+                if($this->debug)
+                    echo $e->getMessage();
+                continue;
+            }
+        }
+        if(empty($xml) && !empty($e))
+            throw $e;
+
+        return $xml;
+    }
+
+    /**
+     * @param array $days
+     * @param string $date
+     * @return array|SimpleXMLElement
+     */
+    function combine_days($days, $date=null)
+    {
+        $programs = [];
+        foreach($days as $day)
+        {
+            /**
+             * @var SimpleXMLElement $program
+             */
+            foreach($day as $program)
+            {
+                if(!empty($date) && $date!=substr($program->attributes()->{'start'},0,8)) //Wrong date
+                    continue;
+                $programs[]=$program;
+            }
+        }
+        return $programs;
+    }
+
+    /**
+     * Get programs
+     * @param string $channel
+     * @param int $timestamp
+     * @param bool $multiple_days Combine data for current day and previous day to get all programs for the current day
+     * @return array|SimpleXMLElement
+     * @throws FileNotFoundException
+     * @throws InvalidXMLFileException
+     */
+    public function get_programs($channel,$timestamp,$multiple_days=null)
+    {
+        $xml_current_day=$this->load_xml_file($channel,$timestamp);
+
+        $first_start_time=$xml_current_day->{'programme'}->attributes()['start'];
+        $first_start_hour=substr($first_start_time,8,2);
+        if($multiple_days===null)
+        {
+            if($first_start_hour>1) //If the first program in the file starts before or on 01:59 the file contains a complete day
+                $multiple_days=true;
+            elseif($first_start_hour<=1)
+                $multiple_days=false;
+        }
+        if($multiple_days)
+        {
+            $days=array();
+            try {
+                $xml_previous_day = $this->load_xml_file($channel, $timestamp - 86400);
+                $days[] = $xml_previous_day;
+            }
+            catch (FileNotFoundException|InvalidXMLFileException $e) {
+                if ($this->debug)
+                    echo $e->getMessage();
+           }
+
+            $days[]=$xml_current_day;
+
+            try {
+                $xml_next_day=$this->load_xml_file($channel,$timestamp+86400);
+                $days[]=$xml_next_day;
+            }
+            catch (FileNotFoundException|InvalidXMLFileException $e) {
+                if ($this->debug)
+                    echo $e->getMessage();
+            }
+        }
+        else
+            $days=array($xml_current_day);
+
+        return $this->combine_days($days, date('Ymd',$timestamp));
+    }
+
+
+    /**
+     * Get program running at the given time or the next starting program
+     * @param int $search_time Program timestamp
+     * @param $programs_xml_or_channel
+     * @param string $mode now (running program at search time), next (next starting program) or nearest (program start with lowest difference to search time)
+     * @return bool|mixed
+     * @throws ProgramNotFoundException
+     * @throws InvalidXMLFileException
+     * @throws FileNotFoundException
+     */
+    public function find_program($search_time,$programs_xml_or_channel,$mode='nearest')
+    {
+        if(is_string($programs_xml_or_channel))
+        {
+            $programs_xml=$this->get_programs($programs_xml_or_channel,$search_time);
+        }
+        elseif(is_array($programs_xml_or_channel))
+            $programs_xml=$programs_xml_or_channel;
+        else
+            throw new \InvalidArgumentException('$programs_xml_or_channel must be array of programs or string channel id');
+
+        foreach($programs_xml as $key=>$program) //Loop through the programs
+        {
+            $program_start=strtotime($program->attributes()->{'start'}); //Get program start
+            if($key==0 && $this->debug)
+                echo sprintf("First program start: %s date: %s\n",(string)$program->attributes()->{'start'},date('c',$program_start));
+
+            $time_to_start[$key]=$program_start-$search_time; //How long is there until the program starts?
+            $diff=$search_time-$program_start;
+
+            if($this->debug)
+                echo sprintf("Time to start: %s (%s seconds) Program starts: XML: %s date: %s Timestamp: %s\n",date('H:i',$time_to_start[$key]),$time_to_start[$key],$program->attributes()->start,date('H:i',$program_start),$program_start);
+
+            if($key==0 && $time_to_start[$key]>0) //First program has not started
+            {
+                if($mode=='next' || $mode=='nearest')
+                    return $program;
+                elseif($mode=='now')
+                {
+                    throw new ProgramNotFoundException('Nothing on air at given time');
+                }
+            }
+
+            if($mode=='next' && $time_to_start[$key]>=0) //Find first program which has not started
+                return $program;
+            elseif($mode=='now')
+            {
+                if($time_to_start[$key]>0) //Current program has not started, return the previous (running now)
+                    return $programs_xml[$key-1];
+            }
+            elseif($mode=='nearest' && $key>0) //Get the nearest start
+            {
+                $time_to_start_previous=$time_to_start[$key-1];
+                $time_to_start_current=$time_to_start[$key];
+
+                if($time_to_start_previous<0)
+                    $time_to_start_previous=-$time_to_start_previous;
+                if($time_to_start_current<0)
+                    $time_to_start_current=-$time_to_start_current;
+                if($this->debug)
+                    echo sprintf("%s<%s\n",$time_to_start_previous,$time_to_start_current);
+                if($time_to_start_previous<$time_to_start_current) //Previous diff was lower
+                    return $programs_xml[$key-1];
+                if(!isset($programs_xml[$key+1])) //If we are on the last program and haven't returned yet, return the current program
+                {
+                    if($this->debug)
+                        echo "Returning last program\n";
+                    //Fetch next day and check if first program is nearer
+                    /*if($mode==='nearest')
+                    {
+                        $channel=(string)$program->attributes()['channel'];
+                        $programs_nextday=$this->getprograms($channel,strtotime('+1 day',$program_start));
+                        print_r($programs_nextday);
+                    }*/
+                    return $program;
+                }
+            }
+        }
+        throw new ProgramNotFoundException('Nothing on air at given time');
+    }
+
+    public function season_episode($program,$string=true)
+    {
+        foreach($program->{'episode-num'} as $num) {
+            if (preg_match('^([0-9]+)\s?\.\s?([0-9]+)/([0-9]+)^', $num, $matches) ||
+                preg_match('^([0-9]+)\s?\.\s?([0-9]+)^', $num, $matches))
+            {
+                if ($string) {
+                    $season = str_pad($matches[1] + 1, 2, '0', STR_PAD_LEFT);
+                    $episode = str_pad($matches[2] + 1, 2, '0', STR_PAD_LEFT);
+                    return "S{$season}E$episode";
+                }
+                else
+                    return array('season' => $matches[1] + 1, 'episode' => $matches[2] + 1);
+            }
+            elseif(preg_match('^\.\s?([0-9]+)/([0-9]+)\s?\.^', $num, $matches)) //One shot series
+            {
+                if ($string)
+                    return "EP" . str_pad($matches[1] + 1, 2, '0', STR_PAD_LEFT);
+                else
+                    return array('season' => 0, 'episode' => $matches[1] + 1);
+            }
+        }
+        return null;
+    }
+
+}
