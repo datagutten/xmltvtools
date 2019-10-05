@@ -45,7 +45,7 @@ class files
             throw new Exception('xmltv_default_sub_folder not set in config');
         $this->default_sub_folder = $config['xmltv_default_sub_folder'];
 
-        if(empty($config['xmltv_default_sub_folder']))
+        if(empty($config['xmltv_alternate_sub_folders']))
             $this->alternate_sub_folders = array();
         else
             $this->alternate_sub_folders = $config['xmltv_alternate_sub_folders'];
