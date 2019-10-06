@@ -34,9 +34,16 @@ class parserTest extends TestCase
 
     public function testFind_program()
     {
-        $program = $this->parser->find_program(strtotime('2019-10-03 22:55'), 'natgeo.no');
+        $program = $this->parser->find_program(strtotime('2019-10-03 21:55'), 'natgeo.no');
         $this->assertEquals('Vinterveiens helter', $program->{'title'});
-        $this->assertEquals('20191003230000 +0000', $program->attributes()->{'start'});
+        $this->assertEquals('20191003220000 +0200', $program->attributes()->{'start'});
+    }
+
+    public function testFind_program2()
+    {
+        $program = $this->parser->find_program(strtotime('2019-10-04 00:55'), 'natgeo.no');
+        $this->assertEquals('Vinterveiens helter', $program->{'title'});
+        $this->assertEquals('20191004010000 +0200', $program->attributes()->{'start'});
     }
 
     public function testGet_programs()

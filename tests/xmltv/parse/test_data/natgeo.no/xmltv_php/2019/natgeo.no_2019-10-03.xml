@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE tv SYSTEM "xmltv.dtd">
+<tv generator-info-name="php-xmltv-grabber" generator-info-url="https://github.com/datagutten/xmltvgrabber">
+  <programme start="20191003000000 +0200" channel="natgeo.no" stop="20191003010000 +0200">
+    <title lang="nb">Hard Time</title>
+    <sub-title lang="nb">Fengselet i Las Vegas</sub-title>
+    <desc lang="nb">I Las Vegas er det vanskelig å unngå en kultur med sex, dop og vold. Mange ender dermed opp i fengsel.</desc>
+    <episode-num system="xmltv_ns">0.6.</episode-num>
+    <episode-num system="onscreen">Sesong 1 | Episode 7</episode-num>
+  </programme>
+  <programme start="20191003010000 +0200" channel="natgeo.no" stop="20191003015900 +0200">
+    <title lang="nb">Inside North Korea's Dynasty</title>
+    <sub-title lang="nb">A Nuclear Family</sub-title>
+    <desc lang="nb">Idet Kim Jong-Il tok full kontroll over Nord-Korea startet også jakten på atomvåpen. Samtidig gjennomgikk befolkningen en av de verste sultkatastrofene i historien.</desc>
+    <episode-num system="xmltv_ns">0.2.</episode-num>
+    <episode-num system="onscreen">Sesong 1 | Episode 3</episode-num>
+  </programme>
+  <programme start="20191003020000 +0200" channel="natgeo.no" stop="20191003030000 +0200">
+    <title lang="nb">Nazistenes byggverk</title>
+    <sub-title lang="nb">V2-rakettbase</sub-title>
+    <desc lang="nb">Nazisten og vitenskapsmannen Wernher von Braun sto bak den ballistiske raketten og la det teknologiske grunnlaget for kampen om verdensrommet.</desc>
+    <episode-num system="xmltv_ns">0.2.</episode-num>
+    <episode-num system="onscreen">Sesong 1 | Episode 3</episode-num>
+  </programme>
+  <programme start="20191003030000 +0200" channel="natgeo.no" stop="20191003035900 +0200">
+    <title lang="nb">Car S.O.S.</title>
+    <sub-title lang="nb">Stirling Moss Sprite Spesial</sub-title>
+    <desc lang="nb">Tim og Fuzz pusser opp en historisk racingbil, en Austin Healey Sebring Sprite, slik at sir Stirling Moss kan sette seg bak rattet igjen.</desc>
+    <episode-num system="xmltv_ns">2.2.</episode-num>
+    <episode-num system="onscreen">Sesong 3 | Episode 3</episode-num>
+  </programme>
+  <programme start="20191003040000 +0200" channel="natgeo.no" stop="20191003050000 +0200">
+    <title lang="nb">Alaska State Troopers</title>
+    <sub-title lang="nb">Forskanset med våpen</sub-title>
+    <desc lang="nb">Hvert øyeblikk er fullt av spenning. Når den mistenkte er bevæpnet og farlig, må betjentene virkelig være på vakt.</desc>
+    <episode-num system="xmltv_ns">4.9.</episode-num>
+    <episode-num system="onscreen">Sesong 5 | Episode 10</episode-num>
+  </programme>
+  <programme start="20191003050000 +0200" channel="natgeo.no" stop="20191003055900 +0200">
+    <title lang="nb">Drugs Inc.</title>
+    <sub-title lang="nb">Biltyverier</sub-title>
+    <desc lang="nb">Vi går inn i biltyvenes rike: tyveriene, bilverkstedene og politiet, som alle en del av en global milliardindustri.</desc>
+  </programme>
+  <programme start="20191003060000 +0200" channel="natgeo.no" stop="20191003070000 +0200">
+    <title lang="nb">Gull i Yukon</title>
+    <sub-title lang="nb">Nyt kaoset</sub-title>
+    <desc lang="nb">Nika og Chris sliter med tekniske feil og vannproblemer, men et nytt medlem av mannskapet kan få dem på rett vei.</desc>
+    <episode-num system="xmltv_ns">3.3.</episode-num>
+    <episode-num system="onscreen">Sesong 4 | Episode 4</episode-num>
+  </programme>
+  <programme start="20191003070000 +0200" channel="natgeo.no" stop="20191003080000 +0200">
+    <title lang="nb">Vinterveiens helter</title>
+    <sub-title lang="nb">Naturkrefter</sub-title>
+    <desc lang="nb">Den norske vinteren er kald og hard. Thord risikerer livet for å holde veiene åpne etter vinterstormene.</desc>
+    <episode-num system="xmltv_ns">2.0.</episode-num>
+    <episode-num system="onscreen">Sesong 3 | Episode 1</episode-num>
+  </programme>
+  <programme start="20191003080000 +0200" channel="natgeo.no" stop="20191003090000 +0200">
+    <title lang="nb">Wicked Tuna</title>
+    <sub-title lang="nb">Rene stridsvognen</sub-title>
+    <desc lang="nb">Kapteinene vurderer om de skal fiske på større avstand fra Gloucester, der man kan tjene mer penger.</desc>
+    <episode-num system="xmltv_ns">7.11.</episode-num>
+    <episode-num system="onscreen">Sesong 8 | Episode 12</episode-num>
+  </programme>
+  <programme start="20191003090000 +0200" channel="natgeo.no" stop="20191003095900 +0200">
+    <title lang="nb">Fengslet i utlandet</title>
+    <sub-title lang="nb">På flukt fra Al Qaida</sub-title>
+    <desc lang="nb">Etter flere dager omgitt av opprørere fra Free Syrian Army, blir fotograf Matthew Schrier kidnappet av Al Nusra-fronten, det syriske Al Qaida.</desc>
+    <episode-num system="xmltv_ns">10.4.</episode-num>
+    <episode-num system="onscreen">Sesong 11 | Episode 5</episode-num>
+  </programme>
+  <programme start="20191003100000 +0200" channel="natgeo.no" stop="20191003105900 +0200">
+    <title lang="nb">Car S.O.S.</title>
+    <sub-title lang="nb">Morgan-kaos</sub-title>
+    <desc lang="nb">Tim og Fuzz drar til Northumberland for å redde et låvefunn, en original 1934-modell Morgan trehjuling som har stått i et skjul i over 50 år.</desc>
+    <episode-num system="xmltv_ns">2.3.</episode-num>
+    <episode-num system="onscreen">Sesong 3 | Episode 4</episode-num>
+  </programme>
+  <programme start="20191003110000 +0200" channel="natgeo.no" stop="20191003120000 +0200">
+    <title lang="nb">Alaska State Troopers</title>
+    <sub-title lang="nb">Metamfetamin</sub-title>
+    <desc lang="nb">Politibetjentene etterforsker de mystiske bilene som har herjet i naturreservatet i Mat-Su Valley.</desc>
+    <episode-num system="xmltv_ns">5.1.</episode-num>
+    <episode-num system="onscreen">Sesong 6 | Episode 2</episode-num>
+  </programme>
+  <programme start="20191003120000 +0200" channel="natgeo.no" stop="20191003130000 +0200">
+    <title lang="nb">Flyhavarikommisjonen</title>
+    <sub-title lang="nb">Dårlig holdning</sub-title>
+    <desc lang="nb">På enhver flytur overlater passasjerene livet i kapteinens hender, hvis menneskelige feil kan være nok til at flyet styrter.</desc>
+    <episode-num system="xmltv_ns">0.1.</episode-num>
+    <episode-num system="onscreen">Sesong 1 | Episode 2</episode-num>
+  </programme>
+  <programme start="20191003130000 +0200" channel="natgeo.no" stop="20191003140000 +0200">
+    <title lang="nb">Flyhavarikommisjonen</title>
+    <sub-title lang="nb">Heltemodige piloter</sub-title>
+    <desc lang="nb">Det tar mange års utdanning for å bli flykapten, og det er i kriser at piloten virkelig kan vise seg fram.</desc>
+    <episode-num system="xmltv_ns">0.2.</episode-num>
+    <episode-num system="onscreen">Sesong 1 | Episode 3</episode-num>
+  </programme>
+  <programme start="20191003140000 +0200" channel="natgeo.no" stop="20191003145900 +0200">
+    <title lang="nb">Gull i Yukon</title>
+    <sub-title lang="nb">Siste innspurt</sub-title>
+    <desc lang="nb">Ken og Guillaume beveger seg oppover i terrenget, og Karl gjør endelig et funn. Cam prøver å avslutte sesongen på en positiv måte.</desc>
+    <episode-num system="xmltv_ns">2.8.</episode-num>
+    <episode-num system="onscreen">Sesong 3 | Episode 9</episode-num>
+  </programme>
+  <programme start="20191003150000 +0200" channel="natgeo.no" stop="20191003160000 +0200">
+    <title lang="nb">Nazistenes byggverk</title>
+    <sub-title lang="nb">Ubåtbase</sub-title>
+    <desc lang="nb">For å skape en trygg havn for sine dødelige ubåter bygde nazistene kjempestore og ugjennomtrengelige ubåtbunkere som fremdeles eksisterer.</desc>
+    <episode-num system="xmltv_ns">0.1.</episode-num>
+    <episode-num system="onscreen">Sesong 1 | Episode 2</episode-num>
+  </programme>
+  <programme start="20191003160000 +0200" channel="natgeo.no" stop="20191003170000 +0200">
+    <title lang="nb">Flyhavarikommisjonen</title>
+    <sub-title lang="nb">Mysteriet Malaysian 370</sub-title>
+    <desc lang="nb">Ledende luftfartseksperter blir konfrontert med en sjokkerende teori når de etterforsker et av de største mysteriene i luftfartens historie.</desc>
+    <episode-num system="xmltv_ns">12.10.</episode-num>
+    <episode-num system="onscreen">Sesong 13 | Episode 11</episode-num>
+  </programme>
+  <programme start="20191003170000 +0200" channel="natgeo.no" stop="20191003175900 +0200">
+    <title lang="nb">Når katastrofen inntreffer</title>
+    <sub-title lang="nb">Massakren ved OL i München</sub-title>
+    <desc lang="nb">OL i München i 1972 skulle vise verden et nytt Tyskland, men isteden endte det i en massakre av 11 deltakere. Finn ut hvordan en dristig redningsoperasjon kulminerte i et voldsomt blodbad.</desc>
+    <episode-num system="xmltv_ns">2.2.</episode-num>
+    <episode-num system="onscreen">Sesong 3 | Episode 3</episode-num>
+  </programme>
+  <programme start="20191003180000 +0200" channel="natgeo.no" stop="20191003190000 +0200">
+    <title lang="nb">Flyhavarikommisjonen</title>
+    <sub-title lang="nb">Dødelig utgang</sub-title>
+    <desc lang="nb">Krasjen mellom United Express 5925 og et privatfly forbløffet etterforskerne inntil de så at en savnet pilot spilte en viktig rolle.</desc>
+    <episode-num system="xmltv_ns">13.0.</episode-num>
+    <episode-num system="onscreen">Sesong 14 | Episode 1</episode-num>
+  </programme>
+  <programme start="20191003190000 +0200" channel="natgeo.no" stop="20191003195900 +0200">
+    <title lang="nb">Flyplassen: Peru</title>
+    <sub-title lang="nb">Episode 2</sub-title>
+    <desc lang="nb">I opptak fra flyplassens sperrede områder avslører man svelging av kapsler, narkotika i klærne og skjulte hulrom.</desc>
+    <episode-num system="xmltv_ns">2.1.</episode-num>
+    <episode-num system="onscreen">Sesong 3 | Episode 2</episode-num>
+  </programme>
+  <programme start="20191003200000 +0200" channel="natgeo.no" stop="20191003210000 +0200">
+    <title lang="nb">Wicked Tuna</title>
+    <sub-title lang="nb">Lagspill</sub-title>
+    <desc lang="nb">Man er midt i sesongen for blåfinnet tunfisk, og det begynner å stramme seg til.</desc>
+    <episode-num system="xmltv_ns">7.6.</episode-num>
+    <episode-num system="onscreen">Sesong 8 | Episode 7</episode-num>
+  </programme>
+  <programme start="20191003210000 +0200" channel="natgeo.no" stop="20191003215900 +0200">
+    <title lang="nb">Superkonstruksjoner: Ingeniørkunst</title>
+    <sub-title lang="nb">Det ultimate lasteskipet</sub-title>
+    <desc lang="nb">Vi får et unikt innblikk i det enorme lasteskipet GPO Amethyst. Skipet er noe helt spesielt og utnytter avansert ingeniørkunst for å frakte digre konstruksjoner over hele verden.</desc>
+    <episode-num system="xmltv_ns">0.1.</episode-num>
+    <episode-num system="onscreen">Sesong 1 | Episode 2</episode-num>
+  </programme>
+  <programme start="20191003220000 +0200" channel="natgeo.no" stop="20191003230000 +0200">
+    <title lang="nb">Vinterveiens helter</title>
+    <sub-title lang="nb">Ekstremvær</sub-title>
+    <desc lang="nb">Bergingsbilene har fått en ny fiende: ekstremvær. Brå temperaturendringer gir mannskapene uventede utfordringer.</desc>
+    <episode-num system="xmltv_ns">3.0.</episode-num>
+    <episode-num system="onscreen">Sesong 4 | Episode 1</episode-num>
+  </programme>
+  <programme start="20191003230000 +0200" channel="natgeo.no" stop="20191003235900 +0200">
+    <title lang="nb">Flyhavarikommisjonen</title>
+    <sub-title lang="nb">Dødelig utgang</sub-title>
+    <desc lang="nb">Krasjen mellom United Express 5925 og et privatfly forbløffet etterforskerne inntil de så at en savnet pilot spilte en viktig rolle.</desc>
+    <episode-num system="xmltv_ns">13.0.</episode-num>
+    <episode-num system="onscreen">Sesong 14 | Episode 1</episode-num>
+  </programme>
+</tv>

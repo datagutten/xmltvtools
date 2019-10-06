@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE tv SYSTEM "xmltv.dtd">
+<tv generator-info-name="php-xmltv-grabber" generator-info-url="https://github.com/datagutten/xmltvgrabber">
+  <programme start="20191005000000 +0200" channel="natgeo.no" stop="20191005010000 +0200">
+    <title lang="nb">Hard Time</title>
+    <sub-title lang="nb">Avhengig i Vegas</sub-title>
+    <desc lang="nb">To innsatte i fengselet i Clark County sliter med rusavhengighet. Begge er desperate etter å få en ny sjanse og vil begynne på nytt i Las Vegas. Kan de bli kvitt avhengigheten eller havner de bak murene igjen?</desc>
+    <episode-num system="xmltv_ns">0.8.</episode-num>
+    <episode-num system="onscreen">Sesong 1 | Episode 9</episode-num>
+  </programme>
+  <programme start="20191005010000 +0200" channel="natgeo.no" stop="20191005015900 +0200">
+    <title lang="nb">The Border</title>
+    <sub-title lang="nb">Trafikk</sub-title>
+    <desc lang="nb">I denne episoden får grensevaktene hjelp av helikoptre og båter i jakten på narkokurerer i den tette vegetasjonen. Noen kilometer østover, i grensebyen Mission i Texas, slår lokalt politi til mot et narkoreir hvor det skal finnes marihuana til en verdi av to millioner dollar, men de får seg en overraskelse på stedet.</desc>
+  </programme>
+  <programme start="20191005020000 +0200" channel="natgeo.no" stop="20191005030000 +0200">
+    <title lang="nb">Nazistenes byggverk</title>
+    <sub-title lang="nb">Hitlers jetgrotter</sub-title>
+    <desc lang="nb">Vi tar for oss historien bak et av de mest avanserte flyene fra 2. verdenskrig, Messerschmitt Me 262, og den hemmelige grotten hvor det ble bygd.</desc>
+    <episode-num system="xmltv_ns">0.4.</episode-num>
+    <episode-num system="onscreen">Sesong 1 | Episode 5</episode-num>
+  </programme>
+  <programme start="20191005030000 +0200" channel="natgeo.no" stop="20191005040000 +0200">
+    <title lang="nb">Car S.O.S.</title>
+    <sub-title lang="nb">Skyline-følelser</sub-title>
+    <desc lang="nb">Kim og mannen hennes Mark er ekte bilentusiaster. Men katastrofen inntreffer mens de renoverer drømmebilen – en Nissan Skyline GTR fra 1995.</desc>
+    <episode-num system="xmltv_ns">2.4.</episode-num>
+    <episode-num system="onscreen">Sesong 3 | Episode 5</episode-num>
+  </programme>
+  <programme start="20191005040000 +0200" channel="natgeo.no" stop="20191005050000 +0200">
+    <title lang="nb">Alaska State Troopers</title>
+    <sub-title lang="nb">Metamfetamin</sub-title>
+    <desc lang="nb">Politibetjentene etterforsker de mystiske bilene som har herjet i naturreservatet i Mat-Su Valley.</desc>
+    <episode-num system="xmltv_ns">5.1.</episode-num>
+    <episode-num system="onscreen">Sesong 6 | Episode 2</episode-num>
+  </programme>
+  <programme start="20191005050000 +0200" channel="natgeo.no" stop="20191005055900 +0200">
+    <title lang="nb">Drugs Inc.</title>
+    <sub-title lang="nb">Hasj</sub-title>
+    <desc lang="nb">Drugs Inc. tar en nærmere titt på det mest vanlige dopet på planeten, fra de marokkanske Rif-fjellene til kaffebarene i Amsterdam.</desc>
+  </programme>
+  <programme start="20191005060000 +0200" channel="natgeo.no" stop="20191005070000 +0200">
+    <title lang="nb">Inside North Korea's Dynasty</title>
+    <sub-title lang="nb">A Nuclear Family</sub-title>
+    <desc lang="nb">Idet Kim Jong-Il tok full kontroll over Nord-Korea startet også jakten på atomvåpen. Samtidig gjennomgikk befolkningen en av de verste sultkatastrofene i historien.</desc>
+    <episode-num system="xmltv_ns">0.2.</episode-num>
+    <episode-num system="onscreen">Sesong 1 | Episode 3</episode-num>
+  </programme>
+  <programme start="20191005070000 +0200" channel="natgeo.no" stop="20191005075900 +0200">
+    <title lang="nb">Villmarkens mann</title>
+    <sub-title lang="nb">Tynn luft</sub-title>
+    <desc lang="nb">Langt inn i Himalaya skal Hazen Audel lede en flokk med jakokser gjennom villmarken og til oldtidsbyen Lomanthang.</desc>
+    <episode-num system="xmltv_ns">0.4.</episode-num>
+    <episode-num system="onscreen">Sesong 1 | Episode 5</episode-num>
+  </programme>
+  <programme start="20191005080000 +0200" channel="natgeo.no" stop="20191005090000 +0200">
+    <title lang="nb">Egypts tapte skatter</title>
+    <sub-title lang="nb">Tutankhamons skatter</sub-title>
+    <desc lang="nb">Arkeologene avslører mysteriene til en av Egypts mest kjente faraoer: Tutankhamon, og de graver opp en ny skattkiste.</desc>
+    <episode-num system="xmltv_ns">0.0.</episode-num>
+    <episode-num system="onscreen">Sesong 1 | Episode 1</episode-num>
+  </programme>
+  <programme start="20191005090000 +0200" channel="natgeo.no" stop="20191005100000 +0200">
+    <title lang="nb">Egypts tapte skatter</title>
+    <sub-title lang="nb">Jakten på pyramidens gravkammer</sub-title>
+    <desc lang="nb">Hvorfor valgte de egyptiske faraoene Kongenes dal som gravplass istedenfor pyramidene i Giza? Ekspertene søker svar.</desc>
+    <episode-num system="xmltv_ns">0.4.</episode-num>
+    <episode-num system="onscreen">Sesong 1 | Episode 5</episode-num>
+  </programme>
+  <programme start="20191005100000 +0200" channel="natgeo.no" stop="20191005105900 +0200">
+    <title lang="nb">Flyhavarikommisjonen: Spesialrapport</title>
+    <sub-title lang="nb">Nybegynnerfeil</sub-title>
+    <desc lang="nb">Små feil ligger bak flere store ulykker. Selv om pilotene gjennomgår en lang utdanning, kan erfarne piloter gjøre skjebnesvangre nybegynnerfeil. En dårlig avgang i Buenos Aires krever 60 menneskeliv og forundrer ulykkesgranskerne. Like etter 11. september styrter American Airlines flight 587 i Queens i New York. Da Continental Airlines 3407 får problemer over Buffalo, gjør pilotene en fatal feil.</desc>
+    <episode-num system="xmltv_ns">1.1.</episode-num>
+    <episode-num system="onscreen">Sesong 2 | Episode 2</episode-num>
+  </programme>
+  <programme start="20191005110000 +0200" channel="natgeo.no" stop="20191005115900 +0200">
+    <title lang="nb">Vinterveiens helter</title>
+    <sub-title lang="nb">Ekstremvær</sub-title>
+    <desc lang="nb">Bergingsbilene har fått en ny fiende: ekstremvær. Brå temperaturendringer gir mannskapene uventede utfordringer.</desc>
+    <episode-num system="xmltv_ns">3.0.</episode-num>
+    <episode-num system="onscreen">Sesong 4 | Episode 1</episode-num>
+  </programme>
+  <programme start="20191005120000 +0200" channel="natgeo.no" stop="20191005125900 +0200">
+    <title lang="nb">Hvordan fange en smugler</title>
+    <sub-title lang="nb">Fra kurér til anfører</sub-title>
+    <desc lang="nb">Teamet møter en rekke utfordringer, fra to fly som frakter med seg skjulte smuglervarer, til en ung mann hvis historie skjuler en hemmelighet.</desc>
+    <episode-num system="xmltv_ns">0.4.</episode-num>
+    <episode-num system="onscreen">Sesong 1 | Episode 5</episode-num>
+  </programme>
+  <programme start="20191005130000 +0200" channel="natgeo.no" stop="20191005140000 +0200">
+    <title lang="nb">11. september-rapporten</title>
+    <sub-title lang="nb">Osama kommer</sub-title>
+    <desc lang="nb">I 1979 gjorde den sovjetiske invasjonen av Afghanistan radikale muslimer til hellige krigere som ville dø for troen. Dette er al-Qaidas bakgrunn.</desc>
+    <episode-num system="xmltv_ns">0.0.</episode-num>
+    <episode-num system="onscreen">Sesong 1 | Episode 1</episode-num>
+  </programme>
+  <programme start="20191005140000 +0200" channel="natgeo.no" stop="20191005145900 +0200">
+    <title lang="nb">11. september-rapporten</title>
+    <sub-title lang="nb">Nedtelling til terror</sub-title>
+    <desc lang="nb">Finn ut hvordan Al-Qaida-nettverket utmanøvrerte USAs etterretning med angrep på to afrikanske ambassader og USS Cole. Undersøk også hvordan fire militante Al-Qaida-medlemmer kom seg til Amerika og lærte å fly.</desc>
+    <episode-num system="xmltv_ns">0.1.</episode-num>
+    <episode-num system="onscreen">Sesong 1 | Episode 2</episode-num>
+  </programme>
+  <programme start="20191005150000 +0200" channel="natgeo.no" stop="20191005160000 +0200">
+    <title lang="nb">11. september-rapporten</title>
+    <sub-title lang="nb">Nullpunktet</sub-title>
+    <desc lang="nb">Om morgenen 11. september 2001 tok 19 militante medlemmer av Al-Qaida kontroll over fire passasjerfly. Hør hva etterforskere, journalister, overlevende og talsmenn for myndighetene sier, og hør på skremmende lydopptak fra flyene.</desc>
+    <episode-num system="xmltv_ns">0.2.</episode-num>
+    <episode-num system="onscreen">Sesong 1 | Episode 3</episode-num>
+  </programme>
+  <programme start="20191005160000 +0200" channel="natgeo.no" stop="20191005165900 +0200">
+    <title lang="nb">11. september-rapporten</title>
+    <sub-title lang="nb">Avslutningen</sub-title>
+    <desc lang="nb">Da tvillingtårnene sto i brann, traff et tredje fly Pentagon. Passasjerene på det siste flyet kjempet mot kaprerne idet de var på vei mot et fjerde mål. Da Amerika sørget, identifiserte Vesten sin dødelige fiende: Al-Qaida.</desc>
+    <episode-num system="xmltv_ns">0.3.</episode-num>
+    <episode-num system="onscreen">Sesong 1 | Episode 4</episode-num>
+  </programme>
+  <programme start="20191005170000 +0200" channel="natgeo.no" stop="20191005175900 +0200">
+    <title lang="nb">Hemmeligheter på havets bunn</title>
+    <sub-title lang="nb">Gullrushets hemmeligheter</sub-title>
+    <desc lang="nb">Vi ser nærmere på gatene i San Francisco, Sacramento-elva, iskalde Klondike og Nord-Canada for å fortelle historien om gullrushet på 1800-tallet. Flere hundretusener dro vestover for å komme seg først til gullfeltene. Det var farlig, og utallige menn, kvinner og barn døde. Rikdommer ble vunnet og tapt, og midt i det hele vokste det moderne USA fram.</desc>
+    <episode-num system="xmltv_ns">1.4.</episode-num>
+    <episode-num system="onscreen">Sesong 2 | Episode 5</episode-num>
+  </programme>
+  <programme start="20191005180000 +0200" channel="natgeo.no" stop="20191005185900 +0200">
+    <title lang="nb">På havets bunn: Tøm Bermudatriangelet</title>
+    <sub-title lang="nb">På havets bunn: Tøm Bermudatriangelet</sub-title>
+    <desc lang="nb">Finn ut hva som skjuler seg under overflaten i det mytiske Bemudatriangelet ved hjelp av data fra avanserte sonarmålinger.</desc>
+  </programme>
+  <programme start="20191005190000 +0200" channel="natgeo.no" stop="20191005195900 +0200">
+    <title lang="nb">Sjøveien til Silkeveien</title>
+    <sub-title lang="nb">Skatteflåten</sub-title>
+    <desc lang="nb">Historikeren Sam Willis følger ruten til et av Kinas gamle skatteskip og avdekker hvordan middelhavsflåten reiste.</desc>
+    <episode-num system="xmltv_ns">0.0.</episode-num>
+    <episode-num system="onscreen">Sesong 1 | Episode 1</episode-num>
+  </programme>
+  <programme start="20191005200000 +0200" channel="natgeo.no" stop="20191005210000 +0200">
+    <title lang="nb">På eventyr med Gordon Ramsay</title>
+    <sub-title lang="nb">Fjellene i Marokko</sub-title>
+    <desc lang="nb">Dypt i Atlas-fjellene i Marokko legger Gordon Ramsey ut på et storslått eventyr for å forstå eldgammel berbersk mat.</desc>
+    <episode-num system="xmltv_ns">0.1.</episode-num>
+    <episode-num system="onscreen">Sesong 1 | Episode 2</episode-num>
+  </programme>
+  <programme start="20191005210000 +0200" channel="natgeo.no" stop="20191005215900 +0200">
+    <title lang="nb">Kanaltunnelen</title>
+    <sub-title lang="nb">Kanaltunnelen</sub-title>
+    <desc lang="nb">Kanaltunnelen forbinder Storbritannia med Frankrike, men hva måtte til for å bygge den? Man boret seg gjennom stein og gravde ut to togtunneler og én servicetunnel. Prosjektet ble finansiert av privat sektor, ikke av offentlige midler. Men prosjektet ble også rammet av flom, brann, tragiske dødsfall og økonomiske smeller. I dag viser den hva man kan oppnå om de to landene samarbeider.</desc>
+  </programme>
+  <programme start="20191005220000 +0200" channel="natgeo.no" stop="20191005225900 +0200">
+    <title lang="nb">Kjempekonstruksjoner: BelugaXL</title>
+    <sub-title lang="nb">Kjempekonstruksjoner: BelugaXL</sub-title>
+    <desc lang="nb">Gjennom eksklusiv tilgang til Airbus-fabrikkene, spektakulære flyfoto, hyperrealistiske CGI-frekvenser og sterke intervjuer, tar Kjempekonstruksjoner: BelugaXL oss med bak kulissene til BelugaXLs unike eventyr. Fra skapelsen av den innovative giganten gjennomført av verdens beste ingeniører til første flytur, forteller vi historien om en tilsynelatende umulig drøm som ble til virkelighet.</desc>
+  </programme>
+  <programme start="20191005230000 +0200" channel="natgeo.no" stop="20191005235900 +0200">
+    <title lang="nb">Diktatorenes teknikker</title>
+    <sub-title lang="nb">Manuel Noriega</sub-title>
+    <desc lang="nb">En nærstudie av metodene Manuel Noriega brukte for å ta seg fra fattigdom til å bli diktator i Panama og lede landet i seks urolige år på 1980-tallet.</desc>
+    <episode-num system="xmltv_ns">0.4.</episode-num>
+    <episode-num system="onscreen">Sesong 1 | Episode 5</episode-num>
+  </programme>
+</tv>
