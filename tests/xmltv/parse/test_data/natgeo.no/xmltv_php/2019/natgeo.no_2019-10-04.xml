@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE tv SYSTEM "xmltv.dtd">
+<tv generator-info-name="php-xmltv-grabber" generator-info-url="https://github.com/datagutten/xmltvgrabber">
+  <programme start="20191004000000 +0200" channel="natgeo.no" stop="20191004010000 +0200">
+    <title lang="nb">Hard Time</title>
+    <sub-title lang="nb">Mødre i retten</sub-title>
+    <desc lang="nb">Kvinneavdelingen i Las Vegas er brutal. To kvinner er tiltalt for drap, men begge nekter å innrømme skyld.</desc>
+    <episode-num system="xmltv_ns">0.7.</episode-num>
+    <episode-num system="onscreen">Sesong 1 | Episode 8</episode-num>
+  </programme>
+  <programme start="20191004010000 +0200" channel="natgeo.no" stop="20191004015900 +0200">
+    <title lang="nb">Vinterveiens helter</title>
+    <sub-title lang="nb">Ekstremvær</sub-title>
+    <desc lang="nb">Bergingsbilene har fått en ny fiende: ekstremvær. Brå temperaturendringer gir mannskapene uventede utfordringer.</desc>
+    <episode-num system="xmltv_ns">3.0.</episode-num>
+    <episode-num system="onscreen">Sesong 4 | Episode 1</episode-num>
+  </programme>
+  <programme start="20191004020000 +0200" channel="natgeo.no" stop="20191004030000 +0200">
+    <title lang="nb">Nazistenes byggverk</title>
+    <sub-title lang="nb">Superstridsvogn</sub-title>
+    <desc lang="nb">Nazistenes ingeniører hadde som oppgave å oppfylle Hitlers stormannsgale krav om å lage et slagskip på land som veide 1000 tonn.</desc>
+    <episode-num system="xmltv_ns">0.3.</episode-num>
+    <episode-num system="onscreen">Sesong 1 | Episode 4</episode-num>
+  </programme>
+  <programme start="20191004030000 +0200" channel="natgeo.no" stop="20191004035900 +0200">
+    <title lang="nb">Car S.O.S.</title>
+    <sub-title lang="nb">Morgan-kaos</sub-title>
+    <desc lang="nb">Tim og Fuzz drar til Northumberland for å redde et låvefunn, en original 1934-modell Morgan trehjuling som har stått i et skjul i over 50 år.</desc>
+    <episode-num system="xmltv_ns">2.3.</episode-num>
+    <episode-num system="onscreen">Sesong 3 | Episode 4</episode-num>
+  </programme>
+  <programme start="20191004040000 +0200" channel="natgeo.no" stop="20191004050000 +0200">
+    <title lang="nb">Alaska State Troopers</title>
+    <sub-title lang="nb">Våpen, penger og kokain</sub-title>
+    <desc lang="nb">Team AST jakter på en farlig rømling gjennom skogen og beskytter innbyggerne mot bjørnene.</desc>
+    <episode-num system="xmltv_ns">5.0.</episode-num>
+    <episode-num system="onscreen">Sesong 6 | Episode 1</episode-num>
+  </programme>
+  <programme start="20191004050000 +0200" channel="natgeo.no" stop="20191004055900 +0200">
+    <title lang="nb">Drugs Inc.</title>
+    <sub-title lang="nb">Ketamin</sub-title>
+    <desc lang="nb">Vi kartlegger ketamins popularitet gjennom erfaringer til smuglere, langere og en bruker som betaler en grusom pris for sin avhengighet.</desc>
+  </programme>
+  <programme start="20191004060000 +0200" channel="natgeo.no" stop="20191004070000 +0200">
+    <title lang="nb">Gull i Yukon</title>
+    <sub-title lang="nb">For blod eller penger</sub-title>
+    <desc lang="nb">Ken og Guillaume står på for å få vasket gull før Ken skal dra. Karl og teamet setter rekord med 5,5 kilo gull på bare én uke.</desc>
+    <episode-num system="xmltv_ns">3.4.</episode-num>
+    <episode-num system="onscreen">Sesong 4 | Episode 5</episode-num>
+  </programme>
+  <programme start="20191004070000 +0200" channel="natgeo.no" stop="20191004080000 +0200">
+    <title lang="nb">Vinterveiens helter</title>
+    <sub-title lang="nb">En dårlig dag på jobben</sub-title>
+    <desc lang="nb">Thord utvider territoriet sitt, og med et større område følger et større ansvar. Nordpå har Jo Roger overlatt ansvaret til sønnen.</desc>
+    <episode-num system="xmltv_ns">2.1.</episode-num>
+    <episode-num system="onscreen">Sesong 3 | Episode 2</episode-num>
+  </programme>
+  <programme start="20191004080000 +0200" channel="natgeo.no" stop="20191004090000 +0200">
+    <title lang="nb">Wicked Tuna</title>
+    <sub-title lang="nb">Jakten på tittelen</sub-title>
+    <desc lang="nb">Kaptein Dave Carraro og FV-Tuna.Com har vært den mest innbringende båten i Gloucester-flåten i fire av de sju siste sesongene. Med den fineste båten og det dyktigste mannskapet har han gode sjanser, men de andre kapteinene vil gjøre alt for å felle mesteren.</desc>
+    <episode-num system="xmltv_ns">7.12.</episode-num>
+    <episode-num system="onscreen">Sesong 8 | Episode 13</episode-num>
+  </programme>
+  <programme start="20191004090000 +0200" channel="natgeo.no" stop="20191004100000 +0200">
+    <title lang="nb">Fengslet i utlandet</title>
+    <sub-title lang="nb">Dårlig brorskap</sub-title>
+    <desc lang="nb">Marineoffiser Lemar Burton mistet alt, og da muligheten for å tjene noen raske penger dukket opp takket han ja. Det skulle han angre på.</desc>
+    <episode-num system="xmltv_ns">10.5.</episode-num>
+    <episode-num system="onscreen">Sesong 11 | Episode 6</episode-num>
+  </programme>
+  <programme start="20191004100000 +0200" channel="natgeo.no" stop="20191004105900 +0200">
+    <title lang="nb">Car S.O.S.</title>
+    <sub-title lang="nb">Skyline-følelser</sub-title>
+    <desc lang="nb">Kim og mannen hennes Mark er ekte bilentusiaster. Men katastrofen inntreffer mens de renoverer drømmebilen – en Nissan Skyline GTR fra 1995.</desc>
+    <episode-num system="xmltv_ns">2.4.</episode-num>
+    <episode-num system="onscreen">Sesong 3 | Episode 5</episode-num>
+  </programme>
+  <programme start="20191004110000 +0200" channel="natgeo.no" stop="20191004120000 +0200">
+    <title lang="nb">Alaska State Troopers</title>
+    <sub-title lang="nb">Alaska brenner</sub-title>
+    <desc lang="nb">En våpendesperado skyter rundt seg, og tilstanden i naturen er ute av kontroll. Politiet vet aldri hvordan dagen ender.</desc>
+    <episode-num system="xmltv_ns">5.2.</episode-num>
+    <episode-num system="onscreen">Sesong 6 | Episode 3</episode-num>
+  </programme>
+  <programme start="20191004120000 +0200" channel="natgeo.no" stop="20191004130000 +0200">
+    <title lang="nb">Flyhavarikommisjonen</title>
+    <sub-title lang="nb">Heltemodige piloter</sub-title>
+    <desc lang="nb">Det tar mange års utdanning for å bli flykapten, og det er i kriser at piloten virkelig kan vise seg fram.</desc>
+    <episode-num system="xmltv_ns">0.2.</episode-num>
+    <episode-num system="onscreen">Sesong 1 | Episode 3</episode-num>
+  </programme>
+  <programme start="20191004130000 +0200" channel="natgeo.no" stop="20191004140000 +0200">
+    <title lang="nb">Flyhavarikommisjonen</title>
+    <sub-title lang="nb">Fly mot pilot</sub-title>
+    <desc lang="nb">Noen ganger fungerer ikke samspillet mellom pilotene og flyet. I cockpiten blir det en kamp mellom menneske og maskin.</desc>
+    <episode-num system="xmltv_ns">0.3.</episode-num>
+    <episode-num system="onscreen">Sesong 1 | Episode 4</episode-num>
+  </programme>
+  <programme start="20191004140000 +0200" channel="natgeo.no" stop="20191004145900 +0200">
+    <title lang="nb">Gull i Yukon</title>
+    <sub-title lang="nb">Siste kraftanstrengelse</sub-title>
+    <desc lang="nb">Nika og Chris kjemper for å nå målet sitt. Karl satser på urørt mark for å tjene penger. Ken og Guillaume får en stor overraskelse.</desc>
+    <episode-num system="xmltv_ns">2.9.</episode-num>
+    <episode-num system="onscreen">Sesong 3 | Episode 10</episode-num>
+  </programme>
+  <programme start="20191004150000 +0200" channel="natgeo.no" stop="20191004160000 +0200">
+    <title lang="nb">Nazistenes byggverk</title>
+    <sub-title lang="nb">V2-rakettbase</sub-title>
+    <desc lang="nb">Nazisten og vitenskapsmannen Wernher von Braun sto bak den ballistiske raketten og la det teknologiske grunnlaget for kampen om verdensrommet.</desc>
+    <episode-num system="xmltv_ns">0.2.</episode-num>
+    <episode-num system="onscreen">Sesong 1 | Episode 3</episode-num>
+  </programme>
+  <programme start="20191004160000 +0200" channel="natgeo.no" stop="20191004170000 +0200">
+    <title lang="nb">Flyhavarikommisjonen</title>
+    <sub-title lang="nb">Dødelig utgang</sub-title>
+    <desc lang="nb">Krasjen mellom United Express 5925 og et privatfly forbløffet etterforskerne inntil de så at en savnet pilot spilte en viktig rolle.</desc>
+    <episode-num system="xmltv_ns">13.0.</episode-num>
+    <episode-num system="onscreen">Sesong 14 | Episode 1</episode-num>
+  </programme>
+  <programme start="20191004170000 +0200" channel="natgeo.no" stop="20191004175900 +0200">
+    <title lang="nb">Når katastrofen inntreffer</title>
+    <sub-title lang="nb">Flyeksplosjon</sub-title>
+    <desc lang="nb">I 1967 krevde en tragisk ulykke på flydekket til USS Forrestal livet til 134 menn og ødela nesten skipet. Finn ut hvordan en brann skapte en kjedereaksjon som endte i katastrofe.</desc>
+    <episode-num system="xmltv_ns">2.3.</episode-num>
+    <episode-num system="onscreen">Sesong 3 | Episode 4</episode-num>
+  </programme>
+  <programme start="20191004180000 +0200" channel="natgeo.no" stop="20191004185900 +0200">
+    <title lang="nb">Flyhavarikommisjonen</title>
+    <sub-title lang="nb">Skremt i San Francisco</sub-title>
+    <desc lang="nb">Når Asiana Airlines flight 214 krasjer på flyplassen i San Francisco, oppdager etterforskerne noe som kunne ha satt passasjerene i fare.</desc>
+    <episode-num system="xmltv_ns">13.1.</episode-num>
+    <episode-num system="onscreen">Sesong 14 | Episode 2</episode-num>
+  </programme>
+  <programme start="20191004190000 +0200" channel="natgeo.no" stop="20191004200000 +0200">
+    <title lang="nb">Verdensløftet</title>
+    <sub-title lang="nb">Få slutt på plastforurensning</sub-title>
+    <desc lang="nb">Pharrell Williams blir med Global Citizen når de oppfordrer regjeringen, bedrifter og innbyggere til å adressere plastforurensningen av havet. Samtidig reiser Darren Criss til Filippinene for å se plastens innvirkning på mennesker som lever i ekstrem fattigdom og oppfordrer verdens befolkning til å overtale ordførere til å forplikte seg til en fremtid med zero waste i deres byer.</desc>
+    <episode-num system="xmltv_ns">0.4.</episode-num>
+    <episode-num system="onscreen">Sesong 1 | Episode 5</episode-num>
+  </programme>
+  <programme start="20191004200000 +0200" channel="natgeo.no" stop="20191004202900 +0200">
+    <title lang="nb">Grensevakt Latin-Amerika</title>
+    <sub-title lang="nb">Våpen og roser</sub-title>
+    <desc lang="nb">På grensen mellom Peru og Chile stanser tollagentene en kvinne de tror skjuler ulovlige varer under klærne.</desc>
+    <episode-num system="xmltv_ns">0.22.</episode-num>
+    <episode-num system="onscreen">Sesong 1 | Episode 23</episode-num>
+  </programme>
+  <programme start="20191004203000 +0200" channel="natgeo.no" stop="20191004210000 +0200">
+    <title lang="nb">Grensevakt Latin-Amerika</title>
+    <sub-title lang="nb">En mors problemer</sub-title>
+    <desc lang="nb">Agentene på grensen til Peru stanser en kvinne med 15 000 dollar mer enn tillatt, som ikke prøver å skjule det.</desc>
+    <episode-num system="xmltv_ns">0.23.</episode-num>
+    <episode-num system="onscreen">Sesong 1 | Episode 24</episode-num>
+  </programme>
+  <programme start="20191004210000 +0200" channel="natgeo.no" stop="20191004220000 +0200">
+    <title lang="nb">Fengslet i utlandet</title>
+    <sub-title lang="nb">Panamania</sub-title>
+    <desc lang="nb">Den kanadiske 21-åringen Christina Jocko er en festglad jente, og hun blir fristet til å smugle kokain.</desc>
+    <episode-num system="xmltv_ns">11.7.</episode-num>
+    <episode-num system="onscreen">Sesong 12 | Episode 8</episode-num>
+  </programme>
+  <programme start="20191004220000 +0200" channel="natgeo.no" stop="20191004225900 +0200">
+    <title lang="nb">The Border</title>
+    <sub-title lang="nb">Trafikk</sub-title>
+    <desc lang="nb">I denne episoden får grensevaktene hjelp av helikoptre og båter i jakten på narkokurerer i den tette vegetasjonen. Noen kilometer østover, i grensebyen Mission i Texas, slår lokalt politi til mot et narkoreir hvor det skal finnes marihuana til en verdi av to millioner dollar, men de får seg en overraskelse på stedet.</desc>
+  </programme>
+  <programme start="20191004230000 +0200" channel="natgeo.no" stop="20191005000000 +0200">
+    <title lang="nb">Flyhavarikommisjonen</title>
+    <sub-title lang="nb">Skremt i San Francisco</sub-title>
+    <desc lang="nb">Når Asiana Airlines flight 214 krasjer på flyplassen i San Francisco, oppdager etterforskerne noe som kunne ha satt passasjerene i fare.</desc>
+    <episode-num system="xmltv_ns">13.1.</episode-num>
+    <episode-num system="onscreen">Sesong 14 | Episode 2</episode-num>
+  </programme>
+</tv>
