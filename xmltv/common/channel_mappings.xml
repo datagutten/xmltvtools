@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<!DOCTYPE mappings SYSTEM "channel_mappings.dtd">
+<mappings>
+    <channel id="discovery.no">
+        <name>Discovery</name>
+        <name>Discovery (N)</name>
+        <name>Discovery HD (N)</name>
+    </channel>
+    <channel id="hd.discovery.no">
+        <name>Discovery HD</name>
+        <name>Discovery HD Showcase</name>
+    </channel>
+    <channel id="science.discovery.no">
+        <name>Discovery Science</name>
+    </channel>
+    <channel id="animalplanet.discovery.no">
+        <name>Animal Planet</name>
+    </channel>
+    <channel id="hd.animalplanet.discovery.no">
+        <name>Animal Planet HD</name>
+    </channel>
+    <channel id="nrk1.nrk.no">
+        <name>NRK1 HD</name>
+        <name>NRK1 &#xD8;stlandssendingen</name>
+        <name>NRK1 &#xD8;stfold</name>
+    </channel>
+    <channel id="nrk2.nrk.no">
+        <name>NRK2 HD</name>
+        <name>NRK2</name>
+    </channel>
+    <channel id="nrk3super.nrk.no">
+        <name>NRK Super _ NRK3</name>
+        <name>NRK Super _ NRK3 HD</name>
+    </channel>
+    <channel id="disneychannel.no">
+        <name>Disney Channel</name>
+    </channel>
+    <channel id="xd.disneychannel.no">
+        <name>Disney XD</name>
+        <name>Disney XD (N)</name>
+    </channel>
+    <channel id="tvnorge.no">
+        <name>TV Norge</name>
+        <name>TV Norge HD</name>
+    </channel>
+    <channel id="max.no">
+        <name>MAX HD</name>
+    </channel>
+    <channel id="voxtv.no">
+        <name>VOX</name>
+        <name>VOX HD</name>
+    </channel>
+    <channel id="fem.no">
+        <name>FEM</name>
+        <name>FEM HD</name>
+    </channel>
+    <channel id="tv2.no">
+        <name>TV2 HD</name>
+        <name>TV 2 (N)</name>
+    </channel>
+    <channel id="zebra.tv2.no">
+        <name>TV2 Zebra HD</name>
+    </channel>
+    <channel id="natgeo.no">
+        <name>Nat Geo Channel</name>
+        <name>Nat Geo HD</name>
+        <name>Nat Geo HD (N)</name>
+    </channel>
+    <channel id="fox.no">
+        <name>FOX</name>
+    </channel>
+    <channel id="cartoonnetwork.no">
+        <name>Cartoon Network</name>
+    </channel>
+    <channel id="boomerangtv.no">
+        <name>Boomerang</name>
+    </channel>
+    <channel id="viasat4.no">
+        <name>Viasat 4 HD</name>
+    </channel>
+    <channel id="tv3.no">
+        <name>TV3 HD</name>
+        <name>TV3</name>
+    </channel>
+    <channel id="foxtv.no">
+        <name>FOX HD</name>
+    </channel>
+    <channel id="hd.bbcknowledge.no">
+        <name>BBC Earth HD</name>
+    </channel>
+</mappings>

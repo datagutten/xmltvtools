@@ -1,0 +1,4 @@
+<!ELEMENT mappings (channel+)>
+<!ELEMENT channel (name+)>
+<!ATTLIST channel id ID #REQUIRED>
+<!ELEMENT name (#PCDATA)>
