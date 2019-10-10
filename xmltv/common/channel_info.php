@@ -5,7 +5,6 @@ namespace datagutten\xmltv\tools\common;
 
 
 use datagutten\xmltv\tools\exceptions\ChannelNotFoundException;
-use InvalidArgumentException;
 use SimpleXMLElement;
 
 class channel_info
@@ -14,6 +13,10 @@ class channel_info
      * @var SimpleXMLElement
      */
     public $xml;
+
+    /**
+     * channel_info constructor.
+     */
     function __construct()
     {
         $this->xml = simplexml_load_file(__DIR__.'/channel_mappings.xml');

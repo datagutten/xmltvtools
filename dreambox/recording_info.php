@@ -28,12 +28,20 @@ class recording_info
      */
     public $xmltv;
 
+    /**
+     * recording_info constructor.
+     */
     function __construct()
     {
         $this->channels = new channel_info();
         $this->xmltv = new parser();
     }
 
+    /**
+     * @param string $input File name
+     * @return array Date, time and channel
+     * @throws InvalidArgumentException File name could not be parsed
+     */
     public static function parse_file_name($input)
     {
         if(!preg_match('^([0-9]{8} [0-9]{4}) - (.*) - (.*)\.ts^U',$input,$result))

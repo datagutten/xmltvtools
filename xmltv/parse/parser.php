@@ -23,6 +23,11 @@ class parser
      * @var files
      */
     public $files;
+
+    /**
+     * parser constructor.
+     * @throws FileNotFoundException
+     */
     function __construct()
     {
         $this->files = new files();
@@ -106,7 +111,7 @@ class parser
     /**
      * Get program running at the given time or the next starting program
      * @param int $search_time Program timestamp
-     * @param $programs_xml_or_channel
+     * @param string $programs_xml_or_channel
      * @param string $mode now (running program at search time), next (next starting program) or nearest (program start with lowest difference to search time)
      * @return bool|mixed
      * @throws ProgramNotFoundException
