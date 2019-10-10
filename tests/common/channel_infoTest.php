@@ -3,6 +3,7 @@
 namespace datagutten\xmltv\tests\tools\common;
 
 use datagutten\xmltv\tools\common\channel_info;
+use datagutten\xmltv\tools\exceptions\ChannelNotFoundException;
 use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 
@@ -37,7 +38,7 @@ class channel_infoTest extends TestCase
 
     public function testInvalidId_to_name()
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(ChannelNotFoundException::class);
         $this->info->id_to_name('nrk0.nrk.no');
     }
 }

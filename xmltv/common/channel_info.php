@@ -4,6 +4,7 @@
 namespace datagutten\xmltv\tools\common;
 
 
+use datagutten\xmltv\tools\exceptions\ChannelNotFoundException;
 use InvalidArgumentException;
 use SimpleXMLElement;
 
@@ -17,11 +18,18 @@ class channel_info
     {
         $this->xml = simplexml_load_file(__DIR__.'/channel_mappings.xml');
     }
+
+    /**
+     * Find channel name from xmltv id
+     * @param $id
+     * @return string
+     * @throws ChannelNotFoundException
+     */
     function id_to_name($id)
     {
         $result = $this->xml->xpath(sprintf('/mappings/channel[@id="%s"]/name', $id));
         if(empty($result))
-            throw new InvalidArgumentException($id.' not found');
+            throw new ChannelNotFoundException($id);
         return (string)$result[0];
 
     }
