@@ -4,7 +4,7 @@
 namespace datagutten\xmltv\tools\common;
 
 
-use datagutten\xmltv\tools\parse\InvalidXMLFileException;
+use datagutten\xmltv\tools\exceptions\InvalidXMLFileException;
 use Exception;
 use FileNotFoundException;
 use InvalidArgumentException;

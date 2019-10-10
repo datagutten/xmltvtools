@@ -12,7 +12,7 @@ namespace datagutten\dreambox;
 use datagutten\xmltv\tools\common\channel_info;
 use datagutten\xmltv\tools\exceptions\ChannelNotFoundException;
 use datagutten\xmltv\tools\parse\parser;
-use datagutten\xmltv\tools\parse\ProgramNotFoundException;
+use datagutten\xmltv\tools\exceptions\ProgramNotFoundException;
 use InvalidArgumentException;
 use SimpleXMLElement;
 

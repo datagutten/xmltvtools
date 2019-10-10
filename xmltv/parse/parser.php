@@ -10,6 +10,8 @@ namespace datagutten\xmltv\tools\parse;
 
 
 use datagutten\xmltv\tools\common\files;
+use datagutten\xmltv\tools\exceptions\InvalidXMLFileException;
+use datagutten\xmltv\tools\exceptions\ProgramNotFoundException;
 use FileNotFoundException;
 use InvalidArgumentException;
 use \SimpleXMLElement;

@@ -6,10 +6,12 @@
  * Time: 15:26
  */
 
-namespace datagutten\xmltv\tools\parse;
+namespace datagutten\xmltv\tools\exceptions;
 
 
-class ProgramNotFoundException extends \Exception
+use Exception;
+
+class ProgramNotFoundException extends Exception
 {
     //TODO: Create message with time and channel
 }
