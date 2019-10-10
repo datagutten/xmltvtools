@@ -33,11 +33,18 @@ class channel_info
         return (string)$result[0];
 
     }
+
+    /**
+     * Find xmltv id from channel name
+     * @param $name
+     * @return string
+     * @throws ChannelNotFoundException
+     */
     function name_to_id($name)
     {
         $result = $this->xml->xpath(sprintf('/mappings/channel/name[.="%s"]/../@id', $name));
         if(empty($result))
-            throw new InvalidArgumentException($name.' not found');
+            throw new ChannelNotFoundException($name);
         return (string)$result[0];
     }
 }

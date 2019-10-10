@@ -10,6 +10,7 @@ namespace datagutten\dreambox;
 
 
 use datagutten\xmltv\tools\common\channel_info;
+use datagutten\xmltv\tools\exceptions\ChannelNotFoundException;
 use datagutten\xmltv\tools\parse\parser;
 use datagutten\xmltv\tools\parse\ProgramNotFoundException;
 use InvalidArgumentException;
@@ -48,6 +49,7 @@ class recording_info
      * @param $filename
      * @return SimpleXMLElement
      * @throws ProgramNotFoundException
+     * @throws ChannelNotFoundException
      */
     public function recording_info($filename)
     {

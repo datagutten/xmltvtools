@@ -32,7 +32,7 @@ class channel_infoTest extends TestCase
 
     public function testInvalidName_to_id()
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(ChannelNotFoundException::class);
         $this->info->name_to_id('NRK1 HD bad');
     }
 
