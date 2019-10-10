@@ -50,11 +50,16 @@ class parserTest extends TestCase
     {
         $programs = $this->parser->get_programs('natgeo.no', strtotime('2019-10-04'));
         $this->assertIsArray($programs);
-        $this->assertEquals('20191004000000 +0000', $programs[0]->attributes()->{'start'});
+        $this->assertEquals('20191004000000 +0200', $programs[0]->attributes()->{'start'});
     }
 
     public function testGet_programsNotCombined()
     {
+        $config = file_get_contents(__DIR__.'/config.php');
+        $config = str_replace('xmltv_php', 'xmltv', $config);
+        file_put_contents(__DIR__.'/config.php', $config);
+        $this->parser->__construct();
+
         $programs = $this->parser->get_programs('natgeo.no', strtotime('2019-10-04'), false);
         $this->assertIsArray($programs);
         $this->assertEquals('20191004060000 +0000', $programs[0]->attributes()->{'start'});
@@ -67,6 +72,11 @@ class parserTest extends TestCase
 
     public function testCombine_days()
     {
+        $config = file_get_contents(__DIR__.'/config.php');
+        $config = str_replace('xmltv_php', 'xmltv', $config);
+        file_put_contents(__DIR__.'/config.php', $config);
+        $this->parser->__construct();
+
         $parser = new parser();
         $day1 = $parser->files->load_file('natgeo.no', strtotime('2019-10-03'));
         $day2 = $parser->files->load_file('natgeo.no', strtotime('2019-10-04'));
