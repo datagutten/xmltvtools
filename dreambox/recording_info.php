@@ -82,9 +82,7 @@ class recording_info
         if(!file_exists($eit_file))
             throw new FileNotFoundException($eit_file);
         $eit_file = file_get_contents($eit_file);
-        if (($pos = strpos($eit_file, '')) === false)
-            $pos = strpos($eit_file, '');
-        $info['title'] = utf8_encode(trim(substr($eit_file, $pos)));
+        $info = eit_parser::parse($eit_file);
 
         if (preg_match('^\(([0-9]+)/s([0-9]+)\)^', $eit_file, $season_episode)) {
             $info['season_episode']['season'] = (int)$season_episode[2];
