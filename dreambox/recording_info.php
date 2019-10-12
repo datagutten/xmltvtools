@@ -86,6 +86,8 @@ class recording_info
         $info['name'] = preg_replace('#\s?\(R\)$#', '', $info['name']);
         $info['title'] = $info['name'];
         $info['season_episode'] = eit_parser::season_episode($info['short_description']);
+        $start = sprintf('%d-%02d-%02d %02d:%02d:%02d',$info['date'][0], $info['date'][1], $info['date'][2], $info['time'][0], $info['time'][1], $info['time'][2]);
+        $info['start_timestamp'] = strtotime($start);
 
         if ($mode == 'array')
             return $info;
