@@ -92,4 +92,7 @@
         <name>BBC Brit</name>
         <name>BBC Brit HD</name>
     </channel>
+    <channel id="auto-motor-og-sport.tv">
+        <name>auto motor og sport tv</name>
+    </channel>
 </mappings>
