@@ -88,4 +88,8 @@
     <channel id="hd.bbcknowledge.no">
         <name>BBC Earth HD</name>
     </channel>
+    <channel id="no.bbcentertainment.no">
+        <name>BBC Brit</name>
+        <name>BBC Brit HD</name>
+    </channel>
 </mappings>
