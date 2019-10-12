@@ -87,8 +87,8 @@ class recording_info
         $info['title'] = utf8_encode(trim(substr($eit_file, $pos)));
 
         if (preg_match('^\(([0-9]+)/s([0-9]+)\)^', $eit_file, $season_episode)) {
-            $info['season_episode']['season'] = $season_episode[2];
-            $info['season_episode']['episode'] = $season_episode[1];
+            $info['season_episode']['season'] = (int)$season_episode[2];
+            $info['season_episode']['episode'] = (int)$season_episode[1];
         }
         if ($mode == 'array')
             return $info;
