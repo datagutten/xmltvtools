@@ -3,6 +3,11 @@
 
 namespace datagutten\dreambox;
 
+function int($int)
+{
+    return (int)$int;
+}
+
 /**
  * Class eit_parser
  * @package datagutten\dreambox
@@ -11,12 +16,45 @@ namespace datagutten\dreambox;
  */
 class eit_parser
 {
+    public static function parseMJD($MJD)
+    {
+        # Parse 16 bit unsigned int containing Modified Julian Date,
+        # as per DVB-SI spec
+        # returning year,month,day
+        $YY = int(($MJD - 15078.2) / 365.25);
+        $MM = int(($MJD - 14956.1 - int($YY * 365.25)) / 30.6001);
+        $D = $MJD - 14956 - int($YY * 365.25) - int($MM * 30.6001);
+        $K = 0;
+        if ($MM == 14 || $MM == 15)
+            $K = 1;
+
+        return [(1900 + $YY + $K), ($MM - 1 - $K * 12), $D];
+    }
+
+    public static function unBCD($byte)
+    {
+        return ($byte >> 4) * 10 + ($byte & 0xf);
+    }
+
+    public static function parse_header($data)
+    {
+        $string = substr($data, 0, 12);
+        //$data = unpack('S/asdf/S/C/C/C/C/C/C/S', $string);
+        $data = unpack('nid/ndate/CtimeH/CtimeM/CtimeS/CdurationH/CdurationM/CdurationS/nstatus', $string);
+
+        $date = self::parseMJD($data['date']);
+        $duration = [self::unBCD($data['durationH']), self::unBCD($data['durationM']), self::unBCD($data['durationS'])];
+        $time = [self::unBCD($data['timeH']), self::unBCD($data['timeM']), self::unBCD($data['timeS'])];
+
+        return ['date'=>$date, 'duration'=>$duration, 'time'=>$time];
+    }
+
     public static function parse($data)
     {
-        $eit = array();
         if (strlen($data) < 12)
             die('Invalid file');
         //0-12 = event_id date, time, duration, running_status, free_ca_mode, descriptors_len
+        $eit = self::parse_header($data);
 
         $pos = 0;
         $pos = $pos + 12;
