@@ -83,6 +83,7 @@ class recording_info
             throw new FileNotFoundException($eit_file);
         $eit_file = file_get_contents($eit_file);
         $info = eit_parser::parse($eit_file);
+        $info['name'] = preg_replace('\s?\(R\)$', '', $info['name']);
         $info['title'] = $info['name'];
         $info['season_episode'] = eit_parser::season_episode($info['short_description']);
 
