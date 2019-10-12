@@ -83,11 +83,9 @@ class recording_info
             throw new FileNotFoundException($eit_file);
         $eit_file = file_get_contents($eit_file);
         $info = eit_parser::parse($eit_file);
+        $info['title'] = $info['name'];
+        $info['season_episode'] = eit_parser::season_episode($info['short_description']);
 
-        if (preg_match('^\(([0-9]+)/s([0-9]+)\)^', $eit_file, $season_episode)) {
-            $info['season_episode']['season'] = (int)$season_episode[2];
-            $info['season_episode']['episode'] = (int)$season_episode[1];
-        }
         if ($mode == 'array')
             return $info;
         else
