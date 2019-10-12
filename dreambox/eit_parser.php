@@ -96,4 +96,26 @@ class eit_parser
             return utf8_encode($string);
         return $string;
     }
+
+    public static function season_episode($short_event_description)
+    {
+        if(preg_match('#\(([0-9]+)(?::([0-9]+))?(?:/s([0-9]+))?\)#',$short_event_description,$season_episode))
+        {
+            $info['raw_season_episode_string']=$season_episode[0];
+
+            if(empty($season_episode[3]))
+            {
+                $info['season']=0;
+                $info['episode']=(int)$season_episode[1];
+            }
+            else
+            {
+                $info['season']=(int)$season_episode[3];
+                $info['episode']=(int)$season_episode[1];
+            }
+            return $info;
+        }
+        else
+            return null;
+    }
 }
