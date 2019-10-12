@@ -13,6 +13,7 @@ use datagutten\xmltv\tools\common\channel_info;
 use datagutten\xmltv\tools\exceptions\ChannelNotFoundException;
 use datagutten\xmltv\tools\parse\parser;
 use datagutten\xmltv\tools\exceptions\ProgramNotFoundException;
+use FileNotFoundException;
 use InvalidArgumentException;
 use SimpleXMLElement;
 
@@ -68,5 +69,30 @@ class recording_info
         $channel_id = $this->channels->name_to_id($channel_name);
 
         return $this->xmltv->find_program($timestamp,$channel_id,'nearest'); //Find the program start nearest to the search time
+    }
+
+    /**
+     * @param string $eit_file eit file to be parsed
+     * @param string $mode Return only the title or an array with season, episode and title
+     * @return string|array
+     * @throws FileNotFoundException
+     */
+    public static function parse_eit($eit_file, $mode = 'title')
+    {
+        if(!file_exists($eit_file))
+            throw new FileNotFoundException($eit_file);
+        $eit_file = file_get_contents($eit_file);
+        if (($pos = strpos($eit_file, '')) === false)
+            $pos = strpos($eit_file, '');
+        $info['title'] = utf8_encode(trim(substr($eit_file, $pos)));
+
+        if (preg_match('^\(([0-9]+)/s([0-9]+)\)^', $eit_file, $season_episode)) {
+            $info['season_episode']['season'] = $season_episode[2];
+            $info['season_episode']['episode'] = $season_episode[1];
+        }
+        if ($mode == 'array')
+            return $info;
+        else
+            return $info['title'];
     }
 }
