@@ -30,7 +30,6 @@ class recording_infoTest extends TestCase
         $program = $this->info->recording_info('20191004 0055 - Nat Geo HD (N) - Vinterveiens helter.ts');
         $this->assertEquals('Vinterveiens helter', $program->{'title'});
         $this->assertEquals('20191004010000 +0200', $program->attributes()->{'start'});
-        print_r($program);
     }
 
     public function testParse_file_name()
