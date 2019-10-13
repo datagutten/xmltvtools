@@ -84,4 +84,12 @@ class parserTest extends TestCase
         $this->assertIsArray($day);
         $this->assertEquals('20191004000000 +0000', $day[0]->attributes()['start']);
     }
+
+    public function testFilterPrograms()
+    {
+        $programs = $this->parser->get_programs('natgeo.no', strtotime('2019-10-04'));
+        $programs_filtered = $this->parser->filter_programs($programs, 'Vinterveiens helter');
+        $this->assertEquals('Vinterveiens helter', $programs_filtered[0]->{'title'});
+        $this->assertNotEquals($programs[0]->{'title'}, $programs_filtered[0]->{'title'});
+    }
 }

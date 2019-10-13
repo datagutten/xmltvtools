@@ -70,7 +70,7 @@ class parser
         $xml_current_day=$this->files->load_file($channel,$timestamp);
 
         $first_start_time=$xml_current_day->{'programme'}->attributes()['start'];
-        $first_start_hour=substr($first_start_time,8,2);
+        $first_start_hour=(int)substr($first_start_time,8,2);
         if($multiple_days===null)
         {
             if($first_start_hour>1) //If the first program in the file starts before or on 01:59 the file contains a complete day
@@ -128,13 +128,16 @@ class parser
                 throw new ProgramNotFoundException($e->getMessage(), 0, $e);
             }
         }
-        elseif(is_array($programs_xml_or_channel))
-            $programs_xml=$programs_xml_or_channel;
+        /*elseif(is_array($programs_xml_or_channel))
+            $programs_xml=$programs_xml_or_channel;*/
         else
             throw new InvalidArgumentException('$programs_xml_or_channel must be array of programs or string channel id');
 
         foreach($programs_xml as $key=>$program) //Loop through the programs
         {
+            /*$start_time = $program->attributes()->{'start'};
+            $start_time = substr($start_time, 0, 14); //Remove timezone
+            $program_start=strtotime($start_time); //Get program start*/
             $program_start=strtotime($program->attributes()->{'start'}); //Get program start
             if($key==0 && $this->debug)
                 echo sprintf("First program start: %s date: %s\n",(string)$program->attributes()->{'start'},date('c',$program_start));
@@ -223,4 +226,20 @@ class parser
         return null;
     }
 
+    /**
+     * @param $programs
+     * @param $program_filter
+     * @return array
+     */
+    public function filter_programs($programs, $program_filter)
+    {
+        $programs_filtered = [];
+        foreach($programs as $program)
+        {
+            if(stripos($program->{'title'}, $program_filter)===false)
+                continue;
+            $programs_filtered[] = $program;
+        }
+        return $programs_filtered;
+    }
 }
