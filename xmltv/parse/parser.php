@@ -39,6 +39,22 @@ class parser
     public $ignore_timezone = true;
 
     /**
+     * Run strtotime on a xmltv date and time, removing timezone if $this->ignore_timezone is set to true
+     * @param string $time Date and time to be converted
+     * @return int Unix timestamp
+     */
+    function strtotime($time)
+    {
+        if(!preg_match('/([0-9]{14})\s\+[0-9]+/', $time, $matches))
+            throw new InvalidArgumentException('Not a valid xmltv date and time');
+
+        if($this->ignore_timezone) {
+            return strtotime($matches[1]);
+        }
+        else
+            return $this->strtotime($time);
+    }
+    /**
      * @param array $days
      * @param string $date
      * @return array|SimpleXMLElement
@@ -140,13 +156,7 @@ class parser
 
         foreach($programs_xml as $key=>$program) //Loop through the programs
         {
-            if($this->ignore_timezone) {
-                $start_time = $program->attributes()->{'start'};
-                $start_time = substr($start_time, 0, 14); //Remove timezone
-                $program_start = strtotime($start_time); //Get program start
-            }
-            else
-                $program_start=strtotime($program->attributes()->{'start'}); //Get program start
+            $program_start=$this->strtotime($program->attributes()->{'start'}); //Get program start
 
             if($key==0 && $this->debug)
                 echo sprintf("First program start: %s date: %s\n",(string)$program->attributes()->{'start'},date('c',$program_start));

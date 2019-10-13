@@ -11,6 +11,7 @@ namespace datagutten\xmltv\tests\tools\xmltv\parse;
 use datagutten\xmltv\tools\exceptions\ProgramNotFoundException;
 use datagutten\xmltv\tools\parse\parser;
 use FileNotFoundException;
+use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 
 class parserTest extends TestCase
@@ -30,6 +31,17 @@ class parserTest extends TestCase
     public function tearDown(): void
     {
         unlink(__DIR__.'/config.php');
+    }
+
+    public function testRemoveTimeZone()
+    {
+        $timestamp = $this->parser->strtotime('20191013063500 +0300');
+        $this->assertEquals('06:35', date('H:i', $timestamp));
+    }
+    public function testRemoveTimeZoneInvalid()
+    {
+        $this->expectException(InvalidArgumentException::class);
+        $this->parser->strtotime('2019101306350');
     }
 
     public function testFind_program()
