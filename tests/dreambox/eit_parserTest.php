@@ -63,4 +63,11 @@ class eit_parserTest extends TestCase
         $info = eit_parser::season_episode($string);
         $this->assertSame($info['episode'], 2);
     }
+    public function testSeason_episode4()
+    {
+        $string = '(3:15/s3)';
+        $info = eit_parser::season_episode($string);
+        $this->assertSame($info['episode'], 3);
+        $this->assertSame($info['season'], 3);
+    }
 }
