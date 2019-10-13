@@ -64,11 +64,11 @@ class parserTest extends TestCase
         $this->assertIsArray($programs);
         $this->assertEquals('20191004060000 +0000', $programs[0]->attributes()->{'start'});
     }
-    public function testProgramNotFound()
+    public function testProgramBeforeSchedule()
     {
         $this->expectException(ProgramNotFoundException::class);
-        $this->expectExceptionMessage('Search time is earlier than first program');
-        $this->parser->find_program(strtotime('2019-10-11 00:45'), 'no.bbcentertainment.no');
+        $this->expectExceptionMessage('Nothing on air at given time');
+        $this->parser->find_program(strtotime('2019-10-11 00:45'), 'no.bbcentertainment.no', 'now');
     }
 
     public function testSeason_episode()
