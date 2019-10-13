@@ -52,7 +52,7 @@ class parser
             return strtotime($matches[1]);
         }
         else
-            return $this->strtotime($time);
+            return strtotime($time);
     }
     /**
      * @param array $days
