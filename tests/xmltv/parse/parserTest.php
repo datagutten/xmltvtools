@@ -8,7 +8,7 @@
 
 namespace datagutten\xmltv\tests\tools\xmltv\parse;
 
-use datagutten\xmltv\tools\parse\InvalidXMLFileException;
+use datagutten\xmltv\tools\exceptions\ProgramNotFoundException;
 use datagutten\xmltv\tools\parse\parser;
 use FileNotFoundException;
 use PHPUnit\Framework\TestCase;
