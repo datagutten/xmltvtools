@@ -94,7 +94,7 @@ class files
         if(!empty($sub_folder))
             $folders = [$sub_folder];
         else
-            $folders = [$this->default_sub_folder] + $this->alternate_sub_folders;
+            $folders = array_merge([$this->default_sub_folder], $this->alternate_sub_folders);
 
         $file = '';
         foreach ($folders as $sub_folder)
