@@ -53,7 +53,15 @@ class files
         $this->filesystem = new Filesystem();
     }
 
-    function file($channel,$timestamp = null,$sub_folder = null, $extension = 'xml')
+    /**
+     * @param string $channel
+     * @param int $timestamp
+     * @param string $sub_folder
+     * @param string $extension
+     * @param bool $create Create folder
+     * @return string File name
+     */
+    function file($channel,$timestamp = null,$sub_folder = null, $extension = 'xml', $create = false)
     {
         if (!preg_match('/[a-z0-9]+\.[a-z]+/', $channel)) {
             throw new InvalidArgumentException('Invalid channel id: ' . $channel);
@@ -64,7 +72,8 @@ class files
             $sub_folder = $this->default_sub_folder;
 
         $folder = $this->xmltv_path.'/'.filename::folder($channel, $sub_folder, $timestamp);
-        $this->filesystem->mkdir($folder);
+        if($create)
+            $this->filesystem->mkdir($folder);
         $file = $folder.'/'.filename::filename($channel, $timestamp, $extension);
         if(file_exists($file))
             return realpath($file);
