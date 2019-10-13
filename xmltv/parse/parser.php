@@ -192,6 +192,12 @@ class parser
         throw new ProgramNotFoundException('Nothing on air at given time');
     }
 
+    /**
+     * Parse a season and episode in xmltv notation
+     * @param SimpleXMLElement $program
+     * @param bool $string Set false to return array instead of formatted string
+     * @return array|string
+     */
     public function season_episode($program,$string=true)
     {
         foreach($program->{'episode-num'} as $num) {
