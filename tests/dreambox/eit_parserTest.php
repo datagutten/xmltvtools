@@ -19,7 +19,6 @@ class eit_parserTest extends TestCase
     {
         $data = file_get_contents(__DIR__.'/test_data/Ice Road Rescue S04E01 - Ekstremvær HD.eit');
         $info = eit_parser::parse($data);
-        print_r($info);
         $this->assertSame('Vinterveiens helter', $info['name']);
         $this->assertSame('(1:8/s4) Ekstremvær. Norsk dokumentarserie fra 2019.', $info['short_description']);
         $this->assertSame('Bergingsbilene har fått en ny fiende: ekstremvær. Brå temperaturendringer gir mannskapene uventede utfordringer.', $info['description']);
@@ -35,7 +34,7 @@ class eit_parserTest extends TestCase
     }
 
 
-    public function testGet_codepage()
+    /*public function testGet_codepage()
     {
 
     }
@@ -43,7 +42,7 @@ class eit_parserTest extends TestCase
     public function testGet_string()
     {
 
-    }
+    }*/
 
     public function testSeason_episode1()
     {
