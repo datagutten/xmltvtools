@@ -139,6 +139,8 @@ class parser
             $start_time = substr($start_time, 0, 14); //Remove timezone
             $program_start=strtotime($start_time); //Get program start*/
             $program_start=strtotime($program->attributes()->{'start'}); //Get program start
+            if($search_time<$program_start)
+                throw new ProgramNotFoundException('Search time is earlier than first program');
             if($key==0 && $this->debug)
                 echo sprintf("First program start: %s date: %s\n",(string)$program->attributes()->{'start'},date('c',$program_start));
 

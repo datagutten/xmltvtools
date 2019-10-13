@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE tv SYSTEM "xmltv.dtd">
+<tv generator-info-name="Vind 2.52.11" generator-info-url="https://xmltv.se">
+  <programme channel="no.bbcentertainment.no" start="20191011062000 +0000" stop="20191011071000 +0000">
+    <title lang="nb">Pointless</title>
+    <desc lang="en">Quiz show in which contestants try to score as few points as possible by coming up with the answers that no-one else can think of. 1/53</desc>
+    <category lang="en">series</category>
+    <episode-num system="xmltv_ns">4.0.</episode-num>
+  </programme>
+  <programme channel="no.bbcentertainment.no" start="20191011071000 +0000" stop="20191011074000 +0000">
+    <title lang="nb">World's Deadliest Drivers</title>
+    <desc lang="en">This episode features motoring mishaps, crazy truckers and run ins with the law, as well as some breath-taking personal accounts of incidents featured. 7/13</desc>
+    <category lang="en">series</category>
+    <episode-num system="xmltv_ns">1.6.</episode-num>
+  </programme>
+  <programme channel="no.bbcentertainment.no" start="20191011074000 +0000" stop="20191011080500 +0000">
+    <title lang="nb">World's Deadliest Drivers</title>
+    <desc lang="en">This episode features cyclist fails, distracted drivers and Russian road rules, as well as some breath-taking personal accounts of incidents featured. 8/13</desc>
+    <category lang="en">series</category>
+    <episode-num system="xmltv_ns">1.7.</episode-num>
+  </programme>
+  <programme channel="no.bbcentertainment.no" start="20191011080500 +0000" stop="20191011084000 +0000">
+    <title lang="nb">QI</title>
+    <desc lang="nb">Sandi Toksvig har en livlig julefeiring på puben sammen med Alan Davies, Cariad Lloyd, Josh Widdicombe og Noel Fielding. 9/16</desc>
+    <credits>
+      <director>Ian Lorimer</director>
+    </credits>
+    <category lang="en">series</category>
+    <episode-num system="xmltv_ns">16.8.</episode-num>
+  </programme>
+  <programme channel="no.bbcentertainment.no" start="20191011084000 +0000" stop="20191011091500 +0000">
+    <title lang="nb">QI</title>
+    <desc lang="nb">Sandi Toksvig filosoferer over smerte og straff med Jimmy Carr, Lee Mack, Alice Levine og Alan Davies. 10/16</desc>
+    <credits>
+      <director>Ian Lorimer</director>
+    </credits>
+    <category lang="en">series</category>
+    <episode-num system="xmltv_ns">16.9.</episode-num>
+  </programme>
+  <programme channel="no.bbcentertainment.no" start="20191011091500 +0000" stop="20191011101000 +0000">
+    <title lang="nb">The Best of Top Gear Series 15 &amp; 16</title>
+    <desc lang="en">Jeremy subjects the Skoda Yeti to a remarkably thorough road test and comedian John Bishop is the Star in a Reasonably Priced Car. 3/4</desc>
+    <category lang="en">series</category>
+    <episode-num system="xmltv_ns">0.2.</episode-num>
+  </programme>
+  <programme channel="no.bbcentertainment.no" start="20191011101000 +0000" stop="20191011111000 +0000">
+    <title lang="nb">Pointless</title>
+    <desc lang="en">Quiz show in which contestants try to score as few points as possible by coming up with the answers that no-one else can think of. 68/55</desc>
+    <category lang="en">series</category>
+    <episode-num system="xmltv_ns">9.67.</episode-num>
+  </programme>
+  <programme channel="no.bbcentertainment.no" start="20191011111000 +0000" stop="20191011121000 +0000">
+    <title lang="nb">Pointless</title>
+    <desc lang="en">Quiz show in which contestants try to score as few points as possible by coming up with the answers that no-one else can think of. 1/53</desc>
+    <category lang="en">series</category>
+    <episode-num system="xmltv_ns">4.0.</episode-num>
+  </programme>
+  <programme channel="no.bbcentertainment.no" start="20191011121000 +0000" stop="20191011131500 +0000">
+    <title lang="nb">The Graham Norton Show</title>
+    <desc lang="en">Graham Norton introduces another installment of his trademark mix of cheeky celebrity chat and live music performances. 1/20</desc>
+    <category lang="en">series</category>
+    <episode-num system="xmltv_ns">25.0.</episode-num>
+  </programme>
+  <programme channel="no.bbcentertainment.no" start="20191011131500 +0000" stop="20191011135500 +0000">
+    <title lang="nb">QI</title>
+    <desc lang="nb">Sandi Toksvig har en livlig julefeiring på puben sammen med Alan Davies, Cariad Lloyd, Josh Widdicombe og Noel Fielding. 9/16</desc>
+    <credits>
+      <director>Ian Lorimer</director>
+    </credits>
+    <category lang="en">series</category>
+    <episode-num system="xmltv_ns">16.8.</episode-num>
+  </programme>
+  <programme channel="no.bbcentertainment.no" start="20191011135500 +0000" stop="20191011144000 +0000">
+    <title lang="nb">QI</title>
+    <desc lang="nb">Sandi Toksvig filosoferer over smerte og straff med Jimmy Carr, Lee Mack, Alice Levine og Alan Davies. 10/16</desc>
+    <credits>
+      <director>Ian Lorimer</director>
+    </credits>
+    <category lang="en">series</category>
+    <episode-num system="xmltv_ns">16.9.</episode-num>
+  </programme>
+  <programme channel="no.bbcentertainment.no" start="20191011144000 +0000" stop="20191011153500 +0000">
+    <title lang="nb">Pointless</title>
+    <desc lang="en">Quiz show in which contestants try to score as few points as possible by coming up with the answers that no-one else can think of.</desc>
+    <category lang="en">series</category>
+    <episode-num system="xmltv_ns">10.33.</episode-num>
+  </programme>
+  <programme channel="no.bbcentertainment.no" start="20191011153500 +0000" stop="20191011164000 +0000">
+    <title lang="nb">The Graham Norton Show</title>
+    <desc lang="en">Graham Norton introduces another installment of his trademark mix of cheeky celebrity chat and live music performances. 1/20</desc>
+    <category lang="en">series</category>
+    <episode-num system="xmltv_ns">25.0.</episode-num>
+  </programme>
+  <programme channel="no.bbcentertainment.no" start="20191011164000 +0000" stop="20191011172000 +0000">
+    <title lang="nb">QI</title>
+    <desc lang="nb">Sandi Toksvig gjør et dypdykk i et potpurri av emner sammen med Phill Jupitus, Cally Beaton, Rhod Gilbert og Alan Davies. 11/16</desc>
+    <credits>
+      <director>Ian Lorimer</director>
+    </credits>
+    <category lang="en">series</category>
+    <episode-num system="xmltv_ns">16.10.</episode-num>
+  </programme>
+  <programme channel="no.bbcentertainment.no" start="20191011172000 +0000" stop="20191011180000 +0000">
+    <title lang="nb">QI</title>
+    <desc lang="nb">Sandi Toksvig får endelig tid til å utsette det hun egentlig burde ha gjort, sammen med Aisling Bea, Holly Walsh, Nikki Bedi og Alan Davies. 12/16</desc>
+    <credits>
+      <director>Ian Lorimer</director>
+    </credits>
+    <category lang="en">series</category>
+    <episode-num system="xmltv_ns">16.11.</episode-num>
+  </programme>
+  <programme channel="no.bbcentertainment.no" start="20191011180000 +0000" stop="20191011190000 +0000">
+    <title lang="nb">Pointless</title>
+    <desc lang="en">Quiz show in which contestants try to score as few points as possible by coming up with the answers that no-one else can think of.</desc>
+    <category lang="en">series</category>
+    <episode-num system="xmltv_ns">10.34.</episode-num>
+  </programme>
+  <programme channel="no.bbcentertainment.no" start="20191011190000 +0000" stop="20191011200000 +0000">
+    <title lang="nb">Standup: Live fra Apollo</title>
+    <desc lang="en">The critically-acclaimed Jamali Maddix introduces the impressive comedy talents of rising stars Fern Brady and Sindhu Vee. 6/7</desc>
+    <credits>
+      <director>Paul Wheeler</director>
+    </credits>
+    <category lang="en">series</category>
+    <episode-num system="xmltv_ns">13.5.</episode-num>
+  </programme>
+  <programme channel="no.bbcentertainment.no" start="20191011200000 +0000" stop="20191011210500 +0000">
+    <title lang="nb">The Graham Norton Show</title>
+    <desc lang="en">Graham Norton introduces another installment of his trademark mix of cheeky celebrity chat and live music performances. 2/20</desc>
+    <category lang="en">series</category>
+    <episode-num system="xmltv_ns">25.1.</episode-num>
+  </programme>
+  <programme channel="no.bbcentertainment.no" start="20191011210500 +0000" stop="20191011221000 +0000">
+    <title lang="nb">The Graham Norton Show</title>
+    <desc lang="en">Graham Norton introduces another installment of his trademark mix of cheeky celebrity chat and live music performances. 1/20</desc>
+    <category lang="en">series</category>
+    <episode-num system="xmltv_ns">25.0.</episode-num>
+  </programme>
+  <programme channel="no.bbcentertainment.no" start="20191011221000 +0000" stop="20191011225500 +0000">
+    <title lang="nb">QI</title>
+    <desc lang="en">Sandi Toksvig looks at the pastimes of past times with Alan Davies, Joe Lycett, Phil Wang and Ellie Taylor. 15/16</desc>
+    <credits>
+      <director>Ian Lorimer</director>
+    </credits>
+    <category lang="en">series</category>
+    <episode-num system="xmltv_ns">16.14.</episode-num>
+  </programme>
+  <programme channel="no.bbcentertainment.no" start="20191011225500 +0000" stop="20191011234500 +0000">
+    <title lang="nb">8 Out of 10 Cats</title>
+    <desc lang="nb">Rob Beckett, Jamali Maddix og Rachel Riley konkurrerer mot Aisling Bea, Sara Pascoe og Tom Davis, og Jimmy Carr er programleder. 1/12</desc>
+    <category lang="en">series</category>
+    <episode-num system="xmltv_ns">19.0.</episode-num>
+  </programme>
+  <programme channel="no.bbcentertainment.no" start="20191011234500 +0000" stop="20191012002000 +0000">
+    <title lang="nb">Would I Lie To You?</title>
+    <desc lang="nb">Rob Brydon er programleder for komispørreleken. Kapteinene David Mitchell og Lee Mack får selskap av Dion Dublin, Debbie McGee, Bob Mortimer og Lucy Porter. 1/11</desc>
+    <credits>
+      <director>Barbara Wiltshire</director>
+      <actor>Lee Mack</actor>
+      <actor>David Mitchell</actor>
+      <actor>Rob Brydon</actor>
+    </credits>
+    <category lang="en">series</category>
+    <episode-num system="xmltv_ns">11.0.</episode-num>
+  </programme>
+  <programme channel="no.bbcentertainment.no" start="20191012002000 +0000" stop="20191012005000 +0000">
+    <title lang="nb">Would I Lie To You?</title>
+    <desc lang="nb">Rob Brydon er programleder for komispørreleken. Kapteinene David Mitchell og Lee Mack får selskap av Rylan Clark-Neal, Sara Pascoe, Mary Portas og Paul Sinha. 2/11</desc>
+    <credits>
+      <director>Barbara Wiltshire</director>
+      <actor>Lee Mack</actor>
+      <actor>David Mitchell</actor>
+      <actor>Rob Brydon</actor>
+    </credits>
+    <category lang="en">series</category>
+    <episode-num system="xmltv_ns">11.1.</episode-num>
+  </programme>
+  <programme channel="no.bbcentertainment.no" start="20191012005000 +0000" stop="20191012014500 +0000">
+    <title lang="nb">The Graham Norton Show</title>
+    <desc lang="en">Graham Norton introduces another installment of his trademark mix of cheeky celebrity chat and live music performances. 2/20</desc>
+    <category lang="en">series</category>
+    <episode-num system="xmltv_ns">25.1.</episode-num>
+  </programme>
+  <programme channel="no.bbcentertainment.no" start="20191012014500 +0000" stop="20191012022000 +0000">
+    <title lang="nb">QI</title>
+    <desc lang="en">Sandi Toksvig looks at the pastimes of past times with Alan Davies, Joe Lycett, Phil Wang and Ellie Taylor. 15/16</desc>
+    <credits>
+      <director>Ian Lorimer</director>
+    </credits>
+    <category lang="en">series</category>
+    <episode-num system="xmltv_ns">16.14.</episode-num>
+  </programme>
+  <programme channel="no.bbcentertainment.no" start="20191012022000 +0000" stop="20191012025500 +0000">
+    <title lang="nb">8 Out of 10 Cats</title>
+    <desc lang="nb">Rob Beckett, Jamali Maddix og Rachel Riley konkurrerer mot Aisling Bea, Sara Pascoe og Tom Davis, og Jimmy Carr er programleder. 1/12</desc>
+    <category lang="en">series</category>
+    <episode-num system="xmltv_ns">19.0.</episode-num>
+  </programme>
+  <programme channel="no.bbcentertainment.no" start="20191012025500 +0000" stop="20191012033000 +0000">
+    <title lang="nb">Would I Lie To You?</title>
+    <desc lang="nb">Rob Brydon er programleder for komispørreleken. Kapteinene David Mitchell og Lee Mack får selskap av Dion Dublin, Debbie McGee, Bob Mortimer og Lucy Porter. 1/11</desc>
+    <credits>
+      <director>Barbara Wiltshire</director>
+      <actor>Lee Mack</actor>
+      <actor>David Mitchell</actor>
+      <actor>Rob Brydon</actor>
+    </credits>
+    <category lang="en">series</category>
+    <episode-num system="xmltv_ns">11.0.</episode-num>
+  </programme>
+  <programme channel="no.bbcentertainment.no" start="20191012033000 +0000" stop="20191012040000 +0000">
+    <title lang="nb">World's Deadliest Drivers</title>
+    <desc lang="en">This episode features cyclist fails, distracted drivers and Russian road rules, as well as some breath-taking personal accounts of incidents featured. 8/13</desc>
+    <category lang="en">series</category>
+    <episode-num system="xmltv_ns">1.7.</episode-num>
+  </programme>
+  <programme channel="no.bbcentertainment.no" start="20191012040000 +0000" stop="20191012045000 +0000">
+    <title lang="nb">Pointless</title>
+    <desc lang="en">Quiz show in which contestants try to score as few points as possible by coming up with the answers that no-one else can think of.</desc>
+    <category lang="en">series</category>
+    <episode-num system="xmltv_ns">10.25.</episode-num>
+  </programme>
+  <programme channel="no.bbcentertainment.no" start="20191012045000 +0000" stop="20191012052500 +0000">
+    <title lang="nb">QI</title>
+    <desc lang="en">Sandi Toksvig looks at the pastimes of past times with Alan Davies, Joe Lycett, Phil Wang and Ellie Taylor. 15/16</desc>
+    <credits>
+      <director>Ian Lorimer</director>
+    </credits>
+    <category lang="en">series</category>
+    <episode-num system="xmltv_ns">16.14.</episode-num>
+  </programme>
+  <programme channel="no.bbcentertainment.no" start="20191012052500 +0000" stop="20191012061500 +0000">
+    <title lang="nb">Pointless</title>
+    <desc lang="en">Quiz show in which contestants try to score as few points as possible by coming up with the answers that no-one else can think of.</desc>
+    <category lang="en">series</category>
+    <episode-num system="xmltv_ns">10.30.</episode-num>
+  </programme>
+</tv>
