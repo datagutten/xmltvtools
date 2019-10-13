@@ -23,6 +23,7 @@ install:
     fi
 
 before_script:
+ - echo 'date.timezone = "Europe/Oslo"' >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
  - vendor/bin/phpunit --version
 
 script:
