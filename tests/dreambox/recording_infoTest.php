@@ -39,4 +39,19 @@ class recording_infoTest extends TestCase
         $this->assertEquals('20191004 0055', $info['datetime']);
         $this->assertEquals('Nat Geo HD (N)', $info['channel']);
     }
+
+    public function testParseEit()
+    {
+        $info = recording_info::parse_eit(__DIR__.'/test_data/Ice Road Rescue S04E01 - Ekstremvær HD.eit', 'array');
+        $this->assertSame('Vinterveiens helter', $info['name']);
+        $this->assertSame('Vinterveiens helter', $info['title']);
+    }
+
+    public function testEitTime()
+    {
+        date_default_timezone_set('Europe/Oslo');
+        $info = recording_info::parse_eit(__DIR__.'/test_data/Ice Road Rescue S04E01 - Ekstremvær HD.eit', 'array');
+        $this->assertSame('2019-10-03T22:00:00+02:00', date('c', $info['start_timestamp']));
+    }
+
 }
