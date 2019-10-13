@@ -34,6 +34,11 @@ class parser
     }
 
     /**
+     * @var bool Ignore timezone in XMLTV data
+     */
+    public $ignore_timezone = true;
+
+    /**
      * @param array $days
      * @param string $date
      * @return array|SimpleXMLElement
@@ -135,10 +140,14 @@ class parser
 
         foreach($programs_xml as $key=>$program) //Loop through the programs
         {
-            /*$start_time = $program->attributes()->{'start'};
-            $start_time = substr($start_time, 0, 14); //Remove timezone
-            $program_start=strtotime($start_time); //Get program start*/
-            $program_start=strtotime($program->attributes()->{'start'}); //Get program start
+            if($this->ignore_timezone) {
+                $start_time = $program->attributes()->{'start'};
+                $start_time = substr($start_time, 0, 14); //Remove timezone
+                $program_start = strtotime($start_time); //Get program start
+            }
+            else
+                $program_start=strtotime($program->attributes()->{'start'}); //Get program start
+
             if($key==0 && $this->debug)
                 echo sprintf("First program start: %s date: %s\n",(string)$program->attributes()->{'start'},date('c',$program_start));
 
