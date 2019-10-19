@@ -33,8 +33,9 @@ class parserTest extends TestCase
         unlink(__DIR__.'/config.php');
     }
 
-    public function testRemoveTimeZone()
+    public function testIgnoreTimeZone()
     {
+        $this->parser->ignore_timezone = true;
         $timestamp = $this->parser->strtotime('20191013063500 +0300');
         $this->assertEquals('06:35', date('H:i', $timestamp));
     }
@@ -90,10 +91,10 @@ class parserTest extends TestCase
         $this->parser->find_program(strtotime('2099-10-11 00:45'), 'no.bbcentertainment.no', 'now');
     }
 
-    public function testSeason_episode()
+    /*public function testSeason_episode()
     {
 
-    }
+    }*/
 
     public function testCombine_days()
     {
