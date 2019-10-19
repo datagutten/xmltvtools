@@ -36,7 +36,7 @@ class parser
     /**
      * @var bool Ignore timezone in XMLTV data
      */
-    public $ignore_timezone = true;
+    public $ignore_timezone = false;
 
     /**
      * Run strtotime on a xmltv date and time, removing timezone if $this->ignore_timezone is set to true
