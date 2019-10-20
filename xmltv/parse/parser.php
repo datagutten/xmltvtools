@@ -59,7 +59,7 @@ class parser
      * @param string $date
      * @return array|SimpleXMLElement
      */
-    function combine_days($days, $date=null)
+    public static function combine_days($days, $date=null)
     {
         $programs = [];
         foreach($days as $day)
@@ -220,7 +220,7 @@ class parser
      * @param bool $string Set false to return array instead of formatted string
      * @return array|string
      */
-    public function season_episode($program,$string=true)
+    public static function season_episode($program,$string=true)
     {
         foreach($program->{'episode-num'} as $num) {
             if (preg_match('^([0-9]+)\s?\.\s?([0-9]+)/([0-9]+)^', $num, $matches) ||
@@ -250,7 +250,7 @@ class parser
      * @param $program_filter
      * @return array
      */
-    public function filter_programs($programs, $program_filter)
+    public static function filter_programs($programs, $program_filter)
     {
         $programs_filtered = [];
         foreach($programs as $program)
