@@ -3,7 +3,9 @@
 namespace datagutten\xmltv\tests\tools\common;
 
 use datagutten\xmltv\tools\common\files;
+use datagutten\xmltv\tools\exceptions\InvalidXMLFileException;
 use FileNotFoundException;
+use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Filesystem\Filesystem;
 
@@ -44,12 +46,27 @@ class filesTest extends TestCase
 
     public function testMissingPath()
     {
-        /*$config = file_get_contents(__DIR__.'/config.php');
-        $config = str_replace('xmltv_default_sub_folder', 'xmltv_default_sub_folder_Bad', $config);
-        file_put_contents(__DIR__.'/config.php', $config);*/
         rmdir(__DIR__.'/xmltv_test');
         $this->expectException(FileNotFoundException::class);
         new files();
+    }
+
+    public function testNoAlternateSubFolder()
+    {
+        $config = file_get_contents(__DIR__.'/config.php');
+        $config = str_replace('xmltv_alternate_sub_folders', 'no_xmltv_alternate_sub_folders', $config);
+        file_put_contents(__DIR__.'/config.php', $config);
+        $files = new files();
+        $this->assertEmpty($files->alternate_sub_folders);
+    }
+
+    public function testCreateFolder()
+    {
+        $files = new files;
+        $file = $files->file('test.no', strtotime('2019-10-01'), 'php', 'xml', true);
+        $dir = dirname($file);
+        $this->assertFileExists($dir);
+        $this->assertSame(__DIR__.'/xmltv_test/test.no/php/2019', $dir);
     }
 
     public function testFile()
@@ -80,6 +97,36 @@ class filesTest extends TestCase
         $file = $files->file('natgeo.no');
         $timestamp = strtotime('midnight');
         $this->assertEquals(sprintf(__DIR__.'/xmltv_test/natgeo.no/xmltv_test/%s/natgeo.no_%s.xml', date('Y', $timestamp), date('Y-m-d', $timestamp)), $file);
+    }
+
+    public function testInvalidChannelId()
+    {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('Invalid channel id: foobar');
+        $files = new files;
+        $files->file('foobar');
+    }
+
+    public function testInvalidXML()
+    {
+        $files = new files;
+        $file = $files->file('test.no', strtotime('2019-10-01'), 'php', 'xml', true);
+        $xml = new \SimpleXMLElement('<xmltv></xmltv>');
+        $xml->asXML($file);
+
+        $this->expectException(InvalidXMLFileException::class);
+        $this->expectExceptionMessage('Invalid XML file: '.realpath($file));
+        $files->load_file('test.no', strtotime('2019-10-01'), 'php');
+    }
+
+    public function testEmptyXML()
+    {
+        $files = new files;
+        $file = $files->file('test.no', strtotime('2019-10-01'), 'php', 'xml', true);
+        touch($file);
+        $this->expectExceptionMessage('Document is empty');
+        $this->expectException(InvalidXMLFileException::class);
+        $files->load_file('test.no', strtotime('2019-10-01'), 'php');
     }
 
     public function tearDown(): void
