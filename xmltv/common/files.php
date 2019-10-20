@@ -33,6 +33,7 @@ class files
      */
     function __construct()
     {
+        libxml_use_internal_errors(true);
         $config = require 'config.php';
         if(empty($config['xmltv_path']))
             throw new Exception('xmltv_path not set in config');
@@ -106,6 +107,12 @@ class files
         if(!file_exists($file))
             throw new FileNotFoundException($file);
         $xml = simplexml_load_file($file);
+        if(false===$xml)
+        {
+            $error = libxml_get_last_error();
+            throw new InvalidXMLFileException($error->message);
+        }
+
         if(empty($xml->programme))
             throw new InvalidXMLFileException('Invalid XML file: '.$file);
         return $xml;
