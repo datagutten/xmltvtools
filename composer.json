@@ -21,6 +21,7 @@
     "autoload": {
         "psr-4": {
             "datagutten\\xmltv\\tools\\": "xmltv",
+            "datagutten\\xmltv\\tools\\exceptions\\": "xmltv/exceptions",
             "datagutten\\xmltv\\tests\\tools\\": "tests",
             "datagutten\\dreambox\\": "dreambox",
             "datagutten\\dreambox\\tests\\": "tests/dreambox"
