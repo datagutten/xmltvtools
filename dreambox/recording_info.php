@@ -11,10 +11,10 @@ namespace datagutten\dreambox;
 
 use datagutten\xmltv\tools\common\channel_info;
 use datagutten\xmltv\tools\exceptions\ChannelNotFoundException;
+use datagutten\xmltv\tools\exceptions;
 use datagutten\xmltv\tools\parse\parser;
 use datagutten\xmltv\tools\exceptions\ProgramNotFoundException;
 use FileNotFoundException;
-use InvalidArgumentException;
 use SimpleXMLElement;
 
 class recording_info
@@ -41,13 +41,13 @@ class recording_info
     /**
      * @param string $input File name
      * @return array Date, time and channel
-     * @throws InvalidArgumentException File name could not be parsed
+     * @throws exceptions\InvalidFileNameException File name could not be parsed
      */
     public static function parse_file_name($input)
     {
         if(!preg_match('^([0-9]{8} [0-9]{4}) - (.*) - (.*)\.ts^U',$input,$result))
         {
-            throw new InvalidArgumentException('Could not parse file name');
+            throw new exceptions\InvalidFileNameException($input);
         }
         else
             return array('datetime'=>$result[1],'channel'=>$result[2]);
@@ -59,6 +59,7 @@ class recording_info
      * @return SimpleXMLElement
      * @throws ProgramNotFoundException
      * @throws ChannelNotFoundException
+	 * @throws exceptions\InvalidFileNameException File name could not be parsed
      */
     public function recording_info($filename)
     {
