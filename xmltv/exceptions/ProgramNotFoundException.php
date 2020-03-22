@@ -9,9 +9,7 @@
 namespace datagutten\xmltv\tools\exceptions;
 
 
-use Exception;
-
-class ProgramNotFoundException extends Exception
+class ProgramNotFoundException extends XMLTVException
 {
     //TODO: Create message with time and channel
 }

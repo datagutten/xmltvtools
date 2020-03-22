@@ -9,9 +9,7 @@
 namespace datagutten\xmltv\tools\exceptions;
 
 
-use Exception;
-
-class InvalidXMLFileException extends Exception
+class InvalidXMLFileException extends XMLTVException
 {
 
 }
