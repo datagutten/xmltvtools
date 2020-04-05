@@ -31,10 +31,11 @@ class files
      * @throws Exception
      * @throws FileNotFoundException
      */
-    function __construct()
+    function __construct($config = [])
     {
         libxml_use_internal_errors(true);
-        $config = require 'config.php';
+        if(empty($config))
+            $config = require 'config.php';
         if(empty($config['xmltv_path']))
             throw new Exception('xmltv_path not set in config');
         $this->xmltv_path = $config['xmltv_path'];
