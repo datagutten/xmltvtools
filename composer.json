@@ -27,5 +27,6 @@
             "datagutten\\dreambox\\": "dreambox",
             "datagutten\\dreambox\\tests\\": "tests/dreambox"
         }
-    }
+    },
+    "bin": ["bin/recording_info.php"]
 }
