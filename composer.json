@@ -4,7 +4,7 @@
     "type": "project",
     "require": {
         "datagutten/tools": "^1.1",
-        "symfony/filesystem": "^4.3",
+        "symfony/filesystem": "^4.3|^5.0",
         "ext-simplexml": "*",
         "ext-dom": "*",
         "ext-libxml": "*"
@@ -27,5 +27,6 @@
             "datagutten\\dreambox\\": "dreambox",
             "datagutten\\dreambox\\tests\\": "tests/dreambox"
         }
-    }
+    },
+    "bin": ["bin/recording_info.php"]
 }
