@@ -132,7 +132,7 @@ class parser
     /**
      * Get program running at the given time or the next starting program
      * @param int $search_time Program timestamp
-     * @param string $programs_xml_or_channel
+     * @param string $programs_xml_or_channel Channel id
      * @param string $mode now (running program at search time), next (next starting program) or nearest (program start with lowest difference to search time)
      * @return SimpleXMLElement
      * @throws ProgramNotFoundException

@@ -55,7 +55,7 @@ class recording_info
 
     /**
      * Find information about a recorded file
-     * @param $filename
+     * @param string $filename File name
      * @return SimpleXMLElement
      * @throws ProgramNotFoundException
      * @throws ChannelNotFoundException

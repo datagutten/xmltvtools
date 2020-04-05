@@ -7,6 +7,7 @@ use datagutten\xmltv\tools\exceptions\InvalidXMLFileException;
 use FileNotFoundException;
 use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
+use SimpleXMLElement;
 use Symfony\Component\Filesystem\Filesystem;
 
 class filesTest extends TestCase
@@ -111,7 +112,7 @@ class filesTest extends TestCase
     {
         $files = new files;
         $file = $files->file('test.no', strtotime('2019-10-01'), 'php', 'xml', true);
-        $xml = new \SimpleXMLElement('<xmltv></xmltv>');
+        $xml = new SimpleXMLElement('<xmltv></xmltv>');
         $xml->asXML($file);
 
         $this->expectException(InvalidXMLFileException::class);
