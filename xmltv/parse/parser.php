@@ -26,11 +26,12 @@ class parser
 
     /**
      * parser constructor.
+     * @param array $config Configuration parameters
      * @throws FileNotFoundException
      */
-    function __construct()
+    function __construct($config = [])
     {
-        $this->files = new files();
+        $this->files = new files($config);
     }
 
     /**

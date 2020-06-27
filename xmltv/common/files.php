@@ -28,6 +28,7 @@ class files
     public $filesystem;
     /**
      * files constructor.
+     * @param array $config Configuration parameters
      * @throws Exception
      * @throws FileNotFoundException
      */
