@@ -100,24 +100,27 @@ class files
         else
             $folders = array_merge([$this->default_sub_folder], $this->alternate_sub_folders);
 
-        $file = '';
+        $error = new InvalidXMLFileException('No files found');
         foreach ($folders as $sub_folder)
         {
             $file = $this->file($channel, $timestamp, $sub_folder);
             if(file_exists($file))
-                break;
-        }
-        if(!file_exists($file))
-            throw new FileNotFoundException($file);
-        $xml = simplexml_load_file($file);
-        if(false===$xml)
-        {
-            $error = libxml_get_last_error();
-            throw new InvalidXMLFileException($error->message);
+            {
+                $xml = simplexml_load_file($file);
+                if(false===$xml)
+                {
+                    $error = libxml_get_last_error();
+                    $error = new InvalidXMLFileException($error->message);
+                }
+                elseif(empty($xml->programme))
+                    $error = new InvalidXMLFileException('Invalid XML file: '.$file);
+                else
+                    return $xml;
+            }
+            else
+                $error = new FileNotFoundException($file);
         }
 
-        if(empty($xml->programme))
-            throw new InvalidXMLFileException('Invalid XML file: '.$file);
-        return $xml;
+        throw $error;
     }
 }

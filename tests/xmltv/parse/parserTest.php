@@ -91,6 +91,16 @@ class parserTest extends TestCase
         $this->parser->find_program(strtotime('2099-10-11 00:45'), 'no.bbcentertainment.no', 'now');
     }
 
+    /**
+     * The file in the default sub directory is invalid, but the second is valid
+     * @throws ProgramNotFoundException
+     */
+    public function testFailToAlternateSubFolder()
+    {
+        $program = $this->parser->find_program(strtotime('2019-11-23 11:00 +01:00'), 'natgeo.no');
+        $this->assertEquals('Vinterveiens helter', $program->{'title'});
+    }
+
     /*public function testSeason_episode()
     {
 
