@@ -3,6 +3,9 @@
 
 namespace datagutten\xmltv\tools\parse;
 
+use datagutten\xmltv\tools\exceptions\XMLTVException;
+use FileNotFoundException;
+
 /**
  * Merge information from different xmltv files
  * @package datagutten\xmltv\tools\parse
@@ -10,6 +13,14 @@ namespace datagutten\xmltv\tools\parse;
 class merger extends parser
 {
     public $parsers = [];
+
+    /**
+     * merger constructor.
+     * @param string $xmltv_path XMLTV root path
+     * @param array $sub_folders Sub folders of each channel to load data from
+     * @throws XMLTVException Invalid configuration file
+     * @throws FileNotFoundException XMLTV path not found
+     */
     function __construct($xmltv_path, $sub_folders)
     {
         parent::__construct(['xmltv_path'=>$xmltv_path, 'xmltv_default_sub_folder'=>$sub_folders[0]]);

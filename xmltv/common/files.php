@@ -5,7 +5,7 @@ namespace datagutten\xmltv\tools\common;
 
 
 use datagutten\xmltv\tools\exceptions\InvalidXMLFileException;
-use Exception;
+use datagutten\xmltv\tools\exceptions\XMLTVException;
 use FileNotFoundException;
 use InvalidArgumentException;
 use SimpleXMLElement;
@@ -26,11 +26,12 @@ class files
      * @var Filesystem
      */
     public $filesystem;
+
     /**
      * files constructor.
      * @param array $config Configuration parameters
-     * @throws Exception
-     * @throws FileNotFoundException
+     * @throws XMLTVException Invalid configuration file
+     * @throws FileNotFoundException XMLTV path not found
      */
     function __construct($config = [])
     {
@@ -38,14 +39,14 @@ class files
         if(empty($config))
             $config = require 'config.php';
         if(empty($config['xmltv_path']))
-            throw new Exception('xmltv_path not set in config');
+            throw new XMLTVException('xmltv_path not set in config');
         $this->xmltv_path = $config['xmltv_path'];
 
         if(!file_exists($this->xmltv_path))
             throw new FileNotFoundException($this->xmltv_path);
 
         if(empty($config['xmltv_default_sub_folder']))
-            throw new Exception('xmltv_default_sub_folder not set in config');
+            throw new XMLTVException('xmltv_default_sub_folder not set in config');
         $this->default_sub_folder = $config['xmltv_default_sub_folder'];
 
         if(empty($config['xmltv_alternate_sub_folders']))

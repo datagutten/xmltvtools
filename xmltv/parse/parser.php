@@ -12,6 +12,7 @@ namespace datagutten\xmltv\tools\parse;
 use datagutten\xmltv\tools\common\files;
 use datagutten\xmltv\tools\exceptions\InvalidXMLFileException;
 use datagutten\xmltv\tools\exceptions\ProgramNotFoundException;
+use datagutten\xmltv\tools\exceptions\XMLTVException;
 use FileNotFoundException;
 use InvalidArgumentException;
 use \SimpleXMLElement;
@@ -27,7 +28,8 @@ class parser
     /**
      * parser constructor.
      * @param array $config Configuration parameters
-     * @throws FileNotFoundException
+     * @throws XMLTVException Invalid configuration file
+     * @throws FileNotFoundException XMLTV path not found
      */
     function __construct($config = [])
     {
