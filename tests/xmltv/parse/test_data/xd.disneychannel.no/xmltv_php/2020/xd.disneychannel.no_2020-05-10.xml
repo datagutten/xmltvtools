@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE tv SYSTEM "xmltv.dtd">
+<tv generator-info-name="php-xmltv-grabber" generator-info-url="https://github.com/datagutten/xmltvgrabber">
+  <programme start="20200510060000 +0200" channel="xd.disneychannel.no" stop="20200510062900 +0200">
+    <title lang="nb">Furiki Wheels</title>
+    <desc lang="nb">Andre gjør et stunt-show. Andre ansetter sin far som sponsor</desc>
+    <sub-title lang="nb">Truffet Av Torden / Dovendyr-Spons</sub-title>
+  </programme>
+  <programme start="20200510062900 +0200" channel="xd.disneychannel.no" stop="20200510070000 +0200">
+    <title lang="nb">Furiki Wheels</title>
+    <desc lang="nb">André lager kaos i lbyen. Frøken Stempel forlater skolen.</desc>
+    <sub-title lang="nb">Morderdekkene Angriper / Hemmeligheter Og Snegler</sub-title>
+  </programme>
+  <programme start="20200510070000 +0200" channel="xd.disneychannel.no" stop="20200510072900 +0200">
+    <title lang="nb">Phineas og Ferb</title>
+    <desc lang="nb">For å hindre at Love Händel blir eliminert fra en viktig musikkonkurranse, må Phineas, Ferb og gjengen reise til det arktiske hjemmet til Klimpaloon, en magisk badedrakt, for å bevise dens eksistens for dommerne i prispanelet. I mellomtiden prøver Doktor Doofenshmirtz og gjøre broren om til et vortesvin, for å få ham kastet som ordfører i Danville.</desc>
+    <sub-title lang="nb">Klimpaloonultimatumet</sub-title>
+  </programme>
+  <programme start="20200510072900 +0200" channel="xd.disneychannel.no" stop="20200510080000 +0200">
+    <title lang="nb">Phineas og Ferb</title>
+    <desc lang="nb">Phineas og Ferb vil gjøre alle dagene i sommerferien spektakulære! Hver dag finner de på nye fantasifulle oppfinnelser, mens den misunnelige storesøsteren Candace prøver å sladre på dem til mamma. Det er alt fra å bygge en berg-og-dalbane i bakgården, surfe på lokale kjempebølger til å dra tilbake til fortiden. Samtidig lever familiens ikke alt for smarte husdyr, nebbdyret Perry, et dobbeltliv som hemmelig agent og kjemper i hver episode mot den onde</desc>
+    <sub-title lang="nb">Phineas And Ferb S4 Ep121</sub-title>
+  </programme>
+  <programme start="20200510080000 +0200" channel="xd.disneychannel.no" stop="20200510082900 +0200">
+    <title lang="nb">Big Hero 6 – TV-serien</title>
+    <desc lang="nb">Momakase truer Hiro til å hjelpe henne med å få tak i en mystisk gjenstand fra Yamas safe. Hvis han ikke bistår henne, vil hun fortelle politisjef Cruz hvem Big Hero 6 egentlig er.</desc>
+    <sub-title lang="nb">Skurken Hiro</sub-title>
+  </programme>
+  <programme start="20200510082900 +0200" channel="xd.disneychannel.no" stop="20200510090000 +0200">
+    <title lang="nb">Phineas og Ferb</title>
+    <desc lang="nb">Phineas og Ferb vil gjøre alle dagene i sommerferien spektakulære! Hver dag finner de på nye fantasifulle oppfinnelser, mens den misunnelige storesøsteren Candace prøver å sladre på dem til mamma. Det er alt fra å bygge en berg-og-dalbane i bakgården, surfe på lokale kjempebølger til å dra tilbake til fortiden. Samtidig lever familiens ikke alt for smarte husdyr, nebbdyret Perry, et dobbeltliv som hemmelig agent og kjemper i hver episode mot den onde</desc>
+    <sub-title lang="nb">Phineas And Ferb S4 Ep122</sub-title>
+  </programme>
+  <programme start="20200510090000 +0200" channel="xd.disneychannel.no" stop="20200510092900 +0200">
+    <title lang="nb">Phineas og Ferb</title>
+    <desc lang="nb">Phineas og Ferb vil gjøre alle dagene i sommerferien spektakulære! Hver dag finner de på nye fantasifulle oppfinnelser, mens den misunnelige storesøsteren Candace prøver å sladre på dem til mamma. Det er alt fra å bygge en berg-og-dalbane i bakgården, surfe på lokale kjempebølger til å dra tilbake til fortiden. Samtidig lever familiens ikke alt for smarte husdyr, nebbdyret Perry, et dobbeltliv som hemmelig agent og kjemper i hver episode mot den onde</desc>
+    <sub-title lang="nb">Phineas And Ferb S4 Ep123</sub-title>
+  </programme>
+  <programme start="20200510092900 +0200" channel="xd.disneychannel.no" stop="20200510100000 +0200">
+    <title lang="nb">Marvel´s Spider-Man</title>
+    <desc lang="nb">Spider-Man må infiltrere stuntgruppa Wake Riders.</desc>
+    <sub-title lang="nb">Opp i det blå</sub-title>
+  </programme>
+  <programme start="20200510100000 +0200" channel="xd.disneychannel.no" stop="20200510102900 +0200">
+    <title lang="nb">Phineas og Ferb</title>
+    <desc lang="nb">Phineas og Ferb vil gjøre alle dagene i sommerferien spektakulære! Hver dag finner de på nye fantasifulle oppfinnelser, mens den misunnelige storesøsteren Candace prøver å sladre på dem til mamma. Det er alt fra å bygge en berg-og-dalbane i bakgården, surfe på lokale kjempebølger til å dra tilbake til fortiden. Samtidig lever familiens ikke alt for smarte husdyr, nebbdyret Perry, et dobbeltliv som hemmelig agent og kjemper i hver episode mot den onde</desc>
+    <sub-title lang="nb">Phineas And Ferb S4 Ep125</sub-title>
+  </programme>
+  <programme start="20200510102900 +0200" channel="xd.disneychannel.no" stop="20200510110000 +0200">
+    <title lang="nb">Phineas og Ferb</title>
+    <desc lang="nb">Phineas og Ferb vil gjøre alle dagene i sommerferien spektakulære! Hver dag finner de på nye fantasifulle oppfinnelser, mens den misunnelige storesøsteren Candace prøver å sladre på dem til mamma. Det er alt fra å bygge en berg-og-dalbane i bakgården, surfe på lokale kjempebølger til å dra tilbake til fortiden. Samtidig lever familiens ikke alt for smarte husdyr, nebbdyret Perry, et dobbeltliv som hemmelig agent og kjemper i hver episode mot den onde</desc>
+    <sub-title lang="nb">Phineas And Ferb S4 Ep126</sub-title>
+  </programme>
+  <programme start="20200510110000 +0200" channel="xd.disneychannel.no" stop="20200510120000 +0200">
+    <title lang="nb">Phineas og Ferb redder sommeren</title>
+    <desc lang="nb">Det er sommerferiens siste dag, og Phineas og Ferb bestemmer seg for å gripe dagen og få mest mulig ut av den. Uheldigvis for Candance betyr det også at det er hennes siste sjanse til å ta brødrene på fersk gjerning… eller er det det? Når Candance’s ultimate siste forsøk på å ferske brødrene før frokost går galt, tar hun sjansen på å repetere dagen med hjelp av en av Dr. Doofenshmirtz’ oppfinnelser. Candace og Dr. Doofenschmirz kjører samme dagen om og om igjen uten at de andre vet det, for at Candance skal prøve å ferske brødrene mens Dr. Doofenschmirtz vil ta over byen! Det er først når tidsreisene begynner å få alvorlige konsekvenser Candance og Dr Doofenschmirtz må begynne å tenke over hva som betyr mest for dem.</desc>
+  </programme>
+  <programme start="20200510120000 +0200" channel="xd.disneychannel.no" stop="20200510122900 +0200">
+    <title lang="nb">Lab Rats</title>
+    <desc lang="nb">Leo og Tasha blir kidnappet av Krane.</desc>
+    <sub-title lang="nb">Tatt</sub-title>
+  </programme>
+  <programme start="20200510122900 +0200" channel="xd.disneychannel.no" stop="20200510130000 +0200">
+    <title lang="nb">Lab Rats</title>
+    <desc lang="nb">Bree kommer inn på en skole i utlandet for et semester.</desc>
+    <sub-title lang="nb">Tre minus Bree</sub-title>
+  </programme>
+  <programme start="20200510130000 +0200" channel="xd.disneychannel.no" stop="20200510132900 +0200">
+    <title lang="nb">Phineas og Ferb</title>
+    <desc lang="nb">Candace blir ved et uhell forvandlet til en flue og utnytter det til å spionere på Jeremy for å finne ut hvor de skal hen på date. / Phineas og Ferb hjelper med å fornye fars bil så Candace kan overta den, akkurat i tide for ”Do Wop Hop”-bilmessen.</desc>
+    <sub-title lang="nb">Flue på veggen / Kjerra mi</sub-title>
+  </programme>
+  <programme start="20200510132900 +0200" channel="xd.disneychannel.no" stop="20200510140000 +0200">
+    <title lang="nb">Phineas og Ferb</title>
+    <desc lang="nb">Phineas og Ferb lager en ny sport kalt Hockey Z-9, og spiller det i en pause på en hockeykamp. I mellomtiden prøver Candace å lure Jeremy til å tro at hun er en hockeyekspert. / Phineas og Ferb lager en diger ball som skal komme ned til Jorda fra verdensrommet ved midnatt på nyttårsaften. I mellomtiden prøver Candace å avsløre brødrene sine før nyttårsforsettet hennes trer i kraft.</desc>
+    <sub-title lang="nb">Isens pris / Godt nyttår!</sub-title>
+  </programme>
+  <programme start="20200510140000 +0200" channel="xd.disneychannel.no" stop="20200510142900 +0200">
+    <title lang="nb">Sara vs. Mørkets krefter</title>
+    <desc lang="nb">Saras søk etter moren fører henne til Paifolkets land.</desc>
+    <sub-title lang="nb">Flukten fra paifolket</sub-title>
+  </programme>
+  <programme start="20200510142900 +0200" channel="xd.disneychannel.no" stop="20200510150000 +0200">
+    <title lang="nb">Sara vs. Mørkets krefter</title>
+    <desc lang="nb">Måne er tilbake og Sara vil finne det perfekte tidspunkt å fortelle henne om Globgor på. Sara og Marco planlegger stranddagen, Men Nocturna trenger Saras hjelp med et uventet problem.</desc>
+    <sub-title lang="nb">Måne husker / Badebuksene</sub-title>
+  </programme>
+  <programme start="20200510150000 +0200" channel="xd.disneychannel.no" stop="20200510152900 +0200">
+    <title lang="nb">Phineas og Ferb</title>
+    <desc lang="nb">Candace utfordrer Buford til å avsløre brødrene hennes ved å unngå at deres siste oppfinnelse forsvinner i siste øyeblikk. / Phineas, Ferb og vennene deres bestemmer seg for å resirkulere rester av materialer fra tidligere oppfinnelser ved å lage noe nytt av dem.</desc>
+    <sub-title lang="nb">Bølleavsløring / Hagerøre</sub-title>
+  </programme>
+  <programme start="20200510152900 +0200" channel="xd.disneychannel.no" stop="20200510160000 +0200">
+    <title lang="nb">Phineas og Ferb</title>
+    <desc lang="nb">Candace har blitt valgt til å delta i det årlige Chinchillaløpet, men får mer å hanskes med enn hun hadde tenkt, når Dr. Doofenshmirtz’ siste oppfinnelse gjør chinchillaene om til fryktelige beist. / Som en del av planen om å avsløre brødrene sine, tilbyr Candace å spille inn hele lydbokversjonen av Bålplassjentenes kompendieguide mens guttene bygger en diger klatrevegg.</desc>
+    <sub-title lang="nb">Der Kinderlümper / Bare dessert</sub-title>
+  </programme>
+  <programme start="20200510160000 +0200" channel="xd.disneychannel.no" stop="20200510162900 +0200">
+    <title lang="nb">Lab Rats Elitestyrken</title>
+    <desc lang="nb">Lab Rats slår seg sammen med Supersykehuset-teamet.</desc>
+    <sub-title lang="nb">Og så ble de fem     </sub-title>
+  </programme>
+  <programme start="20200510162900 +0200" channel="xd.disneychannel.no" stop="20200510170000 +0200">
+    <title lang="nb">Lab Rats Elitestyrken</title>
+    <desc lang="nb">Oliver bestemmer seg for å mestre sine nye superkrefter.</desc>
+    <sub-title lang="nb">Venter på en helt     </sub-title>
+  </programme>
+  <programme start="20200510170000 +0200" channel="xd.disneychannel.no" stop="20200510172900 +0200">
+    <title lang="nb">Phineas og Ferb</title>
+    <desc lang="nb">For å hindre at Love Händel blir eliminert fra en viktig musikkonkurranse, må Phineas, Ferb og gjengen reise til det arktiske hjemmet til Klimpaloon, en magisk badedrakt, for å bevise dens eksistens for dommerne i prispanelet. I mellomtiden prøver Doktor Doofenshmirtz og gjøre broren om til et vortesvin, for å få ham kastet som ordfører i Danville.</desc>
+    <sub-title lang="nb">Klimpaloonultimatumet</sub-title>
+  </programme>
+  <programme start="20200510172900 +0200" channel="xd.disneychannel.no" stop="20200510180000 +0200">
+    <title lang="nb">Phineas og Ferb</title>
+    <desc lang="nb">Phineas og Ferb vil gjøre alle dagene i sommerferien spektakulære! Hver dag finner de på nye fantasifulle oppfinnelser, mens den misunnelige storesøsteren Candace prøver å sladre på dem til mamma. Det er alt fra å bygge en berg-og-dalbane i bakgården, surfe på lokale kjempebølger til å dra tilbake til fortiden. Samtidig lever familiens ikke alt for smarte husdyr, nebbdyret Perry, et dobbeltliv som hemmelig agent og kjemper i hver episode mot den onde</desc>
+    <sub-title lang="nb">Phineas And Ferb S4 Ep121</sub-title>
+  </programme>
+  <programme start="20200510180000 +0200" channel="xd.disneychannel.no" stop="20200510190000 +0200">
+    <title lang="nb">Phineas og Ferb Sommeren tilhører deg</title>
+    <desc lang="nb">  Det er årets lengste dag og Phineas og Ferb vil få mest mulig utav den ved å reise verden rundt på én dag. Mor og far skal reise bort i helgen og overlater ansvaret til Candace. Hun vakler mellom å sladre på brødrene og å bli med dem for å treffe Jeremy i Paris. Sladring eller Jeremy? Hun ender opp med å bli med guttene og vennene deres, slik at hun kan bevise for seg selv at Jeremy bare har øyne for henne. Underveis får Phineas´ optimisme et skudd for baugen og han må overvinne tvilen på om de rekker hjem til solnedgang.  </desc>
+  </programme>
+  <programme start="20200510190000 +0200" channel="xd.disneychannel.no" stop="20200510192900 +0200">
+    <title lang="nb">Phineas og Ferb</title>
+    <desc lang="nb">Phineas og Ferb vil gjøre alle dagene i sommerferien spektakulære! Hver dag finner de på nye fantasifulle oppfinnelser, mens den misunnelige storesøsteren Candace prøver å sladre på dem til mamma. Det er alt fra å bygge en berg-og-dalbane i bakgården, surfe på lokale kjempebølger til å dra tilbake til fortiden. Samtidig lever familiens ikke alt for smarte husdyr, nebbdyret Perry, et dobbeltliv som hemmelig agent og kjemper i hver episode mot den onde</desc>
+    <sub-title lang="nb">Phineas And Ferb S4 Ep122</sub-title>
+  </programme>
+  <programme start="20200510192900 +0200" channel="xd.disneychannel.no" stop="20200510200000 +0200">
+    <title lang="nb">Phineas og Ferb</title>
+    <desc lang="nb">Phineas og Ferb vil gjøre alle dagene i sommerferien spektakulære! Hver dag finner de på nye fantasifulle oppfinnelser, mens den misunnelige storesøsteren Candace prøver å sladre på dem til mamma. Det er alt fra å bygge en berg-og-dalbane i bakgården, surfe på lokale kjempebølger til å dra tilbake til fortiden. Samtidig lever familiens ikke alt for smarte husdyr, nebbdyret Perry, et dobbeltliv som hemmelig agent og kjemper i hver episode mot den onde</desc>
+    <sub-title lang="nb">Phineas And Ferb S4 Ep123</sub-title>
+  </programme>
+  <programme start="20200510200000 +0200" channel="xd.disneychannel.no" stop="20200510202900 +0200">
+    <title lang="nb">Marvel´s Spider-Man</title>
+    <desc lang="nb">Spider-Man og Harry tar opp jakten på goblinkongen for å finne ut hvem som skjuler seg bak masken. Spider-Man får en fornemmelse av at Harry prøver å lure han i en felle.</desc>
+    <sub-title lang="nb">Goblininvasjon - del 2</sub-title>
+  </programme>
+  <programme start="20200510202900 +0200" channel="xd.disneychannel.no" stop="20200510210000 +0200">
+    <title lang="nb">Marvel´s Spider-Man</title>
+    <desc lang="nb">For å beseire goblinkongen må Spider-Man først få Doc Ock, Spider-Girl, Ghost-Spider, Miles Morales og Harry Osborn til å spille på lag.</desc>
+    <sub-title lang="nb">Goblininvasjon - del 3</sub-title>
+  </programme>
+  <programme start="20200510210000 +0200" channel="xd.disneychannel.no" stop="20200510212900 +0200">
+    <title lang="nb">Space Chickens In Space S1</title>
+    <desc lang="nb">Tre kyllinger blir ved en feil tatt opp på er elite-akademi i verdensrommet, i denne surrealistiske humorserien som kombinerer sci-fi-absurditet med det enda mer kompliserte hverdagslivet på skolen.</desc>
+    <sub-title lang="nb">Space Chcikens In Space S1</sub-title>
+  </programme>
+  <programme start="20200510212900 +0200" channel="xd.disneychannel.no">
+    <title lang="nb">Space Chickens In Space S1</title>
+    <desc lang="nb">Tre kyllinger blir ved en feil tatt opp på er elite-akademi i verdensrommet, i denne surrealistiske humorserien som kombinerer sci-fi-absurditet med det enda mer kompliserte hverdagslivet på skolen.</desc>
+    <sub-title lang="nb">Space Chcikens In Space S1</sub-title>
+  </programme>
+</tv>
