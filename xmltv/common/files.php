@@ -15,13 +15,9 @@ class files
 {
     public $xmltv_path;
     /**
-     * @var string Default sub folder
+     * @var array Sub folders in order
      */
-    public $default_sub_folder;
-    /**
-     * @var array Alternate sub folder
-     */
-    public $alternate_sub_folders;
+    public $sub_folders;
     /**
      * @var Filesystem
      */
@@ -44,16 +40,20 @@ class files
 
         if(!file_exists($this->xmltv_path))
             throw new FileNotFoundException($this->xmltv_path);
+        if(!empty($config['xmltv_sub_folders']))
+            $this->sub_folders = $config['xmltv_sub_folders'];
+        else {
+            if (empty($config['xmltv_default_sub_folder']))
+                throw new XMLTVException('xmltv_default_sub_folder not set in config');
 
-        if(empty($config['xmltv_default_sub_folder']))
-            throw new XMLTVException('xmltv_default_sub_folder not set in config');
-        $this->default_sub_folder = $config['xmltv_default_sub_folder'];
-
-        if(empty($config['xmltv_alternate_sub_folders']))
-            $this->alternate_sub_folders = array();
-        else
-            $this->alternate_sub_folders = $config['xmltv_alternate_sub_folders'];
-
+            if (empty($config['xmltv_alternate_sub_folders']))
+                $this->sub_folders = [$config['xmltv_default_sub_folder']];
+            else
+            {
+                $this->sub_folders = $config['xmltv_alternate_sub_folders'];
+                array_unshift($this->sub_folders, $config['xmltv_default_sub_folder']);
+            }
+        }
         $this->filesystem = new Filesystem();
     }
 
@@ -73,7 +73,7 @@ class files
         if(empty($timestamp))
             $timestamp=strtotime('midnight');
         if(empty($sub_folder))
-            $sub_folder = $this->default_sub_folder;
+            $sub_folder = $this->sub_folders[0];
 
         $folder = $this->xmltv_path.'/'.filename::folder($channel, $sub_folder, $timestamp);
         if($create)
@@ -98,7 +98,7 @@ class files
         if(!empty($sub_folder))
             $folders = [$sub_folder];
         else
-            $folders = array_merge([$this->default_sub_folder], $this->alternate_sub_folders);
+            $folders = $this->sub_folders;
 
         $error = new InvalidXMLFileException('No files found');
         foreach ($folders as $sub_folder)

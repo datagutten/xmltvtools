@@ -58,7 +58,7 @@ class filesTest extends TestCase
         $config = str_replace('xmltv_alternate_sub_folders', 'no_xmltv_alternate_sub_folders', $config);
         file_put_contents(__DIR__.'/config.php', $config);
         $files = new files();
-        $this->assertEmpty($files->alternate_sub_folders);
+        $this->assertSame(1, count($files->sub_folders));
     }
 
     public function testCreateFolder()
