@@ -23,10 +23,10 @@ class merger extends parser
      */
     function __construct($xmltv_path, $sub_folders)
     {
-        parent::__construct(['xmltv_path'=>$xmltv_path, 'xmltv_default_sub_folder'=>$sub_folders[0]]);
+        parent::__construct(['xmltv_path'=>$xmltv_path, 'xmltv_sub_folders'=>$sub_folders]);
         foreach (array_slice($sub_folders, 1) as $folder)
         {
-            $this->parsers[] = new parser(['xmltv_path'=>$xmltv_path, 'xmltv_default_sub_folder'=>$folder]);
+            $this->parsers[] = new parser(['xmltv_path'=>$xmltv_path, 'xmltv_sub_folders'=>[$folder]]);
         }
     }
 

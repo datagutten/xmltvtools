@@ -15,4 +15,11 @@ class mergerTest extends TestCase
         $this->assertEquals('Klimpaloonultimatumet', $program->{'sub-title'});
         $this->assertEquals('3.119.', $program->{'episode-num'});
     }
+
+    public function testInvalidFile()
+    {
+        $merger = new merger(__DIR__.'/test_data', ['xmltv_php', 'xmltv']);
+        $program = $merger->find_program(strtotime('2019-11-23 11:00 +01:00'), 'natgeo.no');
+        $this->assertEquals('Vinterveiens helter', $program->{'title'});
+    }
 }
