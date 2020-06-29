@@ -7,7 +7,14 @@ matrix:
     - php: '7.3'
     - php: '7.4'
     - php: 'nightly'
+      install:
+         - composer install --no-interaction --ignore-platform-reqs
       env: IGNORE_PLATFORM_REQS=true
+    - php: '7.4'
+      name: 'Prefer lowest'
+      install:
+         - composer install --no-interaction
+         - composer update --prefer-lowest
   allow_failures:
     - php: 'nightly'
 
@@ -17,9 +24,7 @@ addons:
    - php-xml
 
 install:
-  - if [ "$IGNORE_PLATFORM_REQS" == 'true' ]; then composer install --no-interaction --ignore-platform-reqs;
-    else composer install --no-interaction;
-    fi
+    composer install --no-interaction
 
 before_script:
  - echo 'date.timezone = "Europe/Oslo"' >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
