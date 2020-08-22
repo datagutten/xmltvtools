@@ -10,10 +10,10 @@ namespace datagutten\dreambox;
 
 
 use datagutten\xmltv\tools\common\channel_info;
-use datagutten\xmltv\tools\exceptions\ChannelNotFoundException;
 use datagutten\xmltv\tools\exceptions;
-use datagutten\xmltv\tools\parse\parser;
+use datagutten\xmltv\tools\exceptions\ChannelNotFoundException;
 use datagutten\xmltv\tools\exceptions\ProgramNotFoundException;
+use datagutten\xmltv\tools\parse\parser;
 use FileNotFoundException;
 use SimpleXMLElement;
 
@@ -31,11 +31,14 @@ class recording_info
 
     /**
      * recording_info constructor.
+     * @param string $xmltv_path XMLTV root path
+     * @param array $sub_folders Sub folders of each channel to load data from
+     * @throws FileNotFoundException XMLTV path not found
      */
-    function __construct()
+    function __construct($xmltv_path, $sub_folders)
     {
         $this->channels = new channel_info();
-        $this->xmltv = new parser();
+        $this->xmltv = new parser($xmltv_path, $sub_folders);
     }
 
     /**

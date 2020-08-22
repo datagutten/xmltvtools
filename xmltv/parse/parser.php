@@ -12,10 +12,9 @@ namespace datagutten\xmltv\tools\parse;
 use datagutten\xmltv\tools\common\files;
 use datagutten\xmltv\tools\exceptions\InvalidXMLFileException;
 use datagutten\xmltv\tools\exceptions\ProgramNotFoundException;
-use datagutten\xmltv\tools\exceptions\XMLTVException;
 use FileNotFoundException;
 use InvalidArgumentException;
-use \SimpleXMLElement;
+use SimpleXMLElement;
 
 class parser
 {
@@ -27,13 +26,13 @@ class parser
 
     /**
      * parser constructor.
-     * @param array $config Configuration parameters
-     * @throws XMLTVException Invalid configuration file
+     * @param string $xmltv_path XMLTV root path
+     * @param array $sub_folders Sub folders of each channel to load data from
      * @throws FileNotFoundException XMLTV path not found
      */
-    function __construct($config = [])
+    function __construct($xmltv_path, $sub_folders)
     {
-        $this->files = new files($config);
+        $this->files = new files($xmltv_path, $sub_folders);
     }
 
     /**

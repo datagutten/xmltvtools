@@ -10,7 +10,6 @@ namespace datagutten\xmltv\tests\tools\xmltv\parse;
 
 use datagutten\xmltv\tools\exceptions\ProgramNotFoundException;
 use datagutten\xmltv\tools\parse\parser;
-use FileNotFoundException;
 use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 
@@ -22,15 +21,7 @@ class parserTest extends TestCase
     public $parser;
     public function setUp(): void
     {
-        $config = file_get_contents(__DIR__.'/test_config.php');
-        $config = str_replace('__DIR__', __DIR__, $config);
-        file_put_contents(__DIR__.'/config.php', $config);
-        set_include_path(__DIR__);
-        $this->parser = new parser();
-    }
-    public function tearDown(): void
-    {
-        unlink(__DIR__.'/config.php');
+        $this->parser = new parser(__DIR__.'/test_data', ['xmltv_php', 'xmltv']);
     }
 
     public function testIgnoreTimeZone()
@@ -68,12 +59,8 @@ class parserTest extends TestCase
 
     public function testGet_programsNotCombined()
     {
-        $config = file_get_contents(__DIR__.'/config.php');
-        $config = str_replace('xmltv_php', 'xmltv', $config);
-        file_put_contents(__DIR__.'/config.php', $config);
-        $this->parser->__construct();
-
-        $programs = $this->parser->get_programs('natgeo.no', strtotime('2019-10-04'), false);
+        $parser = new parser(__DIR__.'/test_data', ['xmltv']);
+        $programs = $parser->get_programs('natgeo.no', strtotime('2019-10-04'), false);
         $this->assertIsArray($programs);
         $this->assertEquals('20191004060000 +0000', $programs[0]->attributes()->{'start'});
     }
@@ -108,12 +95,7 @@ class parserTest extends TestCase
 
     public function testCombine_days()
     {
-        $config = file_get_contents(__DIR__.'/config.php');
-        $config = str_replace('xmltv_php', 'xmltv', $config);
-        file_put_contents(__DIR__.'/config.php', $config);
-        $this->parser->__construct();
-
-        $parser = new parser();
+        $parser = new parser(__DIR__.'/test_data', ['xmltv']);
         $day1 = $parser->files->load_file('natgeo.no', strtotime('2019-10-03'));
         $day2 = $parser->files->load_file('natgeo.no', strtotime('2019-10-04'));
         $day = $parser->combine_days(array($day1, $day2), '20191004');

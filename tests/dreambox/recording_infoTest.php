@@ -13,16 +13,8 @@ class recording_infoTest extends TestCase
     public $info;
     public function setUp(): void
     {
-        $config = file_get_contents(__DIR__.'/../xmltv/parse/test_config.php');
-        $config = str_replace('__DIR__', realpath(__DIR__.'/../xmltv/parse'), $config);
-        file_put_contents(__DIR__.'/config.php', $config);
-        set_include_path(__DIR__);
-        $this->info = new recording_info();
-    }
-
-    public function tearDown(): void
-    {
-        unlink(__DIR__.'/config.php');
+        $data_path = realpath(__DIR__.'/../xmltv/parse/test_data');
+        $this->info = new recording_info($data_path, ['xmltv_php', 'xmltv']);
     }
 
     public function testRecording_info()

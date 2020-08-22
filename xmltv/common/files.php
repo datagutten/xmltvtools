@@ -5,7 +5,6 @@ namespace datagutten\xmltv\tools\common;
 
 
 use datagutten\xmltv\tools\exceptions\InvalidXMLFileException;
-use datagutten\xmltv\tools\exceptions\XMLTVException;
 use FileNotFoundException;
 use InvalidArgumentException;
 use SimpleXMLElement;
@@ -25,35 +24,24 @@ class files
 
     /**
      * files constructor.
-     * @param array $config Configuration parameters
-     * @throws XMLTVException Invalid configuration file
+     * @param string $xmltv_path XMLTV root path
+     * @param array $sub_folders Sub folders of each channel to load data from
      * @throws FileNotFoundException XMLTV path not found
      */
-    function __construct($config = [])
+    function __construct($xmltv_path, $sub_folders)
     {
         libxml_use_internal_errors(true);
-        if(empty($config))
-            $config = require 'config.php';
-        if(empty($config['xmltv_path']))
-            throw new XMLTVException('xmltv_path not set in config');
-        $this->xmltv_path = $config['xmltv_path'];
+        if(empty($xmltv_path))
+            throw new InvalidArgumentException('Empty argument: xmltv_path');
+        $this->xmltv_path = $xmltv_path;
 
         if(!file_exists($this->xmltv_path))
             throw new FileNotFoundException($this->xmltv_path);
-        if(!empty($config['xmltv_sub_folders']))
-            $this->sub_folders = $config['xmltv_sub_folders'];
-        else {
-            if (empty($config['xmltv_default_sub_folder']))
-                throw new XMLTVException('xmltv_default_sub_folder not set in config');
+        if(!empty($sub_folders))
+            $this->sub_folders = $sub_folders;
+        else
+            throw new InvalidArgumentException('Empty argument: sub_folders');
 
-            if (empty($config['xmltv_alternate_sub_folders']))
-                $this->sub_folders = [$config['xmltv_default_sub_folder']];
-            else
-            {
-                $this->sub_folders = $config['xmltv_alternate_sub_folders'];
-                array_unshift($this->sub_folders, $config['xmltv_default_sub_folder']);
-            }
-        }
         $this->filesystem = new Filesystem();
     }
 

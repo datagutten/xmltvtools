@@ -19,51 +19,25 @@ class filesTest extends TestCase
     public function setUp(): void
     {
         $this->filesystem = new Filesystem();
-        //copy(__DIR__.'/test_config.php', __DIR__.'/config.php');
-        $config = file_get_contents(__DIR__.'/test_config.php');
-        $config = str_replace('__DIR__', __DIR__, $config);
-        file_put_contents(__DIR__.'/config.php', $config);
-        set_include_path(__DIR__);
         mkdir(__DIR__.'/xmltv_test');
-    }
-
-    public function testInvalidConfig1()
-    {
-        $config = file_get_contents(__DIR__.'/config.php');
-        $config = str_replace('xmltv_path', 'xmltv_path_bad', $config);
-        file_put_contents(__DIR__.'/config.php', $config);
-        $this->expectExceptionMessage('xmltv_path not set in config');
-        new files();
-    }
-
-    public function testInvalidConfig2()
-    {
-        $config = file_get_contents(__DIR__.'/config.php');
-        $config = str_replace('xmltv_default_sub_folder', 'xmltv_default_sub_folder_bad', $config);
-        file_put_contents(__DIR__.'/config.php', $config);
-        $this->expectExceptionMessage('xmltv_default_sub_folder not set in config');
-        new files();
     }
 
     public function testMissingPath()
     {
         rmdir(__DIR__.'/xmltv_test');
         $this->expectException(FileNotFoundException::class);
-        new files();
+        new files(__DIR__.'/xmltv_test', ['xmltv_test']);
     }
 
     public function testNoAlternateSubFolder()
     {
-        $config = file_get_contents(__DIR__.'/config.php');
-        $config = str_replace('xmltv_alternate_sub_folders', 'no_xmltv_alternate_sub_folders', $config);
-        file_put_contents(__DIR__.'/config.php', $config);
-        $files = new files();
+        $files = new files(__DIR__.'/xmltv_test', ['xmltv_test']);
         $this->assertSame(1, count($files->sub_folders));
     }
 
     public function testCreateFolder()
     {
-        $files = new files;
+        $files = new files(__DIR__.'/xmltv_test', ['xmltv_test', 'xmltv']);
         $file = $files->file('test.no', strtotime('2019-10-01'), 'php', 'xml', true);
         $dir = dirname($file);
         $this->assertFileExists($dir);
@@ -72,13 +46,13 @@ class filesTest extends TestCase
 
     public function testFile()
     {
-        $files = new files();
+        $files = new files(__DIR__.'/xmltv_test', ['xmltv_test', 'xmltv']);
         $file = $files->file('natgeo.no', strtotime('2019-10-04'), 'xmltv');
         $this->assertEquals(__DIR__.'/xmltv_test/natgeo.no/xmltv/2019/natgeo.no_2019-10-04.xml', $file);
     }
     public function testExistingFile()
     {
-        $files = new files();
+        $files = new files(__DIR__.'/xmltv_test', ['xmltv_test', 'xmltv']);
         $this->filesystem->mkdir(__DIR__.'/xmltv_test/natgeo.no/xmltv/2019');
         touch(__DIR__.'/xmltv_test/natgeo.no/xmltv/2019/natgeo.no_2019-10-04.xml');
         $file = $files->file('natgeo.no', strtotime('2019-10-04'), 'xmltv');
@@ -87,14 +61,14 @@ class filesTest extends TestCase
 
     public function testDefaultSubFolder()
     {
-        $files = new files();
+        $files = new files(__DIR__.'/xmltv_test', ['xmltv_test', 'xmltv']);
         $file = $files->file('natgeo.no', strtotime('2019-10-04'));
         $this->assertEquals(__DIR__.'/xmltv_test/natgeo.no/xmltv_test/2019/natgeo.no_2019-10-04.xml', $file);
     }
 
     public function testDefaultTimestamp()
     {
-        $files = new files();
+        $files = new files(__DIR__.'/xmltv_test', ['xmltv_test', 'xmltv']);
         $file = $files->file('natgeo.no');
         $timestamp = strtotime('midnight');
         $this->assertEquals(sprintf(__DIR__.'/xmltv_test/natgeo.no/xmltv_test/%s/natgeo.no_%s.xml', date('Y', $timestamp), date('Y-m-d', $timestamp)), $file);
@@ -104,13 +78,13 @@ class filesTest extends TestCase
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage('Invalid channel id: foobar');
-        $files = new files;
+        $files = new files(__DIR__.'/xmltv_test', ['xmltv_test', 'xmltv']);
         $files->file('foobar');
     }
 
     public function testInvalidXML()
     {
-        $files = new files;
+        $files = new files(__DIR__.'/xmltv_test', ['xmltv_test', 'xmltv']);
         $file = $files->file('test.no', strtotime('2019-10-01'), 'php', 'xml', true);
         $xml = new SimpleXMLElement('<xmltv></xmltv>');
         $xml->asXML($file);
@@ -122,7 +96,7 @@ class filesTest extends TestCase
 
     public function testEmptyXML()
     {
-        $files = new files;
+        $files = new files(__DIR__.'/xmltv_test', ['xmltv_test', 'xmltv']);
         $file = $files->file('test.no', strtotime('2019-10-01'), 'php', 'xml', true);
         touch($file);
         $this->expectExceptionMessage('Document is empty');
@@ -133,6 +107,5 @@ class filesTest extends TestCase
     public function tearDown(): void
     {
         $this->filesystem->remove(__DIR__.'/xmltv_test');
-        unlink(__DIR__.'/config.php');
     }
 }
