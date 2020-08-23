@@ -1,11 +1,12 @@
 <?php
 
 
-namespace datagutten\xmltv\tools\parse;
+namespace datagutten\xmltv\tools\data;
 
 
 use datagutten\dreambox\recording_info as dreambox_info;
 use datagutten\video_tools\video;
+use datagutten\xmltv\tools\parse\parser;
 use FileNotFoundException;
 use SimpleXMLElement;
 
