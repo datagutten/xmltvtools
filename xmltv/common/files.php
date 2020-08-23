@@ -46,10 +46,11 @@ class files
     }
 
     /**
-     * @param string $channel
-     * @param int $timestamp
-     * @param string $sub_folder
-     * @param string $extension
+     * Get XMLTV file
+     * @param string $channel XMLTV channel id
+     * @param int $timestamp Timestamp for the date to get
+     * @param string $sub_folder Sub folder of channel folder
+     * @param string $extension File extension
      * @param bool $create Create folder
      * @return string File name
      */
@@ -74,9 +75,10 @@ class files
     }
 
     /**
-     * @param string $channel
-     * @param int $timestamp
-     * @param string $sub_folder
+     * Load XMLTV file
+     * @param string $channel XMLTV channel id
+     * @param int $timestamp Timestamp for the date to get
+     * @param string $sub_folder Sub folder of channel folder
      * @return SimpleXMLElement
      * @throws FileNotFoundException XML file not found
      * @throws InvalidXMLFileException XML file has no <programme> element

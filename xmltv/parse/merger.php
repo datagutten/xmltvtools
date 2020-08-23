@@ -3,7 +3,9 @@
 
 namespace datagutten\xmltv\tools\parse;
 
+use datagutten\xmltv\tools\exceptions\ProgramNotFoundException;
 use FileNotFoundException;
+use SimpleXMLElement;
 
 /**
  * Merge information from different xmltv files
@@ -28,6 +30,13 @@ class merger extends parser
         }
     }
 
+    /**
+     * @param int $search_time Time to search
+     * @param string $programs_xml_or_channel
+     * @param string $mode
+     * @return SimpleXMLElement
+     * @throws ProgramNotFoundException Program not found
+     */
     function find_program($search_time,$programs_xml_or_channel,$mode='nearest')
     {
         $base_program = parent::find_program($search_time,$programs_xml_or_channel,$mode);

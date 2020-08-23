@@ -57,18 +57,16 @@ class parser
             return strtotime($time);
     }
     /**
-     * @param array $days
-     * @param string $date
-     * @return array|SimpleXMLElement
+     * Combine schedule for multiple days to get all programs for the specified date
+     * @param SimpleXMLElement[] $days Array with schedules
+     * @param string $date Date to get
+     * @return SimpleXMLElement[] Array with programs
      */
     public static function combine_days($days, $date=null)
     {
         $programs = [];
         foreach($days as $day)
         {
-            /**
-             * @var SimpleXMLElement $program
-             */
             foreach($day as $program)
             {
                 if(!empty($date) && $date!=substr($program->attributes()->{'start'},0,8)) //Wrong date
@@ -81,12 +79,12 @@ class parser
 
     /**
      * Get programs
-     * @param string $channel
-     * @param int $timestamp
+     * @param string $channel XMLTV channel id
+     * @param int $timestamp Timestamp to search
      * @param bool $multiple_days Combine data for current day and previous day to get all programs for the current day
      * @return array|SimpleXMLElement
-     * @throws FileNotFoundException
-     * @throws InvalidXMLFileException
+     * @throws FileNotFoundException XMLTV file not found
+     * @throws InvalidXMLFileException XMLTV file not valid
      */
     public function get_programs($channel,$timestamp = null,$multiple_days = null)
     {
