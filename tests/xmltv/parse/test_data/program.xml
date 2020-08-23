@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE tv SYSTEM "xmltv.dtd">
+<tv generator-info-name="php-xmltv-grabber" generator-info-url="https://github.com/datagutten/xmltvgrabber">
+    <programme channel="natgeo.no" start="20191010090000 +0000" stop="20191010100000 +0000">
+        <title lang="nb">Alaska State Troopers</title>
+        <desc lang="nb">I den spennende episoden av "Alaska State Troopers" jakter politiet på en stjålet bil og jobber
+            med å løse en drapsgåte. I Fairbanks er veiene glatte, men biltyven setter ikke ned farten av den grunn.
+        </desc>
+        <category lang="en">series</category>
+        <category lang="en">test</category>
+        <episode-num system="xmltv_ns">5.6.</episode-num>
+    </programme>
+</tv>
