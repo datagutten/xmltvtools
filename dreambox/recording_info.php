@@ -11,11 +11,7 @@ namespace datagutten\dreambox;
 
 use datagutten\xmltv\tools\common\channel_info;
 use datagutten\xmltv\tools\exceptions;
-use datagutten\xmltv\tools\exceptions\ChannelNotFoundException;
-use datagutten\xmltv\tools\exceptions\ProgramNotFoundException;
-use datagutten\xmltv\tools\parse\parser;
 use FileNotFoundException;
-use SimpleXMLElement;
 
 class recording_info
 {
@@ -25,20 +21,11 @@ class recording_info
     public $channels;
 
     /**
-     * @var parser
-     */
-    public $xmltv;
-
-    /**
      * recording_info constructor.
-     * @param string $xmltv_path XMLTV root path
-     * @param array $sub_folders Sub folders of each channel to load data from
-     * @throws FileNotFoundException XMLTV path not found
      */
-    function __construct($xmltv_path, $sub_folders)
+    function __construct()
     {
         $this->channels = new channel_info();
-        $this->xmltv = new parser($xmltv_path, $sub_folders);
     }
 
     /**
@@ -54,25 +41,6 @@ class recording_info
         }
         else
             return array('datetime'=>$result[1],'channel'=>$result[2]);
-    }
-
-    /**
-     * Find information about a recorded file
-     * @param string $filename File name
-     * @return SimpleXMLElement
-     * @throws ProgramNotFoundException
-     * @throws ChannelNotFoundException
-	 * @throws exceptions\InvalidFileNameException File name could not be parsed
-     */
-    public function recording_info($filename)
-    {
-        $info=$this->parse_file_name($filename);
-        $timestamp=strtotime($info['datetime']);
-
-        $channel_name=$info['channel'];
-        $channel_id = $this->channels->name_to_id($channel_name);
-
-        return $this->xmltv->find_program($timestamp,$channel_id,'nearest'); //Find the program start nearest to the search time
     }
 
     /**

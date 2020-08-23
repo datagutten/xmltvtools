@@ -14,14 +14,7 @@ class recording_infoTest extends TestCase
     public function setUp(): void
     {
         $data_path = realpath(__DIR__.'/../xmltv/parse/test_data');
-        $this->info = new recording_info($data_path, ['xmltv_php', 'xmltv']);
-    }
-
-    public function testRecording_info()
-    {
-        $program = $this->info->recording_info('20191004 0055 - Nat Geo HD (N) - Vinterveiens helter.ts');
-        $this->assertEquals('Vinterveiens helter', $program->{'title'});
-        $this->assertEquals('20191004010000 +0200', $program->attributes()->{'start'});
+        $this->info = new recording_info();
     }
 
     public function testParse_file_name()
