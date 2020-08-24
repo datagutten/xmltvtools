@@ -15,6 +15,12 @@ matrix:
       install:
          - composer install --no-interaction
          - composer update --prefer-lowest
+    - php: '7.4'
+      name: 'No ffmpeg'
+      addons:
+        apt:
+          packages:
+            - php-xml
   allow_failures:
     - php: 'nightly'
 
@@ -22,6 +28,7 @@ addons:
  apt:
   packages:
    - php-xml
+   - ffmpeg
 
 install:
     composer install --no-interaction
