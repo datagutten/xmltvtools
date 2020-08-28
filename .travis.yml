@@ -21,6 +21,14 @@ matrix:
         apt:
           packages:
             - php-xml
+    - php: '7.4'
+      name: 'No video-tools and no ffmpeg'
+      addons:
+        apt:
+          packages:
+            - php-xml
+      install:
+        - composer remove --no-interaction datagutten/video-tools
   allow_failures:
     - php: 'nightly'
 
@@ -32,6 +40,7 @@ addons:
 
 install:
     composer install --no-interaction
+    composer require --no-interaction datagutten/video-tools
 
 before_script:
  - echo 'date.timezone = "Europe/Oslo"' >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
