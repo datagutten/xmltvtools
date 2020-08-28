@@ -14,6 +14,14 @@ use PHPUnit\Framework\TestCase;
 date_default_timezone_set('Europe/Oslo');
 class recordingTest extends TestCase
 {
+    function setUp(): void
+    {
+        if (!class_exists('datagutten\video_tools\video')) {
+            $this->markTestSkipped(
+                'video class not found, video-tools not installed.'
+            );
+        }
+    }
     public function testFileNotFound()
     {
         $this->expectException(FileNotFoundException::class);

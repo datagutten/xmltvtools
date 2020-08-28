@@ -11,6 +11,15 @@ use PHPUnit\Framework\TestCase;
 
 class recording_fileTest extends TestCase
 {
+    function setUp(): void
+    {
+        if (!class_exists('datagutten\video_tools\video')) {
+            $this->markTestSkipped(
+                'video class not found, video-tools not installed.'
+            );
+        }
+    }
+
     /**
      * @throws DependencyFailedException
      * @throws FileNotFoundException

@@ -8,6 +8,7 @@ use datagutten\video_tools\exceptions as video_exceptions;
 use datagutten\video_tools\video;
 use DependencyFailedException;
 use FileNotFoundException;
+use RuntimeException;
 
 class recording_file
 {
@@ -33,6 +34,8 @@ class recording_file
      */
     function __construct($file)
     {
+        if(!class_exists('datagutten\video_tools\video'))
+            throw new RuntimeException('video class not found, video-tools not installed');
         if(!file_exists($file))
             throw new FileNotFoundException($file);
         $this->file = $file;
