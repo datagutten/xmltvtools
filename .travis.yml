@@ -28,7 +28,7 @@ matrix:
           packages:
             - php-xml
       install:
-        - composer remove --no-interaction datagutten/video-tools
+        - composer remove --dev --no-interaction datagutten/video-tools
   allow_failures:
     - php: 'nightly'
 
