@@ -16,12 +16,6 @@ matrix:
          - composer install --no-interaction
          - composer update --prefer-lowest
     - php: '7.4'
-      name: 'No ffmpeg'
-      addons:
-        apt:
-          packages:
-            - php-xml
-    - php: '7.4'
       name: 'No video-tools and no ffmpeg'
       addons:
         apt:
