@@ -49,6 +49,7 @@ class recording_fileTest extends TestCase
      * @throws DependencyFailedException
      * @throws FileNotFoundException
      * @throws exceptions\DurationNotFoundException
+     * @requires PHPUnit 9.1
      */
     public function testGet_duration_cache()
     {
