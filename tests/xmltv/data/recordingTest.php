@@ -35,6 +35,14 @@ class recordingTest extends TestCase
         new recording($test_file);
     }
 
+    public function testIgnoreInvalidFileName()
+    {
+        $test_file = files::path_join(__DIR__, '..', 'test_data', 'Reklame Kornmo Treider 41.mp4' );
+        $recording = new recording($test_file, '', '', true);
+        $this->assertEmpty($recording->channel_name);
+        $this->assertEmpty($recording->eit);
+    }
+
     public function testPrograms()
     {
         $test_file = files::path_join(__DIR__, '..', 'test_data', '20200605 0855 - Disney XD (N) - Phineas og Ferb x4.ts' );

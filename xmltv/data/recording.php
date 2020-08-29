@@ -55,12 +55,12 @@ class recording extends recording_file
      * @param string $file Recording file
      * @param string $xmltv_path XMLTV root path
      * @param array $xmltv_sub_folders Sub folders of each channel to load data from
-     * @throws FileNotFoundException XMLTV path not found
+     * @param bool $ignore_file_names Ignore errors for file names that can not be parsed
      * @throws FileNotFoundException
      * @throws xmltv_exceptions\InvalidFileNameException
      * @throws XMLTVException
      */
-    function __construct($file, $xmltv_path = '', $xmltv_sub_folders = ['xmltv'])
+    function __construct($file, $xmltv_path = '', $xmltv_sub_folders = ['xmltv'], $ignore_file_names = False)
     {
         parent::__construct($file);
 
@@ -73,13 +73,24 @@ class recording extends recording_file
             trigger_error('Unable to get duration: '.$e->getMessage());
         }
 
-        $info = $this->dreambox->parse_file_name($file);
-        $this->start_datetime = $info['datetime']; //Date and time from file name
-        $this->channel_name = $info['channel']; //Channel from file name
-        $this->start_timestamp=strtotime($info['datetime']);
-        $this->end_timestamp = $this->start_timestamp + $this->duration;
+        try {
+            $info = $this->dreambox->parse_file_name($file);
+            $this->start_datetime = $info['datetime']; //Date and time from file name
+            $this->channel_name = $info['channel']; //Channel from file name
+            $this->start_timestamp = strtotime($info['datetime']);
+            $this->end_timestamp = $this->start_timestamp + $this->duration;
+        } catch (xmltv_exceptions\InvalidFileNameException $e) {
+            if (!$ignore_file_names)
+                throw $e;
+        }
 
-        $this->eit = $this->eit_info();
+        try {
+            $this->eit = $this->eit_info();
+        } catch (FileNotFoundException $e) {
+            if (!$ignore_file_names)
+                throw $e;
+        }
+
         if(!empty($xmltv_path))
             $this->xmltv_parser = new parse\merger($xmltv_path, $xmltv_sub_folders);
     }
