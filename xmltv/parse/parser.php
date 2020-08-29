@@ -138,27 +138,20 @@ class parser
     /**
      * Get program running at the given time or the next starting program
      * @param int $search_time Program timestamp
-     * @param string $programs_xml_or_channel Channel id
+     * @param string $channel Channel id
      * @param string $mode now (running program at search time), next (next starting program) or nearest (program start with lowest difference to search time)
      * @return SimpleXMLElement
      * @throws ProgramNotFoundException
      */
-    public function find_program($search_time,$programs_xml_or_channel,$mode='nearest')
+    public function find_program($search_time, $channel, $mode='nearest')
     {
-        if(is_string($programs_xml_or_channel))
-        {
-            try {
-                $programs_xml = $this->get_programs($programs_xml_or_channel, $search_time);
-            }
-            catch (FileNotFoundException|InvalidXMLFileException $e)
-            {
-                throw new ProgramNotFoundException($e->getMessage(), 0, $e);
-            }
+        try {
+            $programs_xml = $this->get_programs($channel, $search_time);
         }
-        /*elseif(is_array($programs_xml_or_channel))
-            $programs_xml=$programs_xml_or_channel;*/
-        else
-            throw new InvalidArgumentException('$programs_xml_or_channel must be array of programs or string channel id');
+        catch (FileNotFoundException|InvalidXMLFileException $e)
+        {
+            throw new ProgramNotFoundException($e->getMessage(), 0, $e);
+        }
 
         foreach($programs_xml as $key=>$program) //Loop through the programs
         {
