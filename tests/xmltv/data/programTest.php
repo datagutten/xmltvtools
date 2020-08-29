@@ -97,4 +97,18 @@ class programTest extends TestCase
         $program = program::from_xmltv($xml_program);
         $this->assertSame(['series', 'test'], $program->categories);
     }
+
+    public function testsubTitle()
+    {
+        $xml = simplexml_load_file(__DIR__.'/../parse/test_data/program.xml');
+        $xml_program = $xml->{'programme'};
+        $program = program::from_xmltv($xml_program);
+        $this->assertSame('test', $program->sub_title);
+    }
+
+    public function testEitShortDescription()
+    {
+        $program = program::from_eit(__DIR__.'/../test_data/20150401 1520 - Nat Geo HD (N) - Highway Thru Hell.eit');
+        $this->assertSame('(13/s2) Å stenge er ikke en mulighet', $program->description);
+    }
 }

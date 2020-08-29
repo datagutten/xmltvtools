@@ -91,4 +91,12 @@ class recordingTest extends TestCase
         $time = $recording->eit_time();
         $this->assertSame($time, '10:00-10:29');
     }
+
+    public function testDurationInvalidFile()
+    {
+        $this->expectError();
+        $test_file = files::path_join(__DIR__, '..', 'test_data', '20200605 0855 - Disney XD (N) - Phineas og Ferb x4.eit' );
+        $this->expectErrorMessageMatches('/Unable to get duration:.+/');
+        new recording($test_file);
+    }
 }
