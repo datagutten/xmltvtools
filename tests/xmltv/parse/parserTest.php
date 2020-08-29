@@ -1,4 +1,5 @@
-<?php
+<?php /** @noinspection PhpUnhandledExceptionInspection */
+
 /**
  * Created by PhpStorm.
  * User: abi
@@ -12,6 +13,7 @@ use datagutten\xmltv\tools\exceptions\ProgramNotFoundException;
 use datagutten\xmltv\tools\parse\parser;
 use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
+use stdClass;
 
 class parserTest extends TestCase
 {
@@ -48,6 +50,36 @@ class parserTest extends TestCase
         $program = $this->parser->find_program(strtotime('2019-10-04 00:55'), 'natgeo.no');
         $this->assertEquals('Vinterveiens helter', $program->{'title'});
         $this->assertEquals('20191004010000 +0200', $program->attributes()->{'start'});
+    }
+
+    public function testFindFirstProgram()
+    {
+        $program = $this->parser->find_program(strtotime('2020-05-10 02:00'), 'xd.disneychannel.no', 'next');
+        $this->assertEquals('Furiki Wheels', $program->{'title'});
+        $this->assertEquals('20200510060000 +0200', $program->attributes()->{'start'});
+    }
+
+    public function testFind_programNext()
+    {
+        $program = $this->parser->find_program(strtotime('2019-10-04 00:55'), 'natgeo.no', 'next');
+        $this->assertEquals('Vinterveiens helter', $program->{'title'});
+        $this->assertEquals('20191004010000 +0200', $program->attributes()->{'start'});
+    }
+
+    public function testCurrentProgram()
+    {
+        $program = $this->parser->find_program(strtotime('2020-05-10 08:35'), 'xd.disneychannel.no', 'now');
+        $this->assertEquals('Phineas og Ferb', $program->{'title'});
+        $this->assertEquals('20200510082900 +0200', $program->attributes()->{'start'});
+    }
+
+    public function testLastProgram()
+    {
+        $this->parser->debug = true;
+        $this->expectOutputRegex("/Time to start:.+Returning last program\n/s");
+        $program = $this->parser->find_program(strtotime('2020-05-10 23:00'), 'xd.disneychannel.no', 'nearest');
+        $this->assertEquals('Space Chickens In Space S1', $program->{'title'});
+        $this->assertEquals('20200510212900 +0200', $program->attributes()->{'start'});
     }
 
     public function testGet_programs()
@@ -88,10 +120,31 @@ class parserTest extends TestCase
         $this->assertEquals('Vinterveiens helter', $program->{'title'});
     }
 
-    /*public function testSeason_episode()
+    /** @noinspection PhpParamsInspection */
+    public function testSeason_episode()
     {
+        $program = new stdClass();
+        $program->{'episode-num'} = ['0.17.'];
+        $string = parser::season_episode($program);
+        $this->assertSame('S01E18', $string);
 
-    }*/
+        $program->{'episode-num'} = ['0.17.'];
+        $array = parser::season_episode($program, false);
+        $this->assertSame(['season'=>1, 'episode'=>18], $array);
+
+        $program->{'episode-num'} = ['.17/20.'];
+        $string = parser::season_episode($program);
+        $this->assertSame('EP18', $string);
+
+        $program->{'episode-num'} = ['.17/20.'];
+        $array = parser::season_episode($program, false);
+        $this->assertSame(['season'=>0, 'episode'=>18], $array);
+
+        $program->{'episode-num'} = ['.17.'];
+        $string = parser::season_episode($program);
+        $this->assertEmpty($string);
+
+    }
 
     public function testCombine_days()
     {
@@ -100,6 +153,13 @@ class parserTest extends TestCase
         $day2 = $parser->files->load_file('natgeo.no', strtotime('2019-10-04'));
         $day = $parser->combine_days(array($day1, $day2), '20191004');
         $this->assertIsArray($day);
+        $this->assertEquals('20191004000000 +0000', $day[0]->attributes()['start']);
+    }
+
+    public function testCombine_days2()
+    {
+        $parser = new parser(__DIR__.'/test_data', ['xmltv']);
+        $day = $parser->get_programs('natgeo.no', strtotime('2019-10-04'));
         $this->assertEquals('20191004000000 +0000', $day[0]->attributes()['start']);
     }
 
