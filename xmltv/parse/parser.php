@@ -14,6 +14,7 @@ use datagutten\xmltv\tools\exceptions\InvalidXMLFileException;
 use datagutten\xmltv\tools\exceptions\ProgramNotFoundException;
 use FileNotFoundException;
 use InvalidArgumentException;
+use RuntimeException;
 use SimpleXMLElement;
 
 class parser
@@ -94,7 +95,8 @@ class parser
         $first_start_hour=(int)substr($first_start_time,8,2);
         if($multiple_days===null)
         {
-            if($first_start_hour>1) //If the first program in the file starts before or on 01:59 the file contains a complete day
+            //If the first program in the file starts before or on 01:59 the file contains a complete day
+            if($first_start_hour>1)
                 $multiple_days=true;
             elseif($first_start_hour<=1)
                 $multiple_days=false;
@@ -107,9 +109,11 @@ class parser
                 $days[] = $xml_previous_day;
             }
             catch (FileNotFoundException|InvalidXMLFileException $e) {
+                // @codeCoverageIgnoreStart
                 if ($this->debug)
                     echo $e->getMessage();
-           }
+                // @codeCoverageIgnoreEnd
+            }
 
             $days[]=$xml_current_day;
 
@@ -118,8 +122,10 @@ class parser
                 $days[]=$xml_next_day;
             }
             catch (FileNotFoundException|InvalidXMLFileException $e) {
+                // @codeCoverageIgnoreStart
                 if ($this->debug)
                     echo $e->getMessage();
+                // @codeCoverageIgnoreEnd
             }
         }
         else
@@ -200,18 +206,13 @@ class parser
                 {
                     if($this->debug)
                         echo "Returning last program\n";
-                    //Fetch next day and check if first program is nearer
-                    /*if($mode==='nearest')
-                    {
-                        $channel=(string)$program->attributes()['channel'];
-                        $programs_nextday=$this->getprograms($channel,strtotime('+1 day',$program_start));
-                        print_r($programs_nextday);
-                    }*/
                     return $program;
                 }
             }
         }
-        throw new ProgramNotFoundException('Nothing on air at given time');
+        // @codeCoverageIgnoreStart
+        throw new RuntimeException('Loop did not return');
+        // @codeCoverageIgnoreEnd
     }
 
     /**
