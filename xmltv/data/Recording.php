@@ -3,7 +3,6 @@
 
 namespace datagutten\xmltv\tools\data;
 
-
 use datagutten\dreambox;
 use datagutten\video_tools\exceptions as video_exceptions;
 use datagutten\xmltv\tools\exceptions as xmltv_exceptions;
@@ -13,7 +12,7 @@ use DependencyFailedException;
 use FileNotFoundException;
 use InvalidArgumentException;
 
-class recording extends recording_file
+class Recording extends RecordingFile
 {
     /**
      * @var dreambox\recording_info
@@ -41,7 +40,7 @@ class recording extends recording_file
     public $channel_name;
 
     /**
-     * @var program|array
+     * @var Program|array
      */
     public $eit;
 
@@ -60,7 +59,7 @@ class recording extends recording_file
      * @throws xmltv_exceptions\InvalidFileNameException
      * @throws XMLTVException
      */
-    function __construct($file, $xmltv_path = '', $xmltv_sub_folders = ['xmltv'], $ignore_file_names = False)
+    public function __construct($file, $xmltv_path = '', $xmltv_sub_folders = ['xmltv'], $ignore_file_names = false)
     {
         parent::__construct($file);
 
@@ -68,9 +67,8 @@ class recording extends recording_file
 
         try {
             $this->duration = $this->duration();
-        }
-        catch (DependencyFailedException|video_exceptions\DurationNotFoundException $e) {
-            trigger_error('Unable to get duration: '.$e->getMessage());
+        } catch (DependencyFailedException|video_exceptions\DurationNotFoundException $e) {
+            trigger_error('Unable to get duration: ' . $e->getMessage());
         }
 
         try {
@@ -85,7 +83,7 @@ class recording extends recording_file
         }
 
         try {
-            $this->eit = $this->eit_info();
+            $this->eit = $this->eitInfo();
         } catch (FileNotFoundException $e) {
             if (!$ignore_file_names)
                 throw $e;
@@ -100,7 +98,8 @@ class recording extends recording_file
      * @return string XMLTV channel id
      * @throws xmltv_exceptions\ChannelNotFoundException Channel not found
      */
-    function channel_id() {
+    public function channelId()
+    {
         return $this->dreambox->channels->name_to_id($this->channel_name);
     }
 
@@ -110,55 +109,56 @@ class recording extends recording_file
      * @throws xmltv_exceptions\ProgramNotFoundException Program not found
      * @throws xmltv_exceptions\ChannelNotFoundException Channel not found
      */
-    function programs()
+    public function programs()
     {
         if(empty($this->xmltv_parser))
             throw new InvalidArgumentException('XMLTV path not specified');
 
-        $channel = $this->channel_id();
+        $channel = $this->channelId();
         $info_array = [];
         $end_timestamp = $this->start_timestamp;
 
         while($end_timestamp<$this->start_timestamp+$this->duration) {
             $program_xml = $this->xmltv_parser->find_program($end_timestamp, $channel);
             $end_timestamp = strtotime($program_xml->attributes()->{'stop'});
-            $info_array[] = program::from_xmltv($program_xml);
+            $info_array[] = Program::fromXMLTV($program_xml);
         }
         return $info_array;
     }
 
     /**
      * Find the nearest program start in the recording
-     * @return program
+     * @return Program
      * @throws xmltv_exceptions\ProgramNotFoundException Program not found
      * @throws xmltv_exceptions\ChannelNotFoundException Channel not found
      */
-    function program_nearest()
+    public function nearestProgram()
     {
         if(empty($this->xmltv_parser))
             throw new InvalidArgumentException('XMLTV path not specified');
 
-        $xmltv = $this->xmltv_parser->find_program($this->start_timestamp,$this->channel_id(),'nearest');
-        return program::from_xmltv($xmltv);
+        $xmltv = $this->xmltv_parser->find_program($this->start_timestamp, $this->channelId(), 'nearest');
+        return Program::fromXMLTV($xmltv);
     }
 
-    function time()
+    public function time()
     {
-        return sprintf('%s-%s',date('H:i',$this->start_timestamp),date('H:i',$this->end_timestamp));
+        return sprintf('%s-%s', date('H:i', $this->start_timestamp), date('H:i', $this->end_timestamp));
     }
-    function eit_time()
+
+    public function eitTime()
     {
-        return sprintf('%s-%s',date('H:i',$this->eit->start_timestamp),date('H:i',$this->eit->end_timestamp));
+        return sprintf('%s-%s', date('H:i', $this->eit->start_timestamp), date('H:i', $this->eit->end_timestamp));
     }
 
     /**
      * Get information from EIT file
-     * @return program
+     * @return Program
      * @throws FileNotFoundException EIT file not found
      */
-    function eit_info()
+    public function eitInfo()
     {
         $eit_file = sprintf('%s/%s.eit', $this->pathinfo['dirname'], $this->pathinfo['filename']);
-        return program::from_eit($eit_file);
+        return Program::fromEIT($eit_file);
     }
 }

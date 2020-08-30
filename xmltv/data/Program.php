@@ -3,7 +3,6 @@
 
 namespace datagutten\xmltv\tools\data;
 
-
 use datagutten\dreambox\recording_info as dreambox_info;
 use datagutten\video_tools\video;
 use datagutten\xmltv\tools\parse\parser;
@@ -14,7 +13,7 @@ use SimpleXMLElement;
  * Class to represent a XMLTV program
  * @package datagutten\renamevideo
  */
-class program
+class Program
 {
     /**
      * @var int Season
@@ -64,9 +63,9 @@ class program
     /**
      * Get program from XMLTV
      * @param SimpleXMLElement $xml
-     * @return program program
+     * @return Program program
      */
-    static function from_xmltv($xml)
+    public static function fromXMLTV($xml)
     {
         $program = new self();
 
@@ -79,16 +78,14 @@ class program
         if(isset($xml->attributes()->{'stop'}))
             $program->end_timestamp = strtotime($xml->attributes()->{'stop'});
 
-        $program->format_start_end();
+        $program->formatStartEnd();
 
-        if(isset($xml->{'category'})) //Get the category
-        {
+        //Get the category
+        if(isset($xml->{'category'})) {
             if(count($xml->{'category'}) == 1)
                 $program->categories=[(string)$xml->{'category'}];
-            else
-            {
-                foreach ($xml->{'category'} as $category)
-                {
+            else {
+                foreach ($xml->{'category'} as $category) {
                     $program->categories[] = (string)$category;
                 }
             }
@@ -102,8 +99,7 @@ class program
 
         //Get the episode-num string and convert it to season and episode
         $episode = parser::season_episode($xml, false);
-        if(isset($xml->{'episode-num'}) && !empty($episode))
-        {
+        if(isset($xml->{'episode-num'}) && !empty($episode)) {
             $program->season = $episode['season'];
             $program->episode = $episode['episode'];
         }
@@ -113,10 +109,10 @@ class program
 
     /**
      * @param string $file EIT file
-     * @return program
+     * @return Program
      * @throws FileNotFoundException EIT file not found
      */
-    static function from_eit($file)
+    public static function fromEIT($file)
     {
         $program = new self();
         $eit = dreambox_info::parse_eit($file, 'array');
@@ -127,15 +123,14 @@ class program
             $duration = video::time_to_seconds(implode(':', $eit['duration']));
             $program->end_timestamp = $program->start_timestamp + $duration;
         }
-        $program->format_start_end();
+        $program->formatStartEnd();
 
         if(empty($eit['description']) && !empty($eit['short_description']))
             $program->description = $eit['short_description'];
         elseif(!empty($eit['description']))
             $program->description = $eit['description'];
 
-        if(!empty($eit['season_episode']))
-        {
+        if(!empty($eit['season_episode'])) {
             $program->season = $eit['season_episode']['season'];
             $program->episode = $eit['season_episode']['episode'];
         }
@@ -143,7 +138,7 @@ class program
         return $program;
     }
 
-    function format_episode()
+    public function formatEpisode()
     {
         return sprintf('S%02dE%02d', $this->season, $this->episode);
     }
@@ -152,7 +147,7 @@ class program
      * @param int $timestamp
      * @return string
      */
-    static function format_time($timestamp)
+    public static function formatTime($timestamp)
     {
         return date('H:i', $timestamp);
     }
@@ -160,18 +155,18 @@ class program
     /**
      * Format start and end timestamp
      */
-    function format_start_end()
+    public function formatStartEnd()
     {
-        $this->start = self::format_time($this->start_timestamp);
+        $this->start = self::formatTime($this->start_timestamp);
         if(!empty($this->end_timestamp))
-            $this->end = self::format_time($this->end_timestamp);
+            $this->end = self::formatTime($this->end_timestamp);
     }
 
-    function header()
+    public function header()
     {
         $header = sprintf('%s-%s %s', $this->start, $this->end, $this->title);
         if(!empty($this->episode))
-            $header.= ' '.$this->format_episode();
+            $header.= ' '.$this->formatEpisode();
         return $header;
     }
 }

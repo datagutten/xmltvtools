@@ -3,14 +3,13 @@
 
 namespace datagutten\xmltv\tools\data;
 
-
 use datagutten\video_tools\exceptions as video_exceptions;
 use datagutten\video_tools\video;
 use DependencyFailedException;
 use FileNotFoundException;
 use RuntimeException;
 
-class recording_file
+class RecordingFile
 {
     /**
      * @var string Full path to recording file
@@ -32,7 +31,7 @@ class recording_file
      * @param $file
      * @throws FileNotFoundException
      */
-    function __construct($file)
+    public function __construct($file)
     {
         // @codeCoverageIgnoreStart
         if(!class_exists('datagutten\video_tools\video'))
@@ -44,7 +43,7 @@ class recording_file
         $this->pathinfo = pathinfo($file);
     }
 
-    function basename()
+    public function basename()
     {
         return $this->pathinfo['basename'];
     }
@@ -56,7 +55,7 @@ class recording_file
      * @throws video_exceptions\DurationNotFoundException
      * @throws DependencyFailedException
      */
-    function get_duration()
+    public function getDuration()
     {
         return video::duration($this->file);
     }
@@ -66,25 +65,21 @@ class recording_file
      * @throws video_exceptions\DurationNotFoundException
      * @throws DependencyFailedException
      */
-    function duration()
+    public function duration()
     {
-        $file = $this->file.'.duration';
-        if(!file_exists($file))
-        {
-            $duration = $this->get_duration();
+        $file = $this->file . '.duration';
+        if (!file_exists($file)) {
+            $duration = $this->getDuration();
             file_put_contents($file, $duration);
             return $duration;
-        }
-        else
-        {
+        } else {
             $duration = file_get_contents($file);
-            if(empty($duration)) {
+            if (empty($duration)) {
                 unlink($file);
                 return $this->duration();
-            }
-            else
+            } else {
                 return $duration;
-
+            }
         }
     }
 
@@ -92,7 +87,7 @@ class recording_file
      * Get duration as a hours:minutes:seconds string
      * @throws video_exceptions\DurationNotFoundException|DependencyFailedException
      */
-    function duration_hms()
+    public function durationHMS()
     {
         return video::seconds_to_time($this->duration());
     }

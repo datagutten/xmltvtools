@@ -4,7 +4,7 @@ namespace datagutten\xmltv\tests\tools\xmltv\data;
 
 use datagutten\tools\files\files;
 use datagutten\video_tools\exceptions;
-use datagutten\xmltv\tools\data\recording_file;
+use datagutten\xmltv\tools\data\RecordingFile;
 use DependencyFailedException;
 use FileNotFoundException;
 use PHPUnit\Framework\TestCase;
@@ -28,8 +28,8 @@ class recording_fileTest extends TestCase
     public function testGet_duration()
     {
         $test_file = files::path_join(__DIR__, '..', 'test_data', 'Reklame Kornmo Treider 41.mp4' );
-        $file = new recording_file($test_file);
-        $duration = $file->get_duration();
+        $file = new RecordingFile($test_file);
+        $duration = $file->getDuration();
         $this->assertEquals(49, $duration);
     }
 
@@ -41,8 +41,8 @@ class recording_fileTest extends TestCase
     public function testDuration_hms()
     {
         $test_file = files::path_join(__DIR__, '..', 'test_data', 'Reklame Kornmo Treider 41.mp4' );
-        $file = new recording_file($test_file);
-        $this->assertEquals('00:00:49', $file->duration_hms());
+        $file = new RecordingFile($test_file);
+        $this->assertEquals('00:00:49', $file->durationHMS());
     }
 
     /**
@@ -56,7 +56,7 @@ class recording_fileTest extends TestCase
         $test_file = files::path_join(__DIR__, '..', 'test_data', 'Reklame Kornmo Treider 41.mp4' );
         $cache_file = $test_file.'.duration';
 
-        $file = new recording_file($test_file);
+        $file = new RecordingFile($test_file);
         $this->assertFileDoesNotExist($cache_file);
         $duration = $file->duration();
         $this->assertEquals(49, $duration);
@@ -78,7 +78,7 @@ class recording_fileTest extends TestCase
     public function testBasename()
     {
         $test_file = files::path_join(__DIR__, '..', 'test_data', 'Reklame Kornmo Treider 41.mp4' );
-        $file = new recording_file($test_file);
+        $file = new RecordingFile($test_file);
         $this->assertSame('Reklame Kornmo Treider 41.mp4', $file->basename());
     }
 

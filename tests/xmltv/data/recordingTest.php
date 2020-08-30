@@ -4,8 +4,8 @@ namespace datagutten\xmltv\tests\tools\xmltv\data;
 
 
 use datagutten\tools\files\files;
-use datagutten\xmltv\tools\data\program;
-use datagutten\xmltv\tools\data\recording;
+use datagutten\xmltv\tools\data\Program;
+use datagutten\xmltv\tools\data\Recording;
 use datagutten\xmltv\tools\exceptions\InvalidFileNameException;
 use FileNotFoundException;
 use InvalidArgumentException;
@@ -25,20 +25,20 @@ class recordingTest extends TestCase
     public function testFileNotFound()
     {
         $this->expectException(FileNotFoundException::class);
-        new recording('z:/opptak/Phineas and Ferb/Phineas og Ferb S01E29 - Boyfriend from 27,000 B.C.ts');
+        new Recording('z:/opptak/Phineas and Ferb/Phineas og Ferb S01E29 - Boyfriend from 27,000 B.C.ts');
     }
 
     public function testInvalidFileName()
     {
         $test_file = files::path_join(__DIR__, '..', 'test_data', 'Reklame Kornmo Treider 41.mp4' );
         $this->expectException(InvalidFileNameException::class);
-        new recording($test_file);
+        new Recording($test_file);
     }
 
     public function testIgnoreInvalidFileName()
     {
         $test_file = files::path_join(__DIR__, '..', 'test_data', 'Reklame Kornmo Treider 41.mp4' );
-        $recording = new recording($test_file, '', '', true);
+        $recording = new Recording($test_file, '', '', true);
         $this->assertEmpty($recording->channel_name);
         $this->assertEmpty($recording->eit);
     }
@@ -47,7 +47,7 @@ class recordingTest extends TestCase
     {
         $test_file = files::path_join(__DIR__, '..', 'test_data', '20200605 0855 - Disney XD (N) - Phineas og Ferb x4.ts' );
         $xmltv_path = files::path_join(__DIR__, '..', 'parse', 'test_data');
-        $recording = new recording($test_file, $xmltv_path);
+        $recording = new Recording($test_file, $xmltv_path);
         $programs = $recording->programs();
         $this->assertIsArray($programs);
     }
@@ -55,8 +55,8 @@ class recordingTest extends TestCase
     {
         $test_file = files::path_join(__DIR__, '..', 'test_data', '20200605 0855 - Disney XD (N) - Phineas og Ferb x4.ts' );
         $xmltv_path = files::path_join(__DIR__, '..', 'parse', 'test_data');
-        $recording = new recording($test_file, $xmltv_path);
-        $program = $recording->program_nearest();
+        $recording = new Recording($test_file, $xmltv_path);
+        $program = $recording->nearestProgram();
         $this->assertSame(1591340400, $program->start_timestamp);
         $this->assertSame('Phineas og Ferb', $program->title);
     }
@@ -64,30 +64,30 @@ class recordingTest extends TestCase
     public function testEitInfo()
     {
         $test_file = files::path_join(__DIR__, '..', 'test_data', '20200605 0855 - Disney XD (N) - Phineas og Ferb x4.ts' );
-        $recording = new recording($test_file);
-        $eit = $recording->eit_info();
-        $this->assertInstanceOf(program::class, $eit);
+        $recording = new Recording($test_file);
+        $eit = $recording->eitInfo();
+        $this->assertInstanceOf(Program::class, $eit);
     }
 
     public function testNoXMLTV()
     {
         $test_file = files::path_join(__DIR__, '..', 'test_data', '20200605 0855 - Disney XD (N) - Phineas og Ferb x4.ts' );
         $this->expectException(InvalidArgumentException::class);
-        $recording = new recording($test_file);
+        $recording = new Recording($test_file);
         $recording->programs();
     }
     public function testNoXMLTVNearest()
     {
         $test_file = files::path_join(__DIR__, '..', 'test_data', '20200605 0855 - Disney XD (N) - Phineas og Ferb x4.ts' );
         $this->expectException(InvalidArgumentException::class);
-        $recording = new recording($test_file);
-        $recording->program_nearest();
+        $recording = new Recording($test_file);
+        $recording->nearestProgram();
     }
 
     public function testTime()
     {
         $test_file = files::path_join(__DIR__, '..', 'test_data', '20200605 0855 - Disney XD (N) - Phineas og Ferb x4.ts' );
-        $recording = new recording($test_file);
+        $recording = new Recording($test_file);
         $time = $recording->time();
         $this->assertSame($time, '08:55-08:55');
     }
@@ -95,8 +95,8 @@ class recordingTest extends TestCase
     public function testEitTime()
     {
         $test_file = files::path_join(__DIR__, '..', 'test_data', '20200605 0855 - Disney XD (N) - Phineas og Ferb x4.ts' );
-        $recording = new recording($test_file);
-        $time = $recording->eit_time();
+        $recording = new Recording($test_file);
+        $time = $recording->eitTime();
         $this->assertSame($time, '10:00-10:29');
     }
 
@@ -105,6 +105,6 @@ class recordingTest extends TestCase
         $this->expectError();
         $test_file = files::path_join(__DIR__, '..', 'test_data', '20200605 0855 - Disney XD (N) - Phineas og Ferb x4.eit' );
         $this->expectErrorMessageMatches('/Unable to get duration:.+/');
-        new recording($test_file);
+        new Recording($test_file);
     }
 }

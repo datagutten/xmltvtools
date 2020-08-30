@@ -5,7 +5,7 @@
 namespace datagutten\xmltv\tests\tools\xmltv\data;
 
 
-use datagutten\xmltv\tools\data\program;
+use datagutten\xmltv\tools\data\Program;
 use PHPUnit\Framework\TestCase;
 
 date_default_timezone_set('Europe/Oslo');
@@ -13,7 +13,7 @@ class programTest extends TestCase
 {
     public function testFrom_eit()
     {
-        $program = program::from_eit(__DIR__.'/../test_data/20200605 0855 - Disney XD (N) - Phineas og Ferb x4.eit');
+        $program = Program::fromEIT(__DIR__.'/../test_data/20200605 0855 - Disney XD (N) - Phineas og Ferb x4.eit');
         $this->assertSame(4, $program->season);
         $this->assertSame(107, $program->episode);
         $this->assertSame('10:00', $program->start);
@@ -27,7 +27,7 @@ class programTest extends TestCase
 
     public function testFrom_eit2()
     {
-        $program = program::from_eit(__DIR__.'/../test_data/20200611 0855 - Disney XD (N) - Phineas og Ferb x4.eit');
+        $program = Program::fromEIT(__DIR__.'/../test_data/20200611 0855 - Disney XD (N) - Phineas og Ferb x4.eit');
         $this->assertEmpty($program->season);
         $this->assertEmpty($program->episode);
         $this->assertSame('10:00', $program->start);
@@ -41,7 +41,7 @@ class programTest extends TestCase
 
     public function testFrom_eit_NoDescription()
     {
-        $program = program::from_eit(__DIR__.'/../test_data/20181207 0655 - Disney XD (N) - Milo Murphys lov.eit');
+        $program = Program::fromEIT(__DIR__.'/../test_data/20181207 0655 - Disney XD (N) - Milo Murphys lov.eit');
         $this->assertSame('Milo Murphys lov', $program->title);
         $this->assertEmpty($program->season);
         $this->assertEmpty($program->episode);
@@ -56,13 +56,13 @@ class programTest extends TestCase
 
     public function testFormat_time()
     {
-        $time = program::format_time(1544162400);
+        $time = Program::formatTime(1544162400);
         $this->assertSame('07:00', $time);
     }
 
     public function testHeader()
     {
-        $program = new program();
+        $program = new Program();
         $program->start = '06:00';
         $program->end = '06:29';
         $program->title = 'Milo Murphys lov';
@@ -74,18 +74,18 @@ class programTest extends TestCase
 
     public function testFormat_episode()
     {
-        $program = new program();
+        $program = new Program();
         $program->season = 2;
         $program->episode = 10;
-        $this->assertEquals('S02E10', $program->format_episode());
+        $this->assertEquals('S02E10', $program->formatEpisode());
     }
 
     public function testFrom_xmltv()
     {
         $xml = simplexml_load_file(__DIR__.'/../parse/test_data/natgeo.no/xmltv/2019/natgeo.no_2019-10-10.xml');
         $xml_program = $xml->{'programme'};
-        $program = program::from_xmltv($xml_program);
-        $this->assertInstanceOf(program::class, $program);
+        $program = Program::fromXMLTV($xml_program);
+        $this->assertInstanceOf(Program::class, $program);
         $this->assertSame('Wicked Tuna', $program->title);
         $this->assertSame(['series'], $program->categories);
     }
@@ -94,7 +94,7 @@ class programTest extends TestCase
     {
         $xml = simplexml_load_file(__DIR__.'/../parse/test_data/program.xml');
         $xml_program = $xml->{'programme'};
-        $program = program::from_xmltv($xml_program);
+        $program = Program::fromXMLTV($xml_program);
         $this->assertSame(['series', 'test'], $program->categories);
     }
 
@@ -102,13 +102,13 @@ class programTest extends TestCase
     {
         $xml = simplexml_load_file(__DIR__.'/../parse/test_data/program.xml');
         $xml_program = $xml->{'programme'};
-        $program = program::from_xmltv($xml_program);
+        $program = Program::fromXMLTV($xml_program);
         $this->assertSame('test', $program->sub_title);
     }
 
     public function testEitShortDescription()
     {
-        $program = program::from_eit(__DIR__.'/../test_data/20150401 1520 - Nat Geo HD (N) - Highway Thru Hell.eit');
+        $program = Program::fromEIT(__DIR__.'/../test_data/20150401 1520 - Nat Geo HD (N) - Highway Thru Hell.eit');
         $this->assertSame('(13/s2) Å stenge er ikke en mulighet', $program->description);
     }
 }
