@@ -3,9 +3,7 @@
 
 namespace datagutten\xmltv\tools\parse;
 
-use datagutten\xmltv\tools\exceptions\ProgramNotFoundException;
-use FileNotFoundException;
-use SimpleXMLElement;
+use datagutten\xmltv\tools\exceptions\XMLTVException;
 
 /**
  * Merge information from different xmltv files
@@ -33,12 +31,17 @@ class merger extends parser
          */
         foreach ($this->parsers as $parser)
         {
-            $program = $parser->find_program($search_time,$programs_xml_or_channel,$mode);
-            $keys = array_keys((array)$program);
-            $diff = array_diff($keys, $base_keys);
-            foreach($diff as $field)
+            try {
+                $program = $parser->find_program($search_time, $channel, $mode);
+                $keys = array_keys((array)$program);
+                $diff = array_diff($keys, $base_keys);
+                foreach ($diff as $field) {
+                    $base_program->$field = $program->$field;
+                }
+            }
+            catch (XMLTVException $e)
             {
-                $base_program->$field = $program->$field;
+                continue;
             }
         }
         return $base_program;
