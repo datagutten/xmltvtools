@@ -15,12 +15,6 @@ class merger extends parser
 {
     public $parsers = [];
 
-    /**
-     * merger constructor.
-     * @param string $xmltv_path XMLTV root path
-     * @param array $sub_folders Sub folders of each channel to load data from
-     * @throws FileNotFoundException XMLTV path not found
-     */
     function __construct($xmltv_path, $sub_folders)
     {
         parent::__construct($xmltv_path, $sub_folders);
@@ -30,16 +24,9 @@ class merger extends parser
         }
     }
 
-    /**
-     * @param int $search_time Time to search
-     * @param string $programs_xml_or_channel
-     * @param string $mode
-     * @return SimpleXMLElement
-     * @throws ProgramNotFoundException Program not found
-     */
-    function find_program($search_time,$programs_xml_or_channel,$mode='nearest')
+    function find_program($search_time, $channel, $mode='nearest')
     {
-        $base_program = parent::find_program($search_time,$programs_xml_or_channel,$mode);
+        $base_program = parent::find_program($search_time,$channel,$mode);
         $base_keys = array_keys((array)$base_program);
         /**
          * @var parser $parser
