@@ -115,13 +115,22 @@ class Recording extends RecordingFile
             throw new InvalidArgumentException('XMLTV path not specified');
 
         $channel = $this->channelId();
-        $info_array = [];
-        $end_timestamp = $this->start_timestamp;
+        $recording_end_timestamp = $this->start_timestamp+$this->duration;
 
-        while($end_timestamp<$this->start_timestamp+$this->duration) {
-            $program_xml = $this->xmltv_parser->find_program($end_timestamp, $channel);
-            $end_timestamp = strtotime($program_xml->attributes()->{'stop'});
+        $first_program_xml = $this->xmltv_parser->find_program($this->start_timestamp, $channel);
+        $info_array = [Program::fromXMLTV($first_program_xml)];
+        $end_timestamp = strtotime($first_program_xml->attributes()->{'stop'});
+
+        while($end_timestamp<$recording_end_timestamp) {
+            try {
+                $program_xml = $this->xmltv_parser->find_program($end_timestamp, $channel, 'next');
+            }
+            catch (xmltv_exceptions\ProgramNotFoundException $e)
+            {
+                break;
+            }
             $info_array[] = Program::fromXMLTV($program_xml);
+            $end_timestamp = strtotime($program_xml->attributes()->{'stop'});
         }
         return $info_array;
     }

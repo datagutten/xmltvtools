@@ -175,8 +175,13 @@ class parser
                 }
             }
 
-            if($mode=='next' && $time_to_start[$key]>=0) //Find first program which has not started
-                return $program;
+            if($mode=='next')
+            {
+                if($time_to_start[$key]>=0) //Find first program which has not started
+                    return $program;
+                else
+                    throw new ProgramNotFoundException('Nothing on air at given time');
+            }
             elseif($mode=='now')
             {
                 if($time_to_start[$key]>0) //Current program has not started, return the previous (running now)
