@@ -17,7 +17,7 @@ class channel_info
     /**
      * channel_info constructor.
      */
-    function __construct()
+    public function __construct()
     {
         $this->xml = simplexml_load_file(__DIR__.'/channel_mappings.xml');
     }
@@ -29,7 +29,7 @@ class channel_info
      * @return string|array Channel name
      * @throws ChannelNotFoundException
      */
-    function id_to_name($id, $multiple=false)
+    public function id_to_name(string $id, $multiple=false)
     {
         $result = $this->xml->xpath(sprintf('/mappings/channel[@id="%s"]/name', $id));
         if(empty($result))
@@ -46,7 +46,7 @@ class channel_info
      * @return string
      * @throws ChannelNotFoundException
      */
-    function name_to_id($name)
+    public function name_to_id($name)
     {
         $result = $this->xml->xpath(sprintf('/mappings/channel/name[.="%s"]/../@id', $name));
         if(empty($result))

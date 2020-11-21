@@ -26,7 +26,7 @@ class tv
      * @param string $language Language
      * @param string $generator
      */
-    function __construct($channel, $language, $generator = 'php-xmltv-grabber')
+    function __construct(string $channel, string $language, $generator = 'php-xmltv-grabber')
     {
         $this->channel = $channel;
         $this->language = $language;

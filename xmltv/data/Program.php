@@ -65,7 +65,7 @@ class Program
      * @param SimpleXMLElement $xml
      * @return Program program
      */
-    public static function fromXMLTV($xml)
+    public static function fromXMLTV(SimpleXMLElement $xml)
     {
         $program = new self();
 
@@ -112,7 +112,7 @@ class Program
      * @return Program
      * @throws FileNotFoundException EIT file not found
      */
-    public static function fromEIT($file)
+    public static function fromEIT(string $file)
     {
         $program = new self();
         $eit = dreambox_info::parse_eit($file, 'array');
@@ -147,7 +147,7 @@ class Program
      * @param int $timestamp
      * @return string
      */
-    public static function formatTime($timestamp)
+    public static function formatTime(int $timestamp)
     {
         return date('H:i', $timestamp);
     }

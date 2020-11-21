@@ -59,7 +59,7 @@ class Recording extends RecordingFile
      * @throws xmltv_exceptions\InvalidFileNameException
      * @throws XMLTVException
      */
-    public function __construct($file, $xmltv_path = '', $xmltv_sub_folders = ['xmltv'], $ignore_file_names = false)
+    public function __construct(string $file, $xmltv_path = '', $xmltv_sub_folders = ['xmltv'], $ignore_file_names = false)
     {
         parent::__construct($file);
 

@@ -28,17 +28,12 @@ class programme
      */
     public $tv;
 
-    /*
-     *      * @param string $channel
-     * @param string $default_lang Default language used in title, sub-title and description elements
-     */
-
     /**
      * programme constructor.
      * @param int $start Start time as unix timestamp
      * @param tv TV class instance the program should be added to
      */
-    function __construct($start, $tv)
+    public function __construct(int $start, tv $tv)
     {
         $this->xml = $tv->xml->addChild('programme');
         //$this->xml = new SimpleXMLElement('<programme></programme>');
@@ -48,48 +43,48 @@ class programme
         //$tv->xml->addChild($this->xml);
     }
 
-    function stop($stop)
+    public function stop(int $stop)
     {
         $this->xml->addAttribute('stop', date('YmdHis O', $stop));
     }
 
-    function title($title, $lang=null)
+    public function title(string $title, $lang='')
     {
         $title = str_replace('&', '&amp;', $title);
         $title = $this->xml->addChild('title', $title);
         if(!empty($this->default_lang) && empty($lang))
             $lang = $this->default_lang;
-        if ($lang)
+        if (!empty($lang))
             $title->addAttribute('lang', $lang);
     }
 
-    function sub_title($title, $lang=null)
+    public function sub_title($title, $lang='')
     {
         $title = str_replace('&', '&amp;', $title);
         $title = $this->xml->addChild('sub-title', $title);
         if(!empty($this->default_lang) && empty($lang))
             $lang = $this->default_lang;
-        if ($lang)
+        if (!empty($lang))
             $title->addAttribute('lang', $lang);
     }
 
-    function description($description, $lang=null)
+    public function description(string $description, $lang='')
     {
-        $description=str_replace('&','&amp;', $description);
+        $description=str_replace('&', '&amp;', $description);
         $desc=$this->xml->addChild('desc', $description);
         if(!empty($this->default_lang) && empty($lang))
             $lang = $this->default_lang;
-        if($lang)
+        if(!empty($lang))
             $desc->addAttribute('lang', $lang);
     }
 
     /**
-     * @param int $season
-     * @param int $episode
-     * @param int $total_episodes
-     * @param string $onscreen
+     * @param int $episode Episode number
+     * @param int $season Season number
+     * @param int $total_episodes Total episodes
+     * @param string $onscreen Season and episode formatted for screen
      */
-    function series($episode, $season=null, $total_episodes=null, $onscreen=null)
+    public function series(int $episode, $season=0, $total_episodes=0, $onscreen='')
     {
         $xmltv_ns='';
         if(!empty($season))
@@ -100,13 +95,15 @@ class programme
             $xmltv_ns.='/'.$total_episodes;
         $xmltv_ns.='.';
 
-        $episode_num=$this->xml->addChild('episode-num',$xmltv_ns);
-        $episode_num->addAttribute('system','xmltv_ns');
+        $episode_num=$this->xml->addChild('episode-num', $xmltv_ns);
+        $episode_num->addAttribute('system', 'xmltv_ns');
+        if(!empty($onscreen))
+            $this->onscreen($onscreen);
     }
 
-    function onscreen($onscreen)
+    public function onscreen(string $onscreen)
     {
-        $episode_num=$this->xml->addChild('episode-num',$onscreen);
-        $episode_num->addAttribute('system','onscreen');
+        $episode_num=$this->xml->addChild('episode-num', $onscreen);
+        $episode_num->addAttribute('system', 'onscreen');
     }
 }

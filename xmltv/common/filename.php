@@ -13,7 +13,7 @@ class filename
      * @param int $timestamp Timestamp to get year
      * @return string Folder path
      */
-    public static function folder($channel, $sub_folder, $timestamp)
+    public static function folder(string $channel, string $sub_folder, int $timestamp)
     {
         return sprintf('%s/%s/%s', $channel, $sub_folder, date('Y',$timestamp));
     }
@@ -25,7 +25,7 @@ class filename
      * @param string $extension File extension
      * @return string File name
      */
-    public static function filename($channel,$timestamp,$extension)
+    public static function filename(string $channel, int $timestamp, string $extension)
     {
         return $channel.'_'.date('Y-m-d',$timestamp).'.'.$extension;
     }
@@ -38,7 +38,7 @@ class filename
      * @param string $extension File extension
      * @return string File name
      */
-    public static function file_path($channel,$sub_folder,$timestamp,$extension)
+    public static function file_path(string $channel, string $sub_folder, int $timestamp, string $extension)
     {
         $folder = self::folder($channel,$sub_folder,$timestamp);
         $file = self::filename($channel,$timestamp,$extension);

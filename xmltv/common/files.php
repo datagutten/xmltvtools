@@ -28,7 +28,7 @@ class files
      * @param array $sub_folders Sub folders of each channel to load data from
      * @throws FileNotFoundException XMLTV path not found
      */
-    function __construct($xmltv_path, $sub_folders)
+    function __construct(string $xmltv_path, array $sub_folders)
     {
         libxml_use_internal_errors(true);
         if(empty($xmltv_path))
@@ -54,7 +54,7 @@ class files
      * @param bool $create Create folder
      * @return string File name
      */
-    function file($channel,$timestamp = null,$sub_folder = null, $extension = 'xml', $create = false)
+    public function file(string $channel, $timestamp = 0, $sub_folder = '', $extension = 'xml', $create = false)
     {
         if (!preg_match('/[a-z0-9]+\.[a-z]+/', $channel)) {
             throw new InvalidArgumentException('Invalid channel id: ' . $channel);
@@ -83,7 +83,7 @@ class files
      * @throws FileNotFoundException XML file not found
      * @throws InvalidXMLFileException XML file has no <programme> element
      */
-    function load_file($channel, $timestamp = null, $sub_folder = null)
+    public function load_file(string $channel, int $timestamp = 0, $sub_folder = '')
     {
         if(!empty($sub_folder))
             $folders = [$sub_folder];

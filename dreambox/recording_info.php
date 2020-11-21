@@ -33,7 +33,7 @@ class recording_info
      * @return array Date, time and channel
      * @throws exceptions\InvalidFileNameException File name could not be parsed
      */
-    public static function parse_file_name($input)
+    public static function parse_file_name(string $input)
     {
         if(!preg_match('^([0-9]{8} [0-9]{4}) - (.*) - (.*)\.ts^U',$input,$result))
         {
@@ -49,7 +49,7 @@ class recording_info
      * @return string|array
      * @throws FileNotFoundException
      */
-    public static function parse_eit($eit_file, $mode = 'title')
+    public static function parse_eit(string $eit_file, $mode = 'title')
     {
         if(!file_exists($eit_file))
             throw new FileNotFoundException($eit_file);

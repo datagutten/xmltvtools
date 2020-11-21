@@ -13,7 +13,7 @@ class merger extends parser
 {
     public $parsers = [];
 
-    function __construct($xmltv_path, $sub_folders)
+    public function __construct($xmltv_path, $sub_folders)
     {
         parent::__construct($xmltv_path, $sub_folders);
         foreach (array_slice($sub_folders, 1) as $folder)
@@ -22,9 +22,9 @@ class merger extends parser
         }
     }
 
-    function find_program($search_time, $channel, $mode='nearest')
+    public function find_program(int $search_time, string $channel, $mode='nearest')
     {
-        $base_program = parent::find_program($search_time,$channel,$mode);
+        $base_program = parent::find_program($search_time, $channel, $mode);
         $base_keys = array_keys((array)$base_program);
         /**
          * @var parser $parser

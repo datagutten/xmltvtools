@@ -31,7 +31,7 @@ class parser
      * @param array $sub_folders Sub folders of each channel to load data from
      * @throws FileNotFoundException XMLTV path not found
      */
-    function __construct($xmltv_path, $sub_folders)
+    function __construct(string $xmltv_path, array $sub_folders)
     {
         $this->files = new files($xmltv_path, $sub_folders);
     }
@@ -46,7 +46,7 @@ class parser
      * @param string $time Date and time to be converted
      * @return int Unix timestamp
      */
-    function strtotime($time)
+    function strtotime(string $time)
     {
         if(!preg_match('/([0-9]{14})\s\+[0-9]+/', $time, $matches))
             throw new InvalidArgumentException('Not a valid xmltv date and time');
@@ -63,7 +63,7 @@ class parser
      * @param string $date Date to get
      * @return SimpleXMLElement[] Array with programs
      */
-    public static function combine_days($days, $date=null)
+    public static function combine_days(array $days, $date='')
     {
         $programs = [];
         foreach($days as $day)
@@ -82,12 +82,12 @@ class parser
      * Get programs
      * @param string $channel XMLTV channel id
      * @param int $timestamp Timestamp to search
-     * @param bool $multiple_days Combine data for current day and previous day to get all programs for the current day
+     * @param bool|null $multiple_days Combine data for current day and previous day to get all programs for the current day
      * @return array|SimpleXMLElement
      * @throws FileNotFoundException XMLTV file not found
      * @throws InvalidXMLFileException XMLTV file not valid
      */
-    public function get_programs($channel,$timestamp = null,$multiple_days = null)
+    public function get_programs(string $channel, $timestamp = 0, $multiple_days = null)
     {
         $xml_current_day=$this->files->load_file($channel,$timestamp);
 
@@ -143,7 +143,7 @@ class parser
      * @return SimpleXMLElement
      * @throws ProgramNotFoundException
      */
-    public function find_program($search_time, $channel, $mode='nearest')
+    public function find_program(int $search_time, string $channel, $mode='nearest')
     {
         try {
             $programs_xml = $this->get_programs($channel, $search_time);
@@ -219,7 +219,7 @@ class parser
      * @param bool $string Set false to return array instead of formatted string
      * @return array|string
      */
-    public static function season_episode($program,$string=true)
+    public static function season_episode(SimpleXMLElement $program, $string=true)
     {
         foreach($program->{'episode-num'} as $num) {
             if (preg_match('^([0-9]+)\s?\.\s?([0-9]+)/([0-9]+)^', $num, $matches) ||
