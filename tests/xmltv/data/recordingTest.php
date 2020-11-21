@@ -100,6 +100,9 @@ class recordingTest extends TestCase
         $this->assertSame($time, '10:00-10:29');
     }
 
+    /**
+     * @requires PHPUnit >= 8.4
+     */
     public function testDurationInvalidFile()
     {
         $this->expectError();
