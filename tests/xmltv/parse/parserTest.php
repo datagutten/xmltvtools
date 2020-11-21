@@ -9,11 +9,12 @@
 
 namespace datagutten\xmltv\tests\tools\xmltv\parse;
 
+use datagutten\xmltv\tools\exceptions\ChannelNotFoundException;
 use datagutten\xmltv\tools\exceptions\ProgramNotFoundException;
 use datagutten\xmltv\tools\parse\parser;
 use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
-use stdClass;
+use SimpleXMLElement;
 
 class parserTest extends TestCase
 {
@@ -120,30 +121,27 @@ class parserTest extends TestCase
         $this->assertEquals('Vinterveiens helter', $program->{'title'});
     }
 
-    /** @noinspection PhpParamsInspection */
     public function testSeason_episode()
     {
-        $program = new stdClass();
-        $program->{'episode-num'} = ['0.17.'];
+        $program = new SimpleXMLElement('<programme><episode-num>0.17.</episode-num></programme>');
         $string = parser::season_episode($program);
         $this->assertSame('S01E18', $string);
 
-        $program->{'episode-num'} = ['0.17.'];
+        $program = new SimpleXMLElement('<programme><episode-num>0.17.</episode-num></programme>');
         $array = parser::season_episode($program, false);
         $this->assertSame(['season'=>1, 'episode'=>18], $array);
 
-        $program->{'episode-num'} = ['.17/20.'];
+        $program = new SimpleXMLElement('<programme><episode-num>.17/20.</episode-num></programme>');
         $string = parser::season_episode($program);
         $this->assertSame('EP18', $string);
 
-        $program->{'episode-num'} = ['.17/20.'];
+        $program = new SimpleXMLElement('<programme><episode-num>.17/20.</episode-num></programme>');
         $array = parser::season_episode($program, false);
         $this->assertSame(['season'=>0, 'episode'=>18], $array);
 
-        $program->{'episode-num'} = ['.17.'];
+        $program = new SimpleXMLElement('<programme><episode-num>.17.</episode-num></programme>');
         $string = parser::season_episode($program);
         $this->assertEmpty($string);
-
     }
 
     public function testCombine_days()
