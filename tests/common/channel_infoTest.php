@@ -1,10 +1,9 @@
-<?php
+<?php /** @noinspection PhpUnhandledExceptionInspection */
 
 namespace datagutten\xmltv\tests\tools\common;
 
 use datagutten\xmltv\tools\common\channel_info;
 use datagutten\xmltv\tools\exceptions\ChannelNotFoundException;
-use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 
 class channel_infoTest extends TestCase
