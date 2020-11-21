@@ -19,12 +19,12 @@ class filesTest extends TestCase
     public function setUp(): void
     {
         $this->filesystem = new Filesystem();
-        mkdir(__DIR__.'/xmltv_test');
+        $this->filesystem->mkdir(__DIR__.'/xmltv_test/natgeo.no');
     }
 
     public function testMissingPath()
     {
-        rmdir(__DIR__.'/xmltv_test');
+        $this->filesystem->remove(__DIR__.'/xmltv_test');
         $this->expectException(FileNotFoundException::class);
         new files(__DIR__.'/xmltv_test', ['xmltv_test']);
     }
@@ -48,7 +48,9 @@ class filesTest extends TestCase
     {
         $files = new files(__DIR__.'/xmltv_test', ['xmltv_test', 'xmltv']);
         $file = $files->file('natgeo.no', strtotime('2019-10-04'), 'xmltv');
-        $this->assertEquals(__DIR__.'/xmltv_test/natgeo.no/xmltv/2019/natgeo.no_2019-10-04.xml', $file);
+        $path = [__DIR__, 'xmltv_test', 'natgeo.no',
+            'xmltv', '2019', 'natgeo.no_2019-10-04.xml'];
+        $this->assertEquals(implode(DIRECTORY_SEPARATOR, $path), $file);
     }
     public function testExistingFile()
     {
