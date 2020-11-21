@@ -180,10 +180,10 @@ class parser
 
             if($mode=='next')
             {
-                if($time_to_start[$key]>=0) //Find first program which has not started
-                    return $program;
-                else
+                if(!isset($programs_xml[$key+1]))
                     throw new ProgramNotFoundException('Nothing on air at given time');
+                elseif($time_to_start[$key]>=0) //Find first program which has not started
+                    return $program;
             }
             elseif($mode=='now')
             {
