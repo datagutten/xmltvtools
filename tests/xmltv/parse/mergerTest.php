@@ -1,4 +1,4 @@
-<?php
+<?php /** @noinspection PhpUnhandledExceptionInspection */
 
 namespace datagutten\xmltv\tests\tools\xmltv\parse;
 

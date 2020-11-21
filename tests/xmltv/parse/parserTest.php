@@ -114,6 +114,7 @@ class parserTest extends TestCase
     /**
      * The file in the default sub directory is invalid, but the second is valid
      * @throws ProgramNotFoundException
+     * @throws ChannelNotFoundException
      */
     public function testFailToAlternateSubFolder()
     {
