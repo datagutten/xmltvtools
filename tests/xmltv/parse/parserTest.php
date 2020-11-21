@@ -168,4 +168,10 @@ class parserTest extends TestCase
         $this->assertEquals('Vinterveiens helter', $programs_filtered[0]->{'title'});
         $this->assertNotEquals($programs[0]->{'title'}, $programs_filtered[0]->{'title'});
     }
+
+    public function testAfterLast()
+    {
+        $this->expectException(ProgramNotFoundException::class);
+        $this->parser->find_program(strtotime('2020-09-11 22:55'), 'natgeo.no', 'next');
+    }
 }
