@@ -30,6 +30,11 @@ addons:
   packages:
    - ffmpeg
 
+cache:
+  directories:
+    - $HOME/.composer/cache/files
+    - $HOME/.cache/composer/files
+
 install:
     composer install --no-interaction
 
