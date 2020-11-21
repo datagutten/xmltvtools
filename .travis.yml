@@ -20,10 +20,6 @@ matrix:
          - composer update --prefer-lowest
     - php: '7.4'
       name: 'No video-tools and no ffmpeg'
-      addons:
-        apt:
-          packages:
-            - php-xml
       install:
         - composer remove --dev --no-interaction datagutten/video-tools
   allow_failures:
@@ -32,7 +28,6 @@ matrix:
 addons:
  apt:
   packages:
-   - php-xml
    - ffmpeg
 
 install:
