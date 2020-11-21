@@ -10,6 +10,7 @@ namespace datagutten\xmltv\tools\parse;
 
 
 use datagutten\xmltv\tools\common\files;
+use datagutten\xmltv\tools\exceptions\ChannelNotFoundException;
 use datagutten\xmltv\tools\exceptions\InvalidXMLFileException;
 use datagutten\xmltv\tools\exceptions\ProgramNotFoundException;
 use FileNotFoundException;
@@ -86,6 +87,7 @@ class parser
      * @return array|SimpleXMLElement
      * @throws FileNotFoundException XMLTV file not found
      * @throws InvalidXMLFileException XMLTV file not valid
+     * @throws ChannelNotFoundException Channel not found
      */
     public function get_programs(string $channel, $timestamp = 0, $multiple_days = null)
     {
@@ -141,7 +143,8 @@ class parser
      * @param string $channel Channel id
      * @param string $mode now (running program at search time), next (next starting program) or nearest (program start with lowest difference to search time)
      * @return SimpleXMLElement
-     * @throws ProgramNotFoundException
+     * @throws ProgramNotFoundException Program not found
+     * @throws ChannelNotFoundException Channel not found
      */
     public function find_program(int $search_time, string $channel, $mode='nearest')
     {

@@ -4,6 +4,8 @@
 namespace datagutten\xmltv\tools\common;
 
 
+use datagutten\tools\files\files as file_tools;
+use datagutten\xmltv\tools\exceptions\ChannelNotFoundException;
 use datagutten\xmltv\tools\exceptions\InvalidXMLFileException;
 use FileNotFoundException;
 use InvalidArgumentException;
@@ -33,7 +35,7 @@ class files
         libxml_use_internal_errors(true);
         if(empty($xmltv_path))
             throw new InvalidArgumentException('Empty argument: xmltv_path');
-        $this->xmltv_path = $xmltv_path;
+        $this->xmltv_path = realpath($xmltv_path);
 
         if(!file_exists($this->xmltv_path))
             throw new FileNotFoundException($this->xmltv_path);
@@ -53,6 +55,7 @@ class files
      * @param string $extension File extension
      * @param bool $create Create folder
      * @return string File name
+     * @throws ChannelNotFoundException
      */
     public function file(string $channel, $timestamp = 0, $sub_folder = '', $extension = 'xml', $create = false)
     {
@@ -64,10 +67,13 @@ class files
         if(empty($sub_folder))
             $sub_folder = $this->sub_folders[0];
 
-        $folder = $this->xmltv_path.'/'.filename::folder($channel, $sub_folder, $timestamp);
+        $folder = file_tools::path_join($this->xmltv_path, filename::folder($channel, $sub_folder, $timestamp));
         if($create)
             $this->filesystem->mkdir($folder);
-        $file = $folder.'/'.filename::filename($channel, $timestamp, $extension);
+        elseif (!file_exists($path=file_tools::path_join($this->xmltv_path, $channel)))
+            throw new ChannelNotFoundException(sprintf('No data for channel id: %s at %s', $channel, $path));
+
+        $file = file_tools::path_join($folder, filename::filename($channel, $timestamp, $extension));
         if(file_exists($file))
             return realpath($file);
         else
@@ -82,6 +88,7 @@ class files
      * @return SimpleXMLElement
      * @throws FileNotFoundException XML file not found
      * @throws InvalidXMLFileException XML file has no <programme> element
+     * @throws ChannelNotFoundException Channel not found
      */
     public function load_file(string $channel, int $timestamp = 0, $sub_folder = '')
     {

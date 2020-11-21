@@ -4,6 +4,8 @@
 namespace datagutten\xmltv\tools\common;
 
 
+use datagutten\tools\files\files as file_tools;
+
 class filename
 {
     /**
@@ -15,7 +17,7 @@ class filename
      */
     public static function folder(string $channel, string $sub_folder, int $timestamp)
     {
-        return sprintf('%s/%s/%s', $channel, $sub_folder, date('Y',$timestamp));
+        return file_tools::path_join($channel, $sub_folder, date('Y',$timestamp));
     }
 
     /**
