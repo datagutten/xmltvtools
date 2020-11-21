@@ -103,10 +103,13 @@ class parserTest extends TestCase
         $this->expectExceptionMessage('Nothing on air at given time');
         $this->parser->find_program(strtotime('2019-10-11 00:45'), 'no.bbcentertainment.no', 'now');
     }
+
+    /**
+     * @requires PHPUnit >= 9.0
+     */
     public function testFileNotFound()
     {
         $this->expectException(ProgramNotFoundException::class);
-        //$this->expectExceptionMessage('Nothing on air at given time');
         $this->expectExceptionMessageMatches('/File does not exist.+/');
         $this->parser->find_program(strtotime('2099-10-11 00:45'), 'no.bbcentertainment.no', 'now');
     }
