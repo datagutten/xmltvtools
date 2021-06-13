@@ -34,5 +34,8 @@
             "datagutten\\dreambox\\tests\\": "tests/dreambox"
         }
     },
-    "bin": ["bin/recording_info.php"]
+    "bin": ["bin/recording_info.php"],
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    }
 }
