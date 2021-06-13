@@ -7,6 +7,7 @@ use datagutten\tools\files\files;
 use datagutten\xmltv\tools\data\Program;
 use datagutten\xmltv\tools\data\Recording;
 use datagutten\xmltv\tools\exceptions\InvalidFileNameException;
+use datagutten\xmltv\tools\exceptions\ProgramNotFoundException;
 use FileNotFoundException;
 use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
@@ -14,6 +15,11 @@ use PHPUnit\Framework\TestCase;
 date_default_timezone_set('Europe/Oslo');
 class recordingTest extends TestCase
 {
+    /**
+     * @var string
+     */
+    private $xmltv_path;
+
     function setUp(): void
     {
         if (!class_exists('datagutten\video_tools\video')) {
@@ -21,6 +27,7 @@ class recordingTest extends TestCase
                 'video class not found, video-tools not installed.'
             );
         }
+        $this->xmltv_path = files::path_join(__DIR__, '..', 'parse', 'test_data');
     }
     public function testFileNotFound()
     {
@@ -109,5 +116,14 @@ class recordingTest extends TestCase
         $test_file = files::path_join(__DIR__, '..', 'test_data', '20200605 0855 - Disney XD (N) - Phineas og Ferb x4.eit' );
         $this->expectErrorMessageMatches('/Unable to get duration:.+/');
         new Recording($test_file);
+    }
+
+    public function testInvalidEndTime()
+    {
+        $test_file = files::path_join(__DIR__, '..', 'test_data', '20210328 1030 - MAX HD - Grensevakten x10.ts');
+        $recording = new Recording($test_file, $this->xmltv_path, ['xmltv_quad']);
+        $this->expectException(ProgramNotFoundException::class);
+        $this->expectExceptionMessage('Invalid end time');
+        $recording->programs();
     }
 }

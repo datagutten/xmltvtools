@@ -118,8 +118,11 @@ class Recording extends RecordingFile
         $recording_end_timestamp = $this->start_timestamp+$this->duration;
 
         $first_program_xml = $this->xmltv_parser->find_program($this->start_timestamp, $channel);
-        $info_array = [Program::fromXMLTV($first_program_xml)];
-        $end_timestamp = strtotime($first_program_xml->attributes()->{'stop'});
+        $first_program = Program::fromXMLTV($first_program_xml);
+        $info_array = [$first_program];
+        $end_timestamp = $first_program->end_timestamp;
+        if(empty($end_timestamp))
+            throw new xmltv_exceptions\ProgramNotFoundException('Invalid end time');
 
         while($end_timestamp<$recording_end_timestamp) {
             try {

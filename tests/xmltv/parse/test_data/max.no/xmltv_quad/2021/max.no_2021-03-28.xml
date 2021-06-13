@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE tv SYSTEM "xmltv.dtd">
+<tv generator-info-name="php-xmltv-grabber" generator-info-url="https://github.com/datagutten/xmltvgrabber">
+  <programme start="20210328014000 +0100" channel="max.no" stop="20210328033700 +0200">
+    <title lang="nb">Fast N' Loud</title>
+    <desc lang="nb">Motormesteren Richard Rawlings og mekanikertalentet Aaron Kaufmann fra Gas Monkey Garage leter etter forfalne biler som de kan pusse opp og tjene penger på.</desc>
+    <episode-num system="xmltv_ns">2.16/28.</episode-num>
+  </programme>
+  <programme start="20210328033500 +0200" channel="max.no" stop="20210328033200 +0200">
+    <title lang="nb">Overhaling</title>
+    <desc lang="nb">Intetanende bileiere lures til å tro at bilen deres er tauet vekk, i stedet får den en skikkelig overhaling.</desc>
+    <episode-num system="xmltv_ns">1.3/15.</episode-num>
+  </programme>
+  <programme start="20210328033000 +0200" channel="max.no" stop="20210328041600 +0200">
+    <title lang="nb">American Chopper</title>
+    <desc lang="nb">Bill Murray tar kontakt med OCC for å få bygget en sykkel inspirert av hans «Caddyshack»- rolle. Sykkelen skal auksjoneres bort til inntekt for veldedighet ved en golfturnering.</desc>
+    <episode-num system="xmltv_ns">2.71/25.</episode-num>
+  </programme>
+  <programme start="20210328041500 +0200" channel="max.no" stop="20210328045900 +0200">
+    <title lang="nb">Ghost Adventures</title>
+    <desc lang="nb">Zak Bagans, Nick Groff og Aaron Goodwin etterforsker verdens mest skremmende og hjemsøkte steder. Trioen intervjuer øyevitner og historikere på hvert sted og analyserer det de finner sammen med respekterte eksperter på det overnaturlige.</desc>
+    <episode-num system="xmltv_ns">9.6/13.</episode-num>
+  </programme>
+  <programme start="20210328060000 +0200" channel="max.no" stop="20210328062200 +0200">
+    <title lang="nb">Hvordan den lages</title>
+    <desc lang="nb">Har du noen gang lurt på hvordan veggsenger, digitale malerier og badmintonracketer lages? Vi legger hverdagsgjenstander under lupen.</desc>
+    <episode-num system="xmltv_ns">14.25/26.</episode-num>
+  </programme>
+  <programme start="20210328062000 +0200" channel="max.no" stop="20210328064600 +0200">
+    <title lang="nb">Hvordan gjør de det?</title>
+    <desc lang="nb">Mange gjenstander som preger dagens verden, er resultatet av sofistikerte ingeniør- og produksjonsprosesser. Hvordan lages alt sammen?</desc>
+    <episode-num system="xmltv_ns">15.8/20.</episode-num>
+  </programme>
+  <programme start="20210328064500 +0200" channel="max.no" stop="20210328071000 +0200">
+    <title lang="nb">Hvordan gjør de det?</title>
+    <desc lang="nb">Mange gjenstander som preger dagens verden, er resultatet av sofistikerte ingeniør- og produksjonsprosesser. Hvordan lages alt sammen?</desc>
+    <episode-num system="xmltv_ns">15.9/20.</episode-num>
+  </programme>
+  <programme start="20210328071000 +0200" channel="max.no" stop="20210328075500 +0200">
+    <title lang="nb">Fanget på politiets kamera</title>
+    <desc lang="nb">På Amager innleder en motorsyklist et race med andre biler. Vest for Herning overraskes betjentene over at en fyllekjører fortsatt kan stå oppreist, når han blåser 2,4 promille i alkometeret. Videobiloperatør Steen Erik Hansen blir forbikjørt av en motorsykkel som kjører i over 100 km/t på bakhjulet.</desc>
+    <episode-num system="xmltv_ns">1.1/17.</episode-num>
+  </programme>
+  <programme start="20210328075500 +0200" channel="max.no" stop="20210328084000 +0200">
+    <title lang="nb">Fanget på politiets kamera</title>
+    <desc lang="nb">En motorsyklist prøver å riste av seg politibilen i Nordvestjylland i over 240 km/t. På E45 får politiet øye på en bilist som gjør farlige feltskifter. Ved Stenløse må Steen Erik Hansen kjøre hardt for å innhente en stjålet motorsykkel.</desc>
+    <episode-num system="xmltv_ns">1.2/17.</episode-num>
+  </programme>
+  <programme start="20210328084000 +0200" channel="max.no" stop="20210328094000 +0200">
+    <title lang="nb">Skattejegerne</title>
+    <desc lang="nb">Bli med Mike og Frank mens de reiser rundt i USA på jakt etter skjulte skatter i bakgårder, låver og kjellere.</desc>
+    <episode-num system="xmltv_ns">15.15/44.</episode-num>
+  </programme>
+  <programme start="20210328094000 +0200" channel="max.no" stop="20210328104100 +0200">
+    <title lang="nb">Skattejegerne</title>
+    <desc lang="nb">Bli med Mike og Frank mens de reiser rundt i USA på jakt etter skjulte skatter i bakgårder, låver og kjellere.</desc>
+    <episode-num system="xmltv_ns">15.16/44.</episode-num>
+  </programme>
+  <programme start="20210328104000 +0200" channel="max.no" stop="20210328111500 +0200">
+    <title lang="nb">Grensevakten</title>
+    <desc lang="nb">Et godtroende, eldre ektepar blir tatt med narkotika, som de har tatt med for noen de trodde var en venn. En Sør-Afrikansk breakdanser blir stoppet av grensevakter som avslører hans ulovlige plan.</desc>
+    <episode-num system="xmltv_ns">9.9/20.</episode-num>
+  </programme>
+  <programme start="20210328111500 +0200" channel="max.no" stop="20210328114600 +0200">
+    <title lang="nb">Grensevakten</title>
+    <desc lang="nb">Mannen som lurte to godtroende, eldre australiere til å smugle hans ulovlige varer, blir tatt i Melbourne. Tollerne stopper en kinesisk mann som de mistenker reiser med falsk pass. En ubevoktet bag tiltrekker seg tollernes oppmerksomhet i Sydney, og den inneholder fullt at risikoobjekter.</desc>
+    <episode-num system="xmltv_ns">9.10/20.</episode-num>
+  </programme>
+  <programme start="20210328114500 +0200" channel="max.no" stop="20210328121600 +0200">
+    <title lang="nb">Grensevakten</title>
+    <desc lang="nb">Tollerne oppdager fort ting i mannens bukser, som han har innført ulovlig til Australia. En kvinnelig passasjer har en stor mengde fisk i bagasjen. En pakke fra India inneholder håndvesker fylt med narkotika.</desc>
+    <episode-num system="xmltv_ns">9.11/20.</episode-num>
+  </programme>
+  <programme start="20210328121500 +0200" channel="max.no" stop="20210328124600 +0200">
+    <title lang="nb">Grensevakten</title>
+    <desc lang="nb">Spor etter narkotika og avslørende videoer fører en indisk mann på dypt vann. Tollerne må finne ut om en indonesisk kvinne lyver eller er offer for identitetstyveri. En vietnamesisk student blir tatt med infiserte, eksotiske varer.</desc>
+    <episode-num system="xmltv_ns">9.12/20.</episode-num>
+  </programme>
+  <programme start="20210328124500 +0200" channel="max.no" stop="20210328131700 +0200">
+    <title lang="nb">Grensevakten</title>
+    <desc lang="nb">I Sydney blir tollerne bekymret for at en amerikansk kvinne har kommet til Australia for å jobbe ulovlig i sexindustrien. En kinesisk mor og sønn blir tatt i Melbourne med hemmeligheter bortgjemt på alle slags steder. </desc>
+    <episode-num system="xmltv_ns">9.13/20.</episode-num>
+  </programme>
+  <programme start="20210328131500 +0200" channel="max.no" stop="20210328135200 +0200">
+    <title lang="nb">Grensevakten</title>
+    <desc lang="nb">En australsk mann er tilbake etter en rask tur til Sør-Amerika. Smugler han narkotika? Tollerne mistenker at en amerikansk kvinne har kommet til Australia for å jobbe ulovlig i sexindustrien.</desc>
+    <episode-num system="xmltv_ns">9.14/20.</episode-num>
+  </programme>
+  <programme start="20210328135000 +0200" channel="max.no" stop="20210328143100 +0200">
+    <title lang="nb">Grensevakten</title>
+    <desc lang="nb">En av tollernes hunder leder dem til en familie som kommer fra Kambodsja med ting skjult på overraskende steder. En tailandsk student setter framtiden i fare når hun lyver for grensevakten. En passasjer fra Midtøsten avgir falsk forklaring, noe som bekymrer biosikkerhetsvaktene.</desc>
+    <episode-num system="xmltv_ns">9.15/20.</episode-num>
+  </programme>
+  <programme start="20210328143000 +0200" channel="max.no" stop="20210328150600 +0200">
+    <title lang="nb">Grensevakten</title>
+    <desc lang="nb">En narkotikahund leder tollerne i Brisbane til tre studenter fra Taiwan, som blir tatt med en umenneskelig og opprørende hemmelighet. I Melbourne hevder en franskmann at han er kommet til Australia for å finne kjærligheten, men tollerne avdekker snart hans ulovlige plan. Og biosikkerhetsteamet blir sjokkerte når de finner kyllingføtter i en passasjers bagasje.</desc>
+    <episode-num system="xmltv_ns">9.16/20.</episode-num>
+  </programme>
+  <programme start="20210328150500 +0200" channel="max.no" stop="20210328154000 +0200">
+    <title lang="nb">Grensevakten</title>
+    <desc lang="nb">Et vietnamesisk par innrømmer å bruke ice og setter tollerne i beredskap. En engelsk bestefar prøver å skjule sin kriminelle fortid, som kan hindre ham i å få se sitt nyfødte barnebarn. I Brisbane blir en kvinne tatt når hun prøver å kvitte seg med ulovlige varer.</desc>
+    <episode-num system="xmltv_ns">9.17/20.</episode-num>
+  </programme>
+  <programme start="20210328154000 +0200" channel="max.no" stop="20210328161500 +0200">
+    <title lang="nb">Grensevakten</title>
+    <desc lang="nb">En vietnamesisk mann sier han ikke vet hva som er i bagasjen hans, og tollerne frykter det verste når de får se røntgenbildene. En kinesisk mor og sønn blir tatt med noe som utgjør en stor fare for Australia. Og barneleker, som er sendt i posten fra USA, er blitt brukt til å skjule dødelig innhold.</desc>
+    <episode-num system="xmltv_ns">9.18/20.</episode-num>
+  </programme>
+  <programme start="20210328161500 +0200" channel="max.no" stop="20210328172000 +0200">
+    <title lang="nb">Skjærgårdspolitiet</title>
+    <desc lang="nb">Det kommer melding fra Nacka om en mistenkt fyllekjører i en åpen motorbåt. Sjøredningsselskapet får en hastealarm om en kano med to personer som har veltet ute på dypt vann.</desc>
+    <episode-num system="xmltv_ns">1.1/17.</episode-num>
+  </programme>
+  <programme start="20210328172000 +0200" channel="max.no" stop="20210328175600 +0200">
+    <title lang="nb">Pantelånerne i Las Vegas</title>
+    <desc lang="nb">Håndtegnede kart fra Normandie-invasjonen treffer sjappa. Rick får inn en mynt preget med et bilde som likner på den romerske keiseren Caligula. Senere prøver Rick å bygge et hundehus til datterens nye hund.</desc>
+    <episode-num system="xmltv_ns">13.15/16.</episode-num>
+  </programme>
+  <programme start="20210328175500 +0200" channel="max.no" stop="20210328183200 +0200">
+    <title lang="nb">Pantelånerne i Las Vegas</title>
+    <desc lang="nb">Minner fra den ubeseirede boksemesteren Rocky Marciano dukker opp i sjappa. Rick sjekker ut en bil som lyser i mørket. Kommer han til å gjøre en elektrisk avtale eller ende opp i mørket? </desc>
+    <episode-num system="xmltv_ns">14.0/43.</episode-num>
+  </programme>
+  <programme start="20210328183000 +0200" channel="max.no" stop="20210328190700 +0200">
+    <title lang="nb">Pantelånerne i Las Vegas</title>
+    <desc lang="nb">En morsekodeleser klikker inn i sjappa. Kommer Rick til å knekke koden og sikre seg denne sjeldne saken, eller vil han sende ut feil signaler? En kunde kommer inn med et brev skrevet av utenriksminister John Quincy Adams, som senere ble USAs sjette president. Senere insisterer Corey på å ta over Ricks årlige 4. juli-grilling for sjappa.</desc>
+    <episode-num system="xmltv_ns">14.2/43.</episode-num>
+  </programme>
+  <programme start="20210328190500 +0200" channel="max.no" stop="20210328194000 +0200">
+    <title lang="nb">Pantelånerne i Las Vegas</title>
+    <desc lang="nb">En autograf fra baseball-legenden Honus Wagner lander i sjappa. Rick faller for en sjelden førsteutgave av Nabokovs kontroversielle roman, «Lolita». Og Chumlee hjelper til med å sette opp butikkens nye telefonsystem.</desc>
+    <episode-num system="xmltv_ns">14.3/43.</episode-num>
+  </programme>
+  <programme start="20210328194000 +0200" channel="max.no" stop="20210328200700 +0200">
+    <title lang="nb">Pantelånerne i Las Vegas</title>
+    <desc lang="nb">En legendarisk 1967 Shelby GT350 kommer inn i sjappa. Klarer Rick å cruise gjennom forhandlingene eller blir han «Gone in 60 seconds»? Corey og Chumlee leker med tanken på å kjøpe en av de første videospillkonsollene, en Magnavox Odyssey 200. Senere prøve Chumlee ut sjappas nye iskremmaskin.</desc>
+    <episode-num system="xmltv_ns">14.4/43.</episode-num>
+  </programme>
+  <programme start="20210328200500 +0200" channel="max.no" stop="20210328203700 +0200">
+    <title lang="nb">Norske rednecks i Syden</title>
+    <desc lang="nb">Erik, Edel og farsan leier bil og drar inn til et marked i Chania. Erik må få reparert skinnvesten sin. Daniel og Hilde har snart toårsdag så Daniel må ut og kjøpe overraskelsesgave. Samtidig går Øystein bokstaveligtalt bananas.</desc>
+    <episode-num system="xmltv_ns">1.2/32.</episode-num>
+  </programme>
+  <programme start="20210328203500 +0200" channel="max.no" stop="20210328210700 +0200">
+    <title lang="nb">Norske rednecks i Syden</title>
+    <desc lang="nb">Daniel og Hilde legger ut på en liten roadtrip, og det blir en innholdsrik affære. Erik, Edel og farsan er på shopping i Chania, mens Øystein og Monica føler seg tiltrukket av en av byens mange kirker. </desc>
+    <episode-num system="xmltv_ns">1.3/32.</episode-num>
+  </programme>
+  <programme start="20210328210500 +0200" channel="max.no" stop="20210328220000 +0200">
+    <title lang="nb">Barhjelpen</title>
+    <desc lang="nb">Et par på randen av konkurs kjemper mot sin sta og late sønn som er i ferd med å senke familieforretningen.</desc>
+    <episode-num system="xmltv_ns">5.4/32.</episode-num>
+  </programme>
+  <programme start="20210328220000 +0200" channel="max.no" stop="20210329001600 +0200">
+    <title lang="nb">The Fast and the Furious</title>
+    <desc lang="nb">Den nyutdannede politimannen Brian O'Conner må velge hvor lojaliteten hans ligger når han blir involvert i den gateløpverdenen han har blitt sendt undercover for å ødelegge.</desc>
+  </programme>
+</tv>

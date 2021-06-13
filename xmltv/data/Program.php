@@ -78,6 +78,9 @@ class Program
         if(isset($xml->attributes()->{'stop'}))
             $program->end_timestamp = strtotime($xml->attributes()->{'stop'});
 
+        if($program->end_timestamp < $program->start_timestamp)
+            $program->end_timestamp = null;
+
         $program->formatStartEnd();
 
         //Get the category
