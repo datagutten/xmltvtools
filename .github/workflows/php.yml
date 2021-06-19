@@ -51,3 +51,26 @@ jobs:
 
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v1
+
+  no_video_tools:
+    name: 'No video-tools and no ffmpeg'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup PHP with Xdebug
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          coverage: xdebug
+          extensions: libxml
+
+      - name: Install dependencies
+        run: |
+          composer remove --dev --no-interaction datagutten/video-tools
+          composer install --prefer-dist --no-progress
+
+      - name: Run tests
+        run: composer run-script test
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v1
