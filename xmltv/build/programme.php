@@ -24,11 +24,6 @@ class programme
     public $channel;
 
     /**
-     * @var tv TV class instance
-     */
-    public $tv;
-
-    /**
      * programme constructor.
      * @param int $start Start time as unix timestamp
      * @param tv TV class instance the program should be added to
@@ -36,11 +31,9 @@ class programme
     public function __construct(int $start, tv $tv)
     {
         $this->xml = $tv->xml->addChild('programme');
-        //$this->xml = new SimpleXMLElement('<programme></programme>');
         $this->xml->addAttribute('start', date('YmdHis O', $start));
         $this->xml->addAttribute('channel', $tv->channel);
         $this->default_lang = $tv->language;
-        //$tv->xml->addChild($this->xml);
     }
 
     public function stop(int $stop)
