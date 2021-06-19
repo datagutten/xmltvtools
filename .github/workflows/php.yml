@@ -32,6 +32,13 @@ jobs:
     - name: Install APT packages
       run: sudo apt-get install ffmpeg
 
+    - name: Setup PHP with Xdebug
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: ${{ matrix.php }}
+        coverage: xdebug
+        extensions: gd libxml
+
     - name: Install dependencies
       uses: php-actions/composer@v6
       with:
@@ -41,3 +48,6 @@ jobs:
 
     - name: Run default tests
       run: composer run-script test
+
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v1
