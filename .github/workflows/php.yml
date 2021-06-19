@@ -36,6 +36,7 @@ jobs:
       uses: php-actions/composer@v6
       with:
         php_version: ${{ matrix.php }}
+        php_extensions: gd libxml
 
 
     - name: Run default tests
