@@ -81,10 +81,11 @@ class eit_parserTest extends TestCase
         eit_parser::get_codepage(99);
     }
 
-    /*public function testGet_string()
+    public function testGet_stringWithInvalidCodepage()
     {
-
-    }*/
+        $string = eit_parser::get_string('aasdf'.utf8_decode('æøå'), 0, 8);
+        $this->assertEquals('asdfæøå', $string);
+    }
 
     public function testSeason_episode1()
     {
