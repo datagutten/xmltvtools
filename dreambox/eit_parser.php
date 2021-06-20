@@ -72,17 +72,14 @@ class eit_parser
                 $ISO_639_language_code = strtoupper(substr($data, $pos + 2, 3));
                 $event_name_length = ord($data[$pos + 5]);
 
-                $name_event_codepage = self::get_codepage(ord($data[$pos + 6]));
-                $name_event_description = self::get_string($data, $pos + 6, $pos + 6 + $event_name_length, $name_event_codepage);
+                $name_event_description = self::get_string($data, $pos + 6, $pos + 6 + $event_name_length);
                 $eit['name'] = $name_event_description;
 
-                $short_event_codepage = self::get_codepage(ord($data[$pos + 7]));
-                $short_event_description = self::get_string($data, $pos + 7 + $event_name_length, $pos + $length, $short_event_codepage);
+                $short_event_description = self::get_string($data, $pos + 7 + $event_name_length, $pos + $length);
                 $eit['short_description'] = $short_event_description;
 
             } elseif ($rec == 0x4E) {
-                $extended_event_codepage = self::get_codepage(ord($data[$pos + 8]));
-                $extended_event_description = self::get_string($data, $pos + 8, $pos + $length, $extended_event_codepage);
+                $extended_event_description = self::get_string($data, $pos + 8, $pos + $length);
                 $eit['description'] = $extended_event_description;
             }
             $pos += $length;
@@ -123,16 +120,18 @@ class eit_parser
             return null;
     }
 
-    public static function get_string($data, $start, $end, $codepage = null)
+    public static function get_string($data, $start, $end)
     {
+        $codepage = self::get_codepage(ord($data[$start])); //First byte in string is codepage
         $string = '';
-        for ($i = $start; $i < $end; $i++) {
-            if (ord($data[$i]) > 31)
-                $string .= $data[$i];
+        for ($i = $start + 1; $i < $end; $i++)
+        {
+            $string .= $data[$i];
         }
         if ($codepage !== 'utf-8')
             return utf8_encode($string);
-        return $string;
+        else
+            return $string;
     }
 
     public static function season_episode($short_event_description)
