@@ -3,6 +3,7 @@
 namespace datagutten\dreambox\tests;
 
 use datagutten\dreambox\eit_parser;
+use datagutten\dreambox\exceptions\EitException;
 use PHPUnit\Framework\TestCase;
 
 class eit_parserTest extends TestCase
@@ -31,6 +32,13 @@ class eit_parserTest extends TestCase
         $this->assertSame('The Bomb', $info['name']);
         $this->assertSame('<x>SCHEDULE</x>Dokumentarfilm USA 2015', $info['short_description']);
         $this->assertSame('August 1945. Er erzählt die Geschichte des Wettlaufs um die Entwicklung der ersten Atombombe und des späteren atomaren Wettrüstens während des Kalten Krieges.', $info['description']);
+    }
+
+    public function testParseInvalidFile()
+    {
+        $this->expectException(EitException::class);
+        $this->expectExceptionMessage('Invalid file');
+        eit_parser::parse('asdf');
     }
 
     public function testGetHeader()
@@ -68,8 +76,8 @@ class eit_parserTest extends TestCase
 
     public function testInvalidCodepage()
     {
-        $this->expectNotice();
-        $this->expectNoticeMessage('Unknown codepage id 99');
+        $this->expectException(EitException::class);
+        $this->expectExceptionMessage('Unknown codepage id 99');
         eit_parser::get_codepage(99);
     }
 

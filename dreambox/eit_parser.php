@@ -3,6 +3,8 @@
 
 namespace datagutten\dreambox;
 
+use datagutten\dreambox\exceptions\EitException;
+
 function int($int)
 {
     return (int)$int;
@@ -49,10 +51,15 @@ class eit_parser
         return ['date'=>$date, 'duration'=>$duration, 'time'=>$time];
     }
 
-    public static function parse($data)
+    /**
+     * @param string $data EIT file content
+     * @return array
+     * @throws EitException Invalid EIT file
+     */
+    public static function parse(string $data)
     {
         if (strlen($data) < 12)
-            die('Invalid file');
+            throw new EitException('Invalid file');
         //0-12 = event_id date, time, duration, running_status, free_ca_mode, descriptors_len
         $eit = self::parse_header($data);
 
@@ -91,6 +98,7 @@ class eit_parser
      * Get codepage
      * @param int $code
      * @return string
+     * @throws EitException Unknown codepage
      */
     public static function get_codepage(int $code): ?string
     {
@@ -117,17 +125,23 @@ class eit_parser
         elseif ($code == 21)
             return 'utf-8';
         else
-        {
-            trigger_error(sprintf('Unknown codepage id %d', $code));
-            return null;
-        }
+            throw new EitException(sprintf('Unknown codepage id %d', $code));
     }
 
     public static function get_string($data, $start, $end): string
     {
         if($start===$end)
             return '';
-        $codepage = self::get_codepage(ord($data[$start])); //First byte in string is codepage
+        try
+        {
+            //First byte in string is codepage
+            $codepage = self::get_codepage(ord($data[$start]));
+        }
+        catch (EitException $e)
+        {
+            $codepage = null;
+        }
+
         $string = '';
         for ($i = $start + 1; $i < $end; $i++)
         {
