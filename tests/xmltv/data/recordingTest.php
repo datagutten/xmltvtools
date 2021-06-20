@@ -10,7 +10,7 @@ use datagutten\xmltv\tools\exceptions\InvalidFileNameException;
 use datagutten\xmltv\tools\exceptions\ProgramNotFoundException;
 use FileNotFoundException;
 use InvalidArgumentException;
-use PHPUnit\Framework\TestCase;
+use Yoast\PHPUnitPolyfills\TestCases\TestCase;
 
 date_default_timezone_set('Europe/Oslo');
 class recordingTest extends TestCase
@@ -107,9 +107,6 @@ class recordingTest extends TestCase
         $this->assertSame($time, '10:00-10:29');
     }
 
-    /**
-     * @requires PHPUnit >= 8.4
-     */
     public function testDurationInvalidFile()
     {
         $this->expectError();
