@@ -24,6 +24,15 @@ class eit_parserTest extends TestCase
         $this->assertSame('Bergingsbilene har fått en ny fiende: ekstremvær. Brå temperaturendringer gir mannskapene uventede utfordringer.', $info['description']);
     }
 
+    public function testParse2()
+    {
+        $data = file_get_contents(__DIR__.'/test_data/20180807 2000 - arte HD - The Bomb.eit');
+        $info = eit_parser::parse($data);
+        $this->assertSame('The Bomb', $info['name']);
+        $this->assertSame('<x>SCHEDULE</x>Dokumentarfilm USA 2015', $info['short_description']);
+        $this->assertSame('August 1945. Er erzählt die Geschichte des Wettlaufs um die Entwicklung der ersten Atombombe und des späteren atomaren Wettrüstens während des Kalten Krieges.', $info['description']);
+    }
+
     public function testGetHeader()
     {
         $data = file_get_contents(__DIR__.'/test_data/Ice Road Rescue S04E01 - Ekstremvær HD.eit');
