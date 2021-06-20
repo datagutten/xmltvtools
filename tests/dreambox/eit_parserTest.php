@@ -33,13 +33,31 @@ class eit_parserTest extends TestCase
         $this->assertSame(array(20,0,0), $info['time']);
     }
 
-
-    /*public function testGet_codepage()
+    public function testGet_codepage()
     {
+        $data = [
+            1 => 'iso-8859-5',
+            2 => 'iso-8859-6',
+            3 => 'iso-8859-7',
+            4 => 'iso-8859-8',
+            5 => 'iso-8859-9',
+            6 => 'iso-8859-10',
+            7 => 'iso-8859-11',
+            9 => 'iso-8859-13',
+            10 => 'iso-8859-14',
+            11 => 'iso-8859-15',
+            21 => 'utf-8'];
 
+        foreach ($data as $code => $codepage)
+        {
+            $this->assertEquals($codepage, eit_parser::get_codepage($code));
+        }
+
+        $data = file_get_contents(__DIR__ . '/test_data/Ice Road Rescue S04E01 - Ekstremvær HD.eit');
+        $this->assertEquals('iso-8859-9', eit_parser::get_codepage(ord($data[18])));
     }
 
-    public function testGet_string()
+    /*public function testGet_string()
     {
 
     }*/
