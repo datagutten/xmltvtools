@@ -117,7 +117,10 @@ class eit_parser
         elseif ($code == 21)
             return 'utf-8';
         else
+        {
+            trigger_error(sprintf('Unknown codepage id %d', $code));
             return null;
+        }
     }
 
     public static function get_string($data, $start, $end): string

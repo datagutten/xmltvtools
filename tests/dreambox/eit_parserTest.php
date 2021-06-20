@@ -57,6 +57,13 @@ class eit_parserTest extends TestCase
         $this->assertEquals('iso-8859-9', eit_parser::get_codepage(ord($data[18])));
     }
 
+    public function testInvalidCodepage()
+    {
+        $this->expectNotice();
+        $this->expectNoticeMessage('Unknown codepage id 99');
+        eit_parser::get_codepage(99);
+    }
+
     /*public function testGet_string()
     {
 
