@@ -120,8 +120,10 @@ class eit_parser
             return null;
     }
 
-    public static function get_string($data, $start, $end)
+    public static function get_string($data, $start, $end): string
     {
+        if($start===$end)
+            return '';
         $codepage = self::get_codepage(ord($data[$start])); //First byte in string is codepage
         $string = '';
         for ($i = $start + 1; $i < $end; $i++)
