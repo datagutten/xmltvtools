@@ -31,6 +31,12 @@ class recording_infoTest extends TestCase
         $this->assertSame('Vinterveiens helter', $info['title']);
     }
 
+    public function testParseEitTitle()
+    {
+        $info = recording_info::parse_eit(__DIR__.'/test_data/Ice Road Rescue S04E01 - Ekstremvær HD.eit');
+        $this->assertSame('Vinterveiens helter', $info);
+    }
+
     public function testEitTime()
     {
         date_default_timezone_set('Europe/Oslo');
