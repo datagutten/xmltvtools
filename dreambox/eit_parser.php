@@ -66,19 +66,19 @@ class eit_parser
                 break;
             $length = ord($data[$pos + 1]) + 2;
 
-            if ($rec == 0x4D) {
-                $descriptor_tag = $data[$pos + 1];
-                $descriptor_length = $data[$pos + 2];
-                $ISO_639_language_code = strtoupper(substr($data, $pos + 2, 3));
+            if ($rec == 0x4D)
+            {
+                /*$descriptor_tag = $data[$pos + 1];
+                $descriptor_length = ord($data[$pos + 2]);*/
+                $eit['ISO_639_language_code'] = strtoupper(substr($data, $pos + 2, 3));
+
                 $event_name_length = ord($data[$pos + 5]);
-
-                $name_event_description = self::get_string($data, $pos + 6, $pos + 6 + $event_name_length);
-                $eit['name'] = $name_event_description;
-
-                $short_event_description = self::get_string($data, $pos + 7 + $event_name_length, $pos + $length);
-                $eit['short_description'] = $short_event_description;
-
-            } elseif ($rec == 0x4E) {
+                if ($event_name_length > 0)
+                    $eit['name'] = self::get_string($data, $pos + 6, $pos + 6 + $event_name_length);
+                $eit['short_description'] = self::get_string($data, $pos + 7 + $event_name_length, $pos + $length);
+            }
+            elseif ($rec == 0x4E)
+            {
                 $extended_event_description = self::get_string($data, $pos + 8, $pos + $length);
                 $eit['description'] = $extended_event_description;
             }
