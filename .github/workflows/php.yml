@@ -73,3 +73,35 @@ jobs:
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1
+
+  prefer_lowest:
+    name: 'Prefer lowest dependency versions'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Cache Composer packages
+        id: composer-cache
+        uses: actions/cache@v2
+        with:
+          path: vendor
+          key: ${{ runner.os }}-php${{ matrix.php }}-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-php${{ matrix.php }}-
+
+      - name: Install ffmpeg
+        run: sudo apt-get install -y ffmpeg
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          extensions: libxml
+
+      - name: Install dependencies
+        run: composer update --prefer-lowest --no-progress
+
+      - name: Run tests
+        run: composer run-script test
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v1
