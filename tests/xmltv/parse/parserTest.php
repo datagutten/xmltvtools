@@ -13,8 +13,8 @@ use datagutten\xmltv\tools\exceptions\ChannelNotFoundException;
 use datagutten\xmltv\tools\exceptions\ProgramNotFoundException;
 use datagutten\xmltv\tools\parse\parser;
 use InvalidArgumentException;
-use PHPUnit\Framework\TestCase;
 use SimpleXMLElement;
+use Yoast\PHPUnitPolyfills\TestCases\TestCase;
 
 class parserTest extends TestCase
 {
@@ -104,9 +104,6 @@ class parserTest extends TestCase
         $this->parser->find_program(strtotime('2019-10-11 00:45'), 'no.bbcentertainment.no', 'now');
     }
 
-    /**
-     * @requires PHPUnit >= 9.0
-     */
     public function testFileNotFound()
     {
         $this->expectException(ProgramNotFoundException::class);

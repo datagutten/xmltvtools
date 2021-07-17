@@ -7,7 +7,7 @@ use datagutten\video_tools\exceptions;
 use datagutten\xmltv\tools\data\RecordingFile;
 use DependencyFailedException;
 use FileNotFoundException;
-use PHPUnit\Framework\TestCase;
+use Yoast\PHPUnitPolyfills\TestCases\TestCase;
 
 class recording_fileTest extends TestCase
 {
@@ -49,7 +49,6 @@ class recording_fileTest extends TestCase
      * @throws DependencyFailedException
      * @throws FileNotFoundException
      * @throws exceptions\DurationNotFoundException
-     * @requires PHPUnit 9.1
      */
     public function testGet_duration_cache()
     {
