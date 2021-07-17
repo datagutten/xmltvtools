@@ -37,13 +37,13 @@ jobs:
       with:
         php-version: ${{ matrix.php }}
         coverage: xdebug
-        extensions: gd libxml
+        extensions: libxml
 
     - name: Install dependencies
       uses: php-actions/composer@v6
       with:
         php_version: ${{ matrix.php }}
-        php_extensions: gd libxml
+        php_extensions: libxml
 
 
     - name: Run default tests
