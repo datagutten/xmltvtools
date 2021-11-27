@@ -98,7 +98,7 @@ class Recording extends RecordingFile
      * @return string XMLTV channel id
      * @throws xmltv_exceptions\ChannelNotFoundException Channel not found
      */
-    public function channelId()
+    public function channelId(): string
     {
         return $this->dreambox->channels->name_to_id($this->channel_name);
     }
@@ -144,7 +144,7 @@ class Recording extends RecordingFile
      * @throws xmltv_exceptions\ProgramNotFoundException Program not found
      * @throws xmltv_exceptions\ChannelNotFoundException Channel not found
      */
-    public function nearestProgram()
+    public function nearestProgram(): Program
     {
         if(empty($this->xmltv_parser))
             throw new InvalidArgumentException('XMLTV path not specified');
@@ -153,12 +153,12 @@ class Recording extends RecordingFile
         return Program::fromXMLTV($xmltv);
     }
 
-    public function time()
+    public function time(): string
     {
         return sprintf('%s-%s', date('H:i', $this->start_timestamp), date('H:i', $this->end_timestamp));
     }
 
-    public function eitTime()
+    public function eitTime(): string
     {
         return sprintf('%s-%s', date('H:i', $this->eit->start_timestamp), date('H:i', $this->eit->end_timestamp));
     }
@@ -168,7 +168,7 @@ class Recording extends RecordingFile
      * @return Program
      * @throws FileNotFoundException EIT file not found
      */
-    public function eitInfo()
+    public function eitInfo(): Program
     {
         $eit_file = sprintf('%s/%s.eit', $this->pathinfo['dirname'], $this->pathinfo['filename']);
         return Program::fromEIT($eit_file);
