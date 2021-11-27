@@ -91,6 +91,7 @@
     <channel id="no.bbcentertainment.no">
         <name>BBC Brit</name>
         <name>BBC Brit HD</name>
+        <name>BBC Brit HD (N)</name>
     </channel>
     <channel id="auto-motor-og-sport.tv">
         <name>auto motor og sport tv</name>
