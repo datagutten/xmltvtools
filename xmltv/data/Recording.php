@@ -59,7 +59,7 @@ class Recording extends RecordingFile
      * @throws xmltv_exceptions\InvalidFileNameException
      * @throws XMLTVException
      */
-    public function __construct(string $file, $xmltv_path = '', $xmltv_sub_folders = ['xmltv'], $ignore_file_names = false)
+    public function __construct(string $file, $xmltv_path = '', $xmltv_sub_folders = ['xmltv'], $ignore_file_names = false, $require_eit = true)
     {
         parent::__construct($file);
 
@@ -85,7 +85,7 @@ class Recording extends RecordingFile
         try {
             $this->eit = $this->eitInfo();
         } catch (FileNotFoundException $e) {
-            if (!$ignore_file_names)
+            if ($require_eit)
                 throw $e;
         }
 
