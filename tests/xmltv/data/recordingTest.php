@@ -45,7 +45,7 @@ class recordingTest extends TestCase
     public function testIgnoreInvalidFileName()
     {
         $test_file = files::path_join(__DIR__, '..', 'test_data', 'Reklame Kornmo Treider 41.mp4' );
-        $recording = new Recording($test_file, '', '', true);
+        $recording = new Recording($test_file, '', '', true, false);
         $this->assertEmpty($recording->channel_name);
         $this->assertEmpty($recording->eit);
     }
