@@ -13,8 +13,9 @@ use datagutten\xmltv\tools\exceptions\ChannelNotFoundException;
 use datagutten\xmltv\tools\exceptions\ProgramNotFoundException;
 use datagutten\xmltv\tools\parse\parser;
 use InvalidArgumentException;
+use PHPUnit\Framework\TestCase;
 use SimpleXMLElement;
-use Yoast\PHPUnitPolyfills\TestCases\TestCase;
+
 
 class parserTest extends TestCase
 {
