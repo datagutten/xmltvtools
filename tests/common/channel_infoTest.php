@@ -31,7 +31,7 @@ class channel_infoTest extends TestCase
     public function testId_to_MultipleNames()
     {
         $name = $this->info->id_to_name('no.bbcentertainment.no', true);
-        $this->assertEquals(['BBC Brit', 'BBC Brit HD'], $name);
+        $this->assertEquals(['BBC Brit', 'BBC Brit HD', 'BBC Brit HD (N)'], $name);
     }
 
     public function testInvalidName_to_id()
