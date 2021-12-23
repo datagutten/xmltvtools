@@ -26,10 +26,10 @@ class channel_info
      * Find channel name from xmltv id
      * @param string $id Channel id
      * @param bool $multiple Return an array with all possible channel names
-     * @return string|array Channel name
+     * @return string|string[] Channel name
      * @throws ChannelNotFoundException
      */
-    public function id_to_name(string $id, $multiple=false)
+    public function id_to_name(string $id, bool $multiple = false)
     {
         $result = $this->xml->xpath(sprintf('/mappings/channel[@id="%s"]/name', $id));
         if(empty($result))
@@ -37,7 +37,7 @@ class channel_info
         if(!$multiple)
             return (string)$result[0];
         else
-            return (array)$result;
+            return array_map('strval', $result);
     }
 
     /**
