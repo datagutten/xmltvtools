@@ -131,6 +131,6 @@ class recordingTest extends TestCase
         $recording = new Recording($test_file, $this->xmltv_path, ['xmltv_php']);
         $programs = $recording->programs();
         $this->assertIsArray($programs);
-        $this->assertEquals(1, count($programs));
+        $this->assertCount(1, $programs);
     }
 }
