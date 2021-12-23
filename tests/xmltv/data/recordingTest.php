@@ -10,7 +10,7 @@ use datagutten\xmltv\tools\exceptions\InvalidFileNameException;
 use datagutten\xmltv\tools\exceptions\ProgramNotFoundException;
 use FileNotFoundException;
 use InvalidArgumentException;
-use Yoast\PHPUnitPolyfills\TestCases\TestCase;
+use PHPUnit\Framework\TestCase;
 
 date_default_timezone_set('Europe/Oslo');
 class recordingTest extends TestCase

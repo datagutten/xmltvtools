@@ -7,7 +7,8 @@ use datagutten\video_tools\exceptions;
 use datagutten\xmltv\tools\data\RecordingFile;
 use DependencyFailedException;
 use FileNotFoundException;
-use Yoast\PHPUnitPolyfills\TestCases\TestCase;
+use PHPUnit\Framework\TestCase;
+
 
 class recording_fileTest extends TestCase
 {
