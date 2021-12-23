@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE tv SYSTEM "xmltv.dtd">
+<tv generator-info-name="php-xmltv-grabber" generator-info-url="https://github.com/datagutten/xmltvgrabber">
+  <programme start="20211220000800 +0100" channel="nickelodeon.no" stop="20211220003100 +0100">
+    <title lang="nb">Victorious</title>
+    <desc lang="nb">Tori, Andre, Beck og Jade blir gira når de får vite at de skal være med i en ny realityserie kalt "The Wood", som skal filmes på skolen.</desc>
+    <category>komiserie</category>
+    <episode-num system="xmltv_ns">0.13/20.</episode-num>
+  </programme>
+  <programme start="20211220003100 +0100" channel="nickelodeon.no" stop="20211220005300 +0100">
+    <title lang="nb">Hunter Gata</title>
+    <desc lang="nb">Når Herr og Fru Hunter forsvinner er det opp til de fem fosterbarna å finne ut av mysteriet, samtidig som de må holde på fasaden om at alt er fint.</desc>
+    <category>familieserie</category>
+    <episode-num system="xmltv_ns">3.14.</episode-num>
+  </programme>
+  <programme start="20211220005300 +0100" channel="nickelodeon.no" stop="20211220011600 +0100">
+    <title lang="nb">Hunter Gata</title>
+    <desc lang="nb">Når Herr og Fru Hunter forsvinner er det opp til de fem fosterbarna å finne ut av mysteriet, samtidig som de må holde på fasaden om at alt er fint.</desc>
+    <category>familieserie</category>
+    <episode-num system="xmltv_ns">3.15.</episode-num>
+  </programme>
+  <programme start="20211220011600 +0100" channel="nickelodeon.no" stop="20211220013900 +0100">
+    <title lang="nb">Sam &amp; Cat</title>
+    <desc lang="nb">Et konkurrerende selskap poster falske dårlige kritikker av Sam og Cats barnevaktfirma. Sam og Cat tar opp dette og finner ut at selskapet ikke er hva de utgir seg for å være.</desc>
+    <category>familieserie</category>
+    <episode-num system="xmltv_ns">0.6.</episode-num>
+  </programme>
+  <programme start="20211220013900 +0100" channel="nickelodeon.no" stop="20211220020200 +0100">
+    <title lang="nb">Sam &amp; Cat</title>
+    <desc lang="nb">Cat oppdager at Sam er rask til å tekste og overbeviser henne om å delta i en tekstekonkurranse mot den søte gutten Butler, som har en overbærende mamma. Dice prøver å unngå sin plagsomme venn.</desc>
+    <category>familieserie</category>
+    <episode-num system="xmltv_ns">0.7.</episode-num>
+  </programme>
+  <programme start="20211220020200 +0100" channel="nickelodeon.no" stop="20211220022400 +0100">
+    <title lang="nb">Jeg er Frankie</title>
+    <desc lang="nb">Jeg er forandret. Mens Frankie er klar for å jobbe på Cole, bruker Rachel Jennys app til å kontrollere Beto på WARPA. Andrew, Simone og Kingston slår seg sammen for å rømme og redde de andre. Og Frankie og Cole deler et søtt øyeblikk</desc>
+    <category>dramaserie</category>
+    <episode-num system="xmltv_ns">1.21/22.</episode-num>
+  </programme>
+  <programme start="20211220022400 +0100" channel="nickelodeon.no" stop="20211220024600 +0100">
+    <title lang="nb">School of Rock</title>
+    <desc lang="nb">Dewey underviser elevene om økonomi, og Zac ser straks en forretningsidé i Lawrences oppfinnelser. Samtidig sliter Dewey med å pugge til lærereksamen, men Tomika og Summer tror de skal klare å lære han det som skal til for å klare prøven.</desc>
+    <category>familieserie</category>
+    <episode-num system="xmltv_ns">1.4.</episode-num>
+  </programme>
+  <programme start="20211220024600 +0100" channel="nickelodeon.no" stop="20211220030800 +0100">
+    <title lang="nb">School of Rock</title>
+    <desc lang="nb">Summer blir bare mer og mer sjalu på Kale, og legger en plan for å ødelegge forholdet mellom Kale og Freddy. Zack og Lawrence blir redde når de får inntrykk av at rektor er forelsket i en av dem.</desc>
+    <category>familieserie</category>
+    <episode-num system="xmltv_ns">1.5.</episode-num>
+  </programme>
+  <programme start="20211220030800 +0100" channel="nickelodeon.no" stop="20211220033100 +0100">
+    <title lang="nb">Game Shakers</title>
+    <desc lang="nb">Double G har skremt Triple G hver eneste Halloween siden han var baby. Dette året spør han Babe og Kenzie om hjelp, men de lurer ham ved å fortelle Trip om planen. Men det er ikke noe lurt å tulle med Dub.</desc>
+    <category>komiserie</category>
+    <episode-num system="xmltv_ns">0.7.</episode-num>
+  </programme>
+  <programme start="20211220033100 +0100" channel="nickelodeon.no" stop="20211220035400 +0100">
+    <title lang="nb">Game Shakers</title>
+    <desc lang="nb">The Game Shakers tar T-banen til en boksekamp, men glemmer hanskene og sender Trip og Hundson tilbake for å hente dem. Dub har nektet Trip å reise med T-banen og drar for å redde ham fra grusomheten.</desc>
+    <category>komiserie</category>
+    <episode-num system="xmltv_ns">0.8.</episode-num>
+  </programme>
+  <programme start="20211220035400 +0100" channel="nickelodeon.no" stop="20211220040400 +0100">
+    <title lang="nb">LEGO® City Eventyr</title>
+    <desc lang="nb">LEGO® City Adventures byr på nye skurker og lovbrudd i historier der bare fantasien setter grenser.</desc>
+    <category>animasjonsserie</category>
+    <episode-num system="xmltv_ns">2.1.</episode-num>
+  </programme>
+  <programme start="20211220040400 +0100" channel="nickelodeon.no" stop="20211220041400 +0100">
+    <title lang="nb">LEGO® City Eventyr</title>
+    <desc lang="nb">LEGO® City Adventures byr på nye skurker og lovbrudd i historier der bare fantasien setter grenser.</desc>
+    <category>animasjonsserie</category>
+    <episode-num system="xmltv_ns">2.2.</episode-num>
+  </programme>
+  <programme start="20211220041400 +0100" channel="nickelodeon.no" stop="20211220042600 +0100">
+    <title lang="nb">LEGO® City Eventyr</title>
+    <desc lang="nb">LEGO® City Adventures byr på nye skurker og lovbrudd i historier der bare fantasien setter grenser.</desc>
+    <category>animasjonsserie</category>
+    <episode-num system="xmltv_ns">2.2.</episode-num>
+  </programme>
+  <programme start="20211220042600 +0100" channel="nickelodeon.no" stop="20211220044800 +0100">
+    <title lang="nb">Alvinnn!!! og gjengen</title>
+    <desc lang="nb">Alvin og gjengen er helt vanlige ungdommer. De går på skolen, har sine huslige plikter, krangler som søsken flest og spiller utsolgte konserter for millioner av fans. Husker ikke om vi har nevnt at de er internasjonale popstjerner?</desc>
+    <category>animasjonsserie</category>
+    <episode-num system="xmltv_ns">3.11/22.</episode-num>
+  </programme>
+  <programme start="20211220044800 +0100" channel="nickelodeon.no" stop="20211220050000 +0100">
+    <title lang="nb">Alvinnn!!! og gjengen</title>
+    <desc lang="nb">Simons eksperiment om hvordan planter regerer på positiv eller negativ tilbakemelding skaper et monster, og det vokser!. - Brittanys frykt for bier endres til beundring når hun krympes til deres størrelse og erfarer hvordan livet som bie er.</desc>
+    <category>animasjonsserie</category>
+    <episode-num system="xmltv_ns">2.19/26.</episode-num>
+  </programme>
+  <programme start="20211220050000 +0100" channel="nickelodeon.no" stop="20211220052100 +0100">
+    <title lang="nb">Alvinnn!!! og gjengen</title>
+    <desc lang="nb">Alvin og gjengen er helt vanlige ungdommer. De går på skolen, har sine huslige plikter, krangler som søsken flest og spiller utsolgte konserter for millioner av fans. Husker ikke om vi har nevnt at de er internasjonale popstjerner?</desc>
+    <category>animasjonsserie</category>
+    <episode-num system="xmltv_ns">3.12/22.</episode-num>
+  </programme>
+  <programme start="20211220052100 +0100" channel="nickelodeon.no" stop="20211220053300 +0100">
+    <title lang="nb">Alvinnn!!! og gjengen</title>
+    <desc lang="nb">Alvin og gjengen er helt vanlige ungdommer. De går på skolen, har sine huslige plikter, krangler som søsken flest og spiller utsolgte konserter for millioner av fans. Husker ikke om vi har nevnt at de er internasjonale popstjerner?</desc>
+    <category>animasjonsserie</category>
+    <episode-num system="xmltv_ns">3.11/22.</episode-num>
+  </programme>
+  <programme start="20211220053300 +0100" channel="nickelodeon.no" stop="20211220054500 +0100">
+    <title lang="nb">Alvinnn!!! og gjengen</title>
+    <desc lang="nb">Alvin og gjengen er helt vanlige ungdommer. De går på skolen, har sine huslige plikter, krangler som søsken flest og spiller utsolgte konserter for millioner av fans. Husker ikke om vi har nevnt at de er internasjonale popstjerner?</desc>
+    <category>animasjonsserie</category>
+    <episode-num system="xmltv_ns">3.12/22.</episode-num>
+  </programme>
+  <programme start="20211220054500 +0100" channel="nickelodeon.no" stop="20211220060000 +0100">
+    <title lang="nb">Alvinnn!!! og gjengen</title>
+    <desc lang="nb">Alvin og gjengen er helt vanlige ungdommer. De går på skolen, har sine huslige plikter, krangler som søsken flest og spiller utsolgte konserter for millioner av fans. Husker ikke om vi har nevnt at de er internasjonale popstjerner?</desc>
+    <category>animasjonsserie</category>
+    <episode-num system="xmltv_ns">3.12/22.</episode-num>
+  </programme>
+  <programme start="20211220060000 +0100" channel="nickelodeon.no" stop="20211220062100 +0100">
+    <title lang="nb">Familien Casagrande</title>
+    <desc lang="nb">Familen Casagrande er historien om Ronnie Anne, en selvstendig, eventyrlysten 11-åring som utforsker bylivet sammen med sin store Meksikansk-Amerikanske familie.</desc>
+    <category>animasjonsserie</category>
+    <episode-num system="xmltv_ns">1.11.</episode-num>
+  </programme>
+  <programme start="20211220062100 +0100" channel="nickelodeon.no" stop="20211220065100 +0100">
+    <title lang="nb">Bulderhuset</title>
+    <desc lang="nb">Lincoln må rekke skolen, men å få søstrene ut av døren viser seg å være den aller største hindringen. - Lincoln har den avgjørende stemmen når familien skal avgjøre om de skal på stranden eller på tivoli.</desc>
+    <category>animasjonsserie</category>
+    <episode-num system="xmltv_ns">0.4/26.</episode-num>
+  </programme>
+  <programme start="20211220065100 +0100" channel="nickelodeon.no" stop="20211220070800 +0100">
+    <title lang="nb">Bulderhuset</title>
+    <desc lang="nb">Når Clyde tror at foreldrene hans skal ha en ny baby ber han Lincoln om hjelp til å bli en fantastisk storebror - When Lori and Leni both buy the same dress, a fight breaks out leading to Defcon five in the Loud house.</desc>
+    <category>animasjonsserie</category>
+    <episode-num system="xmltv_ns">1.2/26.</episode-num>
+  </programme>
+  <programme start="20211220071100 +0100" channel="nickelodeon.no" stop="20211220071100 +0100">
+    <title lang="nb">Henry Danger</title>
+    <desc lang="nb">Når Henry bruker sin nye superkraft for konkurrere i "Kanon-a-line"-turneringen, må Ray, Schwoz og Charlotte ut på hemmelig oppdrag for å lære Henry en lekse.</desc>
+    <category>komiserie</category>
+    <episode-num system="xmltv_ns">2.10.</episode-num>
+  </programme>
+  <programme start="20211220074100 +0100" channel="nickelodeon.no" stop="20211220074100 +0100">
+    <title lang="nb">Henry Danger</title>
+    <desc lang="nb">Henry og Charlotte har lyst til å fortelle Jasper at Henry egentlig er Kid Danger. De bestemmer seg for å teste om han er klar til å få vite det.</desc>
+    <category>familieserie</category>
+    <episode-num system="xmltv_ns">0.22.</episode-num>
+  </programme>
+  <programme start="20211220081000 +0100" channel="nickelodeon.no" stop="20211220081000 +0100">
+    <title lang="nb">Familien Thunderman</title>
+    <desc lang="nb">Max og Phoebe bruker superkreftene sine for aa gi en venn litt bedre selvtillit, men den gode gjerningen slaar tilbake paa dem naar han tror han har faatt superkrefter selv.</desc>
+    <category>komiserie</category>
+    <episode-num system="xmltv_ns">3.14.</episode-num>
+  </programme>
+  <programme start="20211220083800 +0100" channel="nickelodeon.no" stop="20211220083800 +0100">
+    <title lang="nb">Familien Thunderman</title>
+    <desc lang="nb">Phoebe og Max gleder seg til å bli hedret med et skolemaleri, men finner ut at kunstneren bærer et personlig nag, og hyllesten blir ikke helt som de hadde sett for seg.</desc>
+    <category>komiserie</category>
+    <episode-num system="xmltv_ns">3.15.</episode-num>
+  </programme>
+  <programme start="20211220090000 +0100" channel="nickelodeon.no" stop="20211220090000 +0100">
+    <title lang="nb">Nicky, Ricky, Dicky &amp; Dawn</title>
+    <desc lang="nb">Dawn vil gjøre om på firlingenes dukketeaterforestilling for å omsider kunne vinne talentkonkurransen, men hun blir frustrert når hun blir nedstemt av brødrene sine.</desc>
+    <category>komiserie</category>
+    <episode-num system="xmltv_ns">0.16.</episode-num>
+  </programme>
+  <programme start="20211220092800 +0100" channel="nickelodeon.no" stop="20211220092800 +0100">
+    <title lang="nb">Nicky, Ricky, Dicky &amp; Dawn</title>
+    <desc lang="nb">Firlingene engasjerer seg i et prosjekt for å gjøre noe spesielt for noen andre på valentinsdagen, men ingenting går etter planen, og de begynner å tro at noen har forbannet dem. *Valentinsdag-episode.</desc>
+    <category>komiserie</category>
+    <episode-num system="xmltv_ns">0.17.</episode-num>
+  </programme>
+  <programme start="20211220095800 +0100" channel="nickelodeon.no" stop="20211220095800 +0100">
+    <title lang="nb">Bulderhuset</title>
+    <desc lang="nb">Lincoln og Clyde er bekymret for om de er for gamle til å spille Ace Savvy.. - Lincoln oppdager at å ha en venn over, betyr å få spesielle privilegier og han benytter seg av det.</desc>
+    <category>animasjonsserie</category>
+    <episode-num system="xmltv_ns">2.9/22.</episode-num>
+  </programme>
+  <programme start="20211220102800 +0100" channel="nickelodeon.no" stop="20211220102800 +0100">
+    <title lang="nb">Bulderhuset</title>
+    <desc lang="nb">Gutta lurer på om de skal sove over hos Liam eller bli med på bassengfest hos Josefine.. - Barna er bekymret for at Leni er for svak og prøver å lære henne å være mer agressiv.</desc>
+    <category>animasjonsserie</category>
+    <episode-num system="xmltv_ns">2.10/22.</episode-num>
+  </programme>
+  <programme start="20211220105700 +0100" channel="nickelodeon.no" stop="20211220105700 +0100">
+    <title lang="nb">Familien Bulder</title>
+    <desc lang="nb">Har du noen gang lurt på hvordan det er å vokse opp i en storfamilie? 11 år gamle Lincoln Loud gir seerne en mulighet til å se hvordan man kan overleve kaoset i en storfamilie - spesielt når det består av en eneste gutt og ... 10 søstre.</desc>
+    <category>animasjonsserie</category>
+    <episode-num system="xmltv_ns">4.3.</episode-num>
+  </programme>
+  <programme start="20211220111600 +0100" channel="nickelodeon.no" stop="20211220111600 +0100">
+    <title lang="nb">Familien Casagrande</title>
+    <desc lang="nb">Familen Casagrande er historien om Ronnie Anne, en selvstendig, eventyrlysten 11-åring som utforsker bylivet sammen med sin store Meksikansk-Amerikanske familie.</desc>
+    <category>animasjonsserie</category>
+    <episode-num system="xmltv_ns">0.15/10.</episode-num>
+  </programme>
+  <programme start="20211220114600 +0100" channel="nickelodeon.no" stop="20211220114600 +0100">
+    <title lang="nb">Svampebob Firkant</title>
+    <desc lang="nb">Amerikansk tegnefilmserie fra 2017.
+Svampebob Firkant er en animasjonsserie om den gule sjøsvampen Svampebob. Han bor dypt nede i havet i den undersjøiske byen Bikinibunne. Sammen med bestevennen, den rosa sjøstjernen Patrik, opplever han helt ville og spennende eventyr. SvampeBob bor i en ananas sammen med husdyret sitt, sneglen Gary. I undervannsbyen Bikini Bunnen går fisker oppreist, blåser kunstbobler og spiser undervannsmat som f.eks. en Krabby Patty burger.</desc>
+    <episode-num system="xmltv_ns">10.232.</episode-num>
+  </programme>
+  <programme start="20211220121600 +0100" channel="nickelodeon.no" stop="20211220121600 +0100">
+    <title lang="nb">Svampebob Firkant</title>
+    <desc lang="nb">Amerikansk tegnefilmserie fra 2017.
+Langt nede i havet i undervannsbyen Bikini Bunnen lever en bit gul vaskesvamp som heter SvampeBob Firkant. SvampeBob bor i en ananas sammen med husdyret sitt, sneglen Gary. SvampeBob bor i en ananas sammen med husdyret sitt, sneglen Gary. I undervannsbyen Bikini Bunnen går fisker oppreist, blåser kunstbobler og spiser undervannsmat som f.eks. en Krabby Patty burger.</desc>
+    <episode-num system="xmltv_ns">10.232.</episode-num>
+  </programme>
+  <programme start="20211220123500 +0100" channel="nickelodeon.no" stop="20211220123500 +0100">
+    <title lang="nb">Familien Thunderman</title>
+    <desc lang="nb">Phoebe og Max gleder seg til å bli hedret med et skolemaleri, men finner ut at kunstneren bærer et personlig nag, og hyllesten blir ikke helt som de hadde sett for seg.</desc>
+    <category>komiserie</category>
+    <episode-num system="xmltv_ns">3.15.</episode-num>
+  </programme>
+  <programme start="20211220125600 +0100" channel="nickelodeon.no" stop="20211220125600 +0100">
+    <title lang="nb">Familien Thunderman</title>
+    <desc lang="nb">Phoebe og Max får leke superhelt-mentor for en av søsknene sine, men angrer fort å ha valgt Nora etter å ha sett Billy sine overraskende imponerende evner.</desc>
+    <category>komiserie</category>
+    <episode-num system="xmltv_ns">3.16.</episode-num>
+  </programme>
+  <programme start="20211220132500 +0100" channel="nickelodeon.no" stop="20211220132500 +0100">
+    <title lang="nb">Henry Danger</title>
+    <desc lang="nb">13-år gamle Henry Hart har fått en deltidsjobb som Kid Danger, hjelperen til superhelten Captain Man. Når han lover å å holde den nye identiteten sin hemmelig, er Henry nødt til å sjonglere et dobbeltliv. Etter å ha sverget på å holde identiteten hemmelig, må Henry takle sitt nye dobbeltliv.</desc>
+    <category>komiserie</category>
+    <episode-num system="xmltv_ns">4.8/30.</episode-num>
+  </programme>
+  <programme start="20211220135300 +0100" channel="nickelodeon.no" stop="20211220135300 +0100">
+    <title lang="nb">Henry Danger</title>
+    <desc lang="nb">13-år gamle Henry Hart har fått en deltidsjobb som Kid Danger, hjelperen til superhelten Captain Man. Når han lover å å holde den nye identiteten sin hemmelig, er Henry nødt til å sjonglere et dobbeltliv. Etter å ha sverget på å holde identiteten hemmelig, må Henry takle sitt nye dobbeltliv.</desc>
+    <category>komiserie</category>
+    <episode-num system="xmltv_ns">4.9/30.</episode-num>
+  </programme>
+  <programme start="20211220142100 +0100" channel="nickelodeon.no" stop="20211220142100 +0100">
+    <title lang="nb">Danger Force</title>
+    <desc lang="nb">Captain Man har et nytt team med superhelter-Danger Force. Captain Man og Schwoz lager en skole for å trene unger til å utvikle de ukontrollerbare superkreftene sine til å bekjempe krimalitet.</desc>
+    <category>barneserie</category>
+    <episode-num system="xmltv_ns">0.4/7.</episode-num>
+  </programme>
+  <programme start="20211220144900 +0100" channel="nickelodeon.no" stop="20211220144900 +0100">
+    <title lang="nb">SvampeBob Firkant</title>
+    <desc lang="nb">Amerikansk tegnefilmserie fra 2010.
+Langt nede i havet i undervannsbyen Bikini Bunnen lever en bit gul vaskesvamp som heter SvampeBob Firkant. SvampeBob bor i en ananas sammen med husdyret sitt, sneglen Gary. SvampeBob bor i en ananas sammen med husdyret sitt, sneglen Gary. I undervannsbyen Bikini Bunnen går fisker oppreist, blåser kunstbobler og spiser undervannsmat som f.eks. en Krabby Patty burger.</desc>
+    <episode-num system="xmltv_ns">7.167/26.</episode-num>
+  </programme>
+  <programme start="20211220150100 +0100" channel="nickelodeon.no" stop="20211220150100 +0100">
+    <title lang="nb">Svampebob Firkant</title>
+    <desc lang="nb">Amerikansk tegnefilmserie fra 2018.
+Langt nede i havet i undervannsbyen Bikini Bunnen lever en bit gul vaskesvamp som heter SvampeBob Firkant. SvampeBob bor i en ananas sammen med husdyret sitt, sneglen Gary. SvampeBob bor i en ananas sammen med husdyret sitt, sneglen Gary. I undervannsbyen Bikini Bunnen går fisker oppreist, blåser kunstbobler og spiser undervannsmat som f.eks. en Krabby Patty burger.</desc>
+    <episode-num system="xmltv_ns">11.251.</episode-num>
+  </programme>
+  <programme start="20211220151200 +0100" channel="nickelodeon.no" stop="20211220151200 +0100">
+    <title lang="nb">Svampebob Firkant</title>
+    <desc lang="nb">Amerikansk tegnefilmserie fra 2018.
+Langt nede i havet i undervannsbyen Bikini Bunnen lever en bit gul vaskesvamp som heter SvampeBob Firkant. SvampeBob bor i en ananas sammen med husdyret sitt, sneglen Gary. SvampeBob bor i en ananas sammen med husdyret sitt, sneglen Gary. I undervannsbyen Bikini Bunnen går fisker oppreist, blåser kunstbobler og spiser undervannsmat som f.eks. en Krabby Patty burger.</desc>
+    <episode-num system="xmltv_ns">11.251.</episode-num>
+  </programme>
+  <programme start="20211220153100 +0100" channel="nickelodeon.no" stop="20211220153100 +0100">
+    <title lang="nb">Camp Korall: SvampeBobs underår</title>
+    <desc lang="nb">Bli med Svampebob og vennene når de tilbringer sommeren med å lage bål, fange ville maneter og bade, på den villeste leiren i tareskogen: Camp Korall!</desc>
+    <category>animasjonsserie</category>
+    <episode-num system="xmltv_ns">0.1.</episode-num>
+  </programme>
+  <programme start="20211220160000 +0100" channel="nickelodeon.no" stop="20211220160000 +0100">
+    <title lang="nb">Rugrats (2021)</title>
+    <desc lang="nb">En nyvinning av de elskede tegnefilmene fra 90-årene. Rugrats følger en gruppe eventyrlystne babyer på oppdagelsesferd i den store verden. Tommy Pickles leder gjengen, når de ser på verden fra sitt mikroskopiske og fantasifulle perspektiv.</desc>
+    <category>animasjonsserie</category>
+    <episode-num system="xmltv_ns">0.5.</episode-num>
+  </programme>
+  <programme start="20211220162900 +0100" channel="nickelodeon.no" stop="20211220162900 +0100">
+    <title lang="nb">Bulderhuset</title>
+    <desc lang="nb">Når Lisa, den fire år gamle søsteren til Lincoln, begynner i femte klasse i klassen til Lincoln er hans sosiale status i fare! - Lei av at familiebilen alltid går i stykker, bestemmer ungene seg for å prøve å lure pappa til å kjøpe en ny.</desc>
+    <category>animasjonsserie</category>
+    <episode-num system="xmltv_ns">1.4/26.</episode-num>
+  </programme>
+  <programme start="20211220164700 +0100" channel="nickelodeon.no" stop="20211220164700 +0100">
+    <title lang="nb">Bulderhuset</title>
+    <desc lang="nb">Har du noen gang lurt på hvordan det er å vokse opp i en stor familie? 11 år gamle Lincoln Bulder viser seerne hvordan man overlever kaoset i en stor husholdning fra innsiden, spesielt når man er en gutt med ti søstre.</desc>
+    <category>animasjonsserie</category>
+    <episode-num system="xmltv_ns">3.11.</episode-num>
+  </programme>
+  <programme start="20211220165800 +0100" channel="nickelodeon.no" stop="20211220165800 +0100">
+    <title lang="nb">Bulderhuset</title>
+    <desc lang="nb">Har du noen gang lurt på hvordan det er å vokse opp i en stor familie? 11 år gamle Lincoln Bulder viser seerne hvordan man overlever kaoset i en stor husholdning fra innsiden, spesielt når man er en gutt med ti søstre.</desc>
+    <category>animasjonsserie</category>
+    <episode-num system="xmltv_ns">3.11.</episode-num>
+  </programme>
+  <programme start="20211220171500 +0100" channel="nickelodeon.no" stop="20211220171500 +0100">
+    <title lang="nb">Bulderhuset</title>
+    <desc lang="nb">Lori og Lincoln besøker byen. Lori kjemper med å være en byjente og Lincoln synes at Ronnie Anne har forandret seg.. - Familien har en ny plan for å slippe unna og ikke bli lurt på første April.</desc>
+    <category>animasjonsserie</category>
+    <episode-num system="xmltv_ns">2.4/22.</episode-num>
+  </programme>
+  <programme start="20211220173300 +0100" channel="nickelodeon.no" stop="20211220173300 +0100">
+    <title lang="nb">Danger Force</title>
+    <desc lang="nb">Captain Man har et nytt team med superhelter-Danger Force. Captain Man og Schwoz lager en skole for å trene unger til å utvikle de ukontrollerbare superkreftene sine til å bekjempe krimalitet.</desc>
+    <category>barneserie</category>
+    <episode-num system="xmltv_ns">0.8/7.</episode-num>
+  </programme>
+  <programme start="20211220175400 +0100" channel="nickelodeon.no" stop="20211220175400 +0100">
+    <title lang="nb">Danger Force</title>
+    <desc lang="nb">Captain Man har et nytt team med superhelter-Danger Force. Captain Man og Schwoz lager en skole for å trene unger til å utvikle de ukontrollerbare superkreftene sine til å bekjempe krimalitet.</desc>
+    <category>barneserie</category>
+    <episode-num system="xmltv_ns">0.1/7.</episode-num>
+  </programme>
+  <programme start="20211220182200 +0100" channel="nickelodeon.no" stop="20211220182200 +0100">
+    <title lang="nb">Svampebob Firkant</title>
+    <desc lang="nb">Amerikansk tegnefilmserie fra 2018.
+Langt nede i havet i undervannsbyen Bikini Bunnen lever en bit gul vaskesvamp som heter SvampeBob Firkant. SvampeBob bor i en ananas sammen med husdyret sitt, sneglen Gary. SvampeBob bor i en ananas sammen med husdyret sitt, sneglen Gary. I undervannsbyen Bikini Bunnen går fisker oppreist, blåser kunstbobler og spiser undervannsmat som f.eks. en Krabby Patty burger.</desc>
+    <episode-num system="xmltv_ns">11.259.</episode-num>
+  </programme>
+  <programme start="20211220183400 +0100" channel="nickelodeon.no" stop="20211220183400 +0100">
+    <title lang="nb">Camp Korall: SvampeBobs underår</title>
+    <desc lang="nb">Bli med Svampebob og vennene når de tilbringer sommeren med å lage bål, fange ville maneter og bade, på den villeste leiren i tareskogen: Camp Korall!</desc>
+    <category>animasjonsserie</category>
+    <episode-num system="xmltv_ns">0.2.</episode-num>
+  </programme>
+  <programme start="20211220185100 +0100" channel="nickelodeon.no" stop="20211220185100 +0100">
+    <title lang="nb">Rugrats (2021)</title>
+    <desc lang="nb">En nyvinning av de elskede tegnefilmene fra 90-årene. Rugrats følger en gruppe eventyrlystne babyer på oppdagelsesferd i den store verden. Tommy Pickles leder gjengen, når de ser på verden fra sitt mikroskopiske og fantasifulle perspektiv.</desc>
+    <category>animasjonsserie</category>
+    <episode-num system="xmltv_ns">0.5.</episode-num>
+  </programme>
+  <programme start="20211220191900 +0100" channel="nickelodeon.no" stop="20211220191900 +0100">
+    <title lang="nb">Astronautene</title>
+    <desc lang="nb">Fem barn er uheldigvis ombord et romskip som skal avskjære en mystisk astroide, da det tar av. Uten opplæring, med foreldrene langt borte, må barna jobbe sammen for å finne veien hjem.</desc>
+    <category>dramaserie</category>
+    <episode-num system="xmltv_ns">0.0/10.</episode-num>
+  </programme>
+  <programme start="20211220194900 +0100" channel="nickelodeon.no" stop="20211220194900 +0100">
+    <title lang="nb">Henry Danger</title>
+    <desc lang="nb">13-år gamle Henry Hart har fått en deltidsjobb som Kid Danger, hjelperen til superhelten Captain Man. Når han lover å å holde den nye identiteten sin hemmelig, er Henry nødt til å sjonglere et dobbeltliv. Etter å ha sverget på å holde identiteten hemmelig, må Henry takle sitt nye dobbeltliv.</desc>
+    <category>komiserie</category>
+    <episode-num system="xmltv_ns">4.11/30.</episode-num>
+  </programme>
+  <programme start="20211220201800 +0100" channel="nickelodeon.no" stop="20211220201800 +0100">
+    <title lang="nb">Henry Danger</title>
+    <desc lang="nb">13-år gamle Henry Hart har fått en deltidsjobb som Kid Danger, hjelperen til superhelten Captain Man. Når han lover å å holde den nye identiteten sin hemmelig, er Henry nødt til å sjonglere et dobbeltliv. Etter å ha sverget på å holde identiteten hemmelig, må Henry takle sitt nye dobbeltliv.</desc>
+    <category>komiserie</category>
+    <episode-num system="xmltv_ns">4.12/30.</episode-num>
+  </programme>
+  <programme start="20211220204600 +0100" channel="nickelodeon.no" stop="20211220204600 +0100">
+    <title lang="nb">Familien Thunderman</title>
+    <desc lang="nb">Et av hans gamle forsøk på en rampestrek holder på å ødelegge en superheltsamling, så Max trenger hjelp fra Phoebe for å forhindre det. Kreftene deres er ikke nok til å stoppe trusselen, så Phoebe tar en avgjørelse som snur livet på hodet.</desc>
+    <category>komiserie</category>
+    <episode-num system="xmltv_ns">3.17.</episode-num>
+  </programme>
+  <programme start="20211220211600 +0100" channel="nickelodeon.no" stop="20211220211600 +0100">
+    <title lang="nb">Familien Thunderman</title>
+    <desc lang="nb">Det slår gnister mellom Phoebe og broren til Cherry, og Cherry er redd for å bli overskygget av denne nye romansen. Cherry bønnfaller Phoebe om å ikke date broren hennes, og Phoebe må ta valget mellom kjærlighet og vennskap.</desc>
+    <category>komiserie</category>
+    <episode-num system="xmltv_ns">3.18.</episode-num>
+  </programme>
+  <programme start="20211220214300 +0100" channel="nickelodeon.no" stop="20211220214300 +0100">
+    <title lang="nb">Danger Force</title>
+    <desc lang="nb">Captain Man har et nytt team med superhelter-Danger Force. Captain Man og Schwoz lager en skole for å trene unger til å utvikle de ukontrollerbare superkreftene sine til å bekjempe krimalitet.</desc>
+    <category>barneserie</category>
+    <episode-num system="xmltv_ns">0.1/7.</episode-num>
+  </programme>
+  <programme start="20211220221100 +0100" channel="nickelodeon.no" stop="20211220221100 +0100">
+    <title lang="nb">Danger Force</title>
+    <desc lang="nb">Captain Man har et nytt team med superhelter-Danger Force. Captain Man og Schwoz lager en skole for å trene unger til å utvikle de ukontrollerbare superkreftene sine til å bekjempe krimalitet.</desc>
+    <category>barneserie</category>
+    <episode-num system="xmltv_ns">0.7/7.</episode-num>
+  </programme>
+  <programme start="20211220224100 +0100" channel="nickelodeon.no" stop="20211220224100 +0100">
+    <title lang="nb">iCarly</title>
+    <desc lang="nb">Når Sam og Freddie begge to vinner konkurransen for skolens beste skap, slir de nødt til å dele skap. Carly ber Spencer gi henne timer i billedkunst.</desc>
+    <category>familieserie</category>
+    <episode-num system="xmltv_ns">1.19.</episode-num>
+  </programme>
+  <programme start="20211220230900 +0100" channel="nickelodeon.no" stop="20211220230900 +0100">
+    <title lang="nb">iCarly</title>
+    <desc lang="nb">Dingo-kanalen har stjålet idéer fra iCarly, så Carly, Sam, Freddie og Spencer drar til Dingos Studio for å fortelle manusforfatterne hva de mener om det.</desc>
+    <category>familieserie</category>
+    <episode-num system="xmltv_ns">1.25.</episode-num>
+  </programme>
+  <programme start="20211220233800 +0100" channel="nickelodeon.no" stop="20211220233800 +0100">
+    <title lang="nb">Victorious</title>
+    <desc lang="nb">Tori bli mistenksom når vennene begynner å unngå henne og hun finner ut at alle de andre er med i skolen bordtennisklubb. Hun finner også ut at de bruker klubbens penger til å spise på en dyr restaurant.</desc>
+    <category>komiserie</category>
+    <episode-num system="xmltv_ns">0.14/20.</episode-num>
+  </programme>
+</tv>

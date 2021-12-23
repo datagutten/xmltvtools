@@ -123,4 +123,14 @@ class recordingTest extends TestCase
         $this->expectExceptionMessage('Invalid end time');
         $recording->programs();
     }
+
+    public function testLoop()
+    {
+        $test_file = files::path_join(__DIR__, '..', 'test_data',
+            '20211220 1555 - Nickelodeon - Rugrats (2021) (R) - (6) Amerikansk animasjonsserie fra 2021..ts');
+        $recording = new Recording($test_file, $this->xmltv_path, ['xmltv_php']);
+        $programs = $recording->programs();
+        $this->assertIsArray($programs);
+        $this->assertEquals(1, count($programs));
+    }
 }
