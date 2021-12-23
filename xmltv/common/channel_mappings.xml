@@ -96,6 +96,9 @@
     <channel id="auto-motor-og-sport.tv">
         <name>auto motor og sport tv</name>
     </channel>
+    <channel id="nicktoons.no">
+        <name>NickToons</name>
+    </channel>
     <channel id="nickelodeon.no">
         <name>Nickelodeon</name>
     </channel>
