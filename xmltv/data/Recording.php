@@ -132,6 +132,8 @@ class Recording extends RecordingFile
             {
                 break;
             }
+            if ((string)$program_xml->attributes()->{'start'} == (string)$program_xml->attributes()->{'stop'})
+                break;
             $info_array[] = Program::fromXMLTV($program_xml);
             $end_timestamp = strtotime($program_xml->attributes()->{'stop'});
         }
