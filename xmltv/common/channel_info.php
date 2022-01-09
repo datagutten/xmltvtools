@@ -48,7 +48,7 @@ class channel_info
      */
     public function name_to_id($name)
     {
-        $result = $this->xml->xpath(sprintf('/mappings/channel/name[.="%s"]/../@id', $name));
+        $result = $this->xml->xpath(sprintf('/mappings/channel/name[.="%s"]/../@id', trim($name)));
         if(empty($result))
             throw new ChannelNotFoundException($name);
         return (string)$result[0];
