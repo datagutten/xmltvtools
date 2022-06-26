@@ -61,6 +61,12 @@
     <channel id="zebra.tv2.no">
         <name>TV2 Zebra HD</name>
     </channel>
+    <channel id="livsstilhd.tv2.no">
+        <name>TV2 Livsstil HD</name>
+    </channel>
+    <channel id="sport2.tv2.no">
+        <name>TV2 Sportskanalen HD</name>
+    </channel>
     <channel id="natgeo.no">
         <name>Nat Geo Channel</name>
         <name>Nat Geo HD</name>
