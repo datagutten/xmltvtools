@@ -102,4 +102,7 @@
     <channel id="nickelodeon.no">
         <name>Nickelodeon</name>
     </channel>
+    <channel id="nickjr.no">
+        <name>Nick Jr</name>
+    </channel>
 </mappings>
