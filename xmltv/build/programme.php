@@ -99,4 +99,63 @@ class programme
         $episode_num=$this->xml->addChild('episode-num', $onscreen);
         $episode_num->addAttribute('system', 'onscreen');
     }
+
+    /**
+     * The date the programme or film was finished.  This will probably
+     * be the same as the copyright date.
+     * @param DateTime $date
+     */
+    public function date(DateTime $date)
+    {
+        $date_string = $date->format('YmdHis O');
+        $this->xml->addChild('date', $date_string);
+    }
+
+    /**
+     * Type of programme, eg 'soap', 'comedy' or whatever the
+     * equivalents are in your language.
+     * There's no predefined set of categories, and it's okay for a programme to belong to several.
+     * @param string $category Category name
+     * @param ?string $lang Language code
+     */
+    public function category(string $category, ?string $lang = null)
+    {
+        $xml = $this->xml->addChild('category', $category);
+        if (!empty($lang))
+            $xml->addAttribute('lang', $lang);
+    }
+
+    /**
+     * A URL where you can find out more about the element that contains
+     * it (programme or channel).  This might be the official site, or a fan
+     * page, whatever you like really.
+     *
+     * If multiple url elements are given, the most authoritative or official
+     * (which might conflict...) sites should be listed first.
+     *
+     * If the URL does not define a real (i.e. clickable) link then the scheme
+     * should be set to something other than 'http://' such as 'uri://'
+     *
+     * The system attribute may be used to identify the source or target of the
+     * url, or some other useful feature of the target.
+     * @param string $url URL
+     * @param string $system System
+     */
+    public function url(string $url, string $system)
+    {
+        $xml = $this->xml->addChild('url', $url);
+        if (!empty($system))
+            $xml->addAttribute('system', $system);
+    }
+
+    /**
+     * Helper method to add IMDb URL
+     * @param string $url IMDb URL or id
+     */
+    public function url_imdb(string $url)
+    {
+        if (!str_starts_with($url, 'http'))
+            $url = 'https://www.imdb.com/title/' . $url;
+        $this->url($url, 'IMDb');
+    }
 }
