@@ -4,6 +4,7 @@
 namespace datagutten\xmltv\tools\build;
 
 
+use DateTime;
 use SimpleXMLElement;
 
 class programme
@@ -41,7 +42,7 @@ class programme
         $this->xml->addAttribute('stop', date('YmdHis O', $stop));
     }
 
-    public function title(string $title, $lang='')
+    public function title(string $title, string $lang='')
     {
         $title = str_replace('&', '&amp;', $title);
         $title = $this->xml->addChild('title', $title);
@@ -51,7 +52,7 @@ class programme
             $title->addAttribute('lang', $lang);
     }
 
-    public function sub_title($title, $lang='')
+    public function sub_title(string $title, string $lang='')
     {
         $title = str_replace('&', '&amp;', $title);
         $title = $this->xml->addChild('sub-title', $title);
