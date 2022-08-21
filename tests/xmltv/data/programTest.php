@@ -54,12 +54,6 @@ class programTest extends TestCase
         $this->assertEmpty($program->categories);
     }
 
-    public function testFormat_time()
-    {
-        $time = Program::formatTime(1544162400);
-        $this->assertSame('07:00', $time);
-    }
-
     public function testHeader()
     {
         $program = new Program();
