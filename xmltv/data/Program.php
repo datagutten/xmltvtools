@@ -77,6 +77,11 @@ class Program
     public $categories = [];
 
     /**
+     * @var string XMLTV channel id
+     */
+    public string $channel;
+
+    /**
      * Get program from XMLTV
      * @param SimpleXMLElement $xml
      * @return Program program
@@ -88,6 +93,7 @@ class Program
 
         $program->generator = (string)$xml->xpath('/tv/@generator-info-name')[0];
         $program->parseStartEnd($xml->attributes()->{'start'}, $xml->attributes()->{'stop'} ?? null);
+        $program->channel = $xml->attributes()->{'channel'};
 
         if(isset($xml->title)) //Get the title
             $program->title=(string)$xml->title;
