@@ -19,22 +19,22 @@ class Recording extends RecordingFile
     /**
      * @var dreambox\recording_info
      */
-    public $dreambox;
+    public dreambox\recording_info $dreambox;
 
     /**
      * @var string Date and time for the recording start
      */
-    public $start_datetime;
+    public string $start_datetime;
 
     /**
      * @var int Recording start timestamp
      */
-    public $start_timestamp;
+    public int $start_timestamp;
 
     /**
      * @var int Recording end timestamp
      */
-    public $end_timestamp;
+    public int $end_timestamp;
 
     /**
      * @var DateTimeImmutable Recording start
@@ -49,17 +49,17 @@ class Recording extends RecordingFile
     /**
      * @var string Channel name from file name
      */
-    public $channel_name;
+    public string $channel_name;
 
     /**
-     * @var Program|array
+     * @var Program
      */
-    public $eit;
+    public Program $eit;
 
     /**
      * @var parse\merger
      */
-    public $xmltv_parser;
+    public parse\merger $xmltv_parser;
 
     /**
      * recording constructor.
@@ -71,7 +71,7 @@ class Recording extends RecordingFile
      * @throws xmltv_exceptions\InvalidFileNameException
      * @throws XMLTVException
      */
-    public function __construct(string $file, $xmltv_path = '', $xmltv_sub_folders = ['xmltv'], $ignore_file_names = false, $require_eit = true)
+    public function __construct(string $file, string $xmltv_path = '', array $xmltv_sub_folders = ['xmltv'], bool $ignore_file_names = false, bool $require_eit = true)
     {
         parent::__construct($file);
 
@@ -121,11 +121,11 @@ class Recording extends RecordingFile
 
     /**
      * Get programs in the recording
-     * @return array
+     * @return Program[]
      * @throws xmltv_exceptions\ProgramNotFoundException Program not found
      * @throws xmltv_exceptions\ChannelNotFoundException Channel not found
      */
-    public function programs()
+    public function programs(): array
     {
         if(empty($this->xmltv_parser))
             throw new InvalidArgumentException('XMLTV path not specified');
