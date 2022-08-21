@@ -8,8 +8,6 @@ use datagutten\video_tools\exceptions as video_exceptions;
 use datagutten\xmltv\tools\exceptions as xmltv_exceptions;
 use datagutten\xmltv\tools\exceptions\XMLTVException;
 use datagutten\xmltv\tools\parse;
-use DateInterval;
-use DateTimeImmutable;
 use DependencyFailedException;
 use FileNotFoundException;
 use InvalidArgumentException;
@@ -20,31 +18,6 @@ class Recording extends RecordingFile
      * @var dreambox\recording_info
      */
     public dreambox\recording_info $dreambox;
-
-    /**
-     * @var string Date and time for the recording start
-     */
-    public string $start_datetime;
-
-    /**
-     * @var int Recording start timestamp
-     */
-    public int $start_timestamp;
-
-    /**
-     * @var int Recording end timestamp
-     */
-    public int $end_timestamp;
-
-    /**
-     * @var DateTimeImmutable Recording start
-     */
-    public DateTimeImmutable $start;
-
-    /**
-     * @var DateTimeImmutable Recording end
-     */
-    public DateTimeImmutable $end;
 
     /**
      * @var string Channel name from file name
@@ -85,14 +58,10 @@ class Recording extends RecordingFile
 
         try {
             $info = $this->dreambox->parse_file_name($file);
-            $this->start_datetime = $info['datetime']; //Date and time from file name
+            $this->parseStartEnd($info['datetime']); //Date and time from file name
+            if(!empty($this->duration))
+                $this->calcEnd();
             $this->channel_name = $info['channel']; //Channel from file name
-            $this->start_timestamp = strtotime($info['datetime']);
-            $this->end_timestamp = $this->start_timestamp + $this->duration;
-
-            $this->start = new DateTimeImmutable($info['datetime']);
-            $this->end = $this->start->add(new DateInterval(sprintf('PT%dS', $this->duration)));
-
         } catch (xmltv_exceptions\InvalidFileNameException $e) {
             if (!$ignore_file_names)
                 throw $e;
@@ -131,7 +100,6 @@ class Recording extends RecordingFile
             throw new InvalidArgumentException('XMLTV path not specified');
 
         $channel = $this->channelId();
-        $recording_end_timestamp = $this->start_timestamp+$this->duration;
 
         $first_program_xml = $this->xmltv_parser->find_program($this->start_timestamp, $channel);
         $first_program = Program::fromXMLTV($first_program_xml);
@@ -140,7 +108,7 @@ class Recording extends RecordingFile
         if(empty($end_timestamp))
             throw new xmltv_exceptions\ProgramNotFoundException('Invalid end time');
 
-        while($end_timestamp<$recording_end_timestamp) {
+        while($end_timestamp<$this->end_timestamp) {
             try {
                 $program_xml = $this->xmltv_parser->find_program($end_timestamp, $channel, 'next');
             }
@@ -173,12 +141,12 @@ class Recording extends RecordingFile
 
     public function time(): string
     {
-        return sprintf('%s-%s', date('H:i', $this->start_timestamp), date('H:i', $this->end_timestamp));
+        return sprintf('%s-%s', $this->start_obj->format('H:i'), $this->end_obj->format('H:i'));
     }
 
     public function eitTime(): string
     {
-        return sprintf('%s-%s', date('H:i', $this->eit->start_timestamp), date('H:i', $this->eit->end_timestamp));
+        return sprintf('%s-%s', $this->eit->start_obj->format('H:i'), $this->eit->end_obj->format('H:i'));
     }
 
     /**

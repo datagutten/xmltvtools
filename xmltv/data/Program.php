@@ -18,7 +18,7 @@ use SimpleXMLElement;
 /**
  * Class to represent a XMLTV program
  */
-class Program
+class Program extends BaseElement
 {
     /**
      * @var ?int Season
@@ -32,32 +32,6 @@ class Program
      * @var string Title
      */
     public $title;
-    /**
-     * @var int Start timestamp
-     */
-    public int $start_timestamp;
-    /**
-     * @var ?int End timestamp
-     */
-    public ?int $end_timestamp = null;
-    /**
-     * @var string Formatted start time
-     */
-    public string $start;
-    /**
-     * @var string Formatted end time
-     */
-    public string $end;
-
-    /**
-     * @var DateTimeImmutable Program start
-     */
-    public DateTimeImmutable $start_obj;
-
-    /**
-     * @var DateTimeImmutable Program end
-     */
-    public DateTimeImmutable $end_obj;
 
     /**
      * @var string Sub title
@@ -168,50 +142,7 @@ class Program
         return sprintf('S%02dE%02d', $this->season, $this->episode);
     }
 
-    /**
-     * Parse and format start and end time
-     * Arguments are optional if start_obj and end_obj properties is set
-     * @param string|null $start Start time string
-     * @param string|null $end End time string
-     * @throws XMLTVException Unable to parse time
-     */
-    public function parseStartEnd(?string $start = null, ?string $end = null)
-    {
-        if (!empty($start))
-        {
-            try
-            {
-                $this->start_obj = new DateTimeImmutable($start);
-            }
-            catch (Exception $e)
-            {
-                throw new XMLTVException('Unable to parse start time', $e->getCode(), $e);
-            }
-        }
-        elseif (!isset($this->start_obj))
-            throw new InvalidArgumentException('start_obj must be set if start argument is not provided');
 
-        $this->start_timestamp = $this->start_obj->getTimestamp();
-        $this->start = $this->start_obj->format('H:i');
-
-        if (!empty($end))
-            try
-            {
-                $this->end_obj = new DateTimeImmutable($end);
-            }
-            catch (Exception $e)
-            {
-                throw new XMLTVException('Unable to parse end time', $e->getCode(), $e);
-            }
-        if (!empty($this->end_obj))
-        {
-            $this->end_timestamp = $this->end_obj->getTimestamp();
-            $this->end = $this->end_obj->format('H:i');
-
-            if ($this->end_timestamp < $this->start_timestamp)
-                $this->end_timestamp = null;
-        }
-    }
 
     public function header()
     {

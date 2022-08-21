@@ -9,7 +9,7 @@ use DependencyFailedException;
 use FileNotFoundException;
 use RuntimeException;
 
-class RecordingFile
+class RecordingFile extends BaseElement
 {
     /**
      * @var string Full path to recording file
@@ -21,10 +21,7 @@ class RecordingFile
      */
     public $pathinfo;
 
-    /**
-     * @var int Recording duration in seconds
-     */
-    public $duration = 0;
+
 
     /**
      * recording_file constructor.
@@ -51,7 +48,7 @@ class RecordingFile
     /**
      * Get recording duration
      * Requires package datagutten/video-tools
-     * @return float Duration
+     * @return int Duration
      * @throws video_exceptions\DurationNotFoundException
      * @throws DependencyFailedException
      */
@@ -61,26 +58,25 @@ class RecordingFile
     }
 
     /**
-     * @return false|float|string
+     * @return int
      * @throws video_exceptions\DurationNotFoundException
      * @throws DependencyFailedException
      */
-    public function duration()
+    public function duration(): int
     {
         $file = $this->file . '.duration';
         if (!file_exists($file)) {
             $duration = $this->getDuration();
             file_put_contents($file, $duration);
-            return $duration;
         } else {
-            $duration = file_get_contents($file);
+            $duration = intval(file_get_contents($file));
             if (empty($duration)) {
                 unlink($file);
                 return $this->duration();
-            } else {
-                return $duration;
             }
         }
+        $this->setDuration($duration);
+        return $duration;
     }
 
     /**
