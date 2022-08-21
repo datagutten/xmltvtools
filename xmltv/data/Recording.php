@@ -8,6 +8,8 @@ use datagutten\video_tools\exceptions as video_exceptions;
 use datagutten\xmltv\tools\exceptions as xmltv_exceptions;
 use datagutten\xmltv\tools\exceptions\XMLTVException;
 use datagutten\xmltv\tools\parse;
+use DateInterval;
+use DateTimeImmutable;
 use DependencyFailedException;
 use FileNotFoundException;
 use InvalidArgumentException;
@@ -33,6 +35,16 @@ class Recording extends RecordingFile
      * @var int Recording end timestamp
      */
     public $end_timestamp;
+
+    /**
+     * @var DateTimeImmutable Recording start
+     */
+    public DateTimeImmutable $start;
+
+    /**
+     * @var DateTimeImmutable Recording end
+     */
+    public DateTimeImmutable $end;
 
     /**
      * @var string Channel name from file name
@@ -77,6 +89,10 @@ class Recording extends RecordingFile
             $this->channel_name = $info['channel']; //Channel from file name
             $this->start_timestamp = strtotime($info['datetime']);
             $this->end_timestamp = $this->start_timestamp + $this->duration;
+
+            $this->start = new DateTimeImmutable($info['datetime']);
+            $this->end = $this->start->add(new DateInterval(sprintf('PT%dS', $this->duration)));
+
         } catch (xmltv_exceptions\InvalidFileNameException $e) {
             if (!$ignore_file_names)
                 throw $e;
