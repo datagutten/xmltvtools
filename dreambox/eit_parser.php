@@ -153,7 +153,7 @@ class eit_parser
             return $string;
     }
 
-    public static function season_episode($short_event_description)
+    public static function season_episode(string $short_event_description): array
     {
         if(preg_match('#\(([0-9]+)(?::([0-9]+))?(?:/s([0-9]+))?\)#',$short_event_description,$season_episode))
         {
@@ -172,6 +172,6 @@ class eit_parser
             return $info;
         }
         else
-            return null;
+            return ['raw_season_episode_string' => '', 'season' => null, 'episode' => null];
     }
 }
