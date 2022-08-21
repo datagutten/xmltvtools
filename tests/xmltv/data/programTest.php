@@ -17,10 +17,8 @@ class programTest extends TestCase
         $this->assertSame(4, $program->season);
         $this->assertSame(107, $program->episode);
         $this->assertSame('10:00', $program->start);
-        if(class_exists('datagutten\video_tools\video'))
-            $this->assertSame('10:29', $program->end);
-        else
-            $this->assertEmpty($program->end);
+        $this->assertSame('10:29', $program->end);
+
         $this->assertStringContainsString('I mellomtiden prøver Candace', $program->description);
         $this->assertEmpty($program->categories);
     }
@@ -31,10 +29,8 @@ class programTest extends TestCase
         $this->assertEmpty($program->season);
         $this->assertEmpty($program->episode);
         $this->assertSame('10:00', $program->start);
-        if(class_exists('datagutten\video_tools\video'))
-            $this->assertSame('10:29', $program->end);
-        else
-            $this->assertEmpty($program->end);
+        $this->assertSame('10:29', $program->end);
+
         $this->assertStringContainsString('Candace greier ikke å motså trangen', $program->description);
         $this->assertEmpty($program->categories);
     }
@@ -46,10 +42,7 @@ class programTest extends TestCase
         $this->assertEmpty($program->season);
         $this->assertEmpty($program->episode);
         $this->assertSame('07:00', $program->start);
-        if(class_exists('datagutten\video_tools\video'))
-            $this->assertSame('07:29', $program->end);
-        else
-            $this->assertEmpty($program->end);
+        $this->assertSame('07:29', $program->end);
         $this->assertEmpty($program->description);
         $this->assertEmpty($program->categories);
     }
