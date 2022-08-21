@@ -3,12 +3,16 @@
 
 namespace datagutten\xmltv\tools\data;
 
-use datagutten\dreambox\recording_info as dreambox_info;
-use datagutten\video_tools\video;
+use datagutten\dreambox\eit_parser;
+use datagutten\xmltv\tools\exceptions\XMLTVException;
 use datagutten\xmltv\tools\parse\parser;
+use DateInterval;
+use DateTime;
 use DateTimeImmutable;
+use DateTimeZone;
 use Exception;
 use FileNotFoundException;
+use InvalidArgumentException;
 use SimpleXMLElement;
 
 /**
@@ -17,13 +21,13 @@ use SimpleXMLElement;
 class Program
 {
     /**
-     * @var int Season
+     * @var ?int Season
      */
-    public $season;
+    public ?int $season;
     /**
-     * @var int Episode
+     * @var ?int Episode
      */
-    public $episode;
+    public ?int $episode;
     /**
      * @var string Title
      */
@@ -31,19 +35,19 @@ class Program
     /**
      * @var int Start timestamp
      */
-    public $start_timestamp;
+    public int $start_timestamp;
     /**
-     * @var int End timestamp
+     * @var ?int End timestamp
      */
-    public $end_timestamp;
+    public ?int $end_timestamp = null;
     /**
      * @var string Formatted start time
      */
-    public $start;
+    public string $start;
     /**
      * @var string Formatted end time
      */
-    public $end;
+    public string $end;
 
     /**
      * @var DateTimeImmutable Program start
@@ -83,34 +87,10 @@ class Program
         $program = new self();
 
         $program->generator = (string)$xml->xpath('/tv/@generator-info-name')[0];
-        try
-        {
-            $program->start_timestamp = strtotime($xml->attributes()->{'start'});
-            $program->start_obj = new DateTimeImmutable($xml->attributes()->{'start'});
-        }
-        catch (Exception $e)
-        {
-        }
+        $program->parseStartEnd($xml->attributes()->{'start'}, $xml->attributes()->{'stop'} ?? null);
 
         if(isset($xml->title)) //Get the title
             $program->title=(string)$xml->title;
-
-        if (isset($xml->attributes()->{'stop'}))
-        {
-            try
-            {
-                $program->end_timestamp = strtotime($xml->attributes()->{'stop'});
-                $program->end_obj = new DateTimeImmutable($xml->attributes()->{'stop'});
-            }
-            catch (Exception $e)
-            {
-            }
-        }
-
-        if($program->end_timestamp < $program->start_timestamp)
-            $program->end_timestamp = null;
-
-        $program->formatStartEnd();
 
         //Get the category
         if(isset($xml->{'category'})) {
@@ -146,26 +126,33 @@ class Program
      */
     public static function fromEIT(string $file)
     {
-        $program = new self();
-        $eit = dreambox_info::parse_eit($file, 'array');
+        if (!file_exists($file))
+            throw new FileNotFoundException($file);
+        $eit = eit_parser::parse(file_get_contents($file));
 
-        $program->title = $eit['title'];
-        $program->start_timestamp = $eit['start_timestamp'];
-        if(class_exists('datagutten\video_tools\video')) {
-            $duration = video::time_to_seconds(implode(':', $eit['duration']));
-            $program->end_timestamp = $program->start_timestamp + $duration;
+        $program = new self();
+        try
+        {
+            $start = new DateTime('now', new DateTimeZone('GMT')); //Time zone from EIT is always GMT
+            $start->setDate($eit['date'][0], $eit['date'][1], $eit['date'][2]);
+            $start->setTime($eit['time'][0], $eit['time'][1], $eit['time'][2]);
+            $start->setTimezone(new DateTimeZone(date_default_timezone_get())); //Convert the time to the local timezone
+
+            $program->start_obj = DateTimeImmutable::createFromMutable($start);
+            $program->end_obj = $program->start_obj->add(new DateInterval(sprintf('PT%dH%dM%dS', $eit['duration'][0], $eit['duration'][1], $eit['duration'][2])));
+            $program->parseStartEnd();
         }
-        $program->formatStartEnd();
+        catch (Exception $e)
+        {//Unable to parse time
+        }
+
+        $program->title = preg_replace('#\s?\(R\)$#', '', $eit['name']);
+        list(, $program->season, $program->episode) = array_values(eit_parser::season_episode($eit['short_description']));
 
         if(empty($eit['description']) && !empty($eit['short_description']))
             $program->description = $eit['short_description'];
         elseif(!empty($eit['description']))
             $program->description = $eit['description'];
-
-        if(!empty($eit['season_episode'])) {
-            $program->season = $eit['season_episode']['season'];
-            $program->episode = $eit['season_episode']['episode'];
-        }
 
         return $program;
     }
@@ -176,22 +163,48 @@ class Program
     }
 
     /**
-     * @param int $timestamp
-     * @return string
+     * Parse and format start and end time
+     * Arguments are optional if start_obj and end_obj properties is set
+     * @param string|null $start Start time string
+     * @param string|null $end End time string
+     * @throws XMLTVException Unable to parse time
      */
-    public static function formatTime(int $timestamp)
+    public function parseStartEnd(?string $start = null, ?string $end = null)
     {
-        return date('H:i', $timestamp);
-    }
+        if (!empty($start))
+        {
+            try
+            {
+                $this->start_obj = new DateTimeImmutable($start);
+            }
+            catch (Exception $e)
+            {
+                throw new XMLTVException('Unable to parse start time', $e->getCode(), $e);
+            }
+        }
+        elseif (!isset($this->start_obj))
+            throw new InvalidArgumentException('start_obj must be set if start argument is not provided');
 
-    /**
-     * Format start and end timestamp
-     */
-    public function formatStartEnd()
-    {
-        $this->start = self::formatTime($this->start_timestamp);
-        if(!empty($this->end_timestamp))
-            $this->end = self::formatTime($this->end_timestamp);
+        $this->start_timestamp = $this->start_obj->getTimestamp();
+        $this->start = $this->start_obj->format('H:i');
+
+        if (!empty($end))
+            try
+            {
+                $this->end_obj = new DateTimeImmutable($end);
+            }
+            catch (Exception $e)
+            {
+                throw new XMLTVException('Unable to parse end time', $e->getCode(), $e);
+            }
+        if (!empty($this->end_obj))
+        {
+            $this->end_timestamp = $this->end_obj->getTimestamp();
+            $this->end = $this->end_obj->format('H:i');
+
+            if ($this->end_timestamp < $this->start_timestamp)
+                $this->end_timestamp = null;
+        }
     }
 
     public function header()
