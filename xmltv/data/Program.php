@@ -6,12 +6,13 @@ namespace datagutten\xmltv\tools\data;
 use datagutten\dreambox\recording_info as dreambox_info;
 use datagutten\video_tools\video;
 use datagutten\xmltv\tools\parse\parser;
+use DateTimeImmutable;
+use Exception;
 use FileNotFoundException;
 use SimpleXMLElement;
 
 /**
  * Class to represent a XMLTV program
- * @package datagutten\renamevideo
  */
 class Program
 {
@@ -43,6 +44,17 @@ class Program
      * @var string Formatted end time
      */
     public $end;
+
+    /**
+     * @var DateTimeImmutable Program start
+     */
+    public DateTimeImmutable $start_obj;
+
+    /**
+     * @var DateTimeImmutable Program end
+     */
+    public DateTimeImmutable $end_obj;
+
     /**
      * @var string Sub title
      */
@@ -64,19 +76,36 @@ class Program
      * Get program from XMLTV
      * @param SimpleXMLElement $xml
      * @return Program program
+     * @throws Exception Unable to parse date
      */
     public static function fromXMLTV(SimpleXMLElement $xml)
     {
         $program = new self();
 
         $program->generator = (string)$xml->xpath('/tv/@generator-info-name')[0];
-        $program->start_timestamp = strtotime($xml->attributes()->{'start'});
+        try
+        {
+            $program->start_timestamp = strtotime($xml->attributes()->{'start'});
+            $program->start_obj = new DateTimeImmutable($xml->attributes()->{'start'});
+        }
+        catch (Exception $e)
+        {
+        }
 
         if(isset($xml->title)) //Get the title
             $program->title=(string)$xml->title;
 
-        if(isset($xml->attributes()->{'stop'}))
-            $program->end_timestamp = strtotime($xml->attributes()->{'stop'});
+        if (isset($xml->attributes()->{'stop'}))
+        {
+            try
+            {
+                $program->end_timestamp = strtotime($xml->attributes()->{'stop'});
+                $program->end_obj = new DateTimeImmutable($xml->attributes()->{'stop'});
+            }
+            catch (Exception $e)
+            {
+            }
+        }
 
         if($program->end_timestamp < $program->start_timestamp)
             $program->end_timestamp = null;
