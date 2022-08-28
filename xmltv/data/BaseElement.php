@@ -4,6 +4,7 @@ namespace datagutten\xmltv\tools\data;
 
 use datagutten\xmltv\tools\exceptions\XMLTVException;
 use DateInterval;
+use DateTime;
 use DateTimeImmutable;
 use Exception;
 use InvalidArgumentException;
@@ -51,17 +52,17 @@ abstract class BaseElement
     /**
      * Parse and format start and end time
      * Arguments are optional if start_obj and end_obj properties is set
-     * @param string|null $start Start time string
-     * @param string|null $end End time string
+     * @param ?mixed $start Start time string, timestamp or object
+     * @param ?mixed $end End time string, timestamp or object
      * @throws XMLTVException Unable to parse time
      */
-    public function parseStartEnd(?string $start = null, ?string $end = null)
+    public function parseStartEnd($start = null, $end = null)
     {
         if (!empty($start))
         {
             try
             {
-                $this->start_obj = new DateTimeImmutable($start);
+                $this->start_obj = static::parseTime($start);
             }
             catch (Exception $e)
             {
@@ -75,7 +76,7 @@ abstract class BaseElement
         {
             try
             {
-                $this->end_obj = new DateTimeImmutable($end);
+                $this->end_obj = static::parseTime($end);
             }
             catch (Exception $e)
             {
@@ -83,6 +84,9 @@ abstract class BaseElement
             }
             $this->calcDuration();
         }
+
+        if (!empty($this->duration_obj) && empty($this->end_obj))
+            $this->calcEnd();
 
         $this->convertTimes();
     }
@@ -109,6 +113,37 @@ abstract class BaseElement
 
         /*if(!empty($this->duration_obj))
             $this->duration = $this->duration_obj->s; //TODO: Check if this works with seconds above 60*/
+    }
+
+    protected static function parseTime($time): DateTimeImmutable
+    {
+        if (is_int($time))
+        {
+            $time_obj = new DateTimeImmutable();
+            return $time_obj->setTimestamp($time);
+        }
+        elseif (is_object($time))
+        {
+            if (get_class($time) == DateTimeImmutable::class)
+                return $time;
+            elseif (get_class($time) == DateTime::class)
+                return DateTimeImmutable::createFromMutable($time);
+        }
+        try
+        {
+            return new DateTimeImmutable($time);
+        }
+        catch (Exception $e)
+        {
+            throw new InvalidArgumentException('Unable to parse time', $e->getCode(), $e);
+        }
+    }
+
+    public function setStart($start)
+    {
+        $start_obj = new DateTimeImmutable();
+        if (is_int($start))
+            $start_obj->setTimestamp($start);
     }
 
     /**
