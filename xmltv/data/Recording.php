@@ -112,7 +112,7 @@ class Recording extends RecordingFile
 
         while($end_timestamp<$this->end_timestamp) {
             try {
-                $program_xml = $this->xmltv_parser->find_program($end_timestamp, $channel, 'next');
+                $program_xml = $this->xmltv_parser->find_program($end_timestamp, $channel, 'next', true);
             }
             catch (xmltv_exceptions\ProgramNotFoundException $e)
             {

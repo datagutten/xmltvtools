@@ -24,7 +24,7 @@ class merger extends parser
 
     public function find_program(int $search_time, string $channel, $mode='nearest', bool $multiple_days = false)
     {
-        $base_program = parent::find_program($search_time, $channel, $mode);
+        $base_program = parent::find_program($search_time, $channel, $mode, $multiple_days);
         $base_keys = array_keys((array)$base_program);
         /**
          * @var parser $parser
@@ -32,7 +32,7 @@ class merger extends parser
         foreach ($this->parsers as $parser)
         {
             try {
-                $program = $parser->find_program($search_time, $channel, $mode);
+                $program = $parser->find_program($search_time, $channel, $mode, $multiple_days);
                 $keys = array_keys((array)$program);
                 $diff = array_diff($keys, $base_keys);
                 foreach ($diff as $field) {
