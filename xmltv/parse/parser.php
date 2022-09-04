@@ -89,21 +89,15 @@ class parser
      * @throws InvalidXMLFileException XMLTV file not valid
      * @throws ChannelNotFoundException Channel not found
      */
-    public function get_programs(string $channel, $timestamp = 0, $multiple_days = null)
+    public function get_programs(string $channel, $timestamp = 0, $multiple_days_arg = null)
     {
         $xml_current_day=$this->files->load_file($channel,$timestamp);
 
         $first_start_time=$xml_current_day->{'programme'}->attributes()['start'];
         $first_start_hour=(int)substr($first_start_time,8,2);
-        if($multiple_days===null)
-        {
-            //If the first program in the file starts before or on 01:59 the file contains a complete day
-            if($first_start_hour>1)
-                $multiple_days=true;
-            elseif($first_start_hour<=1)
-                $multiple_days=false;
-        }
-        if($multiple_days)
+
+        //If the first program in the file starts after 01:59 we need to fetch files for multiple days to get a complete days schedule
+        if (($first_start_hour > 1 && $multiple_days_arg !== false) || $multiple_days_arg)
         {
             $days=array();
             try {
@@ -133,7 +127,10 @@ class parser
         else
             $days=array($xml_current_day);
 
-        return $this->combine_days($days, date('Ymd',$timestamp));
+        if (!$multiple_days_arg) //Single day output is expected, remove programs from different dates
+            return $this->combine_days($days, date('Ymd', $timestamp));
+        else
+            return $this->combine_days($days);
     }
 
 
@@ -142,14 +139,21 @@ class parser
      * @param int $search_time Program timestamp
      * @param string $channel Channel id
      * @param string $mode now (running program at search time), next (next starting program) or nearest (program start with lowest difference to search time)
+     * @param bool $multiple_days Include programs starting on the previous or next day
      * @return SimpleXMLElement
      * @throws ProgramNotFoundException Program not found
      * @throws ChannelNotFoundException Channel not found
      */
-    public function find_program(int $search_time, string $channel, $mode='nearest')
+    public function find_program(int $search_time, string $channel, string $mode = 'nearest', bool $multiple_days = false)
     {
+        $search_time_obj = new \DateTimeImmutable();
+        $search_time_obj = $search_time_obj->setTimestamp($search_time);
+
         try {
-            $programs_xml = $this->get_programs($channel, $search_time);
+            if($multiple_days)
+                $programs_xml = $this->get_programs($channel, $search_time, $multiple_days);
+            else
+                $programs_xml = $this->get_programs($channel, $search_time);
         }
         catch (FileNotFoundException|InvalidXMLFileException $e)
         {

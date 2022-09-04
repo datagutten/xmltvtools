@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE tv SYSTEM "xmltv.dtd">
+<tv generator-info-name="php-xmltv-grabber" generator-info-url="https://github.com/datagutten/xmltvgrabber">
+  <programme start="20220827000000 +0200" channel="natgeo.no" stop="20220827005900 +0200">
+    <title lang="nb">Flyhavarikommisjonen</title>
+    <sub-title lang="nb">På bakken: Boeing Max 8</sub-title>
+    <desc lang="nb">Indonesiske etterforskere må finne ut hvorfor et Boeing 737 Max 8, et av verdens mest solgte fly, styrtet i Javasjøen.</desc>
+    <episode-num system="xmltv_ns">19.3.</episode-num>
+    <episode-num system="onscreen">Sesong 20 | Episode 4</episode-num>
+  </programme>
+  <programme start="20220827010000 +0200" channel="natgeo.no" stop="20220827015900 +0200">
+    <title lang="nb">Airport Security Rome</title>
+    <sub-title lang="nb">Hidden Heroin</sub-title>
+    <desc lang="nb">Politiet på Fiumicino-flyplassen i Roma møter mange trusler. Man stanser en mann som har gjemt kokain i kofferten. To reisende fra Iran hevder at de ikke kjenner hverandre, men visumet og historiene er mistenkelige. En passasjer tester positivt på eksplosiver, og politiet kommer for å sjekke bagen hans. En kvinne som frakter noe for broren, blir sjokkert da hun får vite at det inneholder kokain.</desc>
+    <episode-num system="xmltv_ns">7.7.</episode-num>
+    <episode-num system="onscreen">Sesong 8 | Episode 8</episode-num>
+  </programme>
+  <programme start="20220827020000 +0200" channel="natgeo.no" stop="20220827030000 +0200">
+    <title lang="nb">Fengslet i utlandet</title>
+    <sub-title lang="nb">Hippiemafia</sub-title>
+    <desc lang="nb">Dette er historien om Eddie Padilla som var med og dannet Brotherhood of Eternal Love. De smuglet narkotika fra Mexico.</desc>
+    <episode-num system="xmltv_ns">8.3.</episode-num>
+    <episode-num system="onscreen">Sesong 9 | Episode 4</episode-num>
+  </programme>
+  <programme start="20220827030000 +0200" channel="natgeo.no" stop="20220827035900 +0200">
+    <title lang="nb">Hitlers siste kamp</title>
+    <sub-title lang="nb">Dødens skog</sub-title>
+    <desc lang="nb">Desember 1944. Tyske soldater bruker granatkastere, MP-44 og tre bomber for å forsvare Hurtgen-skogen mot amerikanske soldater.</desc>
+    <episode-num system="xmltv_ns">0.1.</episode-num>
+    <episode-num system="onscreen">Sesong 1 | Episode 2</episode-num>
+  </programme>
+  <programme start="20220827040000 +0200" channel="natgeo.no" stop="20220827045900 +0200">
+    <title lang="nb">Disasters Engineered</title>
+    <sub-title lang="nb">Power Plays</sub-title>
+    <desc lang="nb">Atomenergi, som kan være ødeleggende, er en kontroversiell energiform. Da fabrikken på Three Mile Island i Pennsylvania var nær ved å eksplodere, ble bransjen stilt overfor en eksistensiell krise. I Russland anla man en stor demning for å skape "ren energi", men i 2009 døde 72 mennesker i en katastrofal ulykke der. Hvordan kan vi skape en grønnere fremtid basert på fortidens tragedier?</desc>
+    <episode-num system="xmltv_ns">1.4.</episode-num>
+    <episode-num system="onscreen">Sesong 2 | Episode 5</episode-num>
+  </programme>
+  <programme start="20220827050000 +0200" channel="natgeo.no" stop="20220827055900 +0200">
+    <title lang="nb">Flyhavarikommisjonen</title>
+    <sub-title lang="nb">I knipe</sub-title>
+    <desc lang="nb">Under innflygningen i tett tåke styrter et propellfly i fjellene i New Zealand. Redningsmannskapene prøver å finne vraket, og livet til de overlevende henger i en tynn tråd. Så må granskerne finne ut hva som gikk galt. Flyet fikk problemer med landingsutstyret, men jakten på en forklaring fører dem til cockpiten.</desc>
+    <episode-num system="xmltv_ns">19.7.</episode-num>
+    <episode-num system="onscreen">Sesong 20 | Episode 8</episode-num>
+  </programme>
+  <programme start="20220827060000 +0200" channel="natgeo.no" stop="20220827070000 +0200">
+    <title lang="nb">Colossal Machines</title>
+    <sub-title lang="nb">Sub-Zero Supermachines</sub-title>
+    <desc lang="nb">Isbryterne gir en passasje til plasser som er vanskelig å nå med fly. Man bruker hemmelige ingredienser på snøplogen slik at togene ikke sporer av under isete forhold. Et terrengkjøretøy tar seg gjennom snøen der andre hadde sunket.</desc>
+    <episode-num system="xmltv_ns">0.3.</episode-num>
+    <episode-num system="onscreen">Sesong 1 | Episode 4</episode-num>
+  </programme>
+  <programme start="20220827070000 +0200" channel="natgeo.no" stop="20220827075900 +0200">
+    <title lang="nb">Car S.O.S.</title>
+    <sub-title lang="nb">VW Wizard</sub-title>
+    <desc lang="nb">Tim og Fuzz skal redde en spesialbygd bil for første gang, en ombygd "folkevogn boble" kalt VW Wizard.</desc>
+    <episode-num system="xmltv_ns">8.2.</episode-num>
+    <episode-num system="onscreen">Sesong 9 | Episode 3</episode-num>
+  </programme>
+  <programme start="20220827080000 +0200" channel="natgeo.no" stop="20220827085900 +0200">
+    <title lang="nb">Car S.O.S.</title>
+    <sub-title lang="nb">Jaguar XJ-S V12</sub-title>
+    <desc lang="nb">Tim og Fuzz drar til Wolverhampton, der de skal fikse en Jaguar XJ-S V12 fra 1980 som dessverre har forfalt.</desc>
+    <episode-num system="xmltv_ns">8.0.</episode-num>
+    <episode-num system="onscreen">Sesong 9 | Episode 1</episode-num>
+  </programme>
+  <programme start="20220827090000 +0200" channel="natgeo.no" stop="20220827100000 +0200">
+    <title lang="nb">Megabroer</title>
+    <sub-title lang="nb">Danmark til Sverige</sub-title>
+    <desc lang="nb">Vi reiser mellom Danmark og Sverige på verdens lengste bro av sitt slag: Øresundsforbindelsen. Vi ser på gjennomføringen av prosjektet, med fokus på utfordringene som designerne, ingeniørene og byggelagene ble stilt overfor. Se det ekstreme utstyret, de enorme forsyningene og den nyskapende designen som krevdes for å konstruere den 15,9 kilometer lange forbindelsen.</desc>
+    <episode-num system="xmltv_ns">0.0.</episode-num>
+    <episode-num system="onscreen">Sesong 1 | Episode 1</episode-num>
+  </programme>
+  <programme start="20220827100000 +0200" channel="natgeo.no" stop="20220827105900 +0200">
+    <title lang="nb">Nordisk villmark</title>
+    <sub-title lang="nb">Vikingkysten</sub-title>
+    <desc lang="nb">Den norske vikingkysten avslører digre fjorder, storslåtte fjell og vågale utforskere. Her møtes gammel kultur og moderne villmark.</desc>
+    <episode-num system="xmltv_ns">0.0.</episode-num>
+    <episode-num system="onscreen">Sesong 1 | Episode 1</episode-num>
+  </programme>
+  <programme start="20220827110000 +0200" channel="natgeo.no" stop="20220827115900 +0200">
+    <title lang="nb">Europa fra oven</title>
+    <sub-title lang="nb">Finland</sub-title>
+    <desc lang="nb">En fantastisk reise i luften over Finland, som viser oss enorme isbrytere, Europas siste urfolk og verdens rareste sauna.</desc>
+    <episode-num system="xmltv_ns">1.1.</episode-num>
+    <episode-num system="onscreen">Sesong 2 | Episode 2</episode-num>
+  </programme>
+  <programme start="20220827120000 +0200" channel="natgeo.no" stop="20220827125900 +0200">
+    <title lang="nb">Europa fra oven</title>
+    <sub-title lang="nb">Island</sub-title>
+    <desc lang="nb">Den fantastiske reisen gjennom luften viser en helt ny side av Island. Dronekameraer følger arkeologene som kjemper mot vulkanutbrudd for å bevare vikingenes historie, de fanger utrolige bilder av knølhval og avslører hvordan snøplogene jobber for å holde flyplassen åpen på vinteren. På ilden og isens land stiger vi høyt over den moderne arkitekturen som finnes i det dramatiske landskapet.</desc>
+    <episode-num system="xmltv_ns">2.5.</episode-num>
+    <episode-num system="onscreen">Sesong 3 | Episode 6</episode-num>
+  </programme>
+  <programme start="20220827130000 +0200" channel="natgeo.no" stop="20220827135900 +0200">
+    <title lang="nb">Europa fra oven</title>
+    <sub-title lang="nb">Sverige</sub-title>
+    <desc lang="nb">Den første episoden i den nye sesongen av National Geographics dokumentarserie handler om Sverige. Historien, kulturen, byene og naturen ble filmet gjennom et år, noe som gir oss fantastiske bilder av de skiftende årstidene.</desc>
+    <episode-num system="xmltv_ns">1.3.</episode-num>
+    <episode-num system="onscreen">Sesong 2 | Episode 4</episode-num>
+  </programme>
+  <programme start="20220827140000 +0200" channel="natgeo.no" stop="20220827145900 +0200">
+    <title lang="nb">Europa fra oven</title>
+    <sub-title lang="nb">Norge</sub-title>
+    <desc lang="nb">Den fantastiske reisen gjennom luften viser en helt ny side av Norge. Kameraene avslører ingeniørkunsten bak verdens lengste undersjøiske kabel, svever over huskyer på islagte innsjøer og filmer Norges heldigste postmann på ruten over flere øyer. I tillegg til det fantastiske landskapet som ble formet av isbreer, får vi se den moderne arkitekturen som forandrer Oslos fasade mot vannet.</desc>
+    <episode-num system="xmltv_ns">2.0.</episode-num>
+    <episode-num system="onscreen">Sesong 3 | Episode 1</episode-num>
+  </programme>
+  <programme start="20220827150000 +0200" channel="natgeo.no" stop="20220827155900 +0200">
+    <title lang="nb">Lawless Island</title>
+    <sub-title lang="nb">The Kill Shot</sub-title>
+    <desc lang="nb">På sommeren må beboerne i Port Protection dra ut i villmarken for å sikre seg kjøtt til vinteren. Sam gir Troy et hjemmelaget våpen så han kan prøve seg på spydfiske i Alaska. Morgan legger ut på hjortejakt med Matt og sikrer seg sin første bukk. Squibb bruker lange liner for å ta kveite, og jakten på svartbjørn vekker gamle minner for Curly.</desc>
+    <episode-num system="xmltv_ns">3.5.</episode-num>
+    <episode-num system="onscreen">Sesong 4 | Episode 6</episode-num>
+  </programme>
+  <programme start="20220827160000 +0200" channel="natgeo.no" stop="20220827165900 +0200">
+    <title lang="nb">First Alaskans</title>
+    <sub-title lang="nb">The Lone Wolf</sub-title>
+    <desc lang="nb">Vinteren skaper både utfordringer og muligheter for urfolket i Alaska. Daniel og Chris Apassingok leter etter matkilder på St. Lawrence Island. Joel Jacko møter på et rovdyr nær eiendommen. Jody Potts-Joseph setter ut feller for å sikre seg pels til vinteren. Tig Strassburg og Louise Moses jakter på småvilt.</desc>
+    <episode-num system="xmltv_ns">0.5.</episode-num>
+    <episode-num system="onscreen">Sesong 1 | Episode 6</episode-num>
+  </programme>
+  <programme start="20220827170000 +0200" channel="natgeo.no" stop="20220827180000 +0200">
+    <title lang="nb">Car S.O.S.</title>
+    <sub-title lang="nb">Opel Manta GTE</sub-title>
+    <desc lang="nb">Tim og Fuzz drar til Rochdale for å redde en Opel Manta GTE, en tysk klassiker fra 1980-tallet. Bilen tilhører den tidligere rallyføreren Alan, men dårlig helse og konas bortgang har gjort Alan til en einstøing. Familie og venner håper at hjelpen til "Car SOS" kan få Alan ut blant folk igjen.</desc>
+    <episode-num system="xmltv_ns">9.2.</episode-num>
+    <episode-num system="onscreen">Sesong 10 | Episode 3</episode-num>
+  </programme>
+  <programme start="20220827180000 +0200" channel="natgeo.no" stop="20220827185900 +0200">
+    <title lang="nb">America's Funniest Home Videos: Animal Edition</title>
+    <sub-title lang="nb">Lettere skamfull</sub-title>
+    <desc lang="nb">En heldig stork, labradorer som ber for maten, en katt som er redd for matboksen, et esel utfordrer en flokk med kyr for å passe på maten.</desc>
+    <episode-num system="xmltv_ns">0.2.</episode-num>
+    <episode-num system="onscreen">Sesong 1 | Episode 3</episode-num>
+  </programme>
+  <programme start="20220827190000 +0200" channel="natgeo.no" stop="20220827195900 +0200">
+    <title lang="nb">America's Funniest Home Videos: Animal Edition</title>
+    <sub-title lang="nb">Liten, men sterk</sub-title>
+    <desc lang="nb">Et skremmende bjørnemøte på natten, en kylling som elsker aircondition, hunder som stryker på lydighetskurset, en grizzlybjørn tar et fly.</desc>
+    <episode-num system="xmltv_ns">0.3.</episode-num>
+    <episode-num system="onscreen">Sesong 1 | Episode 4</episode-num>
+  </programme>
+  <programme start="20220827200000 +0200" channel="natgeo.no" stop="20220827205900 +0200">
+    <title lang="nb">Flyhavarikommisjonen: Spesialrapport</title>
+    <sub-title lang="nb">Pilotfeil</sub-title>
+    <desc lang="nb">Kritiske feil i cockpiten fører til at tre fly styrter. Om bord på China Airlines flight 140 strever pilotene med datasystemet. Dårlig vær og en rekke feil fører til at et propellfly vender og styrter under landingen i Irland. På en flygning over Sibir fører en ubetenksom avgjørelse til at et barn inntar pilotens plass.</desc>
+    <episode-num system="xmltv_ns">4.7.</episode-num>
+    <episode-num system="onscreen">Sesong 5 | Episode 8</episode-num>
+  </programme>
+  <programme start="20220827210000 +0200" channel="natgeo.no" stop="20220827220000 +0200">
+    <title lang="nb">Expedition Amelia: Bob Ballard's Search</title>
+    <sub-title lang="nb">Expedition Amelia: Bob Ballard's Search</sub-title>
+    <desc lang="nb">National Geographics Bob Ballard oppdaget Titanic. Nå reiser han til en øde Stillehavsøy for å løse den mystiske forsvinningen til Amelia Earhart. Den banebrytende piloten som satte rekorder i luften, brøt barrierer for kvinner på bakken og ble en av historiens mest kjente kvinner. Men hun forsvant sporløst i 1937. Kan Ballard finne flyet hennes?</desc>
+  </programme>
+  <programme start="20220827220000 +0200" channel="natgeo.no" stop="20220827230000 +0200">
+    <title lang="nb">Inside North Korea's Dynasty</title>
+    <sub-title lang="nb">A Nuclear Family</sub-title>
+    <desc lang="nb">Idet Kim Jong-Il tok full kontroll over Nord-Korea startet også jakten på atomvåpen. Samtidig gjennomgikk befolkningen en av de verste sultkatastrofene i historien.</desc>
+    <episode-num system="xmltv_ns">0.2.</episode-num>
+    <episode-num system="onscreen">Sesong 1 | Episode 3</episode-num>
+  </programme>
+  <programme start="20220827230000 +0200" channel="natgeo.no" stop="20220827235900 +0200">
+    <title lang="nb">Flyhavarikommisjonen</title>
+    <sub-title lang="nb">Dobbelt opp</sub-title>
+    <desc lang="nb">Et transportfly fra Transair, på vei til Nigeria med oljeutstyr, flyr over Alpene i kraftig turbulens da en eksplosjon ødelegger begge motorene på høyre side. Boeing 707-maskinen er sterkt skadet og står i brann, men mannskapet lykkes med å gjennomføre en nødlanding. Så må ulykkesgranskerne finne en mikroskopisk, men nær dødelig feil.</desc>
+    <episode-num system="xmltv_ns">20.3.</episode-num>
+    <episode-num system="onscreen">Sesong 21 | Episode 4</episode-num>
+  </programme>
+</tv>

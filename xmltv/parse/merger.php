@@ -22,7 +22,7 @@ class merger extends parser
         }
     }
 
-    public function find_program(int $search_time, string $channel, $mode='nearest')
+    public function find_program(int $search_time, string $channel, $mode='nearest', bool $multiple_days = false)
     {
         $base_program = parent::find_program($search_time, $channel, $mode);
         $base_keys = array_keys((array)$base_program);

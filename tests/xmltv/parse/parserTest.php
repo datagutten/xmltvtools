@@ -176,4 +176,10 @@ class parserTest extends TestCase
         $this->expectException(ProgramNotFoundException::class);
         $this->parser->find_program(strtotime('2020-09-11 22:55'), 'natgeo.no', 'next');
     }
+
+    public function testCrossMidnight()
+    {
+        $program = $this->parser->find_program(strtotime('2022-08-27 23:50'), 'natgeo.no', 'next', true);
+        $this->assertEquals('Flyhavarikommisjonen: Spesialrapport', $program->{'title'});
+    }
 }

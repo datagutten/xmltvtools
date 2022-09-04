@@ -101,7 +101,7 @@ class Recording extends RecordingFile
 
         $channel = $this->channelId();
 
-        $first_program_xml = $this->xmltv_parser->find_program($this->start_timestamp, $channel);
+        $first_program_xml = $this->xmltv_parser->find_program($this->start_obj->getTimestamp(), $channel, 'nearest', true);
         $first_program = Program::fromXMLTV($first_program_xml);
         $info_array = [$first_program];
         $end_timestamp = $first_program->end_timestamp;

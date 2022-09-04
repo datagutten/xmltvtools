@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE tv SYSTEM "xmltv.dtd">
+<tv generator-info-name="php-xmltv-grabber" generator-info-url="https://github.com/datagutten/xmltvgrabber">
+  <programme start="20220828000000 +0200" channel="natgeo.no" stop="20220828010000 +0200">
+    <title lang="nb">Flyhavarikommisjonen: Spesialrapport</title>
+    <sub-title lang="nb">Pilotfeil</sub-title>
+    <desc lang="nb">Kritiske feil i cockpiten fører til at tre fly styrter. Om bord på China Airlines flight 140 strever pilotene med datasystemet. Dårlig vær og en rekke feil fører til at et propellfly vender og styrter under landingen i Irland. På en flygning over Sibir fører en ubetenksom avgjørelse til at et barn inntar pilotens plass.</desc>
+    <episode-num system="xmltv_ns">4.7.</episode-num>
+    <episode-num system="onscreen">Sesong 5 | Episode 8</episode-num>
+  </programme>
+  <programme start="20220828010000 +0200" channel="natgeo.no" stop="20220828015900 +0200">
+    <title lang="nb">Last of the Giants: Wild Fish</title>
+    <sub-title lang="nb">Worst Case Scenario</sub-title>
+    <desc lang="nb">Cyril og teamet finner en 90 kg tung kjempe i Stillehavet under arbeidet med å redde den hvite størens matkilde, stillehavslaksen. Ekspedisjonen fører dem langt ut på havet og høyt opp i fjellene. For å finne fisken må de takle store bølger, ta seg ned farlige stryk og passe seg for grizzlybjørner.</desc>
+    <episode-num system="xmltv_ns">0.2.</episode-num>
+    <episode-num system="onscreen">Sesong 1 | Episode 3</episode-num>
+  </programme>
+  <programme start="20220828020000 +0200" channel="natgeo.no" stop="20220828030000 +0200">
+    <title lang="nb">Alaska: The Next Generation</title>
+    <sub-title lang="nb">Moment of Truth</sub-title>
+    <desc lang="nb">Etter de første feilene leter Alex Javor etter ressurser ved Deadman Lake før kulda setter inn. Rowland-paret drar ut i villmarken for å erstatte tømmeret som er avskåret av elva. Chris og Jessi Morse utvider jaktområdet ved å lage en ny linebane. Johnny Rolfe er fanget i hytta på grunn av rekordkulda, der han lager jaktski for å jakte på kariburein.</desc>
+    <episode-num system="xmltv_ns">1.2.</episode-num>
+    <episode-num system="onscreen">Sesong 2 | Episode 3</episode-num>
+  </programme>
+  <programme start="20220828030000 +0200" channel="natgeo.no" stop="20220828035900 +0200">
+    <title lang="nb">Alaska: The Next Generation</title>
+    <sub-title lang="nb">Dead Weight</sub-title>
+    <desc lang="nb">Naturen gjør det ikke lett om man er sårbar eller dårlig forberedt, så den nye generasjonen i Alaska må virkelig jobbe hardt. Rowland-paret sporer mistenkelige dyrespor som kan bety at familien er i fare. Ved Deadman Lake må Alex Javor tilpasse seg til de nye omgivelsene for å overleve i de krevende forholdene. Chris Morse legger ut på Cosna-elva alene, så Jessi må klare seg selv.</desc>
+    <episode-num system="xmltv_ns">1.3.</episode-num>
+    <episode-num system="onscreen">Sesong 2 | Episode 4</episode-num>
+  </programme>
+  <programme start="20220828040000 +0200" channel="natgeo.no" stop="20220828045900 +0200">
+    <title lang="nb">Fengslet i utlandet</title>
+    <sub-title lang="nb">Kidnappet i Colombia</sub-title>
+    <desc lang="nb">Da åtte ryggsekkturister ble kidnappet av geriljasoldater i Colombia, tok de i bruk en annerledes overlevelsesstrategi: samarbeid, ikke motstand.</desc>
+    <episode-num system="xmltv_ns">6.8.</episode-num>
+    <episode-num system="onscreen">Sesong 7 | Episode 9</episode-num>
+  </programme>
+  <programme start="20220828050000 +0200" channel="natgeo.no" stop="20220828055900 +0200">
+    <title lang="nb">Fengslet i utlandet</title>
+    <sub-title lang="nb">Karibisk mareritt</sub-title>
+    <desc lang="nb">David og Jayne Bladen drømte om et nytt liv utenlands, men en marerittreise med narkotikasmugling og vold endte med 20 mnd. i fengsel.</desc>
+    <episode-num system="xmltv_ns">6.9.</episode-num>
+    <episode-num system="onscreen">Sesong 7 | Episode 10</episode-num>
+  </programme>
+  <programme start="20220828060000 +0200" channel="natgeo.no" stop="20220828070000 +0200">
+    <title lang="nb">Nazistenes bisarre hemmeligheter</title>
+    <sub-title lang="nb">Hemmelig kunstfort</sub-title>
+    <desc lang="nb">Annen verdenskrig raser i Italia, og en britisk offiser oppdager en stor samling renessansekunst i et 900 år gammelt slott.</desc>
+    <episode-num system="xmltv_ns">0.2.</episode-num>
+    <episode-num system="onscreen">Sesong 1 | Episode 3</episode-num>
+  </programme>
+  <programme start="20220828070000 +0200" channel="natgeo.no" stop="20220828075900 +0200">
+    <title lang="nb">Wicked Tuna</title>
+    <sub-title lang="nb">Marathon Monster</sub-title>
+    <desc lang="nb">Å fiske makrellstørje er et langt løp, der Pinwheels Tyler og Marissa blir presset til bristepunktet. Mye kan gå galt når de kjemper med sin største fisk noensinne, og det gjør det. De andre kapteinene strever også med noen kjemper. Nå handler alt om hvem som kan gjøre de store ambisjonene om til enda større fisk. Vil innsatsen være verdt det til slutt?</desc>
+    <episode-num system="xmltv_ns">10.10.</episode-num>
+    <episode-num system="onscreen">Sesong 11 | Episode 11</episode-num>
+  </programme>
+  <programme start="20220828090000 +0200" channel="natgeo.no" stop="20220828095900 +0200">
+    <title lang="nb">Flyhavarikommisjonen</title>
+    <sub-title lang="nb">Dødelig test</sub-title>
+    <desc lang="nb">Et erfarent mannskap prøver ut et passasjerfly over Frankrike, men idet de gjør seg klare for å lande mister kapteinen kontrollen.</desc>
+    <episode-num system="xmltv_ns">11.7.</episode-num>
+    <episode-num system="onscreen">Sesong 12 | Episode 8</episode-num>
+  </programme>
+  <programme start="20220828100000 +0200" channel="natgeo.no" stop="20220828110000 +0200">
+    <title lang="nb">Flyhavarikommisjonen</title>
+    <sub-title lang="nb">Terror i paradiset</sub-title>
+    <desc lang="nb">Etter at en flight til Tahiti krasjer og alle om bord blir drept, avdekker etterforskerne en uventet årsak til ulykken.</desc>
+    <episode-num system="xmltv_ns">11.8.</episode-num>
+    <episode-num system="onscreen">Sesong 12 | Episode 9</episode-num>
+  </programme>
+  <programme start="20220828110000 +0200" channel="natgeo.no" stop="20220828115900 +0200">
+    <title lang="nb">Europa fra oven</title>
+    <sub-title lang="nb">Norge</sub-title>
+    <desc lang="nb">Den fantastiske reisen gjennom luften viser en helt ny side av Norge. Kameraene avslører ingeniørkunsten bak verdens lengste undersjøiske kabel, svever over huskyer på islagte innsjøer og filmer Norges heldigste postmann på ruten over flere øyer. I tillegg til det fantastiske landskapet som ble formet av isbreer, får vi se den moderne arkitekturen som forandrer Oslos fasade mot vannet.</desc>
+    <episode-num system="xmltv_ns">2.0.</episode-num>
+    <episode-num system="onscreen">Sesong 3 | Episode 1</episode-num>
+  </programme>
+  <programme start="20220828120000 +0200" channel="natgeo.no" stop="20220828130000 +0200">
+    <title lang="nb">Megabroer</title>
+    <sub-title lang="nb">Danmark til Sverige</sub-title>
+    <desc lang="nb">Vi reiser mellom Danmark og Sverige på verdens lengste bro av sitt slag: Øresundsforbindelsen. Vi ser på gjennomføringen av prosjektet, med fokus på utfordringene som designerne, ingeniørene og byggelagene ble stilt overfor. Se det ekstreme utstyret, de enorme forsyningene og den nyskapende designen som krevdes for å konstruere den 15,9 kilometer lange forbindelsen.</desc>
+    <episode-num system="xmltv_ns">0.0.</episode-num>
+    <episode-num system="onscreen">Sesong 1 | Episode 1</episode-num>
+  </programme>
+  <programme start="20220828130000 +0200" channel="natgeo.no" stop="20220828135900 +0200">
+    <title lang="nb">Nordisk villmark</title>
+    <sub-title lang="nb">Vikingkysten</sub-title>
+    <desc lang="nb">Den norske vikingkysten avslører digre fjorder, storslåtte fjell og vågale utforskere. Her møtes gammel kultur og moderne villmark.</desc>
+    <episode-num system="xmltv_ns">0.0.</episode-num>
+    <episode-num system="onscreen">Sesong 1 | Episode 1</episode-num>
+  </programme>
+  <programme start="20220828140000 +0200" channel="natgeo.no" stop="20220828145900 +0200">
+    <title lang="nb">Europa fra oven</title>
+    <sub-title lang="nb">Finland</sub-title>
+    <desc lang="nb">En fantastisk reise i luften over Finland, som viser oss enorme isbrytere, Europas siste urfolk og verdens rareste sauna.</desc>
+    <episode-num system="xmltv_ns">1.1.</episode-num>
+    <episode-num system="onscreen">Sesong 2 | Episode 2</episode-num>
+  </programme>
+  <programme start="20220828150000 +0200" channel="natgeo.no" stop="20220828160000 +0200">
+    <title lang="nb">Europa fra oven</title>
+    <sub-title lang="nb">Island</sub-title>
+    <desc lang="nb">Den fantastiske reisen gjennom luften viser en helt ny side av Island. Dronekameraer følger arkeologene som kjemper mot vulkanutbrudd for å bevare vikingenes historie, de fanger utrolige bilder av knølhval og avslører hvordan snøplogene jobber for å holde flyplassen åpen på vinteren. På ilden og isens land stiger vi høyt over den moderne arkitekturen som finnes i det dramatiske landskapet.</desc>
+    <episode-num system="xmltv_ns">2.5.</episode-num>
+    <episode-num system="onscreen">Sesong 3 | Episode 6</episode-num>
+  </programme>
+  <programme start="20220828160000 +0200" channel="natgeo.no" stop="20220828170000 +0200">
+    <title lang="nb">Europa fra oven</title>
+    <sub-title lang="nb">Sverige</sub-title>
+    <desc lang="nb">Den første episoden i den nye sesongen av National Geographics dokumentarserie handler om Sverige. Historien, kulturen, byene og naturen ble filmet gjennom et år, noe som gir oss fantastiske bilder av de skiftende årstidene.</desc>
+    <episode-num system="xmltv_ns">1.3.</episode-num>
+    <episode-num system="onscreen">Sesong 2 | Episode 4</episode-num>
+  </programme>
+  <programme start="20220828170000 +0200" channel="natgeo.no" stop="20220828180000 +0200">
+    <title lang="nb">Europa fra oven</title>
+    <sub-title lang="nb">Norge</sub-title>
+    <desc lang="nb">Den fantastiske reisen gjennom luften viser en helt ny side av Norge. Kameraene avslører ingeniørkunsten bak verdens lengste undersjøiske kabel, svever over huskyer på islagte innsjøer og filmer Norges heldigste postmann på ruten over flere øyer. I tillegg til det fantastiske landskapet som ble formet av isbreer, får vi se den moderne arkitekturen som forandrer Oslos fasade mot vannet.</desc>
+    <episode-num system="xmltv_ns">2.0.</episode-num>
+    <episode-num system="onscreen">Sesong 3 | Episode 1</episode-num>
+  </programme>
+  <programme start="20220828180000 +0200" channel="natgeo.no" stop="20220828190000 +0200">
+    <title lang="nb">Wicked Tuna</title>
+    <sub-title lang="nb">Make the Grade</sub-title>
+    <desc lang="nb">Man er over halvveis i sesongen, der gamle og nye kapteiner kjemper om makrellstørjen. Søskenbarna på Hard Merchandise vil vise hva de kan, mens "Father Tuna" på Moonshine vil lære ferskingen alt han må kunne. Etter at den erfarne kapteinen har lært bort vinneroppskriften, vil pålitelige Dot Com og utfordrerne Time Flies kunne holde seg i teten?</desc>
+    <episode-num system="xmltv_ns">10.12.</episode-num>
+    <episode-num system="onscreen">Sesong 11 | Episode 13</episode-num>
+  </programme>
+  <programme start="20220828200000 +0200" channel="natgeo.no" stop="20220828205800 +0200">
+    <title lang="nb">Flyhavarikommisjonen: Spesialrapport</title>
+    <sub-title lang="nb">Farlig vind</sub-title>
+    <desc lang="nb">Tre fly ble ofre for sterk vind, og ulykkesgranskerne må finne ut hva som skjedde. Under innflygingen til Charlotte blir USAir flight 1016 kastet i bakken av kraftig fallvind. Uten sikt over Peru faller et 737 som en stein og lager en kilometerlang stripe gjennom jungelen. En vitenskapelig ekspedisjon inn i orkanen Hugo går fryktelig galt.</desc>
+    <episode-num system="xmltv_ns">4.8.</episode-num>
+    <episode-num system="onscreen">Sesong 5 | Episode 9</episode-num>
+  </programme>
+  <programme start="20220828210000 +0200" channel="natgeo.no" stop="20220828215800 +0200">
+    <title lang="nb">Europa fra oven</title>
+    <sub-title lang="nb">Danmark</sub-title>
+    <desc lang="nb">Den fantastiske reisen i luften over Danmark gir oss et nytt perspektiv på landet. De flygende kameraene avslører et avansert kraftverk med en skibakke på taket. Vi svever over kongefamiliens garde og ser hvordan man reparerer unike hus. Så utforskes de mange små øyene som landet består av, og vi finner slottet som inspirerte Shakespeare til å skrive Hamlet.</desc>
+    <episode-num system="xmltv_ns">3.1.</episode-num>
+    <episode-num system="onscreen">Sesong 4 | Episode 2</episode-num>
+  </programme>
+  <programme start="20220828220000 +0200" channel="natgeo.no" stop="20220828230000 +0200">
+    <title lang="nb">Vikings: The Rise and Fall</title>
+    <sub-title lang="nb">The Road to Lindisfarne</sub-title>
+    <desc lang="nb">Angrepet på det religiøse samfunnet på den hellige øya Lindisfarne i 793 markerte starten på vikingtiden og deres herjinger, men vi skal se på vikingenes begynnelse i Skandinavia.</desc>
+    <episode-num system="xmltv_ns">0.0.</episode-num>
+    <episode-num system="onscreen">Sesong 1 | Episode 1</episode-num>
+  </programme>
+  <programme start="20220828230000 +0200" channel="natgeo.no" stop="20220829000000 +0200">
+    <title lang="nb">Hemmeligheter på havets bunn</title>
+    <sub-title lang="nb">Vikingenes hav</sub-title>
+    <desc lang="nb">Det kan ligge så mange som 100 000 farkoster på havbunnen i Østersjøen. Det mest utrolige er kanskje krigsskipet Mars, som forsvant for 450 år siden under sin andre dag på sjøen. Skipet har vært omgitt av mystikk, men ble nylig funnet utenfor svenskekysten. Og det viser seg at skipet lever opp til de mange mytene.</desc>
+    <episode-num system="xmltv_ns">2.3.</episode-num>
+    <episode-num system="onscreen">Sesong 3 | Episode 4</episode-num>
+  </programme>
+</tv>
