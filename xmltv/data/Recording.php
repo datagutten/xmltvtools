@@ -98,6 +98,8 @@ class Recording extends RecordingFile
     {
         if(empty($this->xmltv_parser))
             throw new InvalidArgumentException('XMLTV path not specified');
+        if(empty($this->start_obj))
+            throw new xmltv_exceptions\ProgramNotFoundException('Start time not set, unable to search programs');
 
         $channel = $this->channelId();
 
@@ -134,6 +136,8 @@ class Recording extends RecordingFile
     {
         if(empty($this->xmltv_parser))
             throw new InvalidArgumentException('XMLTV path not specified');
+        if(empty($this->start_obj))
+            throw new xmltv_exceptions\ProgramNotFoundException('Start time not set, unable to search programs');
 
         $xmltv = $this->xmltv_parser->find_program($this->start_timestamp, $this->channelId(), 'nearest');
         return Program::fromXMLTV($xmltv);
