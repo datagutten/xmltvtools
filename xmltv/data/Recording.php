@@ -145,7 +145,10 @@ class Recording extends RecordingFile
 
     public function time(): string
     {
-        return sprintf('%s-%s', $this->start_obj->format('H:i'), $this->end_obj->format('H:i'));
+        if (!empty($this->end_obj))
+            return sprintf('%s-%s', $this->start_obj->format('H:i'), $this->end_obj->format('H:i'));
+        else
+            return $this->start_obj->format('H:i');
     }
 
     public function eitTime(): string
