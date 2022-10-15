@@ -48,6 +48,17 @@ class files
     }
 
     /**
+     * Get channel folder
+     */
+    public function channel(string $channel, string $sub_folder = '', int $year = 0)
+    {
+        if ($year)
+            return file_tools::path_join($this->xmltv_path, filename::folder($channel, $sub_folder, $year));
+        else
+            return file_tools::path_join($this->xmltv_path, $channel, $sub_folder);
+    }
+
+    /**
      * Get XMLTV file
      * @param string $channel XMLTV channel id
      * @param int $timestamp Timestamp for the date to get
