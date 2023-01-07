@@ -3,11 +3,13 @@
     "description": "PHP class and tools to work with XMLTV files",
     "type": "library",
     "require": {
-        "datagutten/tools": "^1.8",
+        "datagutten/tools": "^1.11",
         "symfony/filesystem": "^4.3|^5.0",
         "ext-simplexml": "*",
         "ext-dom": "*",
         "ext-libxml": "*",
+        "ext-json": "*",
+        "ext-mbstring": "*",
         "php": ">=7.4"
     },
     "suggest": {
