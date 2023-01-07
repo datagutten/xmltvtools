@@ -83,7 +83,7 @@ class eit_parserTest extends TestCase
 
     public function testGet_stringWithInvalidCodepage()
     {
-        $string = eit_parser::get_string('aasdf'.utf8_decode('æøå'), 0, 8);
+        $string = eit_parser::get_string('aasdf' . mb_convert_encoding('æøå', 'ISO-8859-1'), 0, 8);
         $this->assertEquals('asdfæøå', $string);
     }
 

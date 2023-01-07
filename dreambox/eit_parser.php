@@ -147,8 +147,10 @@ class eit_parser
         {
             $string .= $data[$i];
         }
-        if ($codepage !== 'utf-8')
-            return utf8_encode($string);
+        if (empty($codepage))
+            return mb_convert_encoding($string, 'utf8', 'ISO-8859-1');
+        elseif ($codepage !== 'utf-8')
+            return mb_convert_encoding($string, 'utf8', $codepage);
         else
             return $string;
     }
