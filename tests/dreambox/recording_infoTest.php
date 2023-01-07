@@ -10,10 +10,10 @@ class recording_infoTest extends TestCase
     /**
      * @var recording_info
      */
-    public $info;
+    public recording_info $info;
+
     public function setUp(): void
     {
-        $data_path = realpath(__DIR__.'/../xmltv/parse/test_data');
         $this->info = new recording_info();
     }
 
@@ -26,22 +26,21 @@ class recording_infoTest extends TestCase
 
     public function testParseEit()
     {
-        $info = recording_info::parse_eit(__DIR__.'/test_data/Ice Road Rescue S04E01 - Ekstremvær HD.eit', 'array');
+        $info = recording_info::parse_eit(__DIR__ . '/test_data/Ice Road Rescue S04E01 - Ekstremvær HD.eit', 'array');
         $this->assertSame('Vinterveiens helter', $info['name']);
         $this->assertSame('Vinterveiens helter', $info['title']);
     }
 
     public function testParseEitTitle()
     {
-        $info = recording_info::parse_eit(__DIR__.'/test_data/Ice Road Rescue S04E01 - Ekstremvær HD.eit');
+        $info = recording_info::parse_eit(__DIR__ . '/test_data/Ice Road Rescue S04E01 - Ekstremvær HD.eit');
         $this->assertSame('Vinterveiens helter', $info);
     }
 
     public function testEitTime()
     {
         date_default_timezone_set('Europe/Oslo');
-        $info = recording_info::parse_eit(__DIR__.'/test_data/Ice Road Rescue S04E01 - Ekstremvær HD.eit', 'array');
+        $info = recording_info::parse_eit(__DIR__ . '/test_data/Ice Road Rescue S04E01 - Ekstremvær HD.eit', 'array');
         $this->assertSame('2019-10-03T22:00:00+02:00', date('c', $info['start_timestamp']));
     }
-
 }

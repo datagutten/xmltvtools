@@ -11,7 +11,8 @@ class channel_infoTest extends TestCase
     /**
      * @var channel_info
      */
-    public $info;
+    public channel_info $info;
+
     public function setUp(): void
     {
         $this->info = new channel_info();
@@ -28,6 +29,7 @@ class channel_infoTest extends TestCase
         $name = $this->info->id_to_name('nrk1.nrk.no');
         $this->assertEquals('NRK1 HD', $name);
     }
+
     public function testId_to_MultipleNames()
     {
         $name = $this->info->id_to_name('no.bbcentertainment.no', true);
