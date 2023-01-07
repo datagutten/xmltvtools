@@ -94,7 +94,7 @@ class Recording extends RecordingFile
      * @throws xmltv_exceptions\ProgramNotFoundException Program not found
      * @throws xmltv_exceptions\ChannelNotFoundException Channel not found
      */
-    public function programs(): array
+    public function programs($search_mode = 'next'): array
     {
         if(empty($this->xmltv_parser))
             throw new InvalidArgumentException('XMLTV path not specified');
@@ -112,7 +112,7 @@ class Recording extends RecordingFile
 
         while($end_timestamp<$this->end_timestamp) {
             try {
-                $program_xml = $this->xmltv_parser->find_program($end_timestamp, $channel, 'next', true);
+                $program_xml = $this->xmltv_parser->find_program($end_timestamp, $channel, $search_mode, true);
             }
             catch (xmltv_exceptions\ProgramNotFoundException $e)
             {
