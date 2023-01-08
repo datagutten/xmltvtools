@@ -4,7 +4,7 @@
     "type": "library",
     "require": {
         "datagutten/tools": "^1.11",
-        "symfony/filesystem": "^4.3|^5.0",
+        "symfony/filesystem": "^4.3|^5.0|^6",
         "ext-simplexml": "*",
         "ext-dom": "*",
         "ext-libxml": "*",
