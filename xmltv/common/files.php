@@ -18,11 +18,11 @@ class files
     /**
      * @var array Sub folders in order
      */
-    public $sub_folders;
+    public array $sub_folders;
     /**
      * @var Filesystem
      */
-    public $filesystem;
+    public Filesystem $filesystem;
 
     /**
      * files constructor.
@@ -66,7 +66,7 @@ class files
      * @return string File name
      * @throws ChannelNotFoundException No data for channel
      */
-    public function file(string $channel, int $timestamp = null, string $sub_folder = null, string $extension = 'xml', bool $create = false)
+    public function file(string $channel, int $timestamp = null, string $sub_folder = null, string $extension = 'xml', bool $create = false): string
     {
         if (!preg_match('/[a-z0-9]+\.[a-z]+/', $channel)) {
             throw new InvalidArgumentException('Invalid channel id: ' . $channel);
@@ -92,14 +92,14 @@ class files
     /**
      * Load XMLTV file
      * @param string $channel XMLTV channel id
-     * @param int $timestamp Timestamp for the date to get
-     * @param string $sub_folder Sub folder of channel folder
+     * @param ?int $timestamp Timestamp for the date to get
+     * @param ?string $sub_folder Sub folder of channel folder
      * @return SimpleXMLElement
      * @throws FileNotFoundException XML file not found
      * @throws InvalidXMLFileException XML file has no <programme> element
      * @throws ChannelNotFoundException Channel not found
      */
-    public function load_file(string $channel, int $timestamp = 0, $sub_folder = '')
+    public function load_file(string $channel, int $timestamp = null, string $sub_folder = null): SimpleXMLElement
     {
         if(!empty($sub_folder))
             $folders = [$sub_folder];
