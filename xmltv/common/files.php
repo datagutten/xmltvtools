@@ -59,14 +59,14 @@ class files
     /**
      * Get XMLTV file
      * @param string $channel XMLTV channel id
-     * @param int $timestamp Timestamp for the date to get
-     * @param string $sub_folder Sub folder of channel folder
+     * @param ?int $timestamp Timestamp for the date to get
+     * @param ?string $sub_folder Sub folder of channel folder
      * @param string $extension File extension
      * @param bool $create Create folder
      * @return string File name
-     * @throws ChannelNotFoundException
+     * @throws ChannelNotFoundException No data for channel
      */
-    public function file(string $channel, $timestamp = 0, $sub_folder = '', $extension = 'xml', $create = false)
+    public function file(string $channel, int $timestamp = null, string $sub_folder = null, string $extension = 'xml', bool $create = false)
     {
         if (!preg_match('/[a-z0-9]+\.[a-z]+/', $channel)) {
             throw new InvalidArgumentException('Invalid channel id: ' . $channel);
@@ -76,7 +76,7 @@ class files
         if(empty($sub_folder))
             $sub_folder = $this->sub_folders[0];
 
-        $folder = file_tools::path_join($this->xmltv_path, filename::folder($channel, $sub_folder, $timestamp));
+        $folder = $this->channel($channel, $sub_folder, $timestamp);
         if($create)
             $this->filesystem->mkdir($folder);
         elseif (!file_exists($path=file_tools::path_join($this->xmltv_path, $channel)))
