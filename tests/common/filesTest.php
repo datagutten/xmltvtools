@@ -2,6 +2,7 @@
 
 namespace datagutten\xmltv\tests\tools\common;
 
+use datagutten\tools\files\files as file_tools;
 use datagutten\xmltv\tools\common\files;
 use datagutten\xmltv\tools\exceptions\InvalidXMLFileException;
 use FileNotFoundException;
@@ -34,6 +35,22 @@ class filesTest extends TestCase
     {
         $files = new files(__DIR__ . '/xmltv_test', ['xmltv_test']);
         $this->assertSame(1, count($files->sub_folders));
+    }
+
+    public function testChannelFolder()
+    {
+        $files = new files(__DIR__ . '/xmltv_test', ['xmltv_php']);
+        $expected = file_tools::path_join(__DIR__, 'xmltv_test', 'disneychannel.no', 'xmltv_php');
+        $folder = $files->channel('disneychannel.no');
+        $this->assertSame($expected, $folder);
+    }
+
+    public function testChannelFolderWithTimestamp()
+    {
+        $files = new files(__DIR__ . '/xmltv_test', ['xmltv_php']);
+        $expected = file_tools::path_join(__DIR__, 'xmltv_test', 'disneychannel.no', 'xmltv_php', '2022');
+        $folder = $files->channel('disneychannel.no', null, strtotime('2022-01-01'));
+        $this->assertSame($expected, $folder);
     }
 
     public function testCreateFolder()

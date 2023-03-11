@@ -51,13 +51,13 @@ class files
      * Get channel folder
      * @param string $channel Channel id
      * @param ?string $sub_folder Sub folder (defaults to first valid folder)
-     * @param ?int $year Get folder for a specific year
+     * @param ?int $timestamp Timestamp to get folder for a specific year
      * @return string Channel folder path
      */
-    public function channel(string $channel, string $sub_folder = null, int $year = null): string
+    public function channel(string $channel, string $sub_folder = null, int $timestamp = null): string
     {
-        if ($year)
-            return file_tools::path_join($this->xmltv_path, filename::folder($channel, $sub_folder ?? $this->sub_folders[0], $year));
+        if ($timestamp)
+            return file_tools::path_join($this->xmltv_path, filename::folder($channel, $sub_folder ?? $this->sub_folders[0], $timestamp));
         else
             return file_tools::path_join($this->xmltv_path, $channel, $sub_folder ?? $this->sub_folders[0]);
     }
