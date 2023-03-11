@@ -33,17 +33,11 @@ class files
     function __construct(string $xmltv_path, array $sub_folders)
     {
         libxml_use_internal_errors(true);
-        if(empty($xmltv_path))
-            throw new InvalidArgumentException('Empty argument: xmltv_path');
         $this->xmltv_path = realpath($xmltv_path);
 
         if(!file_exists($this->xmltv_path))
             throw new FileNotFoundException($this->xmltv_path);
-        if(!empty($sub_folders))
-            $this->sub_folders = $sub_folders;
-        else
-            throw new InvalidArgumentException('Empty argument: sub_folders');
-
+        $this->sub_folders = $sub_folders;
         $this->filesystem = new Filesystem();
     }
 
