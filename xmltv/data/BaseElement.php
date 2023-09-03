@@ -179,6 +179,7 @@ abstract class BaseElement
             throw new RuntimeException('End not set, unable to calculate duration');
 
         $this->duration_obj = $this->end_obj->diff($this->start_obj);
+        $this->duration = $this->end_obj->getTimestamp() - $this->start_obj->getTimestamp();
         $this->convertTimes();
         return $this->duration_obj;
     }
