@@ -6,6 +6,7 @@ use datagutten\xmltv\tools\exceptions\XMLTVException;
 use DateInterval;
 use DateTime;
 use DateTimeImmutable;
+use DateTimeZone;
 use Exception;
 use InvalidArgumentException;
 use RuntimeException;
@@ -115,11 +116,11 @@ abstract class BaseElement
             $this->duration = $this->duration_obj->s; //TODO: Check if this works with seconds above 60*/
     }
 
-    protected static function parseTime($time): DateTimeImmutable
+    public static function parseTime(mixed $time, ?DateTimeZone $time_zone = null): DateTimeImmutable
     {
         if (is_int($time))
         {
-            $time_obj = new DateTimeImmutable();
+            $time_obj = new DateTimeImmutable(timezone: $time_zone);
             return $time_obj->setTimestamp($time);
         }
         elseif (is_object($time))
@@ -131,7 +132,7 @@ abstract class BaseElement
         }
         try
         {
-            return new DateTimeImmutable($time);
+            return new DateTimeImmutable($time, $time_zone);
         }
         catch (Exception $e)
         {
