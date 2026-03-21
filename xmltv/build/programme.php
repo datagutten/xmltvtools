@@ -4,6 +4,7 @@
 namespace datagutten\xmltv\tools\build;
 
 
+use datagutten\xmltv\tools\data\BaseElement;
 use DateTime;
 use SimpleXMLElement;
 
@@ -24,31 +25,28 @@ class programme
      */
     public $channel;
 
-    public static function convert_time(int|DateTime $time)
+    public static function format_time(mixed $time): string
     {
-        $format = 'YmdHis O';
-        if (is_int($time))
-            return date($format, $time);
-        else
-            return $time->format($format);
+        $time = BaseElement::parseTime($time);
+        return $time->format('YmdHis O');
     }
 
     /**
      * programme constructor.
-     * @param int $start Start time as unix timestamp
-     * @param tv TV class instance the program should be added to
+     * @param mixed $start Start time as unix timestamp
+     * @param tv $tv TV class instance the program should be added to
      */
-    public function __construct(int|DateTime $start, tv $tv)
+    public function __construct(mixed $start, tv $tv)
     {
         $this->xml = $tv->xml->addChild('programme');
-        $this->xml->addAttribute('start', static::convert_time($start));
+        $this->xml->addAttribute('start', static::format_time($start));
         $this->xml->addAttribute('channel', $tv->channel);
         $this->default_lang = $tv->language;
     }
 
-    public function stop(int|DateTime $stop)
+    public function stop(mixed $stop): void
     {
-        $this->xml->addAttribute('stop', static::convert_time($stop));
+        $this->xml->addAttribute('stop', static::format_time($stop));
     }
 
     public function title(string $title, string $lang='')
@@ -115,10 +113,9 @@ class programme
      * be the same as the copyright date.
      * @param DateTime $date
      */
-    public function date(DateTime $date)
+    public function date(mixed $date): void
     {
-        $date_string = $date->format('YmdHis O');
-        $this->xml->addChild('date', $date_string);
+        $this->xml->addChild('date', self::format_time($date));
     }
 
     /**
