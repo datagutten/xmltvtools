@@ -24,22 +24,31 @@ class programme
      */
     public $channel;
 
+    public static function convert_time(int|DateTime $time)
+    {
+        $format = 'YmdHis O';
+        if (is_int($time))
+            return date($format, $time);
+        else
+            return $time->format($format);
+    }
+
     /**
      * programme constructor.
      * @param int $start Start time as unix timestamp
      * @param tv TV class instance the program should be added to
      */
-    public function __construct(int $start, tv $tv)
+    public function __construct(int|DateTime $start, tv $tv)
     {
         $this->xml = $tv->xml->addChild('programme');
-        $this->xml->addAttribute('start', date('YmdHis O', $start));
+        $this->xml->addAttribute('start', static::convert_time($start));
         $this->xml->addAttribute('channel', $tv->channel);
         $this->default_lang = $tv->language;
     }
 
-    public function stop(int $stop)
+    public function stop(int|DateTime $stop)
     {
-        $this->xml->addAttribute('stop', date('YmdHis O', $stop));
+        $this->xml->addAttribute('stop', static::convert_time($stop));
     }
 
     public function title(string $title, string $lang='')
