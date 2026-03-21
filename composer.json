@@ -10,7 +10,7 @@
         "ext-libxml": "*",
         "ext-json": "*",
         "ext-mbstring": "*",
-        "php": ">=7.4"
+        "php": ">=8.0"
     },
     "suggest": {
         "datagutten/video-tools": "Get duration of video files to calculate end time"
