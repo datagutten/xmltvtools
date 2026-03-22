@@ -10,7 +10,7 @@ use PHPUnit\Framework\TestCase;
 
 date_default_timezone_set('UTC');
 
-class TestParseTime extends TestCase
+class parseTimeTest extends TestCase
 {
     function testIntTimestampNoTimezone()
     {
