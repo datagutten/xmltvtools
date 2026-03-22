@@ -62,7 +62,7 @@ class Program extends BaseElement
      */
     public static function fromXMLTV(SimpleXMLElement $xml)
     {
-        $program = new self();
+        $program = new static();
 
         $program->generator = (string)$xml->xpath('/tv/@generator-info-name')[0];
         $program->parseStartEnd($xml->attributes()->{'start'}, $xml->attributes()->{'stop'} ?? null);
@@ -110,7 +110,7 @@ class Program extends BaseElement
             throw new FileNotFoundException($file);
         $eit = eit_parser::parse(file_get_contents($file));
 
-        $program = new self();
+        $program = new static();
         try
         {
             $start = new DateTime('now', new DateTimeZone('GMT')); //Time zone from EIT is always GMT
