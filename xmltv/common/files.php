@@ -7,6 +7,7 @@ namespace datagutten\xmltv\tools\common;
 use datagutten\tools\files\files as file_tools;
 use datagutten\xmltv\tools\exceptions\ChannelNotFoundException;
 use datagutten\xmltv\tools\exceptions\InvalidXMLFileException;
+use DateTimeInterface;
 use FileNotFoundException;
 use InvalidArgumentException;
 use SimpleXMLElement;
@@ -45,10 +46,10 @@ class files
      * Get channel folder
      * @param string $channel Channel id
      * @param ?string $sub_folder Sub folder (defaults to first valid folder)
-     * @param ?int $timestamp Timestamp to get folder for a specific year
+     * @param int|DateTimeInterface|null $timestamp Timestamp to get folder for a specific year
      * @return string Channel folder path
      */
-    public function channel(string $channel, string $sub_folder = null, int $timestamp = null): string
+    public function channel(string $channel, ?string $sub_folder = null, int|DateTimeInterface|null $timestamp = null): string
     {
         if ($timestamp)
             return file_tools::path_join($this->xmltv_path, filename::folder($channel, $sub_folder ?? $this->sub_folders[0], $timestamp));
@@ -59,14 +60,14 @@ class files
     /**
      * Get XMLTV file
      * @param string $channel XMLTV channel id
-     * @param ?int $timestamp Timestamp for the date to get
+     * @param int|DateTimeInterface|null $timestamp Timestamp for the date to get
      * @param ?string $sub_folder Sub folder of channel folder
      * @param string $extension File extension
      * @param bool $create Create folder
      * @return string File name
      * @throws ChannelNotFoundException No data for channel
      */
-    public function file(string $channel, int $timestamp = null, string $sub_folder = null, string $extension = 'xml', bool $create = false): string
+    public function file(string $channel, int|DateTimeInterface|null $timestamp = null, ?string $sub_folder = null, string $extension = 'xml', bool $create = false): string
     {
         if (!preg_match('/[a-z0-9]+\.[a-z]+/', $channel)) {
             throw new InvalidArgumentException('Invalid channel id: ' . $channel);
@@ -92,14 +93,13 @@ class files
     /**
      * Load XMLTV file
      * @param string $channel XMLTV channel id
-     * @param ?int $timestamp Timestamp for the date to get
+     * @param int|DateTimeInterface|null $timestamp Timestamp for the date to get
      * @param ?string $sub_folder Sub folder of channel folder
      * @return SimpleXMLElement
-     * @throws FileNotFoundException XML file not found
-     * @throws InvalidXMLFileException XML file has no <programme> element
      * @throws ChannelNotFoundException Channel not found
+     * @throws InvalidXMLFileException XML file has no <programme> element
      */
-    public function load_file(string $channel, int $timestamp = null, string $sub_folder = null): SimpleXMLElement
+    public function load_file(string $channel, int|DateTimeInterface|null $timestamp = null, ?string $sub_folder = null): SimpleXMLElement
     {
         if(!empty($sub_folder))
             $folders = [$sub_folder];

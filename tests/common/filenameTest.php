@@ -3,6 +3,8 @@
 namespace datagutten\xmltv\tests\tools\common;
 
 use datagutten\xmltv\tools\common\filename;
+use DateTime;
+use DateTimeImmutable;
 use PHPUnit\Framework\TestCase;
 
 class filenameTest extends TestCase
@@ -22,6 +24,18 @@ class filenameTest extends TestCase
     public function testFilename()
     {
         $file_name = filename::filename('test.no', 1570125820, 'xml');
+        $this->assertEquals('test.no_2019-10-03.xml', $file_name);
+    }
+
+    public function testFilenameObjImmutable()
+    {
+        $file_name = filename::filename('test.no', new DateTimeImmutable('@1570125820'), 'xml');
+        $this->assertEquals('test.no_2019-10-03.xml', $file_name);
+    }
+
+    public function testFilenameObj()
+    {
+        $file_name = filename::filename('test.no', new DateTime('@1570125820'), 'xml');
         $this->assertEquals('test.no_2019-10-03.xml', $file_name);
     }
 }
