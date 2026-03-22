@@ -122,7 +122,11 @@ abstract class BaseElement
         {
             if (is_numeric($time))
             {
-                return new DateTimeImmutable(sprintf('@%d', $time, $time_zone));
+                $date = new DateTimeImmutable(sprintf('@%d', $time));
+                if (!empty($time_zone))
+                    return $date->setTimezone($time_zone);
+                else
+                    return $date;
             }
             elseif (is_object($time))
             {
