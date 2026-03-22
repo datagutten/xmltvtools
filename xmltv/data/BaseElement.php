@@ -118,20 +118,19 @@ abstract class BaseElement
 
     public static function parseTime(mixed $time, ?DateTimeZone $time_zone = null): DateTimeImmutable
     {
-        if (is_int($time))
-        {
-            $time_obj = new DateTimeImmutable(timezone: $time_zone);
-            return $time_obj->setTimestamp($time);
-        }
-        elseif (is_object($time))
-        {
-            if (get_class($time) == DateTimeImmutable::class)
-                return $time;
-            elseif (get_class($time) == DateTime::class)
-                return DateTimeImmutable::createFromMutable($time);
-        }
         try
         {
+            if (is_numeric($time))
+            {
+                return new DateTimeImmutable(sprintf('@%d', $time, $time_zone));
+            }
+            elseif (is_object($time))
+            {
+                if (get_class($time) == DateTimeImmutable::class)
+                    return $time;
+                elseif (get_class($time) == DateTime::class)
+                    return DateTimeImmutable::createFromMutable($time);
+            }
             return new DateTimeImmutable($time, $time_zone);
         }
         catch (Exception $e)
