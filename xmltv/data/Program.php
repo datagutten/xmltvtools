@@ -142,11 +142,12 @@ class Program extends BaseElement
         return sprintf('S%02dE%02d', $this->season, $this->episode);
     }
 
-
-
-    public function header()
+    public function header(): string
     {
-        $header = sprintf('%s-%s %s', $this->start, $this->end, $this->title);
+        if (empty($this->end))
+            $header = sprintf('%s %s', $this->start, $this->title);
+        else
+            $header = sprintf('%s-%s %s', $this->start, $this->end, $this->title);
         if(!empty($this->episode))
             $header.= ' '.$this->formatEpisode();
         return $header;
