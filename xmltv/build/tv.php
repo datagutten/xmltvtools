@@ -31,14 +31,22 @@ class tv
         $this->channel = $channel;
         $this->language = $language;
         $this->generator = $generator;
-        $this->init_xml();
+        $this->xml = new SimpleXMLElement(file_get_contents(__DIR__ . '/template.xml'));
+        if (!empty($generator))
+            $this->generator('php-xmltv-grabber', 'https://github.com/datagutten/xmltvgrabber');
     }
 
-    function init_xml()
+    public function generator(?string $name = null, ?string $url = null): void
     {
-        $this->xml = new SimpleXMLElement(file_get_contents(__DIR__.'/template.xml'));
-        $this->xml->addAttribute('generator-info-name', $this->generator);
-        $this->xml->addAttribute('generator-info-url', 'https://github.com/datagutten/xmltvgrabber');
+        if (!empty($name))
+            $this->xml->addAttribute('generator-info-name', $name);
+        if (!empty($url))
+            $this->xml->addAttribute('generator-info-url', $url);
+    }
+
+    public function source(string $source): void
+    {
+        $this->xml->addAttribute('source-info-url', $source);
     }
 
     function format_output()

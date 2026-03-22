@@ -20,6 +20,21 @@ class buildTest extends TestCase
         $this->assertEquals('php-xmltv-grabber', $tv->generator);
     }
 
+    public function testGenerator()
+    {
+        $tv = new tv('test.no', 'nb', null);
+        $tv->generator('xmltvtools', 'https://github.com/datagutten/xmltvtools');
+        $this->assertStringContainsString('generator-info-url="https://github.com/datagutten/xmltvtools"', $tv->xml->asXML());
+        $this->assertStringContainsString('generator-info-name="xmltvtools"', $tv->xml->asXML());
+    }
+
+    public function testSource()
+    {
+        $tv = new tv('test.no', 'nb');
+        $tv->source('test.no');
+        $this->assertStringContainsString('source-info-url="test.no"', $tv->xml->asXML());
+    }
+
     public function testProgramme()
     {
         $tv = new tv('test.no', 'nb', 'test-grabber');
