@@ -16,7 +16,7 @@ jobs:
         php: [ '8.0', '8.1', '8.2', '8.4', '8.5' ]
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v6
 
     - name: Validate composer.json and composer.lock
       run: composer validate --strict
@@ -52,13 +52,16 @@ jobs:
       run: composer run-script test
 
     - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v3
+      uses: codecov/codecov-action@v5
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+
 
   no_video_tools:
     name: 'No video-tools and no ffmpeg'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v6
       - name: Setup PHP with Xdebug
         uses: shivammathur/setup-php@v2
         with:
@@ -74,13 +77,15 @@ jobs:
         run: composer run-script test
 
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v3
+        uses: codecov/codecov-action@v5
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
 
   prefer_lowest:
     name: 'Prefer lowest dependency versions'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v6
 
       - name: Cache Composer packages
         id: composer-cache
@@ -107,4 +112,6 @@ jobs:
         run: composer run-script test
 
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v3
+        uses: codecov/codecov-action@v5
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
