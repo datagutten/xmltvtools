@@ -13,6 +13,7 @@ use datagutten\xmltv\tools\common\files;
 use datagutten\xmltv\tools\exceptions\ChannelNotFoundException;
 use datagutten\xmltv\tools\exceptions\InvalidXMLFileException;
 use datagutten\xmltv\tools\exceptions\ProgramNotFoundException;
+use DateTimeInterface;
 use FileNotFoundException;
 use InvalidArgumentException;
 use RuntimeException;
@@ -58,13 +59,14 @@ class parser
         else
             return strtotime($time);
     }
+
     /**
      * Combine schedule for multiple days to get all programs for the specified date
      * @param SimpleXMLElement[] $days Array with schedules
-     * @param string $date Date to get
+     * @param ?string $date Date to get (formatted as Ymd)
      * @return SimpleXMLElement[] Array with programs
      */
-    public static function combine_days(array $days, $date='')
+    public static function combine_days(array $days, ?string $date = null): array
     {
         $programs = [];
         foreach($days as $day)
@@ -82,14 +84,13 @@ class parser
     /**
      * Get programs
      * @param string $channel XMLTV channel id
-     * @param int $timestamp Timestamp to search
-     * @param bool|null $multiple_days Combine data for current day and previous day to get all programs for the current day
-     * @return array|SimpleXMLElement
-     * @throws FileNotFoundException XMLTV file not found
+     * @param int|DateTimeInterface|null $timestamp Timestamp to search
+     * @param bool|null $multiple_days_arg Combine data for current day and previous day to get all programs for the current day
+     * @return SimpleXMLElement[]
      * @throws InvalidXMLFileException XMLTV file not valid
      * @throws ChannelNotFoundException Channel not found
      */
-    public function get_programs(string $channel, $timestamp = 0, $multiple_days_arg = null)
+    public function get_programs(string $channel, int|DateTimeInterface|null $timestamp = null, ?bool $multiple_days_arg = null): array
     {
         $xml_current_day=$this->files->load_file($channel,$timestamp);
 
