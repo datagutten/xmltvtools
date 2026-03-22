@@ -27,8 +27,10 @@ class programme
 
     public static function format_time(mixed $time): string
     {
-        $time = BaseElement::parseTime($time);
-        return $time->format('YmdHis O');
+        if (is_numeric($time))
+            return date('YmdHis O', $time);
+        else
+            return BaseElement::parseTime($time)->format('YmdHis O');
     }
 
     /**

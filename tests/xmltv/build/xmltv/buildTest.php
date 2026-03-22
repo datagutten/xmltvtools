@@ -28,7 +28,7 @@ class buildTest extends TestCase
         $this->assertSame($tv->language, $programme->default_lang);
         $this->assertInstanceOf(SimpleXMLElement::class, $programme->xml);
         $output = $tv->xml->asXML();
-        $this->assertStringContainsString('start="20200127180000 +0200"', $output);
+        $this->assertStringContainsString('start="20200127180000 +0100"', $output);
     }
 
     public function testProgrammeDateObj()
