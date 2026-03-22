@@ -137,12 +137,17 @@ abstract class BaseElement
             }
             return new DateTimeImmutable($time, $time_zone);
         }
-        catch (Exception $e)
+        catch (Exception $e) //'DateMalformedStringException' is available starting with 8.3 PHP version
         {
             throw new InvalidArgumentException('Unable to parse time', $e->getCode(), $e);
         }
     }
 
+    /**
+     * @param $start
+     * @return void
+     * @deprecated
+     */
     public function setStart($start)
     {
         $start_obj = new DateTimeImmutable();

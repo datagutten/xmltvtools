@@ -4,7 +4,7 @@
 namespace datagutten\xmltv\tools\data;
 
 use datagutten\dreambox\eit_parser;
-use datagutten\xmltv\tools\exceptions\XMLTVException;
+use datagutten\dreambox\exceptions\EitException;
 use datagutten\xmltv\tools\parse\parser;
 use DateInterval;
 use DateTime;
@@ -12,7 +12,6 @@ use DateTimeImmutable;
 use DateTimeZone;
 use Exception;
 use FileNotFoundException;
-use InvalidArgumentException;
 use SimpleXMLElement;
 
 /**
@@ -103,6 +102,7 @@ class Program extends BaseElement
      * @param string $file EIT file
      * @return Program
      * @throws FileNotFoundException EIT file not found
+     * @throws EitException Invalid EIT file
      */
     public static function fromEIT(string $file)
     {

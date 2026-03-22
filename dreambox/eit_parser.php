@@ -5,11 +5,6 @@ namespace datagutten\dreambox;
 
 use datagutten\dreambox\exceptions\EitException;
 
-function int($int)
-{
-    return (int)$int;
-}
-
 /**
  * Class eit_parser
  * @package datagutten\dreambox
@@ -23,9 +18,9 @@ class eit_parser
         # Parse 16 bit unsigned int containing Modified Julian Date,
         # as per DVB-SI spec
         # returning year,month,day
-        $YY = int(($MJD - 15078.2) / 365.25);
-        $MM = int(($MJD - 14956.1 - int($YY * 365.25)) / 30.6001);
-        $D = $MJD - 14956 - int($YY * 365.25) - int($MM * 30.6001);
+        $YY = intval(($MJD - 15078.2) / 365.25);
+        $MM = intval(($MJD - 14956.1 - intval($YY * 365.25)) / 30.6001);
+        $D = $MJD - 14956 - intval($YY * 365.25) - intval($MM * 30.6001);
         $K = 0;
         if ($MM == 14 || $MM == 15)
             $K = 1;
@@ -41,7 +36,6 @@ class eit_parser
     public static function parse_header($data)
     {
         $string = substr($data, 0, 12);
-        //$data = unpack('S/asdf/S/C/C/C/C/C/C/S', $string);
         $data = unpack('nid/ndate/CtimeH/CtimeM/CtimeS/CdurationH/CdurationM/CdurationS/nstatus', $string);
 
         $date = self::parseMJD($data['date']);
