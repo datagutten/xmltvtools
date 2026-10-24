@@ -16,7 +16,7 @@ jobs:
         php: [ '8.0', '8.1', '8.2', '8.4', '8.5' ]
 
     steps:
-    - uses: actions/checkout@v6
+    - uses: actions/checkout@v7
 
     - name: Validate composer.json and composer.lock
       run: composer validate --strict
@@ -61,7 +61,7 @@ jobs:
     name: 'No video-tools and no ffmpeg'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - name: Setup PHP with Xdebug
         uses: shivammathur/setup-php@v2
         with:
@@ -85,7 +85,7 @@ jobs:
     name: 'Prefer lowest dependency versions'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - name: Cache Composer packages
         id: composer-cache
